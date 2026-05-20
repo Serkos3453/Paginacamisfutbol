@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.utils.html import format_html, escape
 from django.urls import reverse
+from django.http import HttpResponse
+import re
+import urllib.parse
 from .models import Categoria, Camiseta, Pedido, LineaPedido
 
 
@@ -37,6 +40,27 @@ def _url_camiseta(camiseta):
         return '—'
 
 
+def _url_yupoo(camiseta):
+    """Devuelve un enlace HTML a Yupoo."""
+    if camiseta.yupoo_album_id:
+        tienda = "194939" # Proveedor por defecto
+        if camiseta.imagen_url:
+            match = re.search(r'photo\.yupoo\.com/([^/]+)/', camiseta.imagen_url)
+            if match:
+                tienda = match.group(1)
+                
+        url = f"https://{tienda}.x.yupoo.com/albums/{camiseta.yupoo_album_id}?uid=1"
+        search_query = urllib.parse.quote_plus(camiseta.nombre)
+        search_url = f"https://{tienda}.x.yupoo.com/search/album?uid=1&q={search_query}"
+        
+        return format_html(
+            '<a href="{}" target="_blank" style="color:#e91e63; font-weight:bold; text-decoration:none;">🐼 Yupoo</a> '
+            '<br><a href="{}" target="_blank" style="font-size:10px; color:#888; text-decoration:underline;">🔍 Buscar si falla</a>',
+            url, search_url
+        )
+    return '—'
+
+
 def _extras_badge(linea):
     """Devuelve badges HTML con parche / dorsal / texto."""
     badges = []
@@ -63,11 +87,11 @@ class LineaPedidoInline(admin.TabularInline):
     extra = 0
     readonly_fields = [
         'preview_img', 'camiseta', 'talla', 'cantidad',
-        'extras_info', 'link_camiseta',
+        'extras_info', 'link_camiseta', 'link_yupoo',
     ]
     fields = [
         'preview_img', 'camiseta', 'talla', 'cantidad',
-        'extras_info', 'link_camiseta',
+        'extras_info', 'link_camiseta', 'link_yupoo',
     ]
     can_delete = False
 
@@ -82,6 +106,10 @@ class LineaPedidoInline(admin.TabularInline):
     def link_camiseta(self, obj):
         return _url_camiseta(obj.camiseta)
     link_camiseta.short_description = 'URL camiseta'
+
+    def link_yupoo(self, obj):
+        return _url_yupoo(obj.camiseta)
+    link_yupoo.short_description = 'Yupoo'
 
 
 # ──────────────────────────────────────────────────
@@ -114,6 +142,7 @@ class PedidoAdmin(admin.ModelAdmin):
     list_editable = ['estado']
     readonly_fields = ['fecha_pedido', 'fecha_actualizacion', 'resumen_visual']
     inlines = [LineaPedidoInline]
+    actions = ['descargar_doc_proveedor']
 
     fieldsets = (
         ('👤 Cliente', {
@@ -132,6 +161,41 @@ class PedidoAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
         }),
     )
+
+    @admin.action(description='📄 Descargar txt para proveedor (Pedidos seleccionados)')
+    def descargar_doc_proveedor(self, request, queryset):
+        texto = "PEDIDOS PARA PROVEEDOR\n======================\n\n"
+        for pedido in queryset:
+            texto += f"--- PEDIDO #{pedido.pk} ---\n"
+            lineas = pedido.lineas.all().select_related('camiseta')
+            if not lineas:
+                texto += "Sin artículos.\n\n"
+                continue
+            
+            for l in lineas:
+                yupoo = "(Sin URL Yupoo)"
+                if l.camiseta.yupoo_album_id:
+                    tienda = "194939"
+                    if l.camiseta.imagen_url:
+                        match = re.search(r'photo\.yupoo\.com/([^/]+)/', l.camiseta.imagen_url)
+                        if match:
+                            tienda = match.group(1)
+                    yupoo = f"https://{tienda}.x.yupoo.com/albums/{l.camiseta.yupoo_album_id}?uid=1"
+                    
+                extras = []
+                if l.parche: extras.append("Parche")
+                if l.dorsal: extras.append(f"Dorsal: {l.texto_dorsal}")
+                extras_str = " | ".join(extras)
+                if extras_str: extras_str = f" [{extras_str}]"
+                
+                texto += f"Camiseta: {l.camiseta.nombre}\n"
+                texto += f"Yupoo: {yupoo}\n"
+                texto += f"Talla: {l.talla} | Cantidad: {l.cantidad}{extras_str}\n\n"
+            texto += "\n"
+                
+        response = HttpResponse(texto, content_type='text/plain; charset=utf-8')
+        response['Content-Disposition'] = 'attachment; filename="pedidos_proveedor.txt"'
+        return response
 
     # ── columna resumen en el listado ──
     def resumen_corto(self, obj):
@@ -161,6 +225,7 @@ class PedidoAdmin(admin.ModelAdmin):
         for l in lineas:
             img = _imagen_thumb(l.camiseta, height=70)
             link = _url_camiseta(l.camiseta)
+            link_yupoo = _url_yupoo(l.camiseta)
             extras = _extras_badge(l)
             img_url_raw = l.camiseta.imagen_url or (l.camiseta.imagen_local.url if l.camiseta.imagen_local else '—')
 
@@ -172,7 +237,7 @@ class PedidoAdmin(admin.ModelAdmin):
                 '<td style="padding:10px;text-align:center;font-size:15px;font-weight:600;">{}</td>'
                 '<td style="padding:10px;text-align:center;">{}</td>'
                 '<td style="padding:10px;">{}</td>'
-                '<td style="padding:10px;">{}</td>'
+                '<td style="padding:10px;">{}<br><br>{}</td>'
                 '<td style="padding:10px;font-size:11px;word-break:break-all;max-width:220px;">{}</td>'
                 '</tr>',
                 img,
@@ -181,7 +246,7 @@ class PedidoAdmin(admin.ModelAdmin):
                 l.talla,
                 l.cantidad,
                 extras,
-                link,
+                link, link_yupoo,
                 img_url_raw,
             )
 
@@ -211,7 +276,7 @@ class PedidoAdmin(admin.ModelAdmin):
 class LineaPedidoAdmin(admin.ModelAdmin):
     list_display = [
         'pedido', 'preview_img', 'camiseta', 'talla', 'cantidad',
-        'tiene_parche', 'tiene_dorsal', 'nombre_dorsal', 'link_camiseta',
+        'tiene_parche', 'tiene_dorsal', 'nombre_dorsal', 'link_camiseta', 'link_yupoo',
     ]
     list_filter = ['talla', 'parche', 'dorsal']
     search_fields = ['camiseta__nombre', 'pedido__nombre_cliente', 'texto_dorsal']
@@ -236,4 +301,8 @@ class LineaPedidoAdmin(admin.ModelAdmin):
     def link_camiseta(self, obj):
         return _url_camiseta(obj.camiseta)
     link_camiseta.short_description = 'URL'
+
+    def link_yupoo(self, obj):
+        return _url_yupoo(obj.camiseta)
+    link_yupoo.short_description = 'Yupoo'
 
