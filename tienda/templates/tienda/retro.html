@@ -1,0 +1,579 @@
+{% extends 'tienda/base.html' %}
+{% load tienda_filters %}
+{% block title %}Camisetas Retro — FútbolPro{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* ══════════════════════════════════════════════════════════════════
+     RETRO PAGE — Estética vintage diferenciada del catálogo general
+     Paleta: sepia, marrón oscuro, crema envejecida, acento óxido
+  ══════════════════════════════════════════════════════════════════ */
+
+  /* Variables locales que sobreescriben solo en esta página */
+  .retro-page {
+    --r-fondo:       #f5f0e8;
+    --r-fondo-card:  #faf7f2;
+    --r-borde:       #d4c5a9;
+    --r-borde-hover: #8b4513;
+    --r-texto:       #2c1810;
+    --r-gris:        #6b5a4e;
+    --r-acento:      #8b4513;       /* óxido/marrón ladrillo */
+    --r-acento-claro:#b5661a;
+    --r-crema:       #e8dcc8;
+    --r-sombra:      rgba(44,24,16,0.15);
+    --r-sombra-hover:rgba(44,24,16,0.30);
+    --r-stamp:       #6b2d0f;
+  }
+
+  /* Fondo general de la página con textura sutil */
+  .retro-page {
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 28px,
+        rgba(139,69,19,0.04) 28px,
+        rgba(139,69,19,0.04) 29px
+      ),
+      var(--r-fondo);
+    min-height: 100vh;
+  }
+
+  /* ── BANDA SUPERIOR ── */
+  .retro-banda {
+    background: var(--r-texto);
+    color: var(--r-crema);
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ── HERO ── */
+  .retro-hero {
+    padding: 3.5rem 0 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 3px double var(--r-borde);
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  /* Líneas decorativas arriba del hero */
+  .retro-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        var(--r-acento) 0, var(--r-acento) 8px,
+        transparent 8px, transparent 16px
+      );
+  }
+
+  .retro-eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--r-acento);
+    border: 1px solid var(--r-acento);
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .retro-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    color: var(--r-texto);
+  }
+
+  .retro-hero h1 span {
+    display: block;
+    font-style: normal;
+    font-size: 0.45em;
+    letter-spacing: 0.18em;
+    color: var(--r-gris);
+    margin-top: 0.6rem;
+    font-weight: 500;
+  }
+
+  .retro-hero-sub {
+    font-size: 0.88rem;
+    color: var(--r-gris);
+    margin-top: 1.2rem;
+    max-width: 360px;
+    line-height: 1.7;
+    border-left: 2px solid var(--r-acento);
+    padding-left: 0.9rem;
+  }
+
+  /* Sello decorativo */
+  .retro-stamp {
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--r-stamp);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+    transform: rotate(-8deg);
+    box-shadow: inset 0 0 0 5px var(--r-crema), 0 0 0 8px var(--r-stamp);
+    background: var(--r-fondo);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .retro-stamp::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 1px dashed var(--r-stamp);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .retro-stamp-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--r-stamp);
+    line-height: 1;
+  }
+  .retro-stamp-txt {
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--r-stamp);
+    line-height: 1.3;
+    margin-top: 0.15rem;
+  }
+
+  /* ── TOOLBAR ── */
+  .retro-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--r-borde);
+  }
+
+  /* Buscador estilo telegrama */
+  .retro-search-wrap {
+    position: relative;
+    flex: 1; min-width: 220px; max-width: 380px;
+  }
+  .retro-search-wrap svg {
+    position: absolute; left: 1rem; top: 50%;
+    transform: translateY(-50%);
+    color: var(--r-gris);
+    pointer-events: none;
+  }
+  .retro-search-wrap input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.8rem;
+    background: var(--r-fondo-card);
+    border: 1px solid var(--r-borde);
+    border-radius: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: var(--r-texto);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    border-bottom-width: 2px;
+  }
+  .retro-search-wrap input:focus {
+    border-color: var(--r-acento);
+    box-shadow: 0 2px 0 var(--r-acento);
+  }
+  .retro-search-wrap input::placeholder { color: var(--r-gris); opacity: 0.7; }
+
+  .retro-result-count {
+    font-size: 0.78rem;
+    color: var(--r-gris);
+    letter-spacing: 0.05em;
+    font-style: italic;
+  }
+
+  /* ── GRID ── */
+  .retro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── CARD ── */
+  .retro-card {
+    background: var(--r-fondo-card);
+    border: 1px solid var(--r-borde);
+    border-radius: 0;
+    overflow: hidden;
+    transition:
+      transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+      box-shadow 0.3s ease,
+      border-color 0.3s;
+    cursor: pointer;
+    animation: retroFadeUp 0.55s ease both;
+    position: relative;
+  }
+
+  /* Efecto esquina doblada */
+  .retro-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 22px 22px;
+    border-color: transparent transparent var(--r-borde) transparent;
+    transition: border-color 0.3s;
+  }
+
+  .retro-card:hover {
+    transform: translateY(-5px) rotate(0.3deg);
+    box-shadow: 5px 8px 24px var(--r-sombra-hover);
+    border-color: var(--r-acento);
+  }
+  .retro-card:hover::after {
+    border-color: transparent transparent var(--r-acento) transparent;
+  }
+
+  @keyframes retroFadeUp {
+    from { opacity: 0; transform: translateY(18px) rotate(-0.5deg); }
+    to   { opacity: 1; transform: translateY(0) rotate(0); }
+  }
+
+  .retro-card:nth-child(1)  { animation-delay: 0.04s; }
+  .retro-card:nth-child(2)  { animation-delay: 0.09s; }
+  .retro-card:nth-child(3)  { animation-delay: 0.14s; }
+  .retro-card:nth-child(4)  { animation-delay: 0.19s; }
+  .retro-card:nth-child(5)  { animation-delay: 0.24s; }
+  .retro-card:nth-child(6)  { animation-delay: 0.29s; }
+  .retro-card:nth-child(n+7){ animation-delay: 0.34s; }
+
+  /* Imagen con filtro sepia leve */
+  .retro-card-img-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--r-crema);
+  }
+  .retro-card-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease, filter 0.3s ease;
+    filter: sepia(20%) contrast(1.02);
+  }
+  .retro-card:hover .retro-card-img-wrap img {
+    transform: scale(1.05);
+    filter: sepia(0%) contrast(1.05);
+  }
+
+  .retro-card-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--r-crema), var(--r-borde));
+  }
+
+  /* Etiqueta "RETRO" en la esquina */
+  .retro-tag {
+    position: absolute; top: 0; left: 0;
+    background: var(--r-acento);
+    color: #faf7f2;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.65rem;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    padding-right: 1rem;
+  }
+
+  /* Número de álbum como referencia vintage */
+  .retro-album-ref {
+    position: absolute; bottom: 0.6rem; right: 1.5rem;
+    font-size: 0.6rem;
+    color: var(--r-gris);
+    opacity: 0.7;
+    font-style: italic;
+    letter-spacing: 0.05em;
+  }
+
+  .retro-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(44,24,16,0.82) 0%, transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s;
+    display: flex; align-items: flex-end; padding: 1rem;
+  }
+  .retro-card:hover .retro-card-overlay { opacity: 1; }
+  .retro-card-overlay a {
+    width: 100%;
+    text-align: center;
+    background: var(--r-acento);
+    color: #faf7f2;
+    padding: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .retro-card-overlay a:hover { background: var(--r-acento-claro); }
+
+  /* Cuerpo de la card con línea divisora estilo formulario */
+  .retro-card-body {
+    padding: 0.85rem 1rem 0.75rem;
+    border-top: 2px solid var(--r-crema);
+  }
+  .retro-card-nombre {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--r-texto);
+    margin-bottom: 0.55rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .retro-card-tallas {
+    display: flex; gap: 0.3rem; flex-wrap: wrap;
+  }
+  .retro-talla-chip {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--r-borde);
+    padding: 0.18rem 0.4rem;
+    color: var(--r-gris);
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── PAGINACIÓN ── */
+  .retro-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  .retro-pagination a,
+  .retro-pagination span.current {
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--r-borde);
+    text-decoration: none;
+    color: var(--r-texto);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--r-fondo-card);
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .retro-pagination a:hover {
+    background: var(--r-crema);
+    border-color: var(--r-acento);
+    color: var(--r-acento);
+  }
+  .retro-pagination span.current {
+    background: var(--r-acento);
+    color: #faf7f2;
+    border-color: var(--r-acento);
+  }
+
+  /* ── EMPTY ── */
+  .retro-empty {
+    text-align: center;
+    padding: 6rem 2rem;
+    color: var(--r-gris);
+  }
+  .retro-empty h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--r-texto);
+    margin-bottom: 0.8rem;
+  }
+
+  /* ── ENLACE AL CATÁLOGO GENERAL (en la toolbar) ── */
+  .retro-volver {
+    font-size: 0.75rem;
+    color: var(--r-gris);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-bottom: 1px dashed var(--r-borde);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .retro-volver:hover { color: var(--r-acento); border-color: var(--r-acento); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .retro-hero { grid-template-columns: 1fr; }
+    .retro-stamp { display: none; }
+    .retro-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .retro-hero h1 { font-size: 2.8rem; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="retro-page">
+
+  <!-- Banda superior identificadora -->
+  <div class="retro-banda">
+    ✦ Colección Retro · Edición Limitada · FútbolPro ✦
+  </div>
+
+  <!-- Hero -->
+  <div class="retro-hero">
+    <div>
+      <div class="retro-eyebrow">Archivo Histórico · Camisetas Retro</div>
+      <h1>
+        Clásicos<br>Eternos
+        <span>Fútbol que ya es leyenda</span>
+      </h1>
+      <p class="retro-hero-sub">
+        Las camisetas que marcaron una era. Réplicas de los equipos y épocas
+        que no deberían olvidarse.
+      </p>
+    </div>
+
+    <!-- Sello vintage con contador -->
+    <div class="retro-stamp">
+      <div class="retro-stamp-num">{{ page_obj.paginator.count }}</div>
+      <div class="retro-stamp-txt">piezas<br>retro</div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="retro-toolbar">
+    <form class="retro-search-wrap" method="get">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input
+        type="text"
+        name="q"
+        placeholder="Buscar equipo, club, época…"
+        value="{{ busqueda }}"
+        onchange="this.form.submit()"
+      >
+    </form>
+
+    <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+      <span class="retro-result-count">
+        {% if busqueda %}
+          {{ page_obj.paginator.count }} resultado{{ page_obj.paginator.count|pluralize:"s" }} para «{{ busqueda }}»
+        {% else %}
+          Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        {% endif %}
+      </span>
+      <a href="{% url 'catalogo' %}" class="retro-volver">
+        ← Volver al catálogo completo
+      </a>
+    </div>
+  </div>
+
+  <!-- Grid de camisetas -->
+  {% if camisetas %}
+  <div class="retro-grid">
+    {% for camiseta in camisetas %}
+    <div class="retro-card" onclick="location.href='{% url 'detalle_camiseta' camiseta.pk %}'">
+
+      <div class="retro-card-img-wrap">
+        {% if camiseta.imagen_local %}
+          <img src="{{ camiseta.imagen_local.url }}" alt="{{ camiseta.nombre }}" loading="lazy">
+        {% elif camiseta.imagen_url %}
+          <img src="{{ camiseta.imagen_url }}" alt="{{ camiseta.nombre }}" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'retro-card-placeholder\'>⚽</div>'">
+        {% else %}
+          <div class="retro-card-placeholder">⚽</div>
+        {% endif %}
+
+        <div class="retro-tag">Retro</div>
+
+        <div class="retro-card-overlay">
+          <a href="{% url 'detalle_camiseta' camiseta.pk %}" onclick="event.stopPropagation()">
+            Elegir talla →
+          </a>
+        </div>
+      </div>
+
+      <div class="retro-card-body">
+        <div class="retro-card-nombre">{{ camiseta.nombre|limpiar_nombre }}</div>
+        <div class="retro-card-tallas">
+          {% for talla in camiseta.get_tallas %}
+          <span class="retro-talla-chip">{{ talla }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Paginación -->
+  {% if page_obj.has_other_pages %}
+  <div class="retro-pagination">
+    {% if page_obj.has_previous %}
+      <a href="?page=1{% if busqueda %}&q={{ busqueda }}{% endif %}">&laquo;</a>
+      <a href="?page={{ page_obj.previous_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}">‹</a>
+    {% endif %}
+
+    <span class="current">{{ page_obj.number }}</span>
+
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}">›</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}{% if busqueda %}&q={{ busqueda }}{% endif %}">&raquo;</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% else %}
+  <div class="retro-empty">
+    <h2>Sin resultados</h2>
+    <p>
+      {% if busqueda %}
+        No hay camisetas retro que coincidan con «{{ busqueda }}».
+      {% else %}
+        Todavía no hay camisetas retro importadas.
+        Ejecuta <code>scraper_retro.py</code> para poblar esta sección.
+      {% endif %}
+    </p>
+    <a href="{% url 'catalogo_retro' %}" style="
+      display:inline-block; margin-top:1.5rem;
+      padding:0.6rem 1.4rem;
+      background: #8b4513; color:#faf7f2;
+      font-size:0.82rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      text-decoration:none;
+    ">Ver todo el catálogo retro</a>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

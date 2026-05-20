@@ -1,0 +1,188 @@
+{% extends 'tienda/base.html' %}
+{% block title %}Pedido Confirmado — FútbolPro{% endblock %}
+
+{% block extra_css %}
+<style>
+  .confirm-wrap {
+    max-width: 620px;
+    margin: 4rem auto;
+  }
+
+  .confirm-badge {
+    width: 72px; height: 72px;
+    background: var(--dorado);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    animation: popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275);
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0) rotate(-20deg); opacity: 0; }
+    to   { transform: scale(1) rotate(0deg);   opacity: 1; }
+  }
+
+  .confirm-eyebrow {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dorado); margin-bottom: 0.5rem;
+  }
+
+  .confirm-wrap h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900; letter-spacing: -1px; line-height: 1;
+    color: var(--negro); margin-bottom: 0.8rem;
+  }
+
+  .confirm-sub {
+    font-size: 0.95rem; color: var(--gris);
+    line-height: 1.7; margin-bottom: 3rem;
+  }
+
+  /* TARJETA PEDIDO */
+  .pedido-card {
+    background: var(--blanco);
+    border: 1px solid var(--crema-oscura);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+
+  .pedido-header {
+    background: var(--negro);
+    color: var(--blanco);
+    padding: 1.2rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .pedido-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--dorado);
+    letter-spacing: 0.05em;
+  }
+  .pedido-cliente {
+    font-size: 0.88rem; font-weight: 600;
+    color: var(--blanco);
+  }
+
+  .pedido-lineas { padding: 0.5rem 0; }
+
+  .pedido-linea {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--crema-oscura);
+    font-size: 0.88rem;
+  }
+  .pedido-linea:last-child { border-bottom: none; }
+
+  .linea-nombre { color: var(--negro); font-weight: 500; }
+  .linea-talla {
+    display: inline-block; margin-left: 0.5rem;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--crema-oscura);
+    padding: 0.2rem 0.5rem; border-radius: 2px; color: var(--gris);
+  }
+  .linea-qty {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 1rem; color: var(--dorado);
+  }
+
+  .pedido-notas {
+    padding: 1rem 1.5rem;
+    background: var(--crema);
+    font-size: 0.84rem; color: var(--gris);
+    border-top: 1px solid var(--crema-oscura);
+  }
+
+  /* AVISO */
+  .aviso {
+    background: linear-gradient(135deg, #FFF8E7, #FFF0CC);
+    border: 1px solid var(--dorado);
+    border-radius: 4px;
+    padding: 1.2rem 1.5rem;
+    font-size: 0.85rem; color: var(--negro);
+    line-height: 1.6; margin-bottom: 2rem;
+    animation: fadeUp 0.5s 0.3s ease both;
+  }
+  .aviso strong { color: var(--dorado); }
+
+  .acciones {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+    animation: fadeUp 0.5s 0.4s ease both;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="confirm-wrap">
+  <div class="confirm-badge">✓</div>
+  <div class="confirm-eyebrow">Pedido recibido</div>
+  <h1>¡Todo listo,<br>{{ pedido.nombre_cliente|truncatewords:2 }}!</h1>
+  <p class="confirm-sub">Tu pedido <strong>#{{ pedido.pk }}</strong> ha sido registrado correctamente. Te avisaré en cuanto esté listo para entregarte las camisetas.</p>
+
+  <div class="pedido-card">
+    <div class="pedido-header">
+      <span class="pedido-num">Pedido #{{ pedido.pk }}</span>
+      <span class="pedido-cliente">{{ pedido.nombre_cliente }}</span>
+    </div>
+    <div class="pedido-lineas">
+      {% for linea in lineas %}
+      <div class="pedido-linea">
+        <span class="linea-nombre">
+          {{ linea.camiseta.nombre }}
+          <span class="linea-talla">{{ linea.talla }}</span>
+        </span>
+        <span class="linea-qty">×{{ linea.cantidad }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% if pedido.notas %}
+    <div class="pedido-notas">📝 {{ pedido.notas }}</div>
+    {% endif %}
+  </div>
+
+  <div class="aviso">
+    <strong>¿Qué pasa ahora?</strong> Recibirás confirmación por parte del organizador. 
+    No olvides confirmar el pago cuando te lo indiquen.
+  </div>
+
+  <div class="acciones">
+    <a href="#" id="btn-whatsapp" class="btn btn-whatsapp" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.489a.75.75 0 00.918.918l4.455-1.495A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.3 0-4.438-.763-6.152-2.048l-.429-.324-2.645.888.888-2.645-.324-.429A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Compartir por WhatsApp
+    </a>
+    <a href="{% url 'catalogo' %}" class="btn btn-primary">Ver más camisetas</a>
+    <a href="{% url 'catalogo' %}" class="btn btn-outline">Nueva cesta</a>
+  </div>
+</div>
+
+<style>
+  .btn-whatsapp {
+    background: #25D366; color: white !important;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+</style>
+
+<script>
+  // Generar enlace de WhatsApp con resumen del pedido
+  const whatsBtn = document.getElementById('btn-whatsapp');
+  if (whatsBtn) {
+    let msg = '🎉 *Pedido #{{ pedido.pk }}*\n';
+    msg += 'Cliente: {{ pedido.nombre_cliente }}\n\n';
+    msg += '*Artículos:*\n';
+    {% for linea in lineas %}
+    msg += '• {{ linea.camiseta.nombre|truncatechars:40 }} ({{ linea.talla }}) x{{ linea.cantidad }}';
+    {% if linea.parche %} msg += ' +Parche';{% endif %}
+    {% if linea.dorsal %} msg += ' +Dorsal: {{ linea.texto_dorsal }}';{% endif %}
+    msg += '\n';
+    {% endfor %}
+    {% if pedido.notas %}msg += '\n📝 Notas: {{ pedido.notas|truncatechars:80 }}\n';{% endif %}
+    whatsBtn.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+  }
+</script>
+{% endblock %}

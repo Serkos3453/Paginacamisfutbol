@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Fútbol Pro{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}FútbolPro — Camisetas de fútbol réplica de alta calidad. Personalización con parche y dorsal.{% endblock %}">
+  <meta name="theme-color" content="#111008">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crema: #F5F0E8;
+      --crema-oscura: #EDE6D6;
+      --negro: #111008;
+      --gris: #6B6457;
+      --gris-claro: #C4BDB0;
+      --dorado: #C9A84C;
+      --dorado-claro: #E8C97A;
+      --blanco: #FDFAF4;
+      --rojo: #C0392B;
+      --sombra: rgba(17,16,8,0.08);
+      --sombra-hover: rgba(17,16,8,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--crema);
+      color: var(--negro);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── CURSOR PERSONALIZADO ── */
+    body { cursor: none; }
+    #cursor {
+      width: 10px; height: 10px;
+      background: var(--dorado);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s;
+      mix-blend-mode: multiply;
+    }
+    #cursor.hover {
+      width: 40px; height: 40px;
+      background: var(--dorado-claro);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--blanco);
+      border-bottom: 1px solid var(--crema-oscura);
+      padding: 0 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--negro);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .nav-logo span {
+      color: var(--dorado);
+      font-style: italic;
+    }
+
+    .nav-right {
+      display: flex; align-items: center; gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gris);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--negro); }
+
+    /* ── ENLACE RETRO ── */
+    .nav-link-retro {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #8b4513;          /* marrón óxido, igual que la paleta retro */
+      position: relative;
+    }
+    .nav-link-retro:hover { color: #5a2c0c; }
+
+    /* Pequeño punto parpadeante para llamar la atención */
+    .retro-dot {
+      font-size: 0.45rem;
+      color: #8b4513;
+      animation: retro-pulse 2s ease-in-out infinite;
+      line-height: 1;
+    }
+    @keyframes retro-pulse {
+      0%, 100% { opacity: 1;   transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* Subrayado sepia al hacer hover, en vez del cursor normal */
+    .nav-link-retro::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 1px;
+      background: #8b4513;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .nav-link-retro:hover::after { transform: scaleX(1); }
+
+    .nav-cesta {
+      display: flex; align-items: center; gap: 0.6rem;
+      background: var(--negro);
+      color: var(--blanco) !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 2px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+      position: relative;
+    }
+    .nav-cesta:hover { background: var(--dorado); color: var(--negro) !important; transform: translateY(-1px); }
+
+    .cesta-badge {
+      background: var(--dorado);
+      color: var(--negro);
+      border-radius: 50%;
+      width: 20px; height: 20px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+    .cesta-badge.bounce {
+      animation: badgeBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes badgeBounce {
+      0%   { transform: scale(1); }
+      30%  { transform: scale(1.5); }
+      50%  { transform: scale(0.85); }
+      70%  { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .nav-cesta:hover .cesta-badge { background: var(--negro); color: var(--dorado); }
+
+    /* ── MENSAJES ── */
+    .messages-wrap {
+      position: fixed; top: 80px; right: 1.5rem;
+      z-index: 500;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .msg {
+      background: var(--blanco);
+      border: 1px solid var(--crema-oscura);
+      border-left: 3px solid var(--dorado);
+      color: var(--negro);
+      padding: 0.85rem 1.3rem;
+      font-size: 0.88rem;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px var(--sombra);
+      animation: slideMsg 0.3s ease;
+      max-width: 340px;
+    }
+    .msg.error { border-left-color: var(--rojo); }
+    @keyframes slideMsg {
+      from { transform: translateX(110%); opacity: 0; }
+      to   { transform: translateX(0);   opacity: 1; }
+    }
+
+    /* ── CONTENIDO ── */
+    main { max-width: 1440px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+    /* ── BOTONES ── */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      border-radius: 2px;
+      cursor: none;
+      transition: all 0.25s;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--negro);
+      color: var(--blanco);
+    }
+    .btn-primary:hover { background: var(--dorado); color: var(--negro); transform: translateY(-2px); }
+    .btn-gold {
+      background: var(--dorado);
+      color: var(--negro);
+    }
+    .btn-gold:hover { background: var(--dorado-claro); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--negro);
+      color: var(--negro);
+    }
+    .btn-outline:hover { background: var(--negro); color: var(--blanco); }
+    .btn-sm { padding: 0.5rem 1.2rem; font-size: 0.78rem; }
+    .btn-danger { background: var(--rojo); color: white; }
+    .btn-danger:hover { background: #922b21; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--crema-oscura);
+      padding: 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 5rem;
+    }
+    footer p {
+      font-size: 0.82rem;
+      color: var(--gris-claro);
+      letter-spacing: 0.05em;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--gris-claro);
+    }
+    .footer-logo span { color: var(--dorado); font-style: italic; }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      background: none; border: none;
+      cursor: pointer; padding: 0.5rem; z-index: 200;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--negro); margin: 5px 0;
+      transition: all 0.3s ease; border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── SCROLL-TO-TOP ── */
+    .scroll-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      background: var(--negro); color: var(--blanco);
+      border: none; border-radius: 50%;
+      font-size: 1.2rem; cursor: pointer; z-index: 90;
+      opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px var(--sombra-hover);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .scroll-top:hover { background: var(--dorado); color: var(--negro); transform: translateY(-3px); }
+
+    .nav-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4); z-index: 140;
+    }
+    .nav-overlay.active { display: block; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.2rem; z-index: 200; }
+      main { padding: 1.5rem 1.2rem; }
+      footer { padding: 1.5rem 1.2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .hamburger { display: block; }
+      .nav-right {
+        position: fixed; top: 0; right: 0;
+        width: 280px; height: 100vh;
+        background: var(--blanco);
+        flex-direction: column; align-items: flex-start;
+        padding: 5rem 2rem 2rem; gap: 1.5rem;
+        box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 250;
+      }
+      .nav-right.open { transform: translateX(0); }
+      .nav-link { font-size: 1.1rem; padding: 0.5rem 0; display: block; width: 100%; }
+      .nav-cesta { width: 100%; justify-content: center; padding: 0.5rem 0; }
+    }
+
+    /* ── CURSOR: desactivar en táctil ── */
+    @media (pointer: coarse), (hover: none) {
+      body, .btn, .talla-label, a, button { cursor: auto !important; }
+      #cursor { display: none !important; }
+    }
+  </style>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<nav>
+  <a href="{% url 'catalogo' %}" class="nav-logo">Fútbol<span>Pro</span></a>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right" id="nav-right">
+    <a href="{% url 'catalogo' %}" class="nav-link">Catálogo</a>
+
+    {# ── Enlace a la sección Retro ── #}
+    <a href="{% url 'catalogo_retro' %}" class="nav-link nav-link-retro">
+      <span class="retro-dot">●</span> Retro
+    </a>
+
+    <a href="{% url 'cesta' %}" class="nav-cesta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Cesta <span class="cesta-badge">{{ cesta_count }}</span>
+    </a>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+{% if messages %}
+<div class="messages-wrap">
+  {% for message in messages %}
+  <div class="msg {% if message.tags == 'error' %}error{% endif %}">{{ message }}</div>
+  {% endfor %}
+</div>
+<script>setTimeout(() => document.querySelectorAll('.msg').forEach(m => m.style.opacity='0'), 3500);</script>
+{% endif %}
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer>
+  <div class="footer-logo">Fútbol<span>Pro</span></div>
+  <p>Uso privado · Solo para amigos 🤝</p>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Volver arriba">↑</button>
+
+<script>
+  // ── Cursor personalizado (solo en dispositivos con ratón) ──
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
+  const cur = document.getElementById('cursor');
+  if (!isTouchDevice && cur) {
+    document.addEventListener('mousemove', e => {
+      cur.style.left = e.clientX + 'px';
+      cur.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .card, label, input, select, textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => cur.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('hover'));
+    });
+  } else if (cur) {
+    cur.style.display = 'none';
+    document.body.style.cursor = 'auto';
+  }
+
+  // ── Menú hamburguesa ──
+  const hamburger = document.getElementById('hamburger');
+  const navRight = document.getElementById('nav-right');
+  const navOverlay = document.getElementById('nav-overlay');
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    navRight.classList.remove('open');
+    navOverlay.classList.remove('active');
+  }
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = navRight.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      navOverlay.classList.toggle('active', isOpen);
+    });
+    navOverlay.addEventListener('click', closeMenu);
+    navRight.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  }
+
+  // ── Scroll to top ──
+  const scrollBtn = document.getElementById('scroll-top');
+  if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ── Badge bounce al cargar con artículos ──
+  const badge = document.querySelector('.cesta-badge');
+  if (badge && parseInt(badge.textContent) > 0) {
+    badge.classList.add('bounce');
+    badge.addEventListener('animationend', () => badge.classList.remove('bounce'));
+  }
+</script>
+</body>
+</html>

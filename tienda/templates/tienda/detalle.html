@@ -1,0 +1,283 @@
+{% extends 'tienda/base.html' %}
+{% load tienda_filters %}
+{% block title %}{{ camiseta.nombre|limpiar_nombre }} — FútbolPro{% endblock %}
+
+{% block extra_css %}
+<style>
+  .back {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none; color: var(--gris);
+    margin-bottom: 2.5rem; transition: color 0.2s;
+  }
+  .back:hover { color: var(--negro); }
+  .back svg { transition: transform 0.2s; }
+  .back:hover svg { transform: translateX(-3px); }
+
+  .detalle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* GALERÍA */
+  .img-principal {
+    position: sticky; top: 90px;
+    aspect-ratio: 4/5;
+    background: var(--crema);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--crema-oscura);
+  }
+  .img-principal img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .img-principal:hover img { transform: scale(1.04); }
+  .img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 6rem;
+    background: linear-gradient(135deg, var(--crema), var(--crema-oscura));
+  }
+
+  /* INFO */
+  .info-cat {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dorado); margin-bottom: 0.8rem;
+  }
+  .info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900; line-height: 1.1; letter-spacing: -0.5px;
+    color: var(--negro); margin-bottom: 0.5rem;
+  }
+
+  .precio-detalle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dorado);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Divisor */
+  .divider {
+    height: 1px; background: var(--crema-oscura);
+    margin: 1.5rem 0;
+  }
+
+  /* TALLAS */
+  .label-seccion {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gris); margin-bottom: 0.8rem;
+  }
+
+  .tallas-grid {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+
+  .talla-radio { display: none; }
+  .talla-label {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 52px; height: 52px; padding: 0 0.8rem;
+    border: 1.5px solid var(--crema-oscura);
+    border-radius: 2px;
+    font-size: 0.82rem; font-weight: 600;
+    color: var(--gris);
+    cursor: pointer; /* Cambiado a pointer para mejor UX */
+    transition: all 0.18s;
+    user-select: none;
+  }
+  .talla-label:hover {
+    border-color: var(--negro); color: var(--negro);
+  }
+  .talla-radio:checked + .talla-label {
+    background: var(--negro); border-color: var(--negro);
+    color: var(--blanco);
+  }
+
+  .error-talla {
+    margin-top: 0.5rem; font-size: 0.82rem;
+    color: var(--rojo); display: none;
+  }
+
+  /* CANTIDAD */
+  .qty-wrap {
+    display: flex; align-items: center; gap: 0;
+    border: 1.5px solid var(--crema-oscura);
+    border-radius: 2px; width: fit-content;
+    overflow: hidden;
+  }
+  .qty-btn {
+    width: 44px; height: 44px;
+    background: var(--blanco); border: none;
+    font-size: 1.2rem; color: var(--negro);
+    cursor: pointer; transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .qty-btn:hover { background: var(--crema-oscura); }
+  .qty-val {
+    width: 52px; text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--negro);
+    border: none; border-left: 1.5px solid var(--crema-oscura);
+    border-right: 1.5px solid var(--crema-oscura);
+    background: var(--blanco);
+    padding: 0; height: 44px;
+    -moz-appearance: textfield;
+  }
+  .qty-val::-webkit-outer-spin-button,
+  .qty-val::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  /* BOTÓN AÑADIR */
+  .btn-añadir {
+    width: 100%; padding: 1.1rem;
+    background: var(--negro); color: var(--blanco);
+    border: none; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.25s, transform 0.2s;
+    margin-top: 2rem;
+  }
+  .btn-añadir:hover { background: var(--dorado); color: var(--negro); transform: translateY(-2px); }
+  .btn-añadir:active { transform: translateY(0); }
+
+  /* DESCRIPCIÓN */
+  .desc {
+    font-size: 0.88rem; color: var(--gris); line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .detalle { grid-template-columns: 1fr; gap: 2rem; }
+    .img-principal { position: static; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'catalogo' %}" class="back">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <path d="M19 12H5M12 5l-7 7 7 7"/>
+  </svg>
+  Volver al catálogo
+</a>
+
+<div class="detalle">
+  <div class="img-principal">
+    {% if camiseta.imagen_local %}
+      <img src="{{ camiseta.imagen_local.url }}" alt="{{ camiseta.nombre }}">
+    {% elif camiseta.imagen_url %}
+      <img src="{{ camiseta.imagen_url }}" alt="{{ camiseta.nombre }}"
+           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>⚽</div>'">
+    {% else %}
+      <div class="img-placeholder">⚽</div>
+    {% endif %}
+  </div>
+
+  <div class="info">
+    {% if camiseta.categoria %}
+    <div class="info-cat">{{ camiseta.categoria.nombre }}</div>
+    {% endif %}
+    <h1>{{ camiseta.nombre|limpiar_nombre }}</h1>
+
+
+    {% if camiseta.descripcion %}
+    <p class="desc">{{ camiseta.descripcion }}</p>
+    {% endif %}
+
+    <div class="divider"></div>
+
+    <form method="post" action="{% url 'agregar_cesta' %}">
+      {% csrf_token %}
+      <input type="hidden" name="camiseta_id" value="{{ camiseta.pk }}">
+      <input type="hidden" name="talla" id="talla-hidden" value="">
+
+      <div style="margin-bottom:1.5rem;">
+        <div class="label-seccion">Selecciona tu talla</div>
+        <div class="tallas-grid">
+          {% for talla in tallas %}
+          <input type="radio" name="talla_r" id="t_{{ talla }}" class="talla-radio"
+                 value="{{ talla }}" onchange="document.getElementById('talla-hidden').value=this.value">
+          <label for="t_{{ talla }}" class="talla-label">{{ talla }}</label>
+          {% endfor %}
+        </div>
+        <div class="error-talla" id="err-talla">⚠ Elige una talla</div>
+      </div>
+
+      <div class="opciones-extra" style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--crema); border-radius: 4px; border: 1px solid var(--crema-oscura);">
+        <div class="label-seccion" style="margin-bottom: 1rem;">Personaliza tu camiseta</div>
+
+        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; cursor: pointer; font-size: 0.9rem; font-weight: 500;">
+            <input type="checkbox" name="parche" id="parche_chk" style="width: 16px; height: 16px;">
+            Añadir Parche Liga/Champions <span style="color: var(--dorado); font-weight: bold;">(+1.00 €)</span>
+        </label>
+
+        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; cursor: pointer; font-size: 0.9rem; font-weight: 500;">
+            <input type="checkbox" name="dorsal" id="dorsal_chk" onchange="toggleDorsal()" style="width: 16px; height: 16px;">
+            Añadir Nombre y Número <span style="color: var(--dorado); font-weight: bold;">(+3.00 €)</span>
+        </label>
+
+        <div id="div_texto_dorsal" style="display: none; margin-top: 1rem;">
+            <input type="text" name="texto_dorsal" placeholder="Ej: MESSI 10"
+                   style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;">
+            <small style="display: block; margin-top: 0.4rem; color: var(--gris); font-size: 0.75rem;">Escribe el nombre y número exacto que deseas.</small>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div style="margin-bottom:1.5rem;">
+        <div class="label-seccion">Cantidad</div>
+        <div class="qty-wrap">
+          <button type="button" class="qty-btn" onclick="cambiarQty(-1)">−</button>
+          <input type="number" name="cantidad" id="qty" class="qty-val" value="1" min="1" max="10" readonly>
+          <button type="button" class="qty-btn" onclick="cambiarQty(1)">+</button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-añadir" onclick="return validar()">
+        Añadir a la cesta →
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Mostrar/Ocultar el campo de texto del dorsal
+  function toggleDorsal() {
+      var chk = document.getElementById('dorsal_chk');
+      var div = document.getElementById('div_texto_dorsal');
+      if(chk.checked) {
+          div.style.display = 'block';
+          div.querySelector('input').focus();
+      } else {
+          div.style.display = 'none';
+          div.querySelector('input').value = ''; // Limpia si desmarca
+      }
+  }
+
+  // Lógica de cantidad
+  function cambiarQty(d) {
+    const i = document.getElementById('qty');
+    i.value = Math.max(1, Math.min(10, parseInt(i.value||1) + d));
+  }
+
+  // Validar que se haya elegido talla antes de enviar
+  function validar() {
+    const t = document.getElementById('talla-hidden').value;
+    const e = document.getElementById('err-talla');
+    if (!t) {
+      e.style.display = 'block';
+      return false;
+    }
+    e.style.display = 'none';
+    return true;
+  }
+</script>
+{% endblock %}

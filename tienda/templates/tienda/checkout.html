@@ -1,0 +1,180 @@
+{% extends 'tienda/base.html' %}
+{% block title %}Finalizar Pedido — FútbolPro{% endblock %}
+
+{% block extra_css %}
+<style>
+  .page-header {
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--crema-oscura);
+    margin-bottom: 3rem;
+  }
+  .page-eyebrow {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dorado); margin-bottom: 0.5rem;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900; letter-spacing: -1px; line-height: 1;
+  }
+
+  .checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem; align-items: start;
+  }
+
+  /* FORM */
+  .form-card {
+    background: var(--blanco);
+    border: 1px solid var(--crema-oscura);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+  .form-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--negro); margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--crema-oscura);
+  }
+
+  .campo { margin-bottom: 1.5rem; }
+  .campo label {
+    display: block;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gris); margin-bottom: 0.5rem;
+  }
+  .campo input, .campo textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--crema);
+    border: 1.5px solid var(--crema-oscura);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; color: var(--negro);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .campo input:focus, .campo textarea:focus {
+    border-color: var(--dorado);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    background: var(--blanco);
+  }
+  .campo textarea { resize: vertical; min-height: 90px; }
+  .req { color: var(--dorado); }
+
+  /* RESUMEN LATERAL */
+  .resumen-checkout {
+    background: var(--negro);
+    border-radius: 4px;
+    padding: 2rem;
+    position: sticky; top: 90px;
+    color: var(--blanco);
+  }
+  .resumen-checkout h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--dorado); margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .res-item {
+    display: flex; justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.84rem; color: rgba(255,255,255,0.7);
+  }
+  .res-item strong { color: var(--blanco); }
+  .res-total {
+    display: flex; justify-content: space-between;
+    margin-top: 1.2rem; padding-top: 1rem;
+    border-top: 1.5px solid var(--dorado);
+    font-weight: 700; color: var(--blanco);
+  }
+  .res-total span:last-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--dorado);
+  }
+
+  .submit-btn {
+    width: 100%; padding: 1.1rem;
+    background: var(--dorado); color: var(--negro);
+    border: none; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    cursor: pointer; margin-top: 1rem;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .submit-btn:hover { background: var(--dorado-claro); transform: translateY(-2px); }
+
+  @media (max-width: 900px) {
+    .checkout-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .resumen-checkout { position: static; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-eyebrow">Último paso</div>
+  <h1>Finalizar<br>Pedido</h1>
+</div>
+
+<div class="checkout-grid">
+
+  <div class="form-card">
+    <h2>Tus datos</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="campo">
+        <label>Nombre completo <span class="req">*</span></label>
+        <input type="text" name="nombre" placeholder="Ej: Carlos García"
+               value="{{ request.POST.nombre }}" required>
+      </div>
+      <div class="campo">
+        <label>Teléfono <span style="color:var(--gris-claro);font-weight:400;">(opcional)</span></label>
+        <input type="tel" name="telefono" placeholder="Ej: 612 345 678"
+               value="{{ request.POST.telefono }}">
+      </div>
+      <div class="campo">
+        <label>Notas <span style="color:var(--gris-claro);font-weight:400;">(opcional)</span></label>
+        <textarea name="notas" placeholder="Cuándo te la puedo dar, dirección, etc.">{{ request.POST.notas }}</textarea>
+      </div>
+      <button type="submit" class="submit-btn">Enviar pedido →</button>
+    </form>
+  </div>
+
+  <div class="resumen-checkout">
+    <h2>Tu selección</h2>
+    {% for item in cesta %}
+    <div class="res-item">
+      <span>
+        {{ item.nombre|truncatechars:30 }}<br>
+        <strong>Talla: {{ item.talla }}</strong>
+
+        {% if item.parche or item.dorsal %}
+        <br>
+        <span style="font-size: 0.75rem; color: var(--dorado); display: block; margin-top: 0.3rem;">
+            Extra:
+            {% if item.parche %}Parche{% endif %}
+            {% if item.parche and item.dorsal %} + {% endif %}
+            {% if item.dorsal %}Dorsal ({{ item.texto_dorsal }}){% endif %}
+        </span>
+        {% endif %}
+      </span>
+      <span style="white-space:nowrap;font-weight:700;color:white;">×{{ item.cantidad }}</span>
+    </div>
+    {% endfor %}
+    <div class="res-total">
+      <span>Total artículos</span>
+      <span>{{ total_articulos }}</span>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
