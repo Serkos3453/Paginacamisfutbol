@@ -86,26 +86,57 @@
   .search-btn:hover { background: var(--dorado); color: var(--negro); }
 
   /* Dropdown categoría */
-  .cat-select {
-    padding: 0.75rem 2.5rem 0.75rem 1rem;
+  .custom-dropdown {
+    position: relative; min-width: 240px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+  }
+  .dropdown-selected {
+    padding: 0.75rem 1rem;
     background: var(--blanco);
     border: 1px solid var(--crema-oscura);
     border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
     font-size: 0.9rem; color: var(--negro);
-    outline: none; cursor: pointer;
-    appearance: none; -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.8rem center;
+    cursor: pointer; display: flex;
+    justify-content: space-between; align-items: center;
     transition: border-color 0.2s, box-shadow 0.2s;
-    min-width: 180px;
   }
-  .cat-select:focus {
+  .dropdown-selected:hover { border-color: var(--negro); }
+  .custom-dropdown:focus .dropdown-selected,
+  .custom-dropdown:focus-within .dropdown-selected {
     border-color: var(--dorado);
     box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
   }
-  .cat-select:hover { border-color: var(--negro); }
+  .custom-dropdown svg { transition: transform 0.2s; }
+  .custom-dropdown:focus-within svg { transform: rotate(180deg); }
+  
+  .dropdown-list {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: var(--blanco); border: 1px solid var(--crema-oscura);
+    border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-height: 350px; overflow-y: auto; z-index: 100;
+    opacity: 0; visibility: hidden; transform: translateY(-5px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .custom-dropdown:focus .dropdown-list,
+  .custom-dropdown:focus-within .dropdown-list,
+  .custom-dropdown:hover .dropdown-list {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .dropdown-item {
+    display: block; padding: 0.6rem 1rem;
+    color: var(--negro); text-decoration: none; font-size: 0.85rem;
+    transition: background 0.15s;
+    border-bottom: 1px solid #f9f9f9;
+  }
+  .dropdown-item:last-child { border-bottom: none; }
+  .dropdown-item:hover { background: var(--crema); }
+  .dropdown-item.active { background: var(--dorado); font-weight: 600; }
+  
+  /* scrollbar dropdown */
+  .dropdown-list::-webkit-scrollbar { width: 5px; }
+  .dropdown-list::-webkit-scrollbar-track { background: transparent; }
+  .dropdown-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
 
   /* ── GRID ── */
   .grid {
@@ -234,7 +265,7 @@
     .card-nombre { font-size: 0.82rem; }
     .toolbar { flex-direction: column; align-items: stretch; }
     .search-wrap { max-width: 100%; }
-    .cat-select { width: 100%; }
+    .custom-dropdown { width: 100%; }
   }
 </style>
 {% endblock %}
@@ -265,20 +296,32 @@
     <button type="submit" class="search-btn">Buscar</button>
   </form>
 
-  <select class="cat-select" id="cat-select" onchange="location.href=this.value">
-    <option value="{% url 'catalogo' %}{% if busqueda %}?q={{ busqueda }}{% endif %}"
-            {% if not categoria_actual %}selected{% endif %}>
-      Todas las categorías
-    </option>
-    {% for cat in categorias %}
-    {% if 'Todas' not in cat.nombre and 'todas' not in cat.nombre %}
-    <option value="?categoria={{ cat.slug }}{% if busqueda %}&q={{ busqueda }}{% endif %}"
-            {% if categoria_actual.slug == cat.slug %}selected{% endif %}>
-      {{ cat.nombre|limpiar_nombre }}
-    </option>
-    {% endif %}
-    {% endfor %}
-  </select>
+  <div class="custom-dropdown" tabindex="0">
+    <div class="dropdown-selected">
+      <span>
+      {% if categoria_actual %}
+        {{ categoria_actual.nombre|limpiar_nombre }}
+      {% else %}
+        Todas las categorías
+      {% endif %}
+      </span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="dropdown-list">
+      <a class="dropdown-item {% if not categoria_actual %}active{% endif %}" 
+         href="{% url 'catalogo' %}{% if busqueda %}?q={{ busqueda }}{% endif %}">
+        Todas las categorías
+      </a>
+      {% for cat in categorias %}
+      {% if 'Todas' not in cat.nombre and 'todas' not in cat.nombre %}
+      <a class="dropdown-item {% if categoria_actual.slug == cat.slug %}active{% endif %}" 
+         href="?categoria={{ cat.slug }}{% if busqueda %}&q={{ busqueda }}{% endif %}">
+        {{ cat.nombre|limpiar_nombre }}
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 {% if camisetas %}
