@@ -18,14 +18,21 @@ class CategoriaAdmin(admin.ModelAdmin):
 #  Helper: genera la miniatura de una camiseta
 # ──────────────────────────────────────────────────
 def _imagen_thumb(camiseta, height=60):
-    """Devuelve HTML con la miniatura de la camiseta o un dash."""
-    url = camiseta.imagen_url or (camiseta.imagen_local.url if camiseta.imagen_local else '')
+    """Devuelve HTML con la miniatura de la camiseta o un emoji si falla."""
+    # Priorizar imagen local; si no, Yupoo
+    url = ''
+    if camiseta.imagen_local:
+        url = camiseta.imagen_local.url
+    elif camiseta.imagen_url:
+        url = camiseta.imagen_url
+
     if url:
         return format_html(
-            '<img src="{}" style="height:{}px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,.15);" />',
+            '<img src="{}" style="height:{}px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,.15);" '
+            'referrerpolicy="no-referrer" onerror="this.outerHTML=\'<span style=\\\'font-size: 24px;\\\'>⚽</span>\'" />',
             url, height,
         )
-    return '—'
+    return format_html('<span style="font-size: 24px;">⚽</span>')
 
 
 def _url_camiseta(camiseta):
