@@ -533,9 +533,9 @@
 
       <div class="retro-card-img-wrap">
         {% if camiseta.imagen_local %}
-          <img src="{{ camiseta.imagen_local.url }}" alt="{{ camiseta.nombre }}" loading="lazy">
+          <img src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}" loading="lazy">
         {% elif camiseta.imagen_url %}
-          <img src="{{ camiseta.imagen_url }}" alt="{{ camiseta.nombre }}" loading="lazy"
+          <img src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}" loading="lazy"
                onerror="this.parentElement.innerHTML='<div class=\'retro-card-placeholder\'>⚽</div>'">
         {% else %}
           <div class="retro-card-placeholder">⚽</div>

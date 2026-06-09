@@ -303,9 +303,9 @@
 <div class="detalle">
   <div class="img-principal">
     {% if camiseta.imagen_local %}
-      <img src="{{ camiseta.imagen_local.url }}" alt="{{ camiseta.nombre }}">
+      <img src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}">
     {% elif camiseta.imagen_url %}
-      <img src="{{ camiseta.imagen_url }}" alt="{{ camiseta.nombre }}"
+      <img src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}"
            onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>⚽</div>'">
     {% else %}
       <div class="img-placeholder">⚽</div>

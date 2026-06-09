@@ -387,9 +387,9 @@
   <div class="card" onclick="location.href='{% url 'detalle_camiseta' camiseta.pk %}'">
     <div class="card-img-wrap">
       {% if camiseta.imagen_local %}
-        <img class="lazy" data-src="{{ camiseta.imagen_local.url }}" alt="{{ camiseta.nombre|limpiar_nombre }}">
+        <img class="lazy" data-src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre|limpiar_nombre }}">
       {% elif camiseta.imagen_url %}
-        <img class="lazy" data-src="{{ camiseta.imagen_url }}" alt="{{ camiseta.nombre|limpiar_nombre }}"
+        <img class="lazy" data-src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre|limpiar_nombre }}"
              onerror="this.parentElement.innerHTML='<div class=\'card-placeholder\'>⚽</div>'">
       {% else %}
         <div class="card-placeholder">⚽</div>
