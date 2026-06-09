@@ -11,8 +11,8 @@
   .confirm-badge {
     width: 72px;
     height: 72px;
-    background: var(--acento);
-    color: var(--negro);
+    background: var(--primary-container);
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 2rem;
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     animation: popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275);
   }
 
@@ -34,9 +34,8 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--acento);
+    color: var(--secondary-container);
     margin-bottom: 0.6rem;
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
   }
 
   .confirm-wrap h1 {
@@ -45,7 +44,7 @@
     font-weight: 800;
     letter-spacing: -1.5px;
     line-height: 1.1;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 1rem;
   }
 
@@ -58,20 +57,20 @@
 
   /* TARJETA PEDIDO */
   .pedido-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface-container);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 2.5rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px var(--sombra);
     animation: fadeUp 0.5s 0.2s ease both;
   }
 
   .pedido-header {
-    background: rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid var(--borde);
+    background: var(--surface);
+    border-bottom: 1px solid var(--outline);
     padding: 1.4rem 1.8rem;
     display: flex;
     justify-content: space-between;
@@ -81,7 +80,7 @@
     font-family: 'Sora', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--negro);
     letter-spacing: 0.05em;
   }
   .pedido-cliente {
@@ -99,7 +98,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.8rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
     font-size: 0.92rem;
   }
   .pedido-linea:last-child {
@@ -107,7 +106,7 @@
   }
 
   .linea-nombre {
-    color: var(--blanco);
+    color: var(--negro);
     font-weight: 600;
   }
   .linea-talla {
@@ -117,31 +116,31 @@
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: var(--acento);
-    color: var(--negro);
+    background: var(--primary-container);
+    color: white;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0, 242, 254, 0.15);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15);
   }
   .linea-qty {
     font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 1rem;
-    color: var(--acento);
+    color: var(--primary-container);
   }
 
   .pedido-notas {
     padding: 1.2rem 1.8rem;
-    background: rgba(255, 255, 255, 0.01);
+    background: var(--surface);
     font-size: 0.88rem;
     color: var(--gris);
-    border-top: 1px solid var(--borde);
+    border-top: 1px solid var(--outline);
   }
 
   /* AVISO */
   .aviso {
-    background: rgba(0, 242, 254, 0.03);
-    border: 1px solid rgba(0, 242, 254, 0.2);
+    background: rgba(16, 185, 129, 0.04);
+    border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 12px;
     padding: 1.4rem 1.8rem;
     font-size: 0.92rem;
@@ -151,8 +150,7 @@
     animation: fadeUp 0.5s 0.3s ease both;
   }
   .aviso strong {
-    color: var(--acento);
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.2);
+    color: var(--primary-container);
   }
 
   .acciones {
@@ -223,7 +221,7 @@
     background: #ffffff;
     color: #000 !important;
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
   }
 </style>
 

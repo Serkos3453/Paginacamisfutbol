@@ -5,7 +5,7 @@
 <style>
   .page-header {
     padding: 4rem 0 2rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
     margin-bottom: 3rem;
   }
   .page-eyebrow {
@@ -13,9 +13,8 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--acento);
+    color: var(--secondary-container);
     margin-bottom: 0.6rem;
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
   }
   .page-header h1 {
     font-family: 'Sora', sans-serif;
@@ -23,7 +22,7 @@
     font-weight: 800;
     letter-spacing: -1.5px;
     line-height: 1.1;
-    color: var(--blanco);
+    color: var(--negro);
   }
 
   .checkout-grid {
@@ -35,22 +34,22 @@
 
   /* FORM CARD */
   .form-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface-container);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 16px;
     padding: 2.5rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px var(--sombra);
   }
   .form-card h2 {
     font-family: 'Sora', sans-serif;
     font-size: 1.3rem;
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
   }
 
   .campo {
@@ -68,82 +67,81 @@
   .campo input, .campo textarea {
     width: 100%;
     padding: 0.85rem 1rem;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--borde);
+    background: #ffffff;
+    border: 1px solid var(--outline);
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
-    color: var(--blanco);
+    color: var(--negro);
     outline: none;
     transition: border-color 0.25s, box-shadow 0.25s;
   }
   .campo input:focus, .campo textarea:focus {
-    border-color: var(--acento);
-    box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+    border-color: var(--primary-container);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
   }
   .campo textarea {
     resize: vertical;
     min-height: 90px;
   }
   .req {
-    color: var(--acento);
+    color: var(--tertiary-container);
   }
 
   /* RESUMEN LATERAL */
   .resumen-checkout {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface-container);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 16px;
     padding: 2.2rem;
     position: sticky;
     top: 100px;
-    color: var(--blanco);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    color: var(--negro);
+    box-shadow: 0 10px 30px var(--sombra);
   }
   .resumen-checkout h2 {
     font-family: 'Sora', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
   }
   .res-item {
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;
     padding: 0.8rem 0;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
     font-size: 0.88rem;
     color: var(--gris);
   }
   .res-item strong {
-    color: var(--blanco);
+    color: var(--negro);
   }
   .res-total {
     display: flex;
     justify-content: space-between;
     margin-top: 1.2rem;
     padding-top: 1rem;
-    border-top: 2px solid var(--acento);
+    border-top: 2px solid var(--outline);
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--negro);
   }
   .res-total span:last-child {
     font-family: 'Sora', sans-serif;
     font-size: 1.5rem;
-    color: var(--acento);
-    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+    color: var(--primary-container);
   }
 
   .submit-btn {
     width: 100%;
     padding: 1.1rem;
-    background: var(--acento);
-    color: var(--negro);
+    background: var(--primary-container);
+    color: white;
     border: none;
     border-radius: 9999px; /* Pill button */
     font-family: 'Inter', sans-serif;
@@ -154,13 +152,13 @@
     cursor: pointer;
     margin-top: 1rem;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.25);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
   }
   .submit-btn:hover {
-    background: var(--blanco);
-    color: var(--negro);
+    background: #059669;
+    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
   }
 
   @media (max-width: 900px) {
@@ -223,7 +221,7 @@
         </span>
         {% endif %}
       </span>
-      <span style="white-space:nowrap;font-weight:700;color:white;">×{{ item.cantidad }}</span>
+      <span style="white-space:nowrap;font-weight:700;color:var(--negro);">×{{ item.cantidad }}</span>
     </div>
     {% endfor %}
     <div class="res-total">

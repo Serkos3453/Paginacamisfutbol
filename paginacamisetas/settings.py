@@ -134,45 +134,54 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-#  AWS S3 — SOLO para archivos MEDIA (imágenes de camisetas)
+#  SUPABASE STORAGE (S3-compatible) — Para archivos MEDIA (imágenes de camisetas)
 # ═══════════════════════════════════════════════════════════════════════════════
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME', 'eu-west-3')
-AWS_S3_CUSTOM_DOMAIN = os.environ.get(
-    'AWS_S3_CUSTOM_DOMAIN',
-    f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com' if AWS_STORAGE_BUCKET_NAME else '',
-)
+SUPABASE_PROJECT_REF = os.environ.get('SUPABASE_PROJECT_REF', 'qkqjrvzwzjtqaakxieqc')
+SUPABASE_STORAGE_ACCESS_KEY = os.environ.get('SUPABASE_STORAGE_ACCESS_KEY')
+SUPABASE_STORAGE_SECRET_KEY = os.environ.get('SUPABASE_STORAGE_SECRET_KEY')
+SUPABASE_STORAGE_BUCKET = os.environ.get('SUPABASE_STORAGE_BUCKET', 'camisetas')
+SUPABASE_STORAGE_REGION = os.environ.get('SUPABASE_STORAGE_REGION', 'eu-central-1')
 
-# URLs públicas sin firma temporal (legibles por cualquier navegador)
-AWS_QUERYSTRING_AUTH = False
+# Endpoint S3-compatible de Supabase
+SUPABASE_S3_ENDPOINT = f'https://{SUPABASE_PROJECT_REF}.supabase.co/storage/v1/s3'
 
-# Evitar que S3 sobreescriba archivos con el mismo nombre
-AWS_S3_FILE_OVERWRITE = False
+# URL pública para acceder a las imágenes
+SUPABASE_STORAGE_PUBLIC_URL = f'https://{SUPABASE_PROJECT_REF}.supabase.co/storage/v1/object/public/{SUPABASE_STORAGE_BUCKET}'
 
-# Cabeceras de caché para rendimiento en CDN/navegador
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-# Redirigir todos los archivos MEDIA a S3
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
-    },
-    "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-    },
-}
-
-# MEDIA_URL apunta al dominio del bucket
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/' if AWS_S3_CUSTOM_DOMAIN else '/media/'
-
-# Fallback local si no hay S3 configurado (para desarrollo local sin AWS)
-if not AWS_ACCESS_KEY_ID:
-    STORAGES["default"]["BACKEND"] = "django.core.files.storage.FileSystemStorage"
+if SUPABASE_STORAGE_ACCESS_KEY:
+    # ── Producción: Supabase Storage ──
+    STORAGES = {
+        "default": {
+            "BACKEND": "storages.backends.s3.S3Storage",
+            "OPTIONS": {
+                "access_key": SUPABASE_STORAGE_ACCESS_KEY,
+                "secret_key": SUPABASE_STORAGE_SECRET_KEY,
+                "bucket_name": SUPABASE_STORAGE_BUCKET,
+                "region_name": SUPABASE_STORAGE_REGION,
+                "endpoint_url": SUPABASE_S3_ENDPOINT,
+                "querystring_auth": False,
+                "file_overwrite": False,
+                "custom_domain": f'{SUPABASE_PROJECT_REF}.supabase.co/storage/v1/object/public/{SUPABASE_STORAGE_BUCKET}',
+                "object_parameters": {
+                    "CacheControl": "max-age=86400",
+                },
+            },
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
+    MEDIA_URL = f'{SUPABASE_STORAGE_PUBLIC_URL}/'
+else:
+    # ── Desarrollo local: FileSystem ──
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
     MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

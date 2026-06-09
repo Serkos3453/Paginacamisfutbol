@@ -5,7 +5,7 @@
 <style>
   .page-header {
     padding: 4rem 0 2rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
     margin-bottom: 3rem;
   }
   .page-eyebrow {
@@ -13,9 +13,8 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--acento);
+    color: var(--secondary-container);
     margin-bottom: 0.6rem;
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
   }
   .page-header h1 {
     font-family: 'Sora', sans-serif;
@@ -23,7 +22,7 @@
     font-weight: 800;
     letter-spacing: -1.5px;
     line-height: 1;
-    color: var(--blanco);
+    color: var(--negro);
   }
 
   .cesta-layout {
@@ -45,7 +44,7 @@
     gap: 1.5rem;
     align-items: center;
     padding: 1.8rem 0;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
     animation: fadeUp 0.5s ease both;
   }
   .item-img {
@@ -53,8 +52,8 @@
     height: 90px;
     border-radius: 8px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--borde);
+    background: #ffffff;
+    border: 1px solid var(--outline);
     flex-shrink: 0;
   }
   .item-img img {
@@ -69,13 +68,13 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: #f1f5f9;
   }
   .item-nombre {
     font-family: 'Sora', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--blanco);
+    color: var(--negro);
     line-height: 1.35;
     margin-bottom: 0.5rem;
   }
@@ -85,11 +84,11 @@
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    background: var(--acento);
-    color: var(--negro);
+    background: var(--primary-container);
+    color: white;
     padding: 0.25rem 0.65rem;
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
   }
   .item-acciones {
     display: flex;
@@ -100,10 +99,10 @@
   .qty-mini-wrap {
     display: flex;
     align-items: center;
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 6px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface);
   }
   .qm-btn {
     width: 30px;
@@ -119,21 +118,21 @@
     transition: all 0.2s;
   }
   .qm-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--blanco);
+    background: #ffffff;
+    color: var(--negro);
   }
   .qm-val {
     width: 36px;
     height: 30px;
     text-align: center;
     border: none;
-    border-left: 1px solid var(--borde);
-    border-right: 1px solid var(--borde);
+    border-left: 1px solid var(--outline);
+    border-right: 1px solid var(--outline);
     background: transparent;
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
-    color: var(--blanco);
+    color: var(--negro);
     -moz-appearance: textfield;
   }
   .qm-val::-webkit-outer-spin-button,
@@ -159,24 +158,24 @@
 
   /* RESUMEN */
   .resumen {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface-container);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 16px;
     padding: 2.2rem;
     position: sticky;
     top: 100px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px var(--sombra);
   }
   .resumen-title {
     font-family: 'Sora', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--outline);
   }
   .resumen-linea {
     display: flex;
@@ -184,10 +183,10 @@
     font-size: 0.88rem;
     color: var(--gris);
     padding: 0.8rem 0;
-    border-bottom: 1px dashed var(--borde);
+    border-bottom: 1px dashed var(--outline);
   }
   .resumen-linea strong {
-    color: var(--blanco);
+    color: var(--negro);
   }
   .resumen-total {
     display: flex;
@@ -195,17 +194,16 @@
     align-items: center;
     font-weight: 800;
     font-size: 1.05rem;
-    color: var(--blanco);
+    color: var(--negro);
     padding-top: 1.2rem;
     margin-top: 1.2rem;
-    border-top: 2px solid var(--acento);
+    border-top: 2px solid var(--outline);
     margin-bottom: 2rem;
   }
   .resumen-total span:last-child {
     font-family: 'Sora', sans-serif;
     font-size: 1.5rem;
-    color: var(--acento);
-    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+    color: var(--primary-container);
   }
 
   /* EMPTY */
@@ -218,14 +216,13 @@
     font-family: 'Sora', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 1.2rem;
   }
   .empty-icon {
     font-size: 4rem;
     margin-bottom: 1.5rem;
     opacity: 0.4;
-    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.2));
   }
 
   @media (max-width: 900px) {
@@ -266,8 +263,8 @@
         <span class="item-talla">{{ item.talla }}</span>
 
         {% if item.parche or item.dorsal %}
-        <div style="font-size: 0.8rem; color: var(--gris); margin-top: 0.5rem; background: rgba(255,255,255,0.02); padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid var(--borde); display: inline-block;">
-            <strong style="color: var(--blanco);">Personalización:</strong>
+        <div style="font-size: 0.8rem; color: var(--gris); margin-top: 0.5rem; background: var(--surface); padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid var(--outline); display: inline-block;">
+            <strong style="color: var(--negro);">Personalización:</strong>
             <ul style="margin: 0.2rem 0 0 0; padding-left: 1.2rem;">
                 {% if item.parche %}
                     <li>Parche Liga/Champions</li>

@@ -17,18 +17,18 @@
     color: var(--gris);
     margin-bottom: 2.5rem;
     transition: all 0.25s ease;
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     padding: 0.6rem 1.2rem;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
   .back:hover {
-    color: var(--acento);
-    border-color: var(--acento);
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    color: var(--primary-container);
+    border-color: var(--primary-container);
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
     transform: translateX(-3px);
   }
   .back svg {
@@ -51,16 +51,16 @@
     position: sticky;
     top: 100px;
     aspect-ratio: 4/5;
-    background: rgba(255, 255, 255, 0.02);
+    background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid var(--borde);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--outline);
+    box-shadow: 0 10px 30px var(--sombra);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   .img-principal:hover {
-    border-color: var(--acento);
-    box-shadow: 0 20px 50px rgba(0, 242, 254, 0.15);
+    border-color: var(--primary-container);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15), 0 12px 30px rgba(15, 23, 42, 0.08);
   }
   .img-principal img {
     width: 100%;
@@ -78,7 +78,7 @@
     align-items: center;
     justify-content: center;
     font-size: 6rem;
-    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+    background: #f1f5f9;
   }
 
   /* INFO DEL PRODUCTO */
@@ -87,9 +87,8 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--acento);
+    color: var(--secondary-container);
     margin-bottom: 0.8rem;
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
   }
   .info h1 {
     font-family: 'Sora', sans-serif;
@@ -97,7 +96,7 @@
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -1px;
-    color: var(--blanco);
+    color: var(--negro);
     margin-bottom: 1.2rem;
   }
   .desc {
@@ -110,7 +109,7 @@
   /* Divisor */
   .divider {
     height: 1px;
-    background: var(--borde);
+    background: var(--outline);
     margin: 2rem 0;
   }
 
@@ -140,26 +139,26 @@
     min-width: 52px;
     height: 52px;
     padding: 0 1rem;
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 8px;
     font-size: 0.88rem;
     font-weight: 700;
     color: var(--gris);
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
   }
   .talla-label:hover {
-    border-color: var(--blanco);
-    color: var(--blanco);
-    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary-container);
+    color: var(--primary-container);
+    background: #ffffff;
   }
   .talla-radio:checked + .talla-label {
-    background: var(--acento);
-    border-color: var(--acento);
-    color: var(--negro);
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    background: var(--primary-container);
+    border-color: var(--primary-container);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
     transform: scale(1.05);
   }
 
@@ -167,53 +166,53 @@
     margin-top: 0.8rem;
     font-size: 0.82rem;
     font-weight: 600;
-    color: #ff4a4a;
+    color: var(--tertiary-container);
     display: none;
-    text-shadow: 0 0 8px rgba(255, 74, 74, 0.2);
   }
 
   /* PERSONALIZACIÓN */
   .opciones-extra {
-    background: rgba(255, 255, 255, 0.02) !important;
+    background: var(--surface-container) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--borde) !important;
+    border: 1px solid var(--outline) !important;
     border-radius: 12px !important;
     padding: 1.5rem !important;
   }
   .opciones-extra label {
     transition: color 0.2s;
+    color: var(--on-surface);
   }
   .opciones-extra label:hover {
-    color: var(--blanco);
+    color: var(--negro);
   }
   .opciones-extra input[type="checkbox"] {
-    accent-color: var(--acento);
+    accent-color: var(--primary-container);
     cursor: pointer;
   }
   .opciones-extra input[type="text"] {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--borde);
+    background: #ffffff;
+    border: 1px solid var(--outline);
     border-radius: 8px;
-    color: var(--blanco);
+    color: var(--negro);
     outline: none;
     transition: border-color 0.25s, box-shadow 0.25s;
     font-family: 'Inter', sans-serif;
   }
   .opciones-extra input[type="text"]:focus {
-    border-color: var(--acento);
-    box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+    border-color: var(--primary-container);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
   }
 
   /* CANTIDAD */
   .qty-wrap {
     display: flex;
     align-items: center;
-    border: 1px solid var(--borde);
+    border: 1px solid var(--outline);
     border-radius: 8px;
     width: fit-content;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface);
   }
   .qty-btn {
     width: 46px;
@@ -229,8 +228,8 @@
     justify-content: center;
   }
   .qty-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--blanco);
+    background: #ffffff;
+    color: var(--negro);
   }
   .qty-val {
     width: 54px;
@@ -238,10 +237,10 @@
     font-family: 'Sora', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: var(--blanco);
+    color: var(--negro);
     border: none;
-    border-left: 1px solid var(--borde);
-    border-right: 1px solid var(--borde);
+    border-left: 1px solid var(--outline);
+    border-right: 1px solid var(--outline);
     background: transparent;
     height: 46px;
     padding: 0;
@@ -256,8 +255,8 @@
   .btn-añadir {
     width: 100%;
     padding: 1.1rem;
-    background: var(--acento);
-    color: var(--negro);
+    background: var(--primary-container);
+    color: white;
     border: none;
     border-radius: 9999px; /* Rounded pill button */
     font-family: 'Inter', sans-serif;
@@ -268,13 +267,13 @@
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     margin-top: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.25);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
   }
   .btn-añadir:hover {
-    background: var(--blanco);
-    color: var(--negro);
+    background: #059669;
+    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
   }
   .btn-añadir:active {
     transform: translateY(-1px);
@@ -357,7 +356,7 @@
 
         <div id="div_texto_dorsal" style="display: none; margin-top: 1rem;">
             <input type="text" name="texto_dorsal" placeholder="Ej: MESSI 10"
-                   style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;">
+                   style="width: 100%; padding: 0.8rem; border: 1px solid var(--outline); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.9rem; background: #ffffff; color: var(--negro); outline: none;">
             <small style="display: block; margin-top: 0.4rem; color: var(--gris); font-size: 0.75rem;">Escribe el nombre y número exacto que deseas.</small>
         </div>
       </div>

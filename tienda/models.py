@@ -174,16 +174,17 @@ class Producto(models.Model):
 
     def get_imagen_url(self):
         """Retorna la mejor URL de imagen disponible."""
-        from django.conf import settings
-        if getattr(settings, 'AWS_ACCESS_KEY_ID', None) and self.imagen:
-            return self.imagen.url
+        if self.imagen:
+            try:
+                return self.imagen.url
+            except Exception:
+                pass
         return self.imagen_url_original or ''
 
     @property
     def imagen_local(self):
         """Compatibilidad con plantillas antiguas."""
-        from django.conf import settings
-        if getattr(settings, 'AWS_ACCESS_KEY_ID', None):
+        if self.imagen:
             return self.imagen
         return None
 

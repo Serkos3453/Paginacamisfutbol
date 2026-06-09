@@ -12,17 +12,17 @@
   /* Variables locales que sobreescriben solo en esta página */
   .retro-page {
     --r-fondo:       transparent;
-    --r-fondo-card:  rgba(26, 22, 18, 0.55); /* warm dark translucent */
-    --r-borde:       rgba(255, 184, 0, 0.12);
-    --r-borde-hover: #ffb800;
-    --r-texto:       #faf7f2;
-    --r-gris:        #bda38f;
-    --r-acento:      #ffb800;       /* Gold/Amber neon accent */
-    --r-acento-claro:#ffd37a;
-    --r-crema:       rgba(255, 184, 0, 0.08);
-    --r-sombra:      rgba(0,0,0,0.5);
-    --r-sombra-hover:rgba(255, 184, 0, 0.25);
-    --r-stamp:       #ffb800;
+    --r-fondo-card:  rgba(255, 255, 255, 0.7); /* warm light translucent */
+    --r-borde:       rgba(184, 115, 51, 0.15); /* warm light amber border */
+    --r-borde-hover: #b45309; /* warm dark amber border */
+    --r-texto:       #1e293b; /* Slate 800 */
+    --r-gris:        #475569; /* Slate 600 */
+    --r-acento:      #d97706; /* Amber-600 */
+    --r-acento-claro:#f59e0b;
+    --r-crema:       rgba(217, 119, 6, 0.08);
+    --r-sombra:      rgba(15, 23, 42, 0.05);
+    --r-sombra-hover:rgba(217, 119, 6, 0.15);
+    --r-stamp:       #d97706;
   }
 
   /* Fondo general de la página con textura vintage retro */
@@ -120,8 +120,8 @@
     text-align: center;
     padding: 0.5rem;
     transform: rotate(-8deg);
-    box-shadow: 0 0 15px rgba(255, 184, 0, 0.25), inset 0 0 10px rgba(255, 184, 0, 0.15);
-    background: rgba(26, 22, 18, 0.8);
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.15);
+    background: var(--r-fondo-card);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     position: relative;
@@ -145,7 +145,6 @@
     font-weight: 800;
     color: var(--r-acento);
     line-height: 1;
-    text-shadow: 0 0 10px rgba(255, 184, 0, 0.4);
   }
   .retro-stamp-txt {
     font-family: 'Inter', sans-serif;
@@ -180,12 +179,11 @@
     transform: translateY(-50%);
     color: var(--r-acento);
     pointer-events: none;
-    filter: drop-shadow(0 0 4px rgba(255, 184, 0, 0.3));
   }
   .retro-search-wrap input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.8rem;
-    background: rgba(26, 22, 18, 0.6);
+    background: var(--r-fondo-card);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--r-borde);
@@ -198,8 +196,8 @@
   }
   .retro-search-wrap input:focus {
     border-color: var(--r-acento);
-    box-shadow: 0 0 15px rgba(255, 184, 0, 0.2);
-    background: rgba(26, 22, 18, 0.8);
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.15);
+    background: #ffffff;
   }
   .retro-search-wrap input::placeholder { color: var(--r-gris); }
 
@@ -223,7 +221,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--r-borde);
-    box-shadow: inset 1px 1px 0 rgba(255, 184, 0, 0.05), 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px var(--r-sombra);
     border-radius: 12px;
     overflow: hidden;
     transition:
@@ -237,7 +235,7 @@
 
   .retro-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(255, 184, 0, 0.15), 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.1), 0 12px 30px rgba(15, 23, 42, 0.06);
     border-color: var(--r-acento);
   }
 
@@ -259,43 +257,43 @@
     position: relative;
     aspect-ratio: 4/5;
     overflow: hidden;
-    background: rgba(13, 11, 9, 0.5);
+    background: #f1f5f9;
   }
   .retro-card-img-wrap img {
     width: 100%; height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-    filter: sepia(35%) contrast(1.02);
+    filter: sepia(15%) contrast(1.02);
   }
   .retro-card:hover .retro-card-img-wrap img {
     transform: scale(1.08);
-    filter: sepia(10%) contrast(1.05);
+    filter: sepia(5%) contrast(1.05);
   }
 
   .retro-card-placeholder {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
-    background: linear-gradient(135deg, rgba(26,22,18,0.4), rgba(13,11,9,0.6));
+    background: #f1f5f9;
   }
 
   /* Etiqueta "RETRO" en la esquina */
   .retro-tag {
     position: absolute; top: 0.75rem; left: 0.75rem;
     background: var(--r-acento);
-    color: #0d0f12;
+    color: white;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.35rem 0.75rem;
     border-radius: 9999px;
-    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.2);
   }
 
   .retro-card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,11,9,0.85) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.35s;
     display: flex; align-items: flex-end; padding: 1.2rem;
@@ -305,7 +303,7 @@
     width: 100%;
     text-align: center;
     background: var(--r-acento);
-    color: #0d0f12;
+    color: white;
     padding: 0.65rem;
     font-size: 0.78rem;
     font-weight: 700;
@@ -314,11 +312,11 @@
     text-decoration: none;
     border-radius: 9999px;
     transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 10px rgba(255, 184, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.2);
   }
   .retro-card-overlay a:hover { 
     background: var(--r-acento-claro); 
-    box-shadow: 0 0 20px rgba(255, 184, 0, 0.5);
+    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
   }
 
   /* Cuerpo de la card con línea divisora estilo formulario */
@@ -350,14 +348,14 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     border: 1px solid var(--r-borde);
-    background: rgba(255,255,255,0.02);
+    background: rgba(0, 0, 0, 0.02);
     padding: 0.25rem 0.55rem;
     border-radius: 4px;
     color: var(--r-gris);
     transition: all 0.2s;
   }
   .retro-card:hover .retro-talla-chip {
-    border-color: rgba(255,184,0,0.25);
+    border-color: rgba(217, 119, 6, 0.25);
     color: var(--r-texto);
   }
 
@@ -386,7 +384,7 @@
     color: var(--r-texto);
     font-size: 0.9rem;
     font-weight: 600;
-    background: rgba(26,22,18,0.4);
+    background: var(--r-fondo-card);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 8px;
@@ -397,17 +395,17 @@
     min-width: 2.6rem;
   }
   .retro-pagination a:hover {
-    background: rgba(255, 184, 0, 0.1);
+    background: rgba(217, 119, 6, 0.08);
     border-color: var(--r-acento);
     color: var(--r-acento);
-    box-shadow: 0 0 10px rgba(255, 184, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.15);
     transform: translateY(-1px);
   }
   .retro-pagination span.current {
     background: var(--r-acento);
-    color: #0d0f12;
+    color: white;
     border-color: var(--r-acento);
-    box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
   }
   .retro-pagination span.ellipsis {
     border-color: transparent;

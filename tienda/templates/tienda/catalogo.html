@@ -59,12 +59,11 @@
     position: absolute; left: 1rem; top: 50%;
     transform: translateY(-50%);
     color: var(--secondary-container); pointer-events: none;
-    filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.4));
   }
   .search-wrap input {
     width: 100%;
     padding: 0.75rem 3.5rem 0.75rem 2.8rem;
-    background: rgba(26, 28, 35, 0.6);
+    background: var(--surface-container);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--outline);
@@ -75,14 +74,14 @@
   }
   .search-wrap input:focus {
     border-color: var(--primary-container);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
-    background: rgba(26, 28, 35, 0.8);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+    background: #ffffff;
   }
   .search-wrap input::placeholder { color: var(--gris); }
   .search-btn {
     position: absolute; right: 0.4rem; top: 50%;
     transform: translateY(-50%);
-    background: var(--primary-container); color: #0d0f12;
+    background: var(--primary-container); color: white;
     border: none; border-radius: 9999px;
     padding: 0.45rem 1rem; cursor: pointer;
     font-size: 0.72rem; font-weight: 700;
@@ -90,8 +89,8 @@
     transition: background-color 0.2s, box-shadow 0.2s;
   }
   .search-btn:hover { 
-    background: #efffe3; 
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+    background: #059669; 
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
   }
 
   /* ── CATEGORY TABS ── */
@@ -124,7 +123,7 @@
     align-items: center;
     gap: 0.45rem;
     padding: 0.6rem 1.2rem;
-    background: rgba(26, 28, 35, 0.4);
+    background: var(--surface);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--outline);
@@ -141,14 +140,14 @@
     border-color: var(--primary-container);
     color: var(--primary-container);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.15);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
   }
   .category-tab.active {
     background: var(--primary-container);
-    color: #0d0f12;
+    color: white;
     border-color: var(--primary-container);
     font-weight: 700;
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
   }
   .category-icon {
     font-size: 1rem;
@@ -167,7 +166,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--outline);
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px var(--sombra);
     border-radius: 12px; overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
@@ -182,14 +181,14 @@
   }
   .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.15), 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 25px rgba(16, 185, 129, 0.1), 0 12px 30px rgba(15, 23, 42, 0.08);
     border-color: var(--primary-container);
   }
   .card.visible:hover { transform: translateY(-8px); }
 
   .card-img-wrap {
     position: relative; aspect-ratio: 4/5;
-    overflow: hidden; background: rgba(13, 15, 18, 0.5);
+    overflow: hidden; background: #f1f5f9;
   }
   .card-img-wrap img {
     width: 100%; height: 100%; object-fit: cover;
@@ -203,37 +202,37 @@
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
-    background: linear-gradient(135deg, rgba(26,28,35,0.4), rgba(18,20,26,0.6));
+    background: #f1f5f9;
   }
 
   .card-cat-tag {
     position: absolute; top: 0.75rem; left: 0.75rem;
-    background: var(--primary-container); color: #0d0f12;
+    background: var(--primary-container); color: white;
     font-size: 0.65rem; font-weight: 700;
     letter-spacing: 0.12em; text-transform: uppercase;
     padding: 0.35rem 0.75rem; border-radius: 9999px;
-    box-shadow: 0 2px 10px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.2);
   }
 
   .card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,15,18,0.85) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, transparent 60%);
     opacity: 0; transition: opacity 0.35s;
     display: flex; align-items: flex-end; padding: 1.2rem;
   }
   .card:hover .card-overlay { opacity: 1; }
   .card-overlay a {
     width: 100%; text-align: center;
-    background: var(--primary-container); color: #0d0f12;
+    background: var(--primary-container); color: white;
     padding: 0.65rem; font-size: 0.78rem;
     font-weight: 700; letter-spacing: 0.12em;
     text-transform: uppercase; text-decoration: none;
     border-radius: 9999px; transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
   }
   .card-overlay a:hover { 
-    background: #efffe3; 
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    background: #059669; 
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
   }
 
   .card-body { padding: 1.2rem; }
@@ -252,13 +251,13 @@
     font-size: 0.68rem; font-weight: 700;
     letter-spacing: 0.05em;
     border: 1px solid var(--outline);
-    background: rgba(255,255,255,0.02);
+    background: rgba(0, 0, 0, 0.02);
     padding: 0.25rem 0.55rem; border-radius: 4px;
     color: var(--gris);
     transition: all 0.2s;
   }
   .card:hover .talla-chip {
-    border-color: rgba(255,255,255,0.15);
+    border-color: rgba(0, 0, 0, 0.1);
     color: var(--on-surface);
   }
 
@@ -279,7 +278,7 @@
   .pagination a, .pagination span.current, .pagination span.ellipsis {
     padding: 0.6rem 1.1rem;
     border: 1px solid var(--outline);
-    background: rgba(26,28,35,0.4);
+    background: var(--surface);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 8px; text-decoration: none;
@@ -294,13 +293,13 @@
   .pagination a:hover {
     border-color: var(--primary-container);
     color: var(--primary-container);
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.15);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
     transform: translateY(-1px);
   }
   .pagination span.current {
-    background: var(--primary-container); color: #0d0f12;
+    background: var(--primary-container); color: white;
     border-color: var(--primary-container);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
   }
   .pagination span.ellipsis {
     border-color: transparent;
