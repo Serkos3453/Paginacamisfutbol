@@ -163,13 +163,20 @@ class Producto(models.Model):
         super().save(*args, **kwargs)
 
     def get_tallas(self):
-        """Retorna las tallas disponibles de todas las variantes activas."""
-        tallas = list(
-            self.variantes
-            .filter(activa=True)
-            .values_list('talla', flat=True)
-            .distinct()
-        )
+        """Retorna las tallas disponibles de todas las variantes activas.
+        Usa datos prefetched si están disponibles para evitar N+1 queries."""
+        # Si las variantes fueron prefetched, usar memoria en vez de query
+        if 'variantes' in getattr(self, '_prefetched_objects_cache', {}):
+            tallas = list(set(
+                v.talla for v in self.variantes.all() if v.activa
+            ))
+        else:
+            tallas = list(
+                self.variantes
+                .filter(activa=True)
+                .values_list('talla', flat=True)
+                .distinct()
+            )
         return tallas if tallas else ['S', 'M', 'L', 'XL', 'XXL']
 
     def get_imagen_url(self):

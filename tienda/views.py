@@ -7,12 +7,6 @@ from .models import Producto, Categoria, Pedido, LineaPedido
 from django.core.paginator import Paginator
 
 
-from tienda.management.commands.traducir_nombres import traducir_limpiar_nombre
-
-def _limpiar_nombre(texto):
-    return traducir_limpiar_nombre(texto)
-
-
 def get_cesta(request):
     return request.session.get('cesta', [])
 
@@ -23,35 +17,68 @@ def save_cesta(request, cesta):
 def cesta_count(request):
     return sum(item['cantidad'] for item in get_cesta(request))
 
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  CATÁLOGO — Optimizado para 22k+ productos
+# ═══════════════════════════════════════════════════════════════════════════════
 def catalogo(request):
     categorias = Categoria.objects.filter(activa=True).exclude(slug='retro')
+
     categoria_slug = request.GET.get('categoria')
     busqueda = request.GET.get('q', '').strip()
-    productos = Producto.objects.filter(activo=True).select_related('categoria')
+
+    # Query base: solo campos necesarios, con relaciones precargadas
+    productos = (
+        Producto.objects
+        .filter(activo=True)
+        .select_related('categoria')
+        .prefetch_related('variantes')
+        .only(
+            'id', 'nombre', 'slug', 'imagen', 'imagen_url_original',
+            'categoria__id', 'categoria__nombre', 'categoria__slug',
+        )
+    )
+
     if categoria_slug:
         productos = productos.filter(categoria__slug=categoria_slug)
+
     if busqueda:
         for palabra in busqueda.split():
             if palabra:
                 productos = productos.filter(nombre__icontains=palabra)
+
     categoria_actual = None
     if categoria_slug:
         categoria_actual = Categoria.objects.filter(slug=categoria_slug).first()
-    paginator = Paginator(productos, 120)
+
+    # 36 productos por página — carga rápida con imágenes
+    paginator = Paginator(productos, 36)
     page_obj = paginator.get_page(request.GET.get('page'))
+
     return render(request, 'tienda/catalogo.html', {
         'camisetas': page_obj, 'page_obj': page_obj,
         'categorias': categorias, 'categoria_actual': categoria_actual,
         'busqueda': busqueda, 'cesta_count': cesta_count(request),
     })
 
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  DETALLE
+# ═══════════════════════════════════════════════════════════════════════════════
 def detalle_camiseta(request, pk):
-    producto = get_object_or_404(Producto, pk=pk, activo=True)
+    producto = get_object_or_404(
+        Producto.objects.prefetch_related('variantes'),
+        pk=pk, activo=True,
+    )
     return render(request, 'tienda/detalle.html', {
         'camiseta': producto, 'tallas': producto.get_tallas(),
         'cesta_count': cesta_count(request),
     })
 
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  CESTA
+# ═══════════════════════════════════════════════════════════════════════════════
 @require_POST
 def agregar_cesta(request):
     camiseta_id = request.POST.get('camiseta_id')
@@ -73,7 +100,7 @@ def agregar_cesta(request):
             return redirect('cesta')
     cesta.append({
         'camiseta_id': int(camiseta_id),
-        'nombre': _limpiar_nombre(producto.nombre),
+        'nombre': producto.nombre,
         'talla': talla, 'cantidad': cantidad,
         'parche': parche, 'dorsal': dorsal,
         'texto_dorsal': texto_dorsal,
@@ -82,6 +109,7 @@ def agregar_cesta(request):
     save_cesta(request, cesta)
     messages.success(request, f'Añadido: {producto.nombre} ({talla})')
     return redirect('cesta')
+
 
 def ver_cesta(request):
     cesta = get_cesta(request)
@@ -113,6 +141,10 @@ def actualizar_cesta(request):
         save_cesta(request, cesta)
     return redirect('cesta')
 
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  CHECKOUT Y CONFIRMACIÓN
+# ═══════════════════════════════════════════════════════════════════════════════
 def checkout(request):
     cesta = get_cesta(request)
     if not cesta:
@@ -156,16 +188,28 @@ def confirmacion(request, pk):
         'cesta_count': 0,
     })
 
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  RETRO — Optimizado
+# ═══════════════════════════════════════════════════════════════════════════════
 def catalogo_retro(request):
     busqueda = request.GET.get('q', '').strip()
-    productos = Producto.objects.filter(
-        activo=True, categoria__tipo='retro'
-    ).select_related('categoria')
+    productos = (
+        Producto.objects
+        .filter(activo=True, categoria__tipo='retro')
+        .select_related('categoria')
+        .prefetch_related('variantes')
+        .only(
+            'id', 'nombre', 'slug', 'imagen', 'imagen_url_original',
+            'categoria__id', 'categoria__nombre', 'categoria__slug',
+            'categoria__tipo',
+        )
+    )
     if busqueda:
         for palabra in busqueda.split():
             if palabra:
                 productos = productos.filter(nombre__icontains=palabra)
-    paginator = Paginator(productos, 120)
+    paginator = Paginator(productos, 36)
     page_obj = paginator.get_page(request.GET.get('page'))
     return render(request, 'tienda/retro.html', {
         'camisetas': page_obj, 'page_obj': page_obj,
