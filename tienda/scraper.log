@@ -1,0 +1,2672 @@
+2026-06-07 18:10:05,884 [INFO] 🚀 Scraper Multi-Proveedor — 1 proveedor(es)
+2026-06-07 18:10:05,886 [INFO] Productos en BD: 0
+2026-06-07 18:10:05,886 [INFO] ====== WebDriver manager ======
+2026-06-07 18:10:05,898 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-07 18:10:05,989 [INFO] About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+2026-06-07 18:10:06,061 [INFO] Driver downloading response is 200
+2026-06-07 18:10:06,564 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-07 18:10:06,696 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-07 18:10:06,761 [INFO] Driver has been saved in cache [/home/sergioa/.wdm/drivers/chromedriver/linux64/114.0.5735.90]
+2026-06-07 18:12:50,552 [INFO] 🚀 Scraper Multi-Proveedor — 1 proveedor(es)
+2026-06-07 18:12:50,554 [INFO] Productos en BD: 0
+2026-06-07 18:12:50,554 [INFO] ====== WebDriver manager ======
+2026-06-07 18:12:50,560 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-07 18:12:50,624 [INFO] About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+2026-06-07 18:12:50,801 [INFO] Driver downloading response is 200
+2026-06-07 18:12:51,108 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-07 18:12:51,257 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-07 18:12:51,327 [INFO] Driver has been saved in cache [/home/sergioa/.wdm/drivers/chromedriver/linux64/114.0.5735.90]
+2026-06-07 18:14:30,067 [INFO] 🚀 Scraper Multi-Proveedor — 1 proveedor(es)
+2026-06-07 18:14:30,069 [INFO] Productos en BD: 0
+2026-06-07 18:16:59,819 [INFO] 🚀 Scraper Multi-Proveedor — 1 proveedor(es)
+2026-06-07 18:16:59,821 [INFO] Productos en BD: 0
+2026-06-07 18:17:00,486 [INFO] 
+============================================================
+PROVEEDOR: Proveedor 1022669895
+============================================================
+2026-06-07 18:17:00,490 [INFO] Sesión inicial en Yupoo...
+2026-06-07 18:17:07,592 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:17:07,592 [INFO] 📂 26/27 Euroleague Club Fans  [ID: 5110244]
+2026-06-07 18:17:07,592 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/5110244
+2026-06-07 18:17:13,942 [INFO]   Total páginas: 27
+2026-06-07 18:17:17,750 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:17:17,750 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/5110244?page=2
+2026-06-07 18:17:26,529 [INFO]   Página 2: 62 nuevos | Total cat: 182
+2026-06-07 18:17:26,529 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/5110244?page=3
+2026-06-07 18:17:56,204 [WARNING] Timeout — sin álbumes
+2026-06-07 18:17:56,204 [INFO]   Página 3: 0 nuevos | Total cat: 182
+2026-06-07 18:17:56,204 [INFO]   Categoría completa: 182 álbumes
+2026-06-07 18:17:58,639 [INFO]   ✅ creados=182 actualizados=0
+2026-06-07 18:17:58,639 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:17:58,639 [INFO] 📂 26/27 National Team  [ID: 5070592]
+2026-06-07 18:17:58,639 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/5070592
+2026-06-07 18:18:03,362 [INFO]   Total páginas: 27
+2026-06-07 18:18:07,420 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:18:07,420 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/5070592?page=2
+2026-06-07 18:18:16,534 [INFO]   Página 2: 120 nuevos | Total cat: 240
+2026-06-07 18:18:16,534 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/5070592?page=3
+2026-06-07 18:18:25,250 [INFO]   Página 3: 120 nuevos | Total cat: 360
+2026-06-07 18:18:25,251 [INFO]   Página 4: https://1022669895.x.yupoo.com/categories/5070592?page=4
+2026-06-07 18:18:34,362 [INFO]   Página 4: 120 nuevos | Total cat: 480
+2026-06-07 18:18:34,362 [INFO]   Página 5: https://1022669895.x.yupoo.com/categories/5070592?page=5
+2026-06-07 18:18:42,490 [INFO]   Página 5: 120 nuevos | Total cat: 600
+2026-06-07 18:18:42,490 [INFO]   Página 6: https://1022669895.x.yupoo.com/categories/5070592?page=6
+2026-06-07 18:18:50,192 [INFO]   Página 6: 47 nuevos | Total cat: 647
+2026-06-07 18:18:50,192 [INFO]   Página 7: https://1022669895.x.yupoo.com/categories/5070592?page=7
+2026-06-07 18:19:19,099 [WARNING] Timeout — sin álbumes
+2026-06-07 18:19:19,099 [INFO]   Página 7: 0 nuevos | Total cat: 647
+2026-06-07 18:19:19,099 [INFO]   Categoría completa: 647 álbumes
+2026-06-07 18:19:30,088 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:19:30,088 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:19:30,088 [INFO] 📂 26/27 National Team Kids  [ID: 5070577]
+2026-06-07 18:19:30,088 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/5070577
+2026-06-07 18:19:34,968 [INFO]   Total páginas: 1
+2026-06-07 18:19:58,397 [WARNING] Timeout — sin álbumes
+2026-06-07 18:19:58,397 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:19:58,397 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:19:58,397 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:19:58,397 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:19:58,397 [INFO] 📂 25/26 Euroleague Club Fans  [ID: 4791547]
+2026-06-07 18:19:58,397 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4791547
+2026-06-07 18:20:03,825 [INFO]   Total páginas: 1
+2026-06-07 18:20:27,318 [WARNING] Timeout — sin álbumes
+2026-06-07 18:20:27,318 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:20:27,318 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:20:27,318 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:20:27,318 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:20:27,318 [INFO] 📂 25/26 National Team Fans  [ID: 4789845]
+2026-06-07 18:20:27,318 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789845
+2026-06-07 18:20:32,767 [INFO]   Total páginas: 1
+2026-06-07 18:20:56,343 [WARNING] Timeout — sin álbumes
+2026-06-07 18:20:56,343 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:20:56,343 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:20:56,343 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:20:56,343 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:20:56,343 [INFO] 📂 26/27 National Team Players  [ID: 4789844]
+2026-06-07 18:20:56,344 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789844
+2026-06-07 18:21:01,402 [INFO]   Total páginas: 1
+2026-06-07 18:21:24,966 [WARNING] Timeout — sin álbumes
+2026-06-07 18:21:24,966 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:21:24,966 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:21:24,966 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:21:24,966 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:21:24,966 [INFO] 📂 25/26 Euroleague Clubs Players  [ID: 4789843]
+2026-06-07 18:21:24,967 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789843
+2026-06-07 18:21:30,391 [INFO]   Total páginas: 1
+2026-06-07 18:21:53,962 [WARNING] Timeout — sin álbumes
+2026-06-07 18:21:53,962 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:21:53,962 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:21:53,962 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:21:53,962 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:21:53,962 [INFO] 📂 2425 Euroleague Clubs  [ID: 4789807]
+2026-06-07 18:21:53,962 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789807
+2026-06-07 18:22:00,021 [INFO]   Total páginas: 1
+2026-06-07 18:22:23,469 [WARNING] Timeout — sin álbumes
+2026-06-07 18:22:23,469 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:22:23,469 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:22:23,469 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:22:23,469 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:22:23,469 [INFO] 📂 2425 Club Players  [ID: 4789846]
+2026-06-07 18:22:23,469 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789846
+2026-06-07 18:22:29,141 [INFO]   Total páginas: 1
+2026-06-07 18:22:52,712 [WARNING] Timeout — sin álbumes
+2026-06-07 18:22:52,712 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:22:52,712 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:22:52,712 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:22:52,712 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:22:52,712 [INFO] 📂 2425 National Team Fans  [ID: 3255537]
+2026-06-07 18:22:52,713 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3255537
+2026-06-07 18:23:00,619 [INFO]   Total páginas: 1
+2026-06-07 18:23:24,194 [WARNING] Timeout — sin álbumes
+2026-06-07 18:23:24,195 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:23:24,195 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:23:24,195 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:23:24,195 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:23:24,195 [INFO] 📂 2425 Womens Wear  [ID: 4789855]
+2026-06-07 18:23:24,195 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789855
+2026-06-07 18:23:30,830 [INFO]   Total páginas: 1
+2026-06-07 18:23:54,396 [WARNING] Timeout — sin álbumes
+2026-06-07 18:23:54,396 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:23:54,396 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:23:54,396 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:23:54,396 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:23:54,396 [INFO] 📂 2526 Other League Clubs  [ID: 3930346]
+2026-06-07 18:23:54,397 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3930346
+2026-06-07 18:23:59,671 [INFO]   Total páginas: 1
+2026-06-07 18:24:23,228 [WARNING] Timeout — sin álbumes
+2026-06-07 18:24:23,228 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:24:23,228 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:24:23,229 [INFO]   ✅ creados=829 actualizados=0
+2026-06-07 18:24:23,229 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:24:23,229 [INFO] 📂 2326 Mexican Club League  [ID: 3929838]
+2026-06-07 18:24:23,229 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3929838
+2026-06-07 18:24:29,731 [INFO]   Total páginas: 27
+2026-06-07 18:24:33,471 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:24:33,471 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/3929838?page=2
+2026-06-07 18:24:41,062 [INFO]   Página 2: 6 nuevos | Total cat: 126
+2026-06-07 18:24:41,063 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/3929838?page=3
+2026-06-07 18:25:09,054 [WARNING] Timeout — sin álbumes
+2026-06-07 18:25:09,054 [INFO]   Página 3: 0 nuevos | Total cat: 126
+2026-06-07 18:25:09,054 [INFO]   Categoría completa: 126 álbumes
+2026-06-07 18:25:11,029 [INFO]   ✅ creados=955 actualizados=0
+2026-06-07 18:25:11,029 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:25:11,029 [INFO] 📂 22-26 American League  [ID: 4089028]
+2026-06-07 18:25:11,029 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4089028
+2026-06-07 18:25:17,362 [INFO]   Total páginas: 27
+2026-06-07 18:25:19,017 [INFO]   Página 1: 4 nuevos | Total cat: 4
+2026-06-07 18:25:19,017 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/4089028?page=2
+2026-06-07 18:25:47,979 [WARNING] Timeout — sin álbumes
+2026-06-07 18:25:47,979 [INFO]   Página 2: 0 nuevos | Total cat: 4
+2026-06-07 18:25:47,979 [INFO]   Categoría completa: 4 álbumes
+2026-06-07 18:25:48,176 [INFO]   ✅ creados=959 actualizados=0
+2026-06-07 18:25:48,176 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:25:48,176 [INFO] 📂 Jersey Retro  [ID: 4789852]
+2026-06-07 18:25:48,176 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/4789852
+2026-06-07 18:25:53,665 [INFO]   Total páginas: 1
+2026-06-07 18:26:17,246 [WARNING] Timeout — sin álbumes
+2026-06-07 18:26:17,246 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:26:17,246 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:26:17,246 [INFO]   ✅ creados=959 actualizados=0
+2026-06-07 18:26:17,246 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:26:17,246 [INFO] 📂 Kids  [ID: 3860619]
+2026-06-07 18:26:17,246 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3860619
+2026-06-07 18:26:21,778 [INFO]   Total páginas: 1
+2026-06-07 18:26:45,347 [WARNING] Timeout — sin álbumes
+2026-06-07 18:26:45,347 [INFO]   Página 1: 0 nuevos | Total cat: 0
+2026-06-07 18:26:45,347 [INFO]   Categoría completa: 0 álbumes
+2026-06-07 18:26:45,347 [INFO]   ✅ creados=959 actualizados=0
+2026-06-07 18:26:45,348 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:26:45,348 [INFO] 📂 La Liga  [ID: 3923254]
+2026-06-07 18:26:45,348 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3923254
+2026-06-07 18:26:51,088 [INFO]   Total páginas: 27
+2026-06-07 18:26:53,633 [INFO]   Página 1: 53 nuevos | Total cat: 53
+2026-06-07 18:26:53,633 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/3923254?page=2
+2026-06-07 18:27:23,028 [WARNING] Timeout — sin álbumes
+2026-06-07 18:27:23,028 [INFO]   Página 2: 0 nuevos | Total cat: 53
+2026-06-07 18:27:23,028 [INFO]   Categoría completa: 53 álbumes
+2026-06-07 18:27:23,761 [INFO]   ✅ creados=1012 actualizados=0
+2026-06-07 18:27:23,761 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:27:23,761 [INFO] 📂 Ligue 1  [ID: 3297315]
+2026-06-07 18:27:23,761 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3297315
+2026-06-07 18:27:29,293 [INFO]   Total páginas: 27
+2026-06-07 18:27:32,992 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:27:32,992 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/3297315?page=2
+2026-06-07 18:27:39,382 [INFO]   Página 2: 45 nuevos | Total cat: 165
+2026-06-07 18:27:39,383 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/3297315?page=3
+2026-06-07 18:28:08,822 [WARNING] Timeout — sin álbumes
+2026-06-07 18:28:08,822 [INFO]   Página 3: 0 nuevos | Total cat: 165
+2026-06-07 18:28:08,822 [INFO]   Categoría completa: 165 álbumes
+2026-06-07 18:28:11,524 [INFO]   ✅ creados=1177 actualizados=0
+2026-06-07 18:28:11,524 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:28:11,524 [INFO] 📂 Serie A  [ID: 2777483]
+2026-06-07 18:28:11,524 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/2777483
+2026-06-07 18:28:16,720 [INFO]   Total páginas: 27
+2026-06-07 18:28:20,423 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:28:20,423 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/2777483?page=2
+2026-06-07 18:28:28,136 [INFO]   Página 2: 120 nuevos | Total cat: 240
+2026-06-07 18:28:28,136 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/2777483?page=3
+2026-06-07 18:28:34,590 [INFO]   Página 3: 18 nuevos | Total cat: 258
+2026-06-07 18:28:34,590 [INFO]   Página 4: https://1022669895.x.yupoo.com/categories/2777483?page=4
+2026-06-07 18:29:03,314 [WARNING] Timeout — sin álbumes
+2026-06-07 18:29:03,314 [INFO]   Página 4: 0 nuevos | Total cat: 258
+2026-06-07 18:29:03,314 [INFO]   Categoría completa: 258 álbumes
+2026-06-07 18:29:07,546 [INFO]   ✅ creados=1435 actualizados=0
+2026-06-07 18:29:07,546 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:29:07,546 [INFO] 📂 Brasileiro Serie A  [ID: 3921505]
+2026-06-07 18:29:07,547 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3921505
+2026-06-07 18:29:12,446 [INFO]   Total páginas: 27
+2026-06-07 18:29:16,194 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:29:16,194 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/3921505?page=2
+2026-06-07 18:29:24,200 [INFO]   Página 2: 120 nuevos | Total cat: 240
+2026-06-07 18:29:24,200 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/3921505?page=3
+2026-06-07 18:29:32,574 [INFO]   Página 3: 76 nuevos | Total cat: 316
+2026-06-07 18:29:32,574 [INFO]   Página 4: https://1022669895.x.yupoo.com/categories/3921505?page=4
+2026-06-07 18:30:01,677 [WARNING] Timeout — sin álbumes
+2026-06-07 18:30:01,678 [INFO]   Página 4: 0 nuevos | Total cat: 316
+2026-06-07 18:30:01,678 [INFO]   Categoría completa: 316 álbumes
+2026-06-07 18:30:08,069 [INFO]   ✅ creados=1751 actualizados=0
+2026-06-07 18:30:08,070 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:30:08,070 [INFO] 📂 Premier League  [ID: 2777511]
+2026-06-07 18:30:08,070 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/2777511
+2026-06-07 18:30:13,896 [INFO]   Total páginas: 27
+2026-06-07 18:30:17,593 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:30:17,593 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/2777511?page=2
+2026-06-07 18:30:31,622 [INFO]   Página 2: 120 nuevos | Total cat: 240
+2026-06-07 18:30:31,622 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/2777511?page=3
+2026-06-07 18:30:41,181 [INFO]   Página 3: 120 nuevos | Total cat: 360
+2026-06-07 18:30:41,181 [INFO]   Página 4: https://1022669895.x.yupoo.com/categories/2777511?page=4
+2026-06-07 18:30:48,676 [INFO]   Página 4: 57 nuevos | Total cat: 417
+2026-06-07 18:30:48,676 [INFO]   Página 5: https://1022669895.x.yupoo.com/categories/2777511?page=5
+2026-06-07 18:31:17,302 [WARNING] Timeout — sin álbumes
+2026-06-07 18:31:17,302 [INFO]   Página 5: 0 nuevos | Total cat: 417
+2026-06-07 18:31:17,302 [INFO]   Categoría completa: 417 álbumes
+2026-06-07 18:31:26,573 [INFO]   ✅ creados=2168 actualizados=0
+2026-06-07 18:31:26,573 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:31:26,573 [INFO] 📂 Chile League  [ID: 3922962]
+2026-06-07 18:31:26,574 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3922962
+2026-06-07 18:31:31,186 [INFO]   Total páginas: 27
+2026-06-07 18:31:33,706 [INFO]   Página 1: 50 nuevos | Total cat: 50
+2026-06-07 18:31:33,706 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/3922962?page=2
+2026-06-07 18:32:01,278 [WARNING] Timeout — sin álbumes
+2026-06-07 18:32:01,278 [INFO]   Página 2: 0 nuevos | Total cat: 50
+2026-06-07 18:32:01,278 [INFO]   Categoría completa: 50 álbumes
+2026-06-07 18:32:02,382 [INFO]   ✅ creados=2218 actualizados=0
+2026-06-07 18:32:02,382 [INFO] 
+════════════════════════════════════════════════════════════
+2026-06-07 18:32:02,382 [INFO] 📂 Bundesliga  [ID: 3293731]
+2026-06-07 18:32:02,382 [INFO]   Página 1: https://1022669895.x.yupoo.com/categories/3293731
+2026-06-07 18:32:07,769 [INFO]   Total páginas: 27
+2026-06-07 18:32:11,478 [INFO]   Página 1: 120 nuevos | Total cat: 120
+2026-06-07 18:32:11,478 [INFO]   Página 2: https://1022669895.x.yupoo.com/categories/3293731?page=2
+2026-06-07 18:32:18,991 [INFO]   Página 2: 55 nuevos | Total cat: 175
+2026-06-07 18:32:18,991 [INFO]   Página 3: https://1022669895.x.yupoo.com/categories/3293731?page=3
+2026-06-07 18:32:47,461 [WARNING] Timeout — sin álbumes
+2026-06-07 18:32:47,461 [INFO]   Página 3: 0 nuevos | Total cat: 175
+2026-06-07 18:32:47,461 [INFO]   Categoría completa: 175 álbumes
+2026-06-07 18:32:52,409 [INFO]   ✅ creados=2393 actualizados=0
+2026-06-07 18:32:52,409 [INFO] Resumen Proveedor 1022669895: {'creado': 2393, 'actualizado': 0, 'asociado': 0, 'error': 0}
+2026-06-07 18:32:52,528 [INFO] 
+============================================================
+2026-06-07 18:32:52,528 [INFO] 🎉 IMPORTACIÓN COMPLETADA
+2026-06-07 18:32:52,529 [INFO]   Proveedores: 1
+2026-06-07 18:32:52,529 [INFO]   Categorías:  11
+2026-06-07 18:32:52,529 [INFO]   Productos:   2393
+2026-06-07 18:32:52,529 [INFO]   Creados:     2393
+2026-06-07 18:32:52,529 [INFO]   Asociados:   0
+2026-06-07 18:32:52,529 [INFO]   Errores:     0
+2026-06-07 18:35:09,369 [INFO] 🚀 Scraper Multi-Proveedor — 1 proveedor(es)
+2026-06-07 18:35:09,370 [INFO] Productos en BD: 2393
+2026-06-07 18:35:09,911 [INFO] 
+============================================================
+PROVEEDOR: Proveedor 194939
+============================================================
+2026-06-07 18:35:09,915 [INFO] Sesión inicial...
+2026-06-07 18:35:20,638 [INFO] Total páginas: 158
+2026-06-07 18:35:20,638 [INFO] 
+Página 1/158: https://194939.x.yupoo.com/categories
+2026-06-07 18:35:30,751 [INFO]   120 álbumes extraídos
+2026-06-07 18:35:32,135 [INFO]   creados=120 actualizados=0
+2026-06-07 18:35:32,135 [INFO] 
+Página 2/158: https://194939.x.yupoo.com/categories?page=2
+2026-06-07 18:35:40,392 [INFO]   120 álbumes extraídos
+2026-06-07 18:35:41,770 [INFO]   creados=240 actualizados=0
+2026-06-07 18:35:41,770 [INFO] 
+Página 3/158: https://194939.x.yupoo.com/categories?page=3
+2026-06-07 18:35:50,440 [INFO]   120 álbumes extraídos
+2026-06-07 18:35:51,945 [INFO]   creados=360 actualizados=0
+2026-06-07 18:35:51,945 [INFO] 
+Página 4/158: https://194939.x.yupoo.com/categories?page=4
+2026-06-07 18:36:00,425 [INFO]   120 álbumes extraídos
+2026-06-07 18:36:01,923 [INFO]   creados=478 actualizados=0
+2026-06-07 18:36:01,923 [INFO] 
+Página 5/158: https://194939.x.yupoo.com/categories?page=5
+2026-06-07 18:36:09,369 [INFO]   120 álbumes extraídos
+2026-06-07 18:36:11,051 [INFO]   creados=598 actualizados=0
+2026-06-07 18:36:11,051 [INFO] 
+Página 6/158: https://194939.x.yupoo.com/categories?page=6
+2026-06-07 18:36:19,965 [INFO]   120 álbumes extraídos
+2026-06-07 18:36:21,707 [INFO]   creados=718 actualizados=0
+2026-06-07 18:36:21,707 [INFO] 
+Página 7/158: https://194939.x.yupoo.com/categories?page=7
+2026-06-07 18:36:30,256 [INFO]   120 álbumes extraídos
+2026-06-07 18:36:31,955 [INFO]   creados=838 actualizados=0
+2026-06-07 18:36:31,956 [INFO] 
+Página 8/158: https://194939.x.yupoo.com/categories?page=8
+2026-06-07 18:36:40,488 [INFO]   120 álbumes extraídos
+2026-06-07 18:36:42,217 [INFO]   creados=958 actualizados=0
+2026-06-07 18:36:42,217 [INFO] 
+Página 9/158: https://194939.x.yupoo.com/categories?page=9
+2026-06-07 18:36:51,471 [INFO]   120 álbumes extraídos
+2026-06-07 18:36:53,470 [INFO]   creados=1078 actualizados=0
+2026-06-07 18:36:53,470 [INFO] 
+Página 10/158: https://194939.x.yupoo.com/categories?page=10
+2026-06-07 18:37:02,728 [INFO]   120 álbumes extraídos
+2026-06-07 18:37:04,736 [INFO]   creados=1198 actualizados=0
+2026-06-07 18:37:04,736 [INFO]   PROGRESO: 10/158 | Total BD: 3591
+2026-06-07 18:37:04,736 [INFO] 
+Página 11/158: https://194939.x.yupoo.com/categories?page=11
+2026-06-07 18:37:14,872 [INFO]   120 álbumes extraídos
+2026-06-07 18:37:17,013 [INFO]   creados=1318 actualizados=0
+2026-06-07 18:37:17,013 [INFO] 
+Página 12/158: https://194939.x.yupoo.com/categories?page=12
+2026-06-07 18:37:28,578 [INFO]   120 álbumes extraídos
+2026-06-07 18:37:30,540 [INFO]   creados=1438 actualizados=0
+2026-06-07 18:37:30,540 [INFO] 
+Página 13/158: https://194939.x.yupoo.com/categories?page=13
+2026-06-07 18:37:39,121 [INFO]   120 álbumes extraídos
+2026-06-07 18:37:41,233 [INFO]   creados=1558 actualizados=0
+2026-06-07 18:37:41,233 [INFO] 
+Página 14/158: https://194939.x.yupoo.com/categories?page=14
+2026-06-07 18:37:50,511 [INFO]   120 álbumes extraídos
+2026-06-07 18:37:52,561 [INFO]   creados=1678 actualizados=0
+2026-06-07 18:37:52,561 [INFO] 
+Página 15/158: https://194939.x.yupoo.com/categories?page=15
+2026-06-07 18:38:02,161 [INFO]   120 álbumes extraídos
+2026-06-07 18:38:04,039 [INFO]   creados=1798 actualizados=0
+2026-06-07 18:38:04,040 [INFO] 
+Página 16/158: https://194939.x.yupoo.com/categories?page=16
+2026-06-07 18:38:12,171 [INFO]   120 álbumes extraídos
+2026-06-07 18:38:14,275 [INFO]   creados=1918 actualizados=0
+2026-06-07 18:38:14,275 [INFO] 
+Página 17/158: https://194939.x.yupoo.com/categories?page=17
+2026-06-07 18:38:21,862 [INFO]   120 álbumes extraídos
+2026-06-07 18:38:23,940 [INFO]   creados=2038 actualizados=0
+2026-06-07 18:38:23,940 [INFO] 
+Página 18/158: https://194939.x.yupoo.com/categories?page=18
+2026-06-07 18:38:32,462 [INFO]   120 álbumes extraídos
+2026-06-07 18:38:34,439 [INFO]   creados=2158 actualizados=0
+2026-06-07 18:38:34,439 [INFO] 
+Página 19/158: https://194939.x.yupoo.com/categories?page=19
+2026-06-07 18:38:41,920 [INFO]   120 álbumes extraídos
+2026-06-07 18:38:43,914 [INFO]   creados=2278 actualizados=0
+2026-06-07 18:38:43,914 [INFO] 
+Página 20/158: https://194939.x.yupoo.com/categories?page=20
+2026-06-07 18:38:53,290 [INFO]   120 álbumes extraídos
+2026-06-07 18:38:55,373 [INFO]   creados=2398 actualizados=0
+2026-06-07 18:38:55,373 [INFO]   PROGRESO: 20/158 | Total BD: 4791
+2026-06-07 18:38:55,373 [INFO] 
+Página 21/158: https://194939.x.yupoo.com/categories?page=21
+2026-06-07 18:39:04,228 [INFO]   120 álbumes extraídos
+2026-06-07 18:39:06,467 [INFO]   creados=2518 actualizados=0
+2026-06-07 18:39:06,467 [INFO] 
+Página 22/158: https://194939.x.yupoo.com/categories?page=22
+2026-06-07 18:39:15,030 [INFO]   120 álbumes extraídos
+2026-06-07 18:39:17,603 [INFO]   creados=2638 actualizados=0
+2026-06-07 18:39:17,603 [INFO] 
+Página 23/158: https://194939.x.yupoo.com/categories?page=23
+2026-06-07 18:39:26,069 [INFO]   120 álbumes extraídos
+2026-06-07 18:39:28,119 [INFO]   creados=2758 actualizados=0
+2026-06-07 18:39:28,119 [INFO] 
+Página 24/158: https://194939.x.yupoo.com/categories?page=24
+2026-06-07 18:39:35,569 [INFO]   120 álbumes extraídos
+2026-06-07 18:39:37,415 [INFO]   creados=2878 actualizados=0
+2026-06-07 18:39:37,416 [INFO] 
+Página 25/158: https://194939.x.yupoo.com/categories?page=25
+2026-06-07 18:39:46,253 [INFO]   120 álbumes extraídos
+2026-06-07 18:39:48,472 [INFO]   creados=2998 actualizados=0
+2026-06-07 18:39:48,472 [INFO] 
+Página 26/158: https://194939.x.yupoo.com/categories?page=26
+2026-06-07 18:39:56,550 [INFO]   120 álbumes extraídos
+2026-06-07 18:39:59,174 [INFO]   creados=3118 actualizados=0
+2026-06-07 18:39:59,174 [INFO] 
+Página 27/158: https://194939.x.yupoo.com/categories?page=27
+2026-06-07 18:40:07,968 [INFO]   120 álbumes extraídos
+2026-06-07 18:40:10,404 [INFO]   creados=3238 actualizados=0
+2026-06-07 18:40:10,404 [INFO] 
+Página 28/158: https://194939.x.yupoo.com/categories?page=28
+2026-06-07 18:40:19,189 [INFO]   120 álbumes extraídos
+2026-06-07 18:40:21,343 [INFO]   creados=3358 actualizados=0
+2026-06-07 18:40:21,343 [INFO] 
+Página 29/158: https://194939.x.yupoo.com/categories?page=29
+2026-06-07 18:40:30,098 [INFO]   120 álbumes extraídos
+2026-06-07 18:40:32,323 [INFO]   creados=3478 actualizados=0
+2026-06-07 18:40:32,323 [INFO] 
+Página 30/158: https://194939.x.yupoo.com/categories?page=30
+2026-06-07 18:40:40,530 [INFO]   120 álbumes extraídos
+2026-06-07 18:40:42,612 [INFO]   creados=3598 actualizados=0
+2026-06-07 18:40:42,612 [INFO]   PROGRESO: 30/158 | Total BD: 5991
+2026-06-07 18:40:42,612 [INFO] 
+Página 31/158: https://194939.x.yupoo.com/categories?page=31
+2026-06-07 18:40:50,946 [INFO]   120 álbumes extraídos
+2026-06-07 18:40:53,039 [INFO]   creados=3718 actualizados=0
+2026-06-07 18:40:53,039 [INFO] 
+Página 32/158: https://194939.x.yupoo.com/categories?page=32
+2026-06-07 18:41:00,823 [INFO]   120 álbumes extraídos
+2026-06-07 18:41:02,931 [INFO]   creados=3838 actualizados=0
+2026-06-07 18:41:02,931 [INFO] 
+Página 33/158: https://194939.x.yupoo.com/categories?page=33
+2026-06-07 18:41:11,056 [INFO]   120 álbumes extraídos
+2026-06-07 18:41:13,429 [INFO]   creados=3958 actualizados=0
+2026-06-07 18:41:13,429 [INFO] 
+Página 34/158: https://194939.x.yupoo.com/categories?page=34
+2026-06-07 18:41:23,625 [INFO]   120 álbumes extraídos
+2026-06-07 18:41:26,171 [INFO]   creados=4078 actualizados=0
+2026-06-07 18:41:26,171 [INFO] 
+Página 35/158: https://194939.x.yupoo.com/categories?page=35
+2026-06-07 18:41:35,711 [INFO]   120 álbumes extraídos
+2026-06-07 18:41:37,743 [INFO]   creados=4198 actualizados=0
+2026-06-07 18:41:37,743 [INFO] 
+Página 36/158: https://194939.x.yupoo.com/categories?page=36
+2026-06-07 18:41:46,144 [INFO]   119 álbumes extraídos
+2026-06-07 18:41:48,555 [INFO]   creados=4317 actualizados=0
+2026-06-07 18:41:48,555 [INFO] 
+Página 37/158: https://194939.x.yupoo.com/categories?page=37
+2026-06-07 18:41:57,881 [INFO]   119 álbumes extraídos
+2026-06-07 18:42:00,543 [INFO]   creados=4436 actualizados=0
+2026-06-07 18:42:00,543 [INFO] 
+Página 38/158: https://194939.x.yupoo.com/categories?page=38
+2026-06-07 18:42:10,750 [INFO]   120 álbumes extraídos
+2026-06-07 18:42:12,683 [INFO]   creados=4556 actualizados=0
+2026-06-07 18:42:12,683 [INFO] 
+Página 39/158: https://194939.x.yupoo.com/categories?page=39
+2026-06-07 18:42:21,639 [INFO]   120 álbumes extraídos
+2026-06-07 18:42:24,213 [INFO]   creados=4676 actualizados=0
+2026-06-07 18:42:24,213 [INFO] 
+Página 40/158: https://194939.x.yupoo.com/categories?page=40
+2026-06-07 18:42:32,732 [INFO]   120 álbumes extraídos
+2026-06-07 18:42:35,216 [INFO]   creados=4796 actualizados=0
+2026-06-07 18:42:35,216 [INFO]   PROGRESO: 40/158 | Total BD: 7189
+2026-06-07 18:42:35,216 [INFO] 
+Página 41/158: https://194939.x.yupoo.com/categories?page=41
+2026-06-07 18:42:44,050 [INFO]   120 álbumes extraídos
+2026-06-07 18:42:46,994 [INFO]   creados=4916 actualizados=0
+2026-06-07 18:42:46,995 [INFO] 
+Página 42/158: https://194939.x.yupoo.com/categories?page=42
+2026-06-07 18:42:54,598 [INFO]   120 álbumes extraídos
+2026-06-07 18:42:57,429 [INFO]   creados=5036 actualizados=0
+2026-06-07 18:42:57,429 [INFO] 
+Página 43/158: https://194939.x.yupoo.com/categories?page=43
+2026-06-07 18:43:06,818 [INFO]   120 álbumes extraídos
+2026-06-07 18:43:09,532 [INFO]   creados=5156 actualizados=0
+2026-06-07 18:43:09,532 [INFO] 
+Página 44/158: https://194939.x.yupoo.com/categories?page=44
+2026-06-07 18:43:17,956 [INFO]   120 álbumes extraídos
+2026-06-07 18:43:21,234 [INFO]   creados=5276 actualizados=0
+2026-06-07 18:43:21,234 [INFO] 
+Página 45/158: https://194939.x.yupoo.com/categories?page=45
+2026-06-07 18:43:30,466 [INFO]   120 álbumes extraídos
+2026-06-07 18:43:33,628 [INFO]   creados=5396 actualizados=0
+2026-06-07 18:43:33,628 [INFO] 
+Página 46/158: https://194939.x.yupoo.com/categories?page=46
+2026-06-07 18:43:42,871 [INFO]   120 álbumes extraídos
+2026-06-07 18:43:45,958 [INFO]   creados=5516 actualizados=0
+2026-06-07 18:43:45,958 [INFO] 
+Página 47/158: https://194939.x.yupoo.com/categories?page=47
+2026-06-07 18:43:54,792 [INFO]   120 álbumes extraídos
+2026-06-07 18:43:59,414 [INFO]   creados=5636 actualizados=0
+2026-06-07 18:43:59,414 [INFO] 
+Página 48/158: https://194939.x.yupoo.com/categories?page=48
+2026-06-07 18:44:07,367 [INFO]   120 álbumes extraídos
+2026-06-07 18:44:11,233 [INFO]   creados=5756 actualizados=0
+2026-06-07 18:44:11,233 [INFO] 
+Página 49/158: https://194939.x.yupoo.com/categories?page=49
+2026-06-07 18:44:19,744 [INFO]   120 álbumes extraídos
+2026-06-07 18:44:23,861 [INFO]   creados=5876 actualizados=0
+2026-06-07 18:44:23,861 [INFO] 
+Página 50/158: https://194939.x.yupoo.com/categories?page=50
+2026-06-07 18:44:34,367 [INFO]   120 álbumes extraídos
+2026-06-07 18:44:37,586 [INFO]   creados=5996 actualizados=0
+2026-06-07 18:44:37,587 [INFO]   PROGRESO: 50/158 | Total BD: 8389
+2026-06-07 18:44:37,587 [INFO] 
+Página 51/158: https://194939.x.yupoo.com/categories?page=51
+2026-06-07 18:44:48,122 [INFO]   120 álbumes extraídos
+2026-06-07 18:44:51,519 [INFO]   creados=6116 actualizados=0
+2026-06-07 18:44:51,520 [INFO] 
+Página 52/158: https://194939.x.yupoo.com/categories?page=52
+2026-06-07 18:45:00,381 [INFO]   120 álbumes extraídos
+2026-06-07 18:45:03,495 [INFO]   creados=6236 actualizados=0
+2026-06-07 18:45:03,495 [INFO] 
+Página 53/158: https://194939.x.yupoo.com/categories?page=53
+2026-06-07 18:45:13,896 [INFO]   120 álbumes extraídos
+2026-06-07 18:45:17,452 [INFO]   creados=6356 actualizados=0
+2026-06-07 18:45:17,453 [INFO] 
+Página 54/158: https://194939.x.yupoo.com/categories?page=54
+2026-06-07 18:45:25,330 [INFO]   120 álbumes extraídos
+2026-06-07 18:45:29,457 [INFO]   creados=6476 actualizados=0
+2026-06-07 18:45:29,457 [INFO] 
+Página 55/158: https://194939.x.yupoo.com/categories?page=55
+2026-06-07 18:45:38,166 [INFO]   120 álbumes extraídos
+2026-06-07 18:45:41,327 [INFO]   creados=6596 actualizados=0
+2026-06-07 18:45:41,327 [INFO] 
+Página 56/158: https://194939.x.yupoo.com/categories?page=56
+2026-06-07 18:45:51,361 [INFO]   120 álbumes extraídos
+2026-06-07 18:45:55,672 [INFO]   creados=6716 actualizados=0
+2026-06-07 18:45:55,672 [INFO] 
+Página 57/158: https://194939.x.yupoo.com/categories?page=57
+2026-06-07 18:46:04,433 [INFO]   120 álbumes extraídos
+2026-06-07 18:46:09,007 [INFO]   creados=6836 actualizados=0
+2026-06-07 18:46:09,007 [INFO] 
+Página 58/158: https://194939.x.yupoo.com/categories?page=58
+2026-06-07 18:46:17,541 [INFO]   120 álbumes extraídos
+2026-06-07 18:46:22,006 [INFO]   creados=6956 actualizados=0
+2026-06-07 18:46:22,006 [INFO] 
+Página 59/158: https://194939.x.yupoo.com/categories?page=59
+2026-06-07 18:46:30,814 [INFO]   120 álbumes extraídos
+2026-06-07 18:46:35,499 [INFO]   creados=7076 actualizados=0
+2026-06-07 18:46:35,499 [INFO] 
+Página 60/158: https://194939.x.yupoo.com/categories?page=60
+2026-06-07 18:46:44,180 [INFO]   120 álbumes extraídos
+2026-06-07 18:46:49,207 [INFO]   creados=7196 actualizados=0
+2026-06-07 18:46:49,208 [INFO]   PROGRESO: 60/158 | Total BD: 9589
+2026-06-07 18:46:49,208 [INFO] 
+Página 61/158: https://194939.x.yupoo.com/categories?page=61
+2026-06-07 18:46:57,522 [INFO]   120 álbumes extraídos
+2026-06-07 18:47:02,970 [INFO]   creados=7316 actualizados=0
+2026-06-07 18:47:02,970 [INFO] 
+Página 62/158: https://194939.x.yupoo.com/categories?page=62
+2026-06-07 18:47:12,603 [INFO]   120 álbumes extraídos
+2026-06-07 18:47:17,427 [INFO]   creados=7436 actualizados=0
+2026-06-07 18:47:17,427 [INFO] 
+Página 63/158: https://194939.x.yupoo.com/categories?page=63
+2026-06-07 18:47:26,475 [INFO]   120 álbumes extraídos
+2026-06-07 18:47:31,431 [INFO]   creados=7556 actualizados=0
+2026-06-07 18:47:31,431 [INFO] 
+Página 64/158: https://194939.x.yupoo.com/categories?page=64
+2026-06-07 18:47:39,803 [INFO]   120 álbumes extraídos
+2026-06-07 18:47:44,934 [INFO]   creados=7676 actualizados=0
+2026-06-07 18:47:44,934 [INFO] 
+Página 65/158: https://194939.x.yupoo.com/categories?page=65
+2026-06-07 18:47:56,747 [INFO]   120 álbumes extraídos
+2026-06-07 18:48:01,256 [INFO]   creados=7794 actualizados=0
+2026-06-07 18:48:01,256 [INFO] 
+Página 66/158: https://194939.x.yupoo.com/categories?page=66
+2026-06-07 18:48:10,726 [INFO]   120 álbumes extraídos
+2026-06-07 18:48:15,004 [INFO]   creados=7914 actualizados=0
+2026-06-07 18:48:15,005 [INFO] 
+Página 67/158: https://194939.x.yupoo.com/categories?page=67
+2026-06-07 18:48:25,419 [INFO]   120 álbumes extraídos
+2026-06-07 18:48:29,925 [INFO]   creados=8034 actualizados=0
+2026-06-07 18:48:29,925 [INFO] 
+Página 68/158: https://194939.x.yupoo.com/categories?page=68
+2026-06-07 18:48:39,421 [INFO]   120 álbumes extraídos
+2026-06-07 18:48:44,771 [INFO]   creados=8154 actualizados=0
+2026-06-07 18:48:44,771 [INFO] 
+Página 69/158: https://194939.x.yupoo.com/categories?page=69
+2026-06-07 18:48:54,167 [INFO]   120 álbumes extraídos
+2026-06-07 18:48:59,008 [INFO]   creados=8274 actualizados=0
+2026-06-07 18:48:59,008 [INFO] 
+Página 70/158: https://194939.x.yupoo.com/categories?page=70
+2026-06-07 18:49:07,689 [INFO]   120 álbumes extraídos
+2026-06-07 18:49:13,525 [INFO]   creados=8394 actualizados=0
+2026-06-07 18:49:13,525 [INFO]   PROGRESO: 70/158 | Total BD: 10787
+2026-06-07 18:49:13,525 [INFO] 
+Página 71/158: https://194939.x.yupoo.com/categories?page=71
+2026-06-07 18:49:22,255 [INFO]   120 álbumes extraídos
+2026-06-07 18:49:28,300 [INFO]   creados=8514 actualizados=0
+2026-06-07 18:49:28,300 [INFO] 
+Página 72/158: https://194939.x.yupoo.com/categories?page=72
+2026-06-07 18:49:37,029 [INFO]   120 álbumes extraídos
+2026-06-07 18:49:42,063 [INFO]   creados=8634 actualizados=0
+2026-06-07 18:49:42,063 [INFO] 
+Página 73/158: https://194939.x.yupoo.com/categories?page=73
+2026-06-07 18:49:50,608 [INFO]   120 álbumes extraídos
+2026-06-07 18:49:55,655 [INFO]   creados=8754 actualizados=0
+2026-06-07 18:49:55,655 [INFO] 
+Página 74/158: https://194939.x.yupoo.com/categories?page=74
+2026-06-07 18:50:06,097 [INFO]   120 álbumes extraídos
+2026-06-07 18:50:10,441 [INFO]   creados=8874 actualizados=0
+2026-06-07 18:50:10,441 [INFO] 
+Página 75/158: https://194939.x.yupoo.com/categories?page=75
+2026-06-07 18:50:19,774 [INFO]   120 álbumes extraídos
+2026-06-07 18:50:25,788 [INFO]   creados=8994 actualizados=0
+2026-06-07 18:50:25,788 [INFO] 
+Página 76/158: https://194939.x.yupoo.com/categories?page=76
+2026-06-07 18:50:35,404 [INFO]   120 álbumes extraídos
+2026-06-07 18:50:40,580 [INFO]   creados=9114 actualizados=0
+2026-06-07 18:50:40,581 [INFO] 
+Página 77/158: https://194939.x.yupoo.com/categories?page=77
+2026-06-07 18:50:49,049 [INFO]   120 álbumes extraídos
+2026-06-07 18:50:53,518 [INFO]   creados=9234 actualizados=0
+2026-06-07 18:50:53,519 [INFO] 
+Página 78/158: https://194939.x.yupoo.com/categories?page=78
+2026-06-07 18:51:03,596 [INFO]   120 álbumes extraídos
+2026-06-07 18:51:09,293 [INFO]   creados=9354 actualizados=0
+2026-06-07 18:51:09,293 [INFO] 
+Página 79/158: https://194939.x.yupoo.com/categories?page=79
+2026-06-07 18:51:18,124 [INFO]   120 álbumes extraídos
+2026-06-07 18:51:24,429 [INFO]   creados=9474 actualizados=0
+2026-06-07 18:51:24,429 [INFO] 
+Página 80/158: https://194939.x.yupoo.com/categories?page=80
+2026-06-07 18:51:32,450 [INFO]   120 álbumes extraídos
+2026-06-07 18:51:38,152 [INFO]   creados=9594 actualizados=0
+2026-06-07 18:51:38,153 [INFO]   PROGRESO: 80/158 | Total BD: 11987
+2026-06-07 18:51:38,153 [INFO] 
+Página 81/158: https://194939.x.yupoo.com/categories?page=81
+2026-06-07 18:51:48,659 [INFO]   120 álbumes extraídos
+2026-06-07 18:51:54,110 [INFO]   creados=9714 actualizados=0
+2026-06-07 18:51:54,110 [INFO] 
+Página 82/158: https://194939.x.yupoo.com/categories?page=82
+2026-06-07 18:52:03,075 [INFO]   120 álbumes extraídos
+2026-06-07 18:52:10,012 [INFO]   creados=9834 actualizados=0
+2026-06-07 18:52:10,012 [INFO] 
+Página 83/158: https://194939.x.yupoo.com/categories?page=83
+2026-06-07 18:52:19,458 [INFO]   120 álbumes extraídos
+2026-06-07 18:52:24,460 [INFO]   creados=9954 actualizados=0
+2026-06-07 18:52:24,460 [INFO] 
+Página 84/158: https://194939.x.yupoo.com/categories?page=84
+2026-06-07 18:52:34,415 [INFO]   120 álbumes extraídos
+2026-06-07 18:52:39,402 [INFO]   creados=10074 actualizados=0
+2026-06-07 18:52:39,403 [INFO] 
+Página 85/158: https://194939.x.yupoo.com/categories?page=85
+2026-06-07 18:52:49,445 [INFO]   120 álbumes extraídos
+2026-06-07 18:52:54,525 [INFO]   creados=10194 actualizados=0
+2026-06-07 18:52:54,525 [INFO] 
+Página 86/158: https://194939.x.yupoo.com/categories?page=86
+2026-06-07 18:53:04,350 [INFO]   120 álbumes extraídos
+2026-06-07 18:53:09,312 [INFO]   creados=10314 actualizados=0
+2026-06-07 18:53:09,312 [INFO] 
+Página 87/158: https://194939.x.yupoo.com/categories?page=87
+2026-06-07 18:53:19,080 [INFO]   120 álbumes extraídos
+2026-06-07 18:53:24,743 [INFO]   creados=10434 actualizados=0
+2026-06-07 18:53:24,743 [INFO] 
+Página 88/158: https://194939.x.yupoo.com/categories?page=88
+2026-06-07 18:53:33,370 [INFO]   120 álbumes extraídos
+2026-06-07 18:53:38,705 [INFO]   creados=10554 actualizados=0
+2026-06-07 18:53:38,705 [INFO] 
+Página 89/158: https://194939.x.yupoo.com/categories?page=89
+2026-06-07 18:53:46,938 [INFO]   120 álbumes extraídos
+2026-06-07 18:53:52,177 [INFO]   creados=10674 actualizados=0
+2026-06-07 18:53:52,177 [INFO] 
+Página 90/158: https://194939.x.yupoo.com/categories?page=90
+2026-06-07 18:54:02,669 [INFO]   120 álbumes extraídos
+2026-06-07 18:54:07,060 [INFO]   creados=10794 actualizados=0
+2026-06-07 18:54:07,060 [INFO]   PROGRESO: 90/158 | Total BD: 13187
+2026-06-07 18:54:07,060 [INFO] 
+Página 91/158: https://194939.x.yupoo.com/categories?page=91
+2026-06-07 18:54:15,030 [INFO]   120 álbumes extraídos
+2026-06-07 18:54:21,282 [INFO]   creados=10914 actualizados=0
+2026-06-07 18:54:21,282 [INFO] 
+Página 92/158: https://194939.x.yupoo.com/categories?page=92
+2026-06-07 18:54:29,812 [INFO]   120 álbumes extraídos
+2026-06-07 18:54:35,023 [INFO]   creados=11034 actualizados=0
+2026-06-07 18:54:35,023 [INFO] 
+Página 93/158: https://194939.x.yupoo.com/categories?page=93
+2026-06-07 18:54:44,534 [INFO]   120 álbumes extraídos
+2026-06-07 18:54:50,327 [INFO]   creados=11154 actualizados=0
+2026-06-07 18:54:50,327 [INFO] 
+Página 94/158: https://194939.x.yupoo.com/categories?page=94
+2026-06-07 18:54:59,073 [INFO]   120 álbumes extraídos
+2026-06-07 18:55:03,214 [INFO]   creados=11274 actualizados=0
+2026-06-07 18:55:03,215 [INFO] 
+Página 95/158: https://194939.x.yupoo.com/categories?page=95
+2026-06-07 18:55:14,343 [INFO]   120 álbumes extraídos
+2026-06-07 18:55:17,767 [INFO]   creados=11394 actualizados=0
+2026-06-07 18:55:17,767 [INFO] 
+Página 96/158: https://194939.x.yupoo.com/categories?page=96
+2026-06-07 18:55:26,059 [INFO]   120 álbumes extraídos
+2026-06-07 18:55:32,136 [INFO]   creados=11514 actualizados=0
+2026-06-07 18:55:32,136 [INFO] 
+Página 97/158: https://194939.x.yupoo.com/categories?page=97
+2026-06-07 18:55:41,264 [INFO]   120 álbumes extraídos
+2026-06-07 18:55:47,785 [INFO]   creados=11634 actualizados=0
+2026-06-07 18:55:47,785 [INFO] 
+Página 98/158: https://194939.x.yupoo.com/categories?page=98
+2026-06-07 18:55:57,411 [INFO]   120 álbumes extraídos
+2026-06-07 18:56:02,548 [INFO]   creados=11754 actualizados=0
+2026-06-07 18:56:02,548 [INFO] 
+Página 99/158: https://194939.x.yupoo.com/categories?page=99
+2026-06-07 18:56:11,182 [INFO]   120 álbumes extraídos
+2026-06-07 18:56:17,931 [INFO]   creados=11874 actualizados=0
+2026-06-07 18:56:17,931 [INFO] 
+Página 100/158: https://194939.x.yupoo.com/categories?page=100
+2026-06-07 18:56:25,706 [INFO]   120 álbumes extraídos
+2026-06-07 18:56:31,754 [INFO]   creados=11994 actualizados=0
+2026-06-07 18:56:31,754 [INFO]   PROGRESO: 100/158 | Total BD: 14387
+2026-06-07 18:56:31,754 [INFO] 
+Página 101/158: https://194939.x.yupoo.com/categories?page=101
+2026-06-07 18:56:40,317 [INFO]   120 álbumes extraídos
+2026-06-07 18:56:47,313 [INFO]   creados=12114 actualizados=0
+2026-06-07 18:56:47,314 [INFO] 
+Página 102/158: https://194939.x.yupoo.com/categories?page=102
+2026-06-07 18:56:56,189 [INFO]   120 álbumes extraídos
+2026-06-07 18:57:01,017 [INFO]   creados=12234 actualizados=0
+2026-06-07 18:57:01,017 [INFO] 
+Página 103/158: https://194939.x.yupoo.com/categories?page=103
+2026-06-07 18:57:11,626 [INFO]   120 álbumes extraídos
+2026-06-07 18:57:16,632 [INFO]   creados=12354 actualizados=0
+2026-06-07 18:57:16,632 [INFO] 
+Página 104/158: https://194939.x.yupoo.com/categories?page=104
+2026-06-07 18:57:26,227 [INFO]   120 álbumes extraídos
+2026-06-07 18:57:31,931 [INFO]   creados=12473 actualizados=0
+2026-06-07 18:57:31,931 [INFO] 
+Página 105/158: https://194939.x.yupoo.com/categories?page=105
+2026-06-07 18:57:39,999 [INFO]   120 álbumes extraídos
+2026-06-07 18:57:46,189 [INFO]   creados=12593 actualizados=0
+2026-06-07 18:57:46,190 [INFO] 
+Página 106/158: https://194939.x.yupoo.com/categories?page=106
+2026-06-07 18:57:55,352 [INFO]   120 álbumes extraídos
+2026-06-07 18:58:00,303 [INFO]   creados=12713 actualizados=0
+2026-06-07 18:58:00,303 [INFO] 
+Página 107/158: https://194939.x.yupoo.com/categories?page=107
+2026-06-07 18:58:09,503 [INFO]   120 álbumes extraídos
+2026-06-07 18:58:14,077 [INFO]   creados=12833 actualizados=0
+2026-06-07 18:58:14,077 [INFO] 
+Página 108/158: https://194939.x.yupoo.com/categories?page=108
+2026-06-07 18:58:23,773 [INFO]   120 álbumes extraídos
+2026-06-07 18:58:27,447 [INFO]   creados=12953 actualizados=0
+2026-06-07 18:58:27,447 [INFO] 
+Página 109/158: https://194939.x.yupoo.com/categories?page=109
+2026-06-07 18:58:36,904 [INFO]   120 álbumes extraídos
+2026-06-07 18:58:40,916 [INFO]   creados=13073 actualizados=0
+2026-06-07 18:58:40,916 [INFO] 
+Página 110/158: https://194939.x.yupoo.com/categories?page=110
+2026-06-07 18:58:49,582 [INFO]   120 álbumes extraídos
+2026-06-07 18:58:53,778 [INFO]   creados=13193 actualizados=0
+2026-06-07 18:58:53,778 [INFO]   PROGRESO: 110/158 | Total BD: 15586
+2026-06-07 18:58:53,778 [INFO] 
+Página 111/158: https://194939.x.yupoo.com/categories?page=111
+2026-06-07 18:59:02,958 [INFO]   120 álbumes extraídos
+2026-06-07 18:59:07,314 [INFO]   creados=13313 actualizados=0
+2026-06-07 18:59:07,314 [INFO] 
+Página 112/158: https://194939.x.yupoo.com/categories?page=112
+2026-06-07 18:59:16,094 [INFO]   120 álbumes extraídos
+2026-06-07 18:59:19,920 [INFO]   creados=13433 actualizados=0
+2026-06-07 18:59:19,920 [INFO] 
+Página 113/158: https://194939.x.yupoo.com/categories?page=113
+2026-06-07 18:59:28,393 [INFO]   120 álbumes extraídos
+2026-06-07 18:59:32,465 [INFO]   creados=13553 actualizados=0
+2026-06-07 18:59:32,465 [INFO] 
+Página 114/158: https://194939.x.yupoo.com/categories?page=114
+2026-06-07 18:59:41,788 [INFO]   120 álbumes extraídos
+2026-06-07 18:59:45,776 [INFO]   creados=13673 actualizados=0
+2026-06-07 18:59:45,776 [INFO] 
+Página 115/158: https://194939.x.yupoo.com/categories?page=115
+2026-06-07 18:59:54,917 [INFO]   120 álbumes extraídos
+2026-06-07 19:00:00,960 [INFO]   creados=13793 actualizados=0
+2026-06-07 19:00:00,960 [INFO] 
+Página 116/158: https://194939.x.yupoo.com/categories?page=116
+2026-06-07 19:00:08,720 [INFO]   120 álbumes extraídos
+2026-06-07 19:00:12,981 [INFO]   creados=13913 actualizados=0
+2026-06-07 19:00:12,981 [INFO] 
+Página 117/158: https://194939.x.yupoo.com/categories?page=117
+2026-06-07 19:00:22,617 [INFO]   120 álbumes extraídos
+2026-06-07 19:00:27,383 [INFO]   creados=14033 actualizados=0
+2026-06-07 19:00:27,383 [INFO] 
+Página 118/158: https://194939.x.yupoo.com/categories?page=118
+2026-06-07 19:00:38,598 [INFO]   120 álbumes extraídos
+2026-06-07 19:00:44,427 [INFO]   creados=14153 actualizados=0
+2026-06-07 19:00:44,427 [INFO] 
+Página 119/158: https://194939.x.yupoo.com/categories?page=119
+2026-06-07 19:00:53,291 [INFO]   120 álbumes extraídos
+2026-06-07 19:00:58,071 [INFO]   creados=14272 actualizados=0
+2026-06-07 19:00:58,071 [INFO] 
+Página 120/158: https://194939.x.yupoo.com/categories?page=120
+2026-06-07 19:01:07,271 [INFO]   120 álbumes extraídos
+2026-06-07 19:01:11,707 [INFO]   creados=14392 actualizados=0
+2026-06-07 19:01:11,708 [INFO]   PROGRESO: 120/158 | Total BD: 16785
+2026-06-07 19:01:11,708 [INFO] 
+Página 121/158: https://194939.x.yupoo.com/categories?page=121
+2026-06-07 19:01:21,794 [INFO]   120 álbumes extraídos
+2026-06-07 19:01:26,400 [INFO]   creados=14512 actualizados=0
+2026-06-07 19:01:26,400 [INFO] 
+Página 122/158: https://194939.x.yupoo.com/categories?page=122
+2026-06-07 19:01:35,232 [INFO]   120 álbumes extraídos
+2026-06-07 19:01:37,987 [INFO]   creados=14632 actualizados=0
+2026-06-07 19:01:37,988 [INFO] 
+Página 123/158: https://194939.x.yupoo.com/categories?page=123
+2026-06-07 19:01:46,901 [INFO]   120 álbumes extraídos
+2026-06-07 19:01:50,179 [INFO]   creados=14752 actualizados=0
+2026-06-07 19:01:50,179 [INFO] 
+Página 124/158: https://194939.x.yupoo.com/categories?page=124
+2026-06-07 19:01:58,164 [INFO]   120 álbumes extraídos
+2026-06-07 19:02:00,844 [INFO]   creados=14872 actualizados=0
+2026-06-07 19:02:00,844 [INFO] 
+Página 125/158: https://194939.x.yupoo.com/categories?page=125
+2026-06-07 19:02:10,331 [INFO]   120 álbumes extraídos
+2026-06-07 19:02:14,168 [INFO]   creados=14992 actualizados=0
+2026-06-07 19:02:14,168 [INFO] 
+Página 126/158: https://194939.x.yupoo.com/categories?page=126
+2026-06-07 19:02:24,368 [INFO]   120 álbumes extraídos
+2026-06-07 19:02:27,326 [INFO]   creados=15112 actualizados=0
+2026-06-07 19:02:27,326 [INFO] 
+Página 127/158: https://194939.x.yupoo.com/categories?page=127
+2026-06-07 19:02:38,729 [INFO]   120 álbumes extraídos
+2026-06-07 19:02:42,842 [INFO]   creados=15232 actualizados=0
+2026-06-07 19:02:42,842 [INFO] 
+Página 128/158: https://194939.x.yupoo.com/categories?page=128
+2026-06-07 19:02:51,718 [INFO]   120 álbumes extraídos
+2026-06-07 19:02:55,196 [INFO]   creados=15352 actualizados=0
+2026-06-07 19:02:55,196 [INFO] 
+Página 129/158: https://194939.x.yupoo.com/categories?page=129
+2026-06-07 19:03:05,263 [INFO]   120 álbumes extraídos
+2026-06-07 19:03:09,118 [INFO]   creados=15472 actualizados=0
+2026-06-07 19:03:09,118 [INFO] 
+Página 130/158: https://194939.x.yupoo.com/categories?page=130
+2026-06-07 19:03:17,366 [INFO]   120 álbumes extraídos
+2026-06-07 19:03:21,456 [INFO]   creados=15592 actualizados=0
+2026-06-07 19:03:21,456 [INFO]   PROGRESO: 130/158 | Total BD: 17985
+2026-06-07 19:03:21,456 [INFO] 
+Página 131/158: https://194939.x.yupoo.com/categories?page=131
+2026-06-07 19:03:30,207 [INFO]   120 álbumes extraídos
+2026-06-07 19:03:34,529 [INFO]   creados=15712 actualizados=0
+2026-06-07 19:03:34,529 [INFO] 
+Página 132/158: https://194939.x.yupoo.com/categories?page=132
+2026-06-07 19:03:45,332 [INFO]   120 álbumes extraídos
+2026-06-07 19:03:48,772 [INFO]   creados=15832 actualizados=0
+2026-06-07 19:03:48,772 [INFO] 
+Página 133/158: https://194939.x.yupoo.com/categories?page=133
+2026-06-07 19:03:57,940 [INFO]   120 álbumes extraídos
+2026-06-07 19:04:02,019 [INFO]   creados=15952 actualizados=0
+2026-06-07 19:04:02,019 [INFO] 
+Página 134/158: https://194939.x.yupoo.com/categories?page=134
+2026-06-07 19:04:10,417 [INFO]   120 álbumes extraídos
+2026-06-07 19:04:14,794 [INFO]   creados=16072 actualizados=0
+2026-06-07 19:04:14,794 [INFO] 
+Página 135/158: https://194939.x.yupoo.com/categories?page=135
+2026-06-07 19:04:23,198 [INFO]   120 álbumes extraídos
+2026-06-07 19:04:27,949 [INFO]   creados=16192 actualizados=0
+2026-06-07 19:04:27,949 [INFO] 
+Página 136/158: https://194939.x.yupoo.com/categories?page=136
+2026-06-07 19:04:36,727 [INFO]   120 álbumes extraídos
+2026-06-07 19:04:40,526 [INFO]   creados=16312 actualizados=0
+2026-06-07 19:04:40,527 [INFO] 
+Página 137/158: https://194939.x.yupoo.com/categories?page=137
+2026-06-07 19:04:49,273 [INFO]   120 álbumes extraídos
+2026-06-07 19:04:53,222 [INFO]   creados=16432 actualizados=0
+2026-06-07 19:04:53,223 [INFO] 
+Página 138/158: https://194939.x.yupoo.com/categories?page=138
+2026-06-07 19:05:02,200 [INFO]   120 álbumes extraídos
+2026-06-07 19:05:07,718 [INFO]   creados=16552 actualizados=0
+2026-06-07 19:05:07,718 [INFO] 
+Página 139/158: https://194939.x.yupoo.com/categories?page=139
+2026-06-07 19:05:17,563 [INFO]   120 álbumes extraídos
+2026-06-07 19:05:21,668 [INFO]   creados=16672 actualizados=0
+2026-06-07 19:05:21,668 [INFO] 
+Página 140/158: https://194939.x.yupoo.com/categories?page=140
+2026-06-07 19:05:31,604 [INFO]   120 álbumes extraídos
+2026-06-07 19:05:37,262 [INFO]   creados=16792 actualizados=0
+2026-06-07 19:05:37,262 [INFO]   PROGRESO: 140/158 | Total BD: 19185
+2026-06-07 19:05:37,262 [INFO] 
+Página 141/158: https://194939.x.yupoo.com/categories?page=141
+2026-06-07 19:05:45,508 [INFO]   120 álbumes extraídos
+2026-06-07 19:05:51,897 [INFO]   creados=16912 actualizados=0
+2026-06-07 19:05:51,897 [INFO] 
+Página 142/158: https://194939.x.yupoo.com/categories?page=142
+2026-06-07 19:05:59,498 [INFO]   120 álbumes extraídos
+2026-06-07 19:06:08,807 [INFO]   creados=17031 actualizados=0
+2026-06-07 19:06:08,807 [INFO] 
+Página 143/158: https://194939.x.yupoo.com/categories?page=143
+2026-06-07 19:06:18,378 [INFO]   120 álbumes extraídos
+2026-06-07 19:06:22,522 [INFO]   creados=17151 actualizados=0
+2026-06-07 19:06:22,522 [INFO] 
+Página 144/158: https://194939.x.yupoo.com/categories?page=144
+2026-06-07 19:06:31,028 [INFO]   120 álbumes extraídos
+2026-06-07 19:06:35,808 [INFO]   creados=17271 actualizados=0
+2026-06-07 19:06:35,809 [INFO] 
+Página 145/158: https://194939.x.yupoo.com/categories?page=145
+2026-06-07 19:06:44,010 [INFO]   120 álbumes extraídos
+2026-06-07 19:06:49,306 [INFO]   creados=17391 actualizados=0
+2026-06-07 19:06:49,306 [INFO] 
+Página 146/158: https://194939.x.yupoo.com/categories?page=146
+2026-06-07 19:06:58,736 [INFO]   120 álbumes extraídos
+2026-06-07 19:07:03,296 [INFO]   creados=17511 actualizados=0
+2026-06-07 19:07:03,296 [INFO] 
+Página 147/158: https://194939.x.yupoo.com/categories?page=147
+2026-06-07 19:07:12,760 [INFO]   120 álbumes extraídos
+2026-06-07 19:07:18,486 [INFO]   creados=17631 actualizados=0
+2026-06-07 19:07:18,486 [INFO] 
+Página 148/158: https://194939.x.yupoo.com/categories?page=148
+2026-06-07 19:07:28,607 [INFO]   120 álbumes extraídos
+2026-06-07 19:07:34,537 [INFO]   creados=17750 actualizados=0
+2026-06-07 19:07:34,537 [INFO] 
+Página 149/158: https://194939.x.yupoo.com/categories?page=149
+2026-06-07 19:07:43,587 [INFO]   120 álbumes extraídos
+2026-06-07 19:07:48,111 [INFO]   creados=17870 actualizados=0
+2026-06-07 19:07:48,111 [INFO] 
+Página 150/158: https://194939.x.yupoo.com/categories?page=150
+2026-06-07 19:08:01,503 [INFO]   120 álbumes extraídos
+2026-06-07 19:08:04,544 [INFO]   creados=17990 actualizados=0
+2026-06-07 19:08:04,544 [INFO]   PROGRESO: 150/158 | Total BD: 20383
+2026-06-07 19:08:04,544 [INFO] 
+Página 151/158: https://194939.x.yupoo.com/categories?page=151
+2026-06-07 19:08:12,648 [INFO]   120 álbumes extraídos
+2026-06-07 19:08:16,491 [INFO]   creados=18110 actualizados=0
+2026-06-07 19:08:16,491 [INFO] 
+Página 152/158: https://194939.x.yupoo.com/categories?page=152
+2026-06-07 19:08:26,123 [INFO]   120 álbumes extraídos
+2026-06-07 19:08:30,050 [INFO]   creados=18230 actualizados=0
+2026-06-07 19:08:30,050 [INFO] 
+Página 153/158: https://194939.x.yupoo.com/categories?page=153
+2026-06-07 19:08:39,264 [INFO]   120 álbumes extraídos
+2026-06-07 19:08:44,183 [INFO]   creados=18350 actualizados=0
+2026-06-07 19:08:44,183 [INFO] 
+Página 154/158: https://194939.x.yupoo.com/categories?page=154
+2026-06-07 19:08:52,914 [INFO]   120 álbumes extraídos
+2026-06-07 19:08:59,616 [INFO]   creados=18470 actualizados=0
+2026-06-07 19:08:59,617 [INFO] 
+Página 155/158: https://194939.x.yupoo.com/categories?page=155
+2026-06-07 19:09:10,142 [INFO]   120 álbumes extraídos
+2026-06-07 19:09:20,120 [INFO]   creados=18590 actualizados=0
+2026-06-07 19:09:20,120 [INFO] 
+Página 156/158: https://194939.x.yupoo.com/categories?page=156
+2026-06-07 19:09:29,936 [INFO]   120 álbumes extraídos
+2026-06-07 19:09:40,377 [INFO]   creados=18710 actualizados=0
+2026-06-07 19:09:40,377 [INFO] 
+Página 157/158: https://194939.x.yupoo.com/categories?page=157
+2026-06-07 19:09:49,550 [INFO]   120 álbumes extraídos
+2026-06-07 19:09:58,447 [INFO]   creados=18830 actualizados=0
+2026-06-07 19:09:58,447 [INFO] 
+Página 158/158: https://194939.x.yupoo.com/categories?page=158
+2026-06-07 19:10:06,802 [INFO]   64 álbumes extraídos
+2026-06-07 19:10:09,715 [INFO]   creados=18894 actualizados=0
+2026-06-07 19:10:09,716 [INFO] Resumen Proveedor 194939: {'creado': 18894, 'actualizado': 0, 'asociado': 0, 'error': 0}
+2026-06-07 19:10:09,813 [INFO] 
+============================================================
+2026-06-07 19:10:09,813 [INFO] 🎉 IMPORTACIÓN COMPLETADA
+2026-06-07 19:10:09,814 [INFO]   Proveedores: 2
+2026-06-07 19:10:09,814 [INFO]   Categorías:  12
+2026-06-07 19:10:09,814 [INFO]   Productos:   21287
+2026-06-07 19:10:09,814 [INFO]   Creados:     18894
+2026-06-07 19:10:09,815 [INFO]   Asociados:   0
+2026-06-07 19:10:09,815 [INFO]   Errores:     0
+2026-06-07 19:12:53,529 [INFO] 🚀 Scraper Multi-Proveedor — 1 proveedor(es)
+2026-06-07 19:12:53,531 [INFO] Productos en BD: 21287
+2026-06-07 19:12:54,187 [INFO] 
+============================================================
+PROVEEDOR: Proveedor Baocheng
+============================================================
+2026-06-07 19:12:54,190 [INFO] Sesión inicial...
+2026-06-07 19:13:03,486 [INFO] Total páginas: 14
+2026-06-07 19:13:03,486 [INFO] 
+Página 1/14: https://baocheng3f888.x.yupoo.com/categories
+2026-06-07 19:13:12,295 [INFO]   120 álbumes extraídos
+2026-06-07 19:13:12,603 [INFO]     📸 Imagen guardada para 25.26S2XL -> 2526s2xl-1.jpg
+2026-06-07 19:13:12,866 [INFO]     📸 Imagen guardada para 24.25S2XL -> 2425s2xl.jpg
+2026-06-07 19:13:13,104 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl.jpg
+2026-06-07 19:13:13,477 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl.jpg
+2026-06-07 19:13:13,719 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-1.jpg
+2026-06-07 19:13:14,036 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-2.jpg
+2026-06-07 19:13:14,312 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-1.jpg
+2026-06-07 19:13:14,591 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-2.jpg
+2026-06-07 19:13:14,861 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-3.jpg
+2026-06-07 19:13:15,095 [INFO]     📸 Imagen guardada para 26.272S2XL -> 26272s2xl.jpg
+2026-06-07 19:13:15,333 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-4.jpg
+2026-06-07 19:13:15,620 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-5.jpg
+2026-06-07 19:13:15,848 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-6.jpg
+2026-06-07 19:13:16,160 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl.jpg
+2026-06-07 19:13:16,407 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-1.jpg
+2026-06-07 19:13:16,657 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-2.jpg
+2026-06-07 19:13:16,989 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-7.jpg
+2026-06-07 19:13:17,223 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-8.jpg
+2026-06-07 19:13:17,474 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-9.jpg
+2026-06-07 19:13:17,702 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-10.jpg
+2026-06-07 19:13:17,939 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-3.jpg
+2026-06-07 19:13:18,155 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-4.jpg
+2026-06-07 19:13:18,429 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-11.jpg
+2026-06-07 19:13:18,717 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-12.jpg
+2026-06-07 19:13:18,968 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-13.jpg
+2026-06-07 19:13:19,233 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-14.jpg
+2026-06-07 19:13:19,527 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-15.jpg
+2026-06-07 19:13:19,749 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-16.jpg
+2026-06-07 19:13:19,981 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-17.jpg
+2026-06-07 19:13:20,252 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-5.jpg
+2026-06-07 19:13:20,533 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-18.jpg
+2026-06-07 19:13:20,792 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-19.jpg
+2026-06-07 19:13:21,053 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-20.jpg
+2026-06-07 19:13:21,358 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-21.jpg
+2026-06-07 19:13:21,629 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-22.jpg
+2026-06-07 19:13:21,852 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-6.jpg
+2026-06-07 19:13:22,279 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-23.jpg
+2026-06-07 19:13:22,713 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-24.jpg
+2026-06-07 19:13:23,446 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-7.jpg
+2026-06-07 19:13:23,946 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl.jpg
+2026-06-07 19:13:24,332 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-8.jpg
+2026-06-07 19:13:24,612 [INFO]     📸 Imagen guardada para 26S3XL -> 26s3xl-1.jpg
+2026-06-07 19:13:24,839 [INFO]     📸 Imagen guardada para 26S3XL -> 26s3xl-2.jpg
+2026-06-07 19:13:25,074 [INFO]     📸 Imagen guardada para 26S3XL -> 26s3xl-3.jpg
+2026-06-07 19:13:25,324 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-4.jpg
+2026-06-07 19:13:25,561 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-9.jpg
+2026-06-07 19:13:25,799 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-10.jpg
+2026-06-07 19:13:26,061 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-11.jpg
+2026-06-07 19:13:26,763 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-25.jpg
+2026-06-07 19:13:27,032 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-26.jpg
+2026-06-07 19:13:27,296 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-12.jpg
+2026-06-07 19:13:27,657 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-13.jpg
+2026-06-07 19:13:27,931 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-5.jpg
+2026-06-07 19:13:28,202 [INFO]     📸 Imagen guardada para 26. -> 26.jpg
+2026-06-07 19:13:28,472 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-3.jpg
+2026-06-07 19:13:28,731 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-14.jpg
+2026-06-07 19:13:29,096 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-27.jpg
+2026-06-07 19:13:29,387 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-15.jpg
+2026-06-07 19:13:29,640 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-16.jpg
+2026-06-07 19:13:29,929 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-17.jpg
+2026-06-07 19:13:30,189 [INFO]     📸 Imagen guardada para 26.27 -> 2627.jpg
+2026-06-07 19:13:30,478 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-28.jpg
+2026-06-07 19:13:30,959 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-18.jpg
+2026-06-07 19:13:31,261 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-29.jpg
+2026-06-07 19:13:31,530 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-19.jpg
+2026-06-07 19:13:31,815 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-20.jpg
+2026-06-07 19:13:32,501 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-30.jpg
+2026-06-07 19:13:32,797 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-21.jpg
+2026-06-07 19:13:33,090 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-22.jpg
+2026-06-07 19:13:33,348 [INFO]     📸 Imagen guardada para 26.27OKS2XL -> 2627oks2xl.jpg
+2026-06-07 19:13:33,640 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-31.jpg
+2026-06-07 19:13:34,105 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-32.jpg
+2026-06-07 19:13:34,564 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-4.jpg
+2026-06-07 19:13:34,850 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-33.jpg
+2026-06-07 19:13:35,290 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-23.jpg
+2026-06-07 19:13:35,556 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-24.jpg
+2026-06-07 19:13:36,233 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-25.jpg
+2026-06-07 19:13:36,558 [INFO]     📸 Imagen guardada para 26.27S—2XL -> 2627s2xl-34.jpg
+2026-06-07 19:13:36,868 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-5.jpg
+2026-06-07 19:13:37,175 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-6.jpg
+2026-06-07 19:13:37,471 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-35.jpg
+2026-06-07 19:13:37,788 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-26.jpg
+2026-06-07 19:13:40,597 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-27.jpg
+2026-06-07 19:13:43,406 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-28.jpg
+2026-06-07 19:13:45,578 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-6.jpg
+2026-06-07 19:13:46,491 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-7.jpg
+2026-06-07 19:13:47,416 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-8.jpg
+2026-06-07 19:13:48,732 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-9.jpg
+2026-06-07 19:13:49,741 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-7.jpg
+2026-06-07 19:13:50,094 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-8.jpg
+2026-06-07 19:13:51,067 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-36.jpg
+2026-06-07 19:13:52,111 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-37.jpg
+2026-06-07 19:13:52,445 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-38.jpg
+2026-06-07 19:13:52,837 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-39.jpg
+2026-06-07 19:13:53,884 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-40.jpg
+2026-06-07 19:13:54,759 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-41.jpg
+2026-06-07 19:13:56,721 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-42.jpg
+2026-06-07 19:13:57,658 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-9.jpg
+2026-06-07 19:13:58,874 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-43.jpg
+2026-06-07 19:14:00,304 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-44.jpg
+2026-06-07 19:14:01,181 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-10.jpg
+2026-06-07 19:14:02,861 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-10.jpg
+2026-06-07 19:14:03,738 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-45.jpg
+2026-06-07 19:14:06,448 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-46.jpg
+2026-06-07 19:14:08,807 [INFO]     📸 Imagen guardada para 26.27m3XL -> 2627m3xl.jpg
+2026-06-07 19:14:09,063 [INFO]     📸 Imagen guardada para 26.27m3XL -> 2627m3xl-1.jpg
+2026-06-07 19:14:09,327 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-11.jpg
+2026-06-07 19:14:09,612 [INFO]     📸 Imagen guardada para 26. -> 26-1.jpg
+2026-06-07 19:14:10,477 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-12.jpg
+2026-06-07 19:14:11,467 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-11.jpg
+2026-06-07 19:14:12,531 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-12.jpg
+2026-06-07 19:14:12,819 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-13.jpg
+2026-06-07 19:14:13,833 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-47.jpg
+2026-06-07 19:14:15,222 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-29.jpg
+2026-06-07 19:14:17,403 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-30.jpg
+2026-06-07 19:14:18,160 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-48.jpg
+2026-06-07 19:14:18,891 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-49.jpg
+2026-06-07 19:14:19,816 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-14.jpg
+2026-06-07 19:14:20,925 [INFO]     📸 Imagen guardada para 26. S3XL -> 26-s3xl.jpg
+2026-06-07 19:14:22,100 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-50.jpg
+2026-06-07 19:14:22,110 [INFO]   creados=120 actualizados=0
+2026-06-07 19:14:22,110 [INFO] 
+Página 2/14: https://baocheng3f888.x.yupoo.com/categories?page=2
+2026-06-07 19:14:30,454 [INFO]   120 álbumes extraídos
+2026-06-07 19:14:32,573 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-31.jpg
+2026-06-07 19:14:32,929 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-32.jpg
+2026-06-07 19:14:33,899 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-51.jpg
+2026-06-07 19:14:34,211 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-52.jpg
+2026-06-07 19:14:35,081 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-53.jpg
+2026-06-07 19:14:36,032 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-13.jpg
+2026-06-07 19:14:37,284 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-14.jpg
+2026-06-07 19:14:37,595 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-15.jpg
+2026-06-07 19:14:38,311 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-54.jpg
+2026-06-07 19:14:39,037 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-33.jpg
+2026-06-07 19:14:40,214 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-34.jpg
+2026-06-07 19:14:41,245 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-35.jpg
+2026-06-07 19:14:42,451 [INFO]     📸 Imagen guardada para 26.27S3XLF -> 2627s3xlf.jpg
+2026-06-07 19:14:43,349 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-15.jpg
+2026-06-07 19:14:44,266 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-16.jpg
+2026-06-07 19:14:45,117 [INFO]     📸 Imagen guardada para 26.27XSXL -> 2627xsxl.jpg
+2026-06-07 19:14:47,356 [INFO]     📸 Imagen guardada para 26.27XS2XL -> 2627xs2xl.jpg
+2026-06-07 19:14:47,774 [INFO]     📸 Imagen guardada para 26S3XL -> 26s3xl-16.jpg
+2026-06-07 19:14:50,967 [INFO]     📸 Imagen guardada para 26S3XL -> 26s3xl-17.jpg
+2026-06-07 19:14:52,536 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-55.jpg
+2026-06-07 19:14:52,963 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-17.jpg
+2026-06-07 19:14:54,121 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-18.jpg
+2026-06-07 19:14:54,609 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-19.jpg
+2026-06-07 19:14:55,723 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-20.jpg
+2026-06-07 19:14:57,305 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-56.jpg
+2026-06-07 19:14:57,690 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-57.jpg
+2026-06-07 19:14:59,318 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-58.jpg
+2026-06-07 19:15:00,468 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-18.jpg
+2026-06-07 19:15:00,905 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-36.jpg
+2026-06-07 19:15:03,791 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-59.jpg
+2026-06-07 19:15:05,648 [INFO]     📸 Imagen guardada para ，26.S2XL -> 26s2xl-21.jpg
+2026-06-07 19:15:07,492 [INFO]     📸 Imagen guardada para ，26.27S3XL -> 2627s3xl-37.jpg
+2026-06-07 19:15:08,416 [INFO]     📸 Imagen guardada para 26. -> 26-2.jpg
+2026-06-07 19:15:09,981 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-22.jpg
+2026-06-07 19:15:10,324 [INFO]     📸 Imagen guardada para ，26.27，S3XL -> 2627s3xl-38.jpg
+2026-06-07 19:15:11,014 [INFO]     📸 Imagen guardada para 26.27S4XL -> 2627s4xl-1.jpg
+2026-06-07 19:15:12,804 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-19.jpg
+2026-06-07 19:15:13,782 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-23.jpg
+2026-06-07 19:15:14,907 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-24.jpg
+2026-06-07 19:15:15,272 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-25.jpg
+2026-06-07 19:15:17,974 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-60.jpg
+2026-06-07 19:15:19,766 [INFO]     📸 Imagen guardada para 26S2XL -> 26s2xl-26.jpg
+2026-06-07 19:15:20,802 [INFO]     📸 Imagen guardada para 26 -> 26-3.jpg
+2026-06-07 19:15:22,432 [INFO]     📸 Imagen guardada para 26， -> 26-4.jpg
+2026-06-07 19:15:24,089 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-39.jpg
+2026-06-07 19:15:25,470 [INFO]     📸 Imagen guardada para 26. -> 26-5.jpg
+2026-06-07 19:15:27,093 [INFO]     📸 Imagen guardada para 26.27 -> 2627-1.jpg
+2026-06-07 19:15:28,064 [INFO]     📸 Imagen guardada para ，26S3XL -> 26s3xl-20.jpg
+2026-06-07 19:15:29,113 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-27.jpg
+2026-06-07 19:15:30,092 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-21.jpg
+2026-06-07 19:15:31,375 [INFO]     📸 Imagen guardada para 26-S3XL -> 26-s3xl-1.jpg
+2026-06-07 19:15:32,262 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-40.jpg
+2026-06-07 19:15:33,289 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-28.jpg
+2026-06-07 19:15:35,125 [INFO]     📸 Imagen guardada para ，26.27S2XL -> 2627s2xl-61.jpg
+2026-06-07 19:15:36,353 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-62.jpg
+2026-06-07 19:15:37,582 [INFO]     📸 Imagen guardada para 26. -> 26-6.jpg
+2026-06-07 19:15:38,512 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-63.jpg
+2026-06-07 19:15:39,667 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-64.jpg
+2026-06-07 19:15:40,571 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-29.jpg
+2026-06-07 19:15:41,605 [INFO]     📸 Imagen guardada para 26，S3XL -> 26s3xl-22.jpg
+2026-06-07 19:15:42,702 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-41.jpg
+2026-06-07 19:15:44,136 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-42.jpg
+2026-06-07 19:15:45,592 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-65.jpg
+2026-06-07 19:15:46,533 [INFO]     📸 Imagen guardada para ，26.27XS2XL -> 2627xs2xl-1.jpg
+2026-06-07 19:15:46,854 [INFO]     📸 Imagen guardada para ，26S3XL -> 26s3xl-23.jpg
+2026-06-07 19:15:48,700 [INFO]     📸 Imagen guardada para ，26S2XL -> 26s2xl-30.jpg
+2026-06-07 19:15:50,280 [INFO]     📸 Imagen guardada para ，26S2XL -> 26s2xl-31.jpg
+2026-06-07 19:15:51,264 [INFO]     📸 Imagen guardada para 26-S2XL -> 26-s2xl.jpg
+2026-06-07 19:15:52,234 [INFO]     📸 Imagen guardada para 26-S2XL -> 26-s2xl-1.jpg
+2026-06-07 19:15:53,501 [INFO]     📸 Imagen guardada para 26 -> 26-7.jpg
+2026-06-07 19:15:54,386 [INFO]     📸 Imagen guardada para 26-S3XL -> 26-s3xl-2.jpg
+2026-06-07 19:15:54,724 [INFO]     📸 Imagen guardada para 26-S2XL -> 26-s2xl-2.jpg
+2026-06-07 19:15:55,039 [INFO]     📸 Imagen guardada para ，26-S2XL -> 26-s2xl-3.jpg
+2026-06-07 19:15:55,934 [INFO]     📸 Imagen guardada para 26-S2.XL -> 26-s2xl-4.jpg
+2026-06-07 19:15:57,074 [INFO]     📸 Imagen guardada para 26，S2XL -> 26s2xl-32.jpg
+2026-06-07 19:15:58,040 [INFO]     📸 Imagen guardada para ，26.27S3XL -> 2627s3xl-43.jpg
+2026-06-07 19:15:59,003 [INFO]     📸 Imagen guardada para 26-S3XL -> 26-s3xl-3.jpg
+2026-06-07 19:15:59,922 [INFO]     📸 Imagen guardada para 26，S3XL -> 26s3xl-24.jpg
+2026-06-07 19:16:01,898 [INFO]     📸 Imagen guardada para 26-S2XL -> 26-s2xl-5.jpg
+2026-06-07 19:16:02,272 [INFO]     📸 Imagen guardada para 26-S3XL -> 26-s3xl-4.jpg
+2026-06-07 19:16:03,413 [INFO]     📸 Imagen guardada para 26-S3XL -> 26-s3xl-5.jpg
+2026-06-07 19:16:03,797 [INFO]     📸 Imagen guardada para 26-S3XL -> 26-s3xl-6.jpg
+2026-06-07 19:16:05,211 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-33.jpg
+2026-06-07 19:16:07,373 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-34.jpg
+2026-06-07 19:16:07,762 [INFO]     📸 Imagen guardada para 26.27S3XL -> 2627s3xl-44.jpg
+2026-06-07 19:16:09,357 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-25.jpg
+2026-06-07 19:16:10,239 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-66.jpg
+2026-06-07 19:16:12,345 [INFO]     📸 Imagen guardada para 26.27.S2XL -> 2627s2xl-67.jpg
+2026-06-07 19:16:12,722 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-26.jpg
+2026-06-07 19:16:13,971 [INFO]     📸 Imagen guardada para 26S3XL -> 26s3xl-27.jpg
+2026-06-07 19:16:14,861 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-28.jpg
+2026-06-07 19:16:15,130 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-35.jpg
+2026-06-07 19:16:15,424 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-36.jpg
+2026-06-07 19:16:16,245 [INFO]     📸 Imagen guardada para ，26.27S2XL -> 2627s2xl-68.jpg
+2026-06-07 19:16:16,576 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-69.jpg
+2026-06-07 19:16:17,384 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-70.jpg
+2026-06-07 19:16:17,748 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-71.jpg
+2026-06-07 19:16:18,849 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-29.jpg
+2026-06-07 19:16:19,799 [INFO]     📸 Imagen guardada para S2XL -> s2xl.jpg
+2026-06-07 19:16:20,681 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-37.jpg
+2026-06-07 19:16:21,437 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-38.jpg
+2026-06-07 19:16:21,674 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-30.jpg
+2026-06-07 19:16:22,405 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-31.jpg
+2026-06-07 19:16:22,709 [INFO]     📸 Imagen guardada para 26.27S2XL -> 2627s2xl-72.jpg
+2026-06-07 19:16:23,451 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-39.jpg
+2026-06-07 19:16:24,028 [INFO]     📸 Imagen guardada para 26，S3XL -> 26s3xl-32.jpg
+2026-06-07 19:16:24,258 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-33.jpg
+2026-06-07 19:16:24,511 [INFO]     📸 Imagen guardada para 26. -> 26-8.jpg
+2026-06-07 19:16:25,202 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-34.jpg
+2026-06-07 19:16:25,801 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-35.jpg
+2026-06-07 19:16:26,053 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-2.jpeg
+2026-06-07 19:16:26,829 [INFO]     📸 Imagen guardada para 休闲款纽卡斯 -> -35.jpg
+2026-06-07 19:16:27,217 [INFO]     📸 Imagen guardada para ， -> -36.jpg
+2026-06-07 19:16:28,001 [INFO]     📸 Imagen guardada para 休闲看罗马 -> -37.jpg
+2026-06-07 19:16:28,818 [INFO]     📸 Imagen guardada para 休闲款阿森纳 -> -38.jpg
+2026-06-07 19:16:29,620 [INFO]     📸 Imagen guardada para ， -> -39.jpg
+2026-06-07 19:16:29,966 [INFO]     📸 Imagen guardada para ， -> -40.jpg
+2026-06-07 19:16:30,375 [INFO]     📸 Imagen guardada para ， -> -41.jpg
+2026-06-07 19:16:30,634 [INFO]     📸 Imagen guardada para ， -> -42.jpg
+2026-06-07 19:16:31,562 [INFO]     📸 Imagen guardada para ， -> -43.jpg
+2026-06-07 19:16:31,572 [INFO]   creados=240 actualizados=0
+2026-06-07 19:16:31,572 [INFO] 
+Página 3/14: https://baocheng3f888.x.yupoo.com/categories?page=3
+2026-06-07 19:16:40,829 [INFO]   120 álbumes extraídos
+2026-06-07 19:16:41,171 [INFO]     📸 Imagen guardada para 。 -> -44.jpg
+2026-06-07 19:16:41,462 [INFO]     📸 Imagen guardada para ： -> -45.jpg
+2026-06-07 19:16:41,828 [INFO]     📸 Imagen guardada para 休闲款罗马 -> -46.jpg
+2026-06-07 19:16:42,116 [INFO]     📸 Imagen guardada para 休闲款阿森纳 -> -47.jpg
+2026-06-07 19:16:42,448 [INFO]     📸 Imagen guardada para ， -> -48.jpg
+2026-06-07 19:16:42,752 [INFO]     📸 Imagen guardada para ： -> -49.jpg
+2026-06-07 19:16:43,061 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-35.jpg
+2026-06-07 19:16:43,333 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-36.jpg
+2026-06-07 19:16:43,574 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-37.jpg
+2026-06-07 19:16:43,805 [INFO]     📸 Imagen guardada para 26.S2XL125 -> 26s2xl125.jpg
+2026-06-07 19:16:44,103 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-40.jpg
+2026-06-07 19:16:44,429 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-41.jpg
+2026-06-07 19:16:44,770 [INFO]     📸 Imagen guardada para 1：1S3XL -> 11s3xl.jpg
+2026-06-07 19:16:45,014 [INFO]     📸 Imagen guardada para 26.S3XL（F） -> 26s3xlf.jpg
+2026-06-07 19:16:45,328 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-42.jpg
+2026-06-07 19:16:45,579 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-38.jpg
+2026-06-07 19:16:45,878 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-43.jpg
+2026-06-07 19:16:46,186 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-39.jpg
+2026-06-07 19:16:46,447 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-40.jpg
+2026-06-07 19:16:46,767 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-44.jpg
+2026-06-07 19:16:47,056 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-45.jpg
+2026-06-07 19:16:47,350 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-46.jpg
+2026-06-07 19:16:47,683 [INFO]     📸 Imagen guardada para 1：1S3XL -> 11s3xl-1.jpg
+2026-06-07 19:16:47,928 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-41.jpg
+2026-06-07 19:16:48,199 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-42.jpg
+2026-06-07 19:16:48,507 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-47.jpg
+2026-06-07 19:16:48,775 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-43.jpg
+2026-06-07 19:16:49,137 [INFO]     📸 Imagen guardada para 26.S2XLAC -> 26s2xlac.jpg
+2026-06-07 19:16:49,372 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-48.jpg
+2026-06-07 19:16:49,671 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-49.jpg
+2026-06-07 19:16:49,965 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-50.jpg
+2026-06-07 19:16:50,261 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-51.jpg
+2026-06-07 19:16:50,468 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-52.jpg
+2026-06-07 19:16:50,686 [INFO]     📸 Imagen guardada para 1：1S3XL -> 11s3xl-2.jpg
+2026-06-07 19:16:50,993 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-44.jpg
+2026-06-07 19:16:51,701 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-53.jpg
+2026-06-07 19:16:52,180 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-54.jpg
+2026-06-07 19:16:52,556 [INFO]     📸 Imagen guardada para 26.S2XL -> 26s2xl-55.jpg
+2026-06-07 19:16:52,790 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-45.jpg
+2026-06-07 19:16:53,035 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-46.jpg
+2026-06-07 19:16:53,335 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-47.jpg
+2026-06-07 19:16:53,632 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-48.jpg
+2026-06-07 19:16:53,957 [INFO]     📸 Imagen guardada para 。26 -> 26-9.jpg
+2026-06-07 19:16:54,217 [INFO]     📸 Imagen guardada para ，26 -> 26-10.jpg
+2026-06-07 19:16:54,530 [INFO]     📸 Imagen guardada para ， -> -50.jpg
+2026-06-07 19:16:54,820 [INFO]     📸 Imagen guardada para ， -> -51.jpg
+2026-06-07 19:16:55,130 [INFO]     📸 Imagen guardada para ， -> -52.jpg
+2026-06-07 19:16:55,426 [INFO]     📸 Imagen guardada para 26.S3XL（F） -> 26s3xlf-1.jpg
+2026-06-07 19:16:55,785 [INFO]     📸 Imagen guardada para ， -> -53.jpg
+2026-06-07 19:16:56,085 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-49.jpg
+2026-06-07 19:16:56,334 [INFO]     📸 Imagen guardada para 。26AC -> 26ac.jpg
+2026-06-07 19:16:56,597 [INFO]     📸 Imagen guardada para ， -> -54.jpg
+2026-06-07 19:16:56,838 [INFO]     📸 Imagen guardada para ，26 -> 26-11.jpg
+2026-06-07 19:16:57,099 [INFO]     📸 Imagen guardada para ， -> -55.jpg
+2026-06-07 19:16:57,392 [INFO]     📸 Imagen guardada para 26.S3XL -> 26s3xl-50.jpg
+2026-06-07 19:16:57,687 [INFO]     📸 Imagen guardada para 。 -> -56.jpg
+2026-06-07 19:16:57,966 [INFO]     📸 Imagen guardada para ， -> -57.jpg
+2026-06-07 19:16:58,289 [INFO]     📸 Imagen guardada para ， -> -58.jpg
+2026-06-07 19:16:58,526 [INFO]     📸 Imagen guardada para ：S-3XL -> s-3xl-3.jpg
+2026-06-07 19:16:58,813 [INFO]     📸 Imagen guardada para 曼联复古款 -> -59.jpg
+2026-06-07 19:16:59,144 [INFO]     📸 Imagen guardada para 曼联休闲款 -> -60.jpg
+2026-06-07 19:16:59,434 [INFO]     📸 Imagen guardada para ， -> -61.jpg
+2026-06-07 19:16:59,692 [INFO]     📸 Imagen guardada para ， -> -62.jpg
+2026-06-07 19:17:00,001 [INFO]     📸 Imagen guardada para ， -> -63.jpg
+2026-06-07 19:17:00,321 [INFO]     📸 Imagen guardada para ， -> -64.jpg
+2026-06-07 19:17:00,674 [INFO]     📸 Imagen guardada para ， -> -65.jpg
+2026-06-07 19:17:00,942 [INFO]     📸 Imagen guardada para ， -> -66.jpg
+2026-06-07 19:17:01,254 [INFO]     📸 Imagen guardada para ， -> -67.jpg
+2026-06-07 19:17:01,545 [INFO]     📸 Imagen guardada para ， -> -68.jpg
+2026-06-07 19:17:01,829 [INFO]     📸 Imagen guardada para ，26-27AC -> 26-27ac.jpg
+2026-06-07 19:17:02,086 [INFO]     📸 Imagen guardada para ， -> -69.jpg
+2026-06-07 19:17:02,328 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-4.jpg
+2026-06-07 19:17:02,599 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-5.jpg
+2026-06-07 19:17:02,871 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-6.jpg
+2026-06-07 19:17:03,163 [INFO]     📸 Imagen guardada para ， -> -70.jpg
+2026-06-07 19:17:03,460 [INFO]     📸 Imagen guardada para ， -> -71.jpg
+2026-06-07 19:17:03,742 [INFO]     📸 Imagen guardada para ， -> -72.jpg
+2026-06-07 19:17:03,985 [INFO]     📸 Imagen guardada para ， -> -73.jpg
+2026-06-07 19:17:04,256 [INFO]     📸 Imagen guardada para 球员舒格兰特别版 -> -74.jpg
+2026-06-07 19:17:04,541 [INFO]     📸 Imagen guardada para 球员意大利特别版 -> -75.jpg
+2026-06-07 19:17:04,831 [INFO]     📸 Imagen guardada para 球员阿根廷特别版 -> -76.jpg
+2026-06-07 19:17:05,082 [INFO]     📸 Imagen guardada para 阿尔及利亚休闲复古 -> -77.jpg
+2026-06-07 19:17:05,342 [INFO]     📸 Imagen guardada para 复古墨西哥休闲款 -> -78.jpg
+2026-06-07 19:17:05,646 [INFO]     📸 Imagen guardada para ， -> -79.jpg
+2026-06-07 19:17:05,971 [INFO]     📸 Imagen guardada para 休闲复古利雅得 -> -80.jpg
+2026-06-07 19:17:06,243 [INFO]     📸 Imagen guardada para 刚果休闲复古 -> -81.jpg
+2026-06-07 19:17:06,522 [INFO]     📸 Imagen guardada para 休闲复古西班牙 -> -82.jpg
+2026-06-07 19:17:06,806 [INFO]     📸 Imagen guardada para 球员皇马特别版 -> -83.jpg
+2026-06-07 19:17:07,134 [INFO]     📸 Imagen guardada para 球员皇马特别版 -> -84.jpg
+2026-06-07 19:17:07,384 [INFO]     📸 Imagen guardada para ， -> -85.jpg
+2026-06-07 19:17:07,680 [INFO]     📸 Imagen guardada para 球员哥伦比亚客 -> -86.jpg
+2026-06-07 19:17:07,974 [INFO]     📸 Imagen guardada para 哥伦比亚短裤 -> -87.jpg
+2026-06-07 19:17:08,316 [INFO]     📸 Imagen guardada para ， -> -88.jpg
+2026-06-07 19:17:08,680 [INFO]     📸 Imagen guardada para ， -> -89.jpg
+2026-06-07 19:17:09,036 [INFO]     📸 Imagen guardada para ， -> -90.jpg
+2026-06-07 19:17:09,330 [INFO]     📸 Imagen guardada para ， -> -91.jpg
+2026-06-07 19:17:09,637 [INFO]     📸 Imagen guardada para ， -> -92.jpg
+2026-06-07 19:17:09,920 [INFO]     📸 Imagen guardada para S=3XL -> s3xl.jpg
+2026-06-07 19:17:10,203 [INFO]     📸 Imagen guardada para 蓝十字白 -> -93.jpg
+2026-06-07 19:17:10,502 [INFO]     📸 Imagen guardada para 蓝十字蓝 -> -94.jpg
+2026-06-07 19:17:10,792 [INFO]     📸 Imagen guardada para 比利时特别版 -> -95.jpg
+2026-06-07 19:17:11,092 [INFO]     📸 Imagen guardada para 巴西特别版 -> -96.jpg
+2026-06-07 19:17:11,413 [INFO]     📸 Imagen guardada para 25-262 -> 25-262.jpg
+2026-06-07 19:17:11,730 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-36.jpg
+2026-06-07 19:17:12,034 [INFO]     📸 Imagen guardada para 哥伦比亚复古休闲款 -> -97.jpg
+2026-06-07 19:17:12,307 [INFO]     📸 Imagen guardada para 哥伦比亚复古休闲款 -> -98.jpg
+2026-06-07 19:17:12,583 [INFO]     📸 Imagen guardada para 塞内加尔复古休闲款 -> -99.jpg
+2026-06-07 19:17:12,936 [INFO]     📸 Imagen guardada para 阿根延复古休闲款 -> -100.jpg
+2026-06-07 19:17:13,255 [INFO]     📸 Imagen guardada para 利物浦复古休闲款 -> -101.jpg
+2026-06-07 19:17:13,573 [INFO]     📸 Imagen guardada para 哥伦比亚复古休闲款 -> -102.jpg
+2026-06-07 19:17:13,921 [INFO]     📸 Imagen guardada para 纽卡斯复古休闲款 -> -103.jpg
+2026-06-07 19:17:14,242 [INFO]     📸 Imagen guardada para 科特迪瓦复古休闲款 -> -104.jpg
+2026-06-07 19:17:14,532 [INFO]     📸 Imagen guardada para 日本复古休闲款 -> -105.jpg
+2026-06-07 19:17:14,808 [INFO]     📸 Imagen guardada para 墨西哥复古休闲款 -> -106.jpg
+2026-06-07 19:17:15,138 [INFO]     📸 Imagen guardada para 比利时复古休闲款 -> -107.jpg
+2026-06-07 19:17:15,420 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-37.jpg
+2026-06-07 19:17:15,664 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-38.jpg
+2026-06-07 19:17:15,945 [INFO]     📸 Imagen guardada para ， -> -108.jpg
+2026-06-07 19:17:16,248 [INFO]     📸 Imagen guardada para ， -> -109.jpg
+2026-06-07 19:17:16,508 [INFO]     📸 Imagen guardada para ， -> -110.jpg
+2026-06-07 19:17:16,521 [INFO]   creados=360 actualizados=0
+2026-06-07 19:17:16,521 [INFO] 
+Página 4/14: https://baocheng3f888.x.yupoo.com/categories?page=4
+2026-06-07 19:17:26,623 [INFO]   120 álbumes extraídos
+2026-06-07 19:17:26,997 [INFO]     📸 Imagen guardada para ， -> -111.jpg
+2026-06-07 19:17:27,308 [INFO]     📸 Imagen guardada para 26 -> 26-12.jpg
+2026-06-07 19:17:27,628 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-7.jpg
+2026-06-07 19:17:27,919 [INFO]     📸 Imagen guardada para 球员英格兰特别版 -> -112.jpg
+2026-06-07 19:17:28,198 [INFO]     📸 Imagen guardada para ： -> -113.jpg
+2026-06-07 19:17:28,472 [INFO]     📸 Imagen guardada para ： -> -114.jpg
+2026-06-07 19:17:28,769 [INFO]     📸 Imagen guardada para ： -> -115.jpg
+2026-06-07 19:17:29,047 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-8.jpg
+2026-06-07 19:17:29,378 [INFO]     📸 Imagen guardada para ： -> -116.jpg
+2026-06-07 19:17:29,687 [INFO]     📸 Imagen guardada para ： -> -117.jpg
+2026-06-07 19:17:29,963 [INFO]     📸 Imagen guardada para ： -> -118.jpg
+2026-06-07 19:17:30,372 [INFO]     📸 Imagen guardada para ： -> -119.jpg
+2026-06-07 19:17:30,696 [INFO]     📸 Imagen guardada para ： -> -120.jpg
+2026-06-07 19:17:30,933 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-9.jpg
+2026-06-07 19:17:31,207 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-10.jpg
+2026-06-07 19:17:31,491 [INFO]     📸 Imagen guardada para ： -> -121.jpg
+2026-06-07 19:17:31,787 [INFO]     📸 Imagen guardada para ： -> -122.jpg
+2026-06-07 19:17:32,066 [INFO]     📸 Imagen guardada para ：26 -> 26-13.jpg
+2026-06-07 19:17:32,368 [INFO]     📸 Imagen guardada para ： -> -123.jpg
+2026-06-07 19:17:32,660 [INFO]     📸 Imagen guardada para ： -> -124.jpg
+2026-06-07 19:17:32,961 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-11.jpg
+2026-06-07 19:17:33,237 [INFO]     📸 Imagen guardada para 26 -> 26-14.jpg
+2026-06-07 19:17:33,501 [INFO]     📸 Imagen guardada para 球员马赛特别版 -> -125.jpg
+2026-06-07 19:17:33,769 [INFO]     📸 Imagen guardada para ： -> -126.jpg
+2026-06-07 19:17:34,173 [INFO]     📸 Imagen guardada para ：26 -> 26-15.jpg
+2026-06-07 19:17:34,443 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-39.jpg
+2026-06-07 19:17:34,742 [INFO]     📸 Imagen guardada para ： -> -127.jpeg
+2026-06-07 19:17:35,026 [INFO]     📸 Imagen guardada para ： -> -128.jpeg
+2026-06-07 19:17:35,322 [INFO]     📸 Imagen guardada para ： -> -129.jpeg
+2026-06-07 19:17:35,609 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-12.jpg
+2026-06-07 19:17:35,861 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-13.jpg
+2026-06-07 19:17:36,127 [INFO]     📸 Imagen guardada para S=3XL -> s3xl-1.jpg
+2026-06-07 19:17:36,392 [INFO]     📸 Imagen guardada para S=3XL -> s3xl-2.jpg
+2026-06-07 19:17:36,663 [INFO]     📸 Imagen guardada para 26 -> 26-16.jpg
+2026-06-07 19:17:36,919 [INFO]     📸 Imagen guardada para ，26 -> 26-17.jpg
+2026-06-07 19:17:37,218 [INFO]     📸 Imagen guardada para ， -> -130.jpg
+2026-06-07 19:17:37,556 [INFO]     📸 Imagen guardada para ， -> -131.jpg
+2026-06-07 19:17:37,790 [INFO]     📸 Imagen guardada para 26 -> 26-18.jpg
+2026-06-07 19:17:38,078 [INFO]     📸 Imagen guardada para 球员日本守门员 -> -132.jpg
+2026-06-07 19:17:38,360 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-14.jpg
+2026-06-07 19:17:38,717 [INFO]     📸 Imagen guardada para 球员纳斯尔 -> -133.jpg
+2026-06-07 19:17:39,013 [INFO]     📸 Imagen guardada para ， -> -134.jpg
+2026-06-07 19:17:39,307 [INFO]     📸 Imagen guardada para 女款哥伦比亚 -> -135.jpg
+2026-06-07 19:17:39,641 [INFO]     📸 Imagen guardada para ， -> -136.jpg
+2026-06-07 19:17:39,955 [INFO]     📸 Imagen guardada para 。 -> -137.jpg
+2026-06-07 19:17:40,303 [INFO]     📸 Imagen guardada para ， -> -138.jpg
+2026-06-07 19:17:40,603 [INFO]     📸 Imagen guardada para 女款西班牙主 -> -139.jpg
+2026-06-07 19:17:40,888 [INFO]     📸 Imagen guardada para 女款阿根廷主 -> -140.jpg
+2026-06-07 19:17:41,204 [INFO]     📸 Imagen guardada para 女款墨西哥主 -> -141.jpg
+2026-06-07 19:17:41,547 [INFO]     📸 Imagen guardada para 女款德国主 -> -142.jpg
+2026-06-07 19:17:41,859 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-15.jpg
+2026-06-07 19:17:42,163 [INFO]     📸 Imagen guardada para ， -> -143.jpg
+2026-06-07 19:17:42,478 [INFO]     📸 Imagen guardada para ， -> -144.jpg
+2026-06-07 19:17:42,756 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-16.jpg
+2026-06-07 19:17:43,044 [INFO]     📸 Imagen guardada para 。 -> -145.jpg
+2026-06-07 19:17:44,038 [INFO]     📸 Imagen guardada para ， -> -146.jpg
+2026-06-07 19:17:44,335 [INFO]     📸 Imagen guardada para ， -> -147.jpg
+2026-06-07 19:17:44,646 [INFO]     📸 Imagen guardada para ， -> -148.jpg
+2026-06-07 19:17:44,976 [INFO]     📸 Imagen guardada para : -> -149.jpg
+2026-06-07 19:17:45,246 [INFO]     📸 Imagen guardada para :26 -> 26-19.jpg
+2026-06-07 19:17:45,479 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-17.jpg
+2026-06-07 19:17:45,849 [INFO]     📸 Imagen guardada para : -> -150.jpg
+2026-06-07 19:17:46,167 [INFO]     📸 Imagen guardada para : -> -151.jpg
+2026-06-07 19:17:46,459 [INFO]     📸 Imagen guardada para : -> -152.jpg
+2026-06-07 19:17:46,839 [INFO]     📸 Imagen guardada para : -> -153.jpg
+2026-06-07 19:17:47,129 [INFO]     📸 Imagen guardada para : -> -154.jpg
+2026-06-07 19:17:47,432 [INFO]     📸 Imagen guardada para : -> -155.jpg
+2026-06-07 19:17:47,719 [INFO]     📸 Imagen guardada para : -> -156.jpg
+2026-06-07 19:17:47,991 [INFO]     📸 Imagen guardada para : -> -157.jpg
+2026-06-07 19:17:48,272 [INFO]     📸 Imagen guardada para : -> -158.jpg
+2026-06-07 19:17:48,546 [INFO]     📸 Imagen guardada para XS-3XL -> xs-3xl.jpg
+2026-06-07 19:17:48,828 [INFO]     📸 Imagen guardada para : -> -159.jpg
+2026-06-07 19:17:49,116 [INFO]     📸 Imagen guardada para : -> -160.jpg
+2026-06-07 19:17:49,447 [INFO]     📸 Imagen guardada para : -> -161.jpg
+2026-06-07 19:17:49,842 [INFO]     📸 Imagen guardada para : -> -162.jpg
+2026-06-07 19:17:50,259 [INFO]     📸 Imagen guardada para : -> -163.jpg
+2026-06-07 19:17:50,637 [INFO]     📸 Imagen guardada para : -> -164.jpg
+2026-06-07 19:17:50,899 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-18.jpg
+2026-06-07 19:17:51,131 [INFO]     📸 Imagen guardada para S-3XL -> s-3xl-19.jpg
+2026-06-07 19:17:51,447 [INFO]     📸 Imagen guardada para : -> -165.jpg
+2026-06-07 19:17:51,740 [INFO]     📸 Imagen guardada para XS-3XL26 -> xs-3xl26.jpg
+2026-06-07 19:17:51,991 [INFO]     📸 Imagen guardada para S-3XL26 -> s-3xl26.jpg
+2026-06-07 19:17:52,249 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-1.jpg
+2026-06-07 19:17:52,516 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-20.jpg
+2026-06-07 19:17:52,751 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-2.jpg
+2026-06-07 19:17:52,985 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-40.jpg
+2026-06-07 19:17:53,235 [INFO]     📸 Imagen guardada para 2026/27 -> 202627-41.jpg
+2026-06-07 19:17:53,604 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-21.jpg
+2026-06-07 19:17:54,258 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-22.jpg
+2026-06-07 19:17:54,595 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-23.jpg
+2026-06-07 19:17:54,912 [INFO]     📸 Imagen guardada para : -> -166.jpg
+2026-06-07 19:17:55,156 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-24.jpg
+2026-06-07 19:17:55,381 [INFO]     📸 Imagen guardada para S-3XL26: -> s-3xl26-3.jpg
+2026-06-07 19:17:55,670 [INFO]     📸 Imagen guardada para : -> -167.jpg
+2026-06-07 19:17:55,927 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-25.jpg
+2026-06-07 19:17:56,190 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-26.jpg
+2026-06-07 19:17:56,475 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-27.jpg
+2026-06-07 19:17:56,760 [INFO]     📸 Imagen guardada para : -> -168.jpg
+2026-06-07 19:17:57,072 [INFO]     📸 Imagen guardada para : -> -169.jpg
+2026-06-07 19:17:57,389 [INFO]     📸 Imagen guardada para : -> -170.jpg
+2026-06-07 19:17:57,656 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-28.jpg
+2026-06-07 19:17:57,906 [INFO]     📸 Imagen guardada para :S-3XL -> s-3xl-29.jpg
+2026-06-07 19:17:58,157 [INFO]     📸 Imagen guardada para :S-3XL -> s-3xl-30.jpg
+2026-06-07 19:17:58,443 [INFO]     📸 Imagen guardada para :S-3XL -> s-3xl-31.jpg
+2026-06-07 19:17:58,702 [INFO]     📸 Imagen guardada para :S-3XL -> s-3xl-32.jpg
+2026-06-07 19:17:58,946 [INFO]     📸 Imagen guardada para :S-3XL26 -> s-3xl26-4.jpg
+2026-06-07 19:17:59,164 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-5.jpg
+2026-06-07 19:17:59,393 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-6.jpg
+2026-06-07 19:17:59,694 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-7.jpg
+2026-06-07 19:18:00,016 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-33.jpg
+2026-06-07 19:18:00,268 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-8.jpg
+2026-06-07 19:18:00,526 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-9.jpg
+2026-06-07 19:18:00,790 [INFO]     📸 Imagen guardada para :26 -> 26-20.jpg
+2026-06-07 19:18:01,116 [INFO]     📸 Imagen guardada para : -> -171.jpg
+2026-06-07 19:18:01,396 [INFO]     📸 Imagen guardada para XS-3XL:26 -> xs-3xl26-1.jpg
+2026-06-07 19:18:01,688 [INFO]     📸 Imagen guardada para 利兹联休闲款 -> -172.jpg
+2026-06-07 19:18:01,978 [INFO]     📸 Imagen guardada para : -> -173.jpg
+2026-06-07 19:18:02,306 [INFO]     📸 Imagen guardada para :S-3XL26 -> s-3xl26-10.jpg
+2026-06-07 19:18:02,538 [INFO]     📸 Imagen guardada para :S-3XL26 -> s-3xl26-11.jpg
+2026-06-07 19:18:02,838 [INFO]     📸 Imagen guardada para :S-3XL -> s-3xl-34.jpg
+2026-06-07 19:18:02,848 [INFO]   creados=480 actualizados=0
+2026-06-07 19:18:02,848 [INFO] 
+Página 5/14: https://baocheng3f888.x.yupoo.com/categories?page=5
+2026-06-07 19:18:12,367 [INFO]   120 álbumes extraídos
+2026-06-07 19:18:12,676 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-12.jpg
+2026-06-07 19:18:12,999 [INFO]     📸 Imagen guardada para : -> -174.jpg
+2026-06-07 19:18:13,286 [INFO]     📸 Imagen guardada para :26 -> 26-21.jpg
+2026-06-07 19:18:13,543 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-13.jpg
+2026-06-07 19:18:13,856 [INFO]     📸 Imagen guardada para :S-3XL26 -> s-3xl26-14.jpg
+2026-06-07 19:18:14,150 [INFO]     📸 Imagen guardada para 拜仁短裤 -> -175.jpg
+2026-06-07 19:18:14,452 [INFO]     📸 Imagen guardada para 阿贾克斯短裤 -> -176.jpg
+2026-06-07 19:18:14,744 [INFO]     📸 Imagen guardada para 阿森纳短裤 -> -177.jpg
+2026-06-07 19:18:15,045 [INFO]     📸 Imagen guardada para :26 -> 26-22.jpg
+2026-06-07 19:18:15,299 [INFO]     📸 Imagen guardada para :26 -> 26-23.jpg
+2026-06-07 19:18:15,596 [INFO]     📸 Imagen guardada para : -> -178.jpg
+2026-06-07 19:18:15,914 [INFO]     📸 Imagen guardada para 休闲款罗马 -> -179.jpg
+2026-06-07 19:18:16,202 [INFO]     📸 Imagen guardada para :26 -> 26-24.jpg
+2026-06-07 19:18:16,496 [INFO]     📸 Imagen guardada para 美洲休闲款 -> -180.jpg
+2026-06-07 19:18:16,821 [INFO]     📸 Imagen guardada para : -> -181.jpg
+2026-06-07 19:18:17,144 [INFO]     📸 Imagen guardada para 休闲款曼联 -> -182.jpg
+2026-06-07 19:18:17,453 [INFO]     📸 Imagen guardada para 休闲款皇马 -> -183.jpg
+2026-06-07 19:18:17,707 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-15.jpg
+2026-06-07 19:18:17,967 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-16.jpg
+2026-06-07 19:18:18,286 [INFO]     📸 Imagen guardada para 凯尔特人短裤 -> -184.jpg
+2026-06-07 19:18:18,585 [INFO]     📸 Imagen guardada para 切尔西短裤 -> -185.jpg
+2026-06-07 19:18:18,916 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-17.jpg
+2026-06-07 19:18:19,160 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-61.jpg
+2026-06-07 19:18:19,466 [INFO]     📸 Imagen guardada para : -> -186.jpg
+2026-06-07 19:18:19,764 [INFO]     📸 Imagen guardada para 纽卡斯休闲款 -> -187.jpg
+2026-06-07 19:18:20,050 [INFO]     📸 Imagen guardada para : -> -188.jpg
+2026-06-07 19:18:20,383 [INFO]     📸 Imagen guardada para : -> -189.jpg
+2026-06-07 19:18:20,691 [INFO]     📸 Imagen guardada para : -> -190.jpg
+2026-06-07 19:18:21,044 [INFO]     📸 Imagen guardada para : -> -191.jpg
+2026-06-07 19:18:21,363 [INFO]     📸 Imagen guardada para : -> -192.jpg
+2026-06-07 19:18:22,047 [INFO]     📸 Imagen guardada para 沙特客 -> -193.jpg
+2026-06-07 19:18:22,370 [INFO]     📸 Imagen guardada para 沙特主 -> -194.jpg
+2026-06-07 19:18:22,609 [INFO]     📸 Imagen guardada para 休闲利物浦短裤 -> -195.jpg
+2026-06-07 19:18:22,900 [INFO]     📸 Imagen guardada para 休闲皇马短裤 -> -196.jpg
+2026-06-07 19:18:23,269 [INFO]     📸 Imagen guardada para 休闲利物浦短裤 -> -197.jpg
+2026-06-07 19:18:23,598 [INFO]     📸 Imagen guardada para 休闲利物浦短裤 -> -198.jpg
+2026-06-07 19:18:23,906 [INFO]     📸 Imagen guardada para 休闲曼联短裤 -> -199.jpg
+2026-06-07 19:18:24,199 [INFO]     📸 Imagen guardada para 休闲切尔西短裤 -> -200.jpg
+2026-06-07 19:18:24,492 [INFO]     📸 Imagen guardada para 休闲阿森纳短裤 -> -201.jpg
+2026-06-07 19:18:24,967 [INFO]     📸 Imagen guardada para 休闲曼联短裤 -> -202.jpg
+2026-06-07 19:18:25,521 [INFO]     📸 Imagen guardada para : -> -203.jpg
+2026-06-07 19:18:26,224 [INFO]     📸 Imagen guardada para : -> -204.jpg
+2026-06-07 19:18:26,830 [INFO]     📸 Imagen guardada para : -> -205.jpg
+2026-06-07 19:18:27,195 [INFO]     📸 Imagen guardada para : -> -206.jpg
+2026-06-07 19:18:27,512 [INFO]     📸 Imagen guardada para : -> -207.jpg
+2026-06-07 19:18:27,885 [INFO]     📸 Imagen guardada para : -> -208.jpg
+2026-06-07 19:18:28,194 [INFO]     📸 Imagen guardada para : -> -209.jpg
+2026-06-07 19:18:28,438 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-18.jpg
+2026-06-07 19:18:28,714 [INFO]     📸 Imagen guardada para :S-3XL:26 -> s-3xl26-19.jpg
+2026-06-07 19:18:29,016 [INFO]     📸 Imagen guardada para : -> -210.jpg
+2026-06-07 19:18:29,260 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-62.jpg
+2026-06-07 19:18:29,504 [INFO]     📸 Imagen guardada para :26 -> 26-25.jpg
+2026-06-07 19:18:29,785 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-63.jpg
+2026-06-07 19:18:30,111 [INFO]     📸 Imagen guardada para : -> -211.jpg
+2026-06-07 19:18:30,455 [INFO]     📸 Imagen guardada para : -> -212.jpg
+2026-06-07 19:18:30,787 [INFO]     📸 Imagen guardada para : -> -213.jpg
+2026-06-07 19:18:31,135 [INFO]     📸 Imagen guardada para : -> -214.jpg
+2026-06-07 19:18:31,434 [INFO]     📸 Imagen guardada para S-3XL:26 -> s-3xl26-20.jpg
+2026-06-07 19:18:31,683 [INFO]     📸 Imagen guardada para S-3XL: -> s-3xl-35.jpg
+2026-06-07 19:18:32,012 [INFO]     📸 Imagen guardada para : -> -215.jpg
+2026-06-07 19:18:32,364 [INFO]     📸 Imagen guardada para : -> -216.jpg
+2026-06-07 19:18:32,958 [INFO]     📸 Imagen guardada para :S-3XL -> s-3xl-36.jpg
+2026-06-07 19:18:33,293 [INFO]     📸 Imagen guardada para : -> -217.jpg
+2026-06-07 19:18:33,635 [INFO]     📸 Imagen guardada para : -> -218.jpg
+2026-06-07 19:18:33,956 [INFO]     📸 Imagen guardada para : -> -219.jpg
+2026-06-07 19:18:34,291 [INFO]     📸 Imagen guardada para : -> -220.jpg
+2026-06-07 19:18:34,599 [INFO]     📸 Imagen guardada para : -> -221.jpg
+2026-06-07 19:18:34,993 [INFO]     📸 Imagen guardada para : -> -222.jpg
+2026-06-07 19:18:35,324 [INFO]     📸 Imagen guardada para : -> -223.jpg
+2026-06-07 19:18:35,771 [INFO]     📸 Imagen guardada para :26 -> 26-26.jpg
+2026-06-07 19:18:36,088 [INFO]     📸 Imagen guardada para :26 -> 26-27.jpg
+2026-06-07 19:18:36,423 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-64.jpg
+2026-06-07 19:18:36,750 [INFO]     📸 Imagen guardada para : -> -224.jpg
+2026-06-07 19:18:37,051 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-65.jpg
+2026-06-07 19:18:37,392 [INFO]     📸 Imagen guardada para : -> -225.jpg
+2026-06-07 19:18:37,664 [INFO]     📸 Imagen guardada para :S-3XL26 -> s-3xl26-21.jpg
+2026-06-07 19:18:37,990 [INFO]     📸 Imagen guardada para : -> -226.jpg
+2026-06-07 19:18:38,397 [INFO]     📸 Imagen guardada para : -> -227.jpg
+2026-06-07 19:18:38,761 [INFO]     📸 Imagen guardada para : -> -228.jpg
+2026-06-07 19:18:39,002 [INFO]     📸 Imagen guardada para : -> -229.jpg
+2026-06-07 19:18:39,321 [INFO]     📸 Imagen guardada para : -> -230.jpg
+2026-06-07 19:18:39,629 [INFO]     📸 Imagen guardada para : -> -231.jpg
+2026-06-07 19:18:39,905 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-66.jpg
+2026-06-07 19:18:40,184 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-67.jpg
+2026-06-07 19:18:40,556 [INFO]     📸 Imagen guardada para : -> -232.jpg
+2026-06-07 19:18:40,916 [INFO]     📸 Imagen guardada para : -> -233.jpg
+2026-06-07 19:18:41,240 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-68.jpg
+2026-06-07 19:18:41,572 [INFO]     📸 Imagen guardada para : -> -234.jpg
+2026-06-07 19:18:41,904 [INFO]     📸 Imagen guardada para : -> -235.jpg
+2026-06-07 19:18:42,284 [INFO]     📸 Imagen guardada para : -> -236.jpg
+2026-06-07 19:18:42,538 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-69.jpg
+2026-06-07 19:18:42,782 [INFO]     📸 Imagen guardada para :26 -> 26-28.jpg
+2026-06-07 19:18:43,025 [INFO]     📸 Imagen guardada para :26 -> 26-29.jpg
+2026-06-07 19:18:43,388 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-70.jpg
+2026-06-07 19:18:43,687 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-71.jpg
+2026-06-07 19:18:43,999 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-72.jpg
+2026-06-07 19:18:44,239 [INFO]     📸 Imagen guardada para :26 -> 26-30.jpg
+2026-06-07 19:18:44,550 [INFO]     📸 Imagen guardada para : -> -237.jpg
+2026-06-07 19:18:44,955 [INFO]     📸 Imagen guardada para : -> -238.jpg
+2026-06-07 19:18:45,163 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-73.jpg
+2026-06-07 19:18:45,558 [INFO]     📸 Imagen guardada para : -> -239.jpg
+2026-06-07 19:18:45,901 [INFO]     📸 Imagen guardada para : -> -240.jpg
+2026-06-07 19:18:46,219 [INFO]     📸 Imagen guardada para : -> -241.jpg
+2026-06-07 19:18:46,564 [INFO]     📸 Imagen guardada para : -> -242.jpg
+2026-06-07 19:18:46,896 [INFO]     📸 Imagen guardada para : -> -243.jpg
+2026-06-07 19:18:47,203 [INFO]     📸 Imagen guardada para : -> -244.jpg
+2026-06-07 19:18:47,628 [INFO]     📸 Imagen guardada para : -> -245.jpg
+2026-06-07 19:18:47,941 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-74.jpg
+2026-06-07 19:18:48,301 [INFO]     📸 Imagen guardada para : -> -246.jpg
+2026-06-07 19:18:48,710 [INFO]     📸 Imagen guardada para : -> -247.jpg
+2026-06-07 19:18:48,990 [INFO]     📸 Imagen guardada para :26 -> 26-31.jpg
+2026-06-07 19:18:49,269 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-75.jpg
+2026-06-07 19:18:49,622 [INFO]     📸 Imagen guardada para : -> -248.jpg
+2026-06-07 19:18:49,954 [INFO]     📸 Imagen guardada para : -> -249.jpg
+2026-06-07 19:18:50,312 [INFO]     📸 Imagen guardada para : -> -250.jpg
+2026-06-07 19:18:50,588 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-76.jpg
+2026-06-07 19:18:50,914 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-77.jpg
+2026-06-07 19:18:51,229 [INFO]     📸 Imagen guardada para : -> -251.jpg
+2026-06-07 19:18:51,591 [INFO]     📸 Imagen guardada para : -> -252.jpg
+2026-06-07 19:18:51,921 [INFO]     📸 Imagen guardada para : -> -253.jpg
+2026-06-07 19:18:51,931 [INFO]   creados=600 actualizados=0
+2026-06-07 19:18:51,931 [INFO] 
+Página 6/14: https://baocheng3f888.x.yupoo.com/categories?page=6
+2026-06-07 19:19:01,567 [INFO]   120 álbumes extraídos
+2026-06-07 19:19:01,867 [INFO]     📸 Imagen guardada para :26 -> 26-32.jpg
+2026-06-07 19:19:02,193 [INFO]     📸 Imagen guardada para : -> -254.jpg
+2026-06-07 19:19:02,531 [INFO]     📸 Imagen guardada para : -> -255.jpg
+2026-06-07 19:19:02,855 [INFO]     📸 Imagen guardada para : -> -256.jpg
+2026-06-07 19:19:03,185 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-78.jpg
+2026-06-07 19:19:03,506 [INFO]     📸 Imagen guardada para : -> -257.jpg
+2026-06-07 19:19:03,767 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-79.jpg
+2026-06-07 19:19:04,125 [INFO]     📸 Imagen guardada para : -> -258.jpg
+2026-06-07 19:19:04,446 [INFO]     📸 Imagen guardada para : -> -259.jpg
+2026-06-07 19:19:04,764 [INFO]     📸 Imagen guardada para : -> -260.jpg
+2026-06-07 19:19:05,110 [INFO]     📸 Imagen guardada para : -> -261.jpg
+2026-06-07 19:19:05,495 [INFO]     📸 Imagen guardada para : -> -262.jpg
+2026-06-07 19:19:05,849 [INFO]     📸 Imagen guardada para : -> -263.jpg
+2026-06-07 19:19:06,130 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-80.jpg
+2026-06-07 19:19:06,442 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-81.jpg
+2026-06-07 19:19:06,749 [INFO]     📸 Imagen guardada para :26 -> 26-33.jpg
+2026-06-07 19:19:07,069 [INFO]     📸 Imagen guardada para : -> -264.jpg
+2026-06-07 19:19:07,457 [INFO]     📸 Imagen guardada para : -> -265.jpg
+2026-06-07 19:19:07,735 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-82.jpg
+2026-06-07 19:19:08,054 [INFO]     📸 Imagen guardada para : -> -266.jpg
+2026-06-07 19:19:08,396 [INFO]     📸 Imagen guardada para : -> -267.jpg
+2026-06-07 19:19:08,717 [INFO]     📸 Imagen guardada para : -> -268.jpg
+2026-06-07 19:19:09,087 [INFO]     📸 Imagen guardada para : -> -269.jpg
+2026-06-07 19:19:09,343 [INFO]     📸 Imagen guardada para :AC -> ac-1.jpg
+2026-06-07 19:19:09,705 [INFO]     📸 Imagen guardada para : -> -270.jpg
+2026-06-07 19:19:10,028 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-83.jpg
+2026-06-07 19:19:10,306 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-84.jpg
+2026-06-07 19:19:10,560 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-85.jpg
+2026-06-07 19:19:10,881 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-86.jpg
+2026-06-07 19:19:11,233 [INFO]     📸 Imagen guardada para : -> -271.jpg
+2026-06-07 19:19:11,498 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-87.jpg
+2026-06-07 19:19:11,766 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-88.jpg
+2026-06-07 19:19:12,025 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-89.jpg
+2026-06-07 19:19:12,290 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-90.jpg
+2026-06-07 19:19:12,598 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-91.jpg
+2026-06-07 19:19:12,834 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-1.jpg
+2026-06-07 19:19:13,114 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-92.jpg
+2026-06-07 19:19:13,434 [INFO]     📸 Imagen guardada para : -> -272.jpg
+2026-06-07 19:19:13,740 [INFO]     📸 Imagen guardada para : -> -273.jpg
+2026-06-07 19:19:14,066 [INFO]     📸 Imagen guardada para : -> -274.jpg
+2026-06-07 19:19:14,412 [INFO]     📸 Imagen guardada para : -> -275.jpg
+2026-06-07 19:19:14,741 [INFO]     📸 Imagen guardada para : -> -276.jpg
+2026-06-07 19:19:15,038 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-93.jpg
+2026-06-07 19:19:15,398 [INFO]     📸 Imagen guardada para : -> -277.jpg
+2026-06-07 19:19:15,653 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-94.jpg
+2026-06-07 19:19:15,967 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-95.jpg
+2026-06-07 19:19:16,288 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-96.jpg
+2026-06-07 19:19:16,566 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-97.jpg
+2026-06-07 19:19:16,822 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-98.jpg
+2026-06-07 19:19:17,311 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-99.jpg
+2026-06-07 19:19:17,592 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-100.jpg
+2026-06-07 19:19:17,898 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-101.jpg
+2026-06-07 19:19:18,247 [INFO]     📸 Imagen guardada para : -> -278.jpg
+2026-06-07 19:19:18,561 [INFO]     📸 Imagen guardada para : -> -279.jpg
+2026-06-07 19:19:18,903 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-102.jpg
+2026-06-07 19:19:19,255 [INFO]     📸 Imagen guardada para : -> -280.jpg
+2026-06-07 19:19:19,580 [INFO]     📸 Imagen guardada para : -> -281.jpg
+2026-06-07 19:19:19,904 [INFO]     📸 Imagen guardada para : -> -282.jpg
+2026-06-07 19:19:20,239 [INFO]     📸 Imagen guardada para : -> -283.jpg
+2026-06-07 19:19:20,609 [INFO]     📸 Imagen guardada para : -> -284.jpg
+2026-06-07 19:19:20,967 [INFO]     📸 Imagen guardada para : -> -285.jpg
+2026-06-07 19:19:21,382 [INFO]     📸 Imagen guardada para : -> -286.jpg
+2026-06-07 19:19:21,761 [INFO]     📸 Imagen guardada para : -> -287.jpg
+2026-06-07 19:19:22,126 [INFO]     📸 Imagen guardada para : -> -288.jpg
+2026-06-07 19:19:22,514 [INFO]     📸 Imagen guardada para : -> -289.jpg
+2026-06-07 19:19:22,909 [INFO]     📸 Imagen guardada para : -> -290.jpg
+2026-06-07 19:19:23,348 [INFO]     📸 Imagen guardada para : -> -291.jpg
+2026-06-07 19:19:23,707 [INFO]     📸 Imagen guardada para : -> -292.jpg
+2026-06-07 19:19:23,975 [INFO]     📸 Imagen guardada para :23-262 -> 23-262.jpg
+2026-06-07 19:19:24,281 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-103.jpg
+2026-06-07 19:19:24,576 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-104.jpg
+2026-06-07 19:19:24,853 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-105.jpg
+2026-06-07 19:19:25,244 [INFO]     📸 Imagen guardada para : -> -293.jpg
+2026-06-07 19:19:25,615 [INFO]     📸 Imagen guardada para : -> -294.jpg
+2026-06-07 19:19:25,993 [INFO]     📸 Imagen guardada para : -> -295.jpg
+2026-06-07 19:19:26,359 [INFO]     📸 Imagen guardada para : -> -296.jpg
+2026-06-07 19:19:26,731 [INFO]     📸 Imagen guardada para : -> -297.jpg
+2026-06-07 19:19:27,097 [INFO]     📸 Imagen guardada para : -> -298.jpg
+2026-06-07 19:19:27,391 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-106.jpg
+2026-06-07 19:19:27,752 [INFO]     📸 Imagen guardada para : -> -299.jpg
+2026-06-07 19:19:28,044 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-107.jpg
+2026-06-07 19:19:28,278 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-2.jpg
+2026-06-07 19:19:28,563 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-108.jpg
+2026-06-07 19:19:28,828 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-109.jpg
+2026-06-07 19:19:29,122 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-110.jpg
+2026-06-07 19:19:29,404 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-111.jpg
+2026-06-07 19:19:29,713 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-112.jpg
+2026-06-07 19:19:29,975 [INFO]     📸 Imagen guardada para :25-26AC -> 25-26ac.jpg
+2026-06-07 19:19:30,295 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-113.jpg
+2026-06-07 19:19:30,574 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-114.jpg
+2026-06-07 19:19:30,895 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-115.jpg
+2026-06-07 19:19:31,285 [INFO]     📸 Imagen guardada para : -> -300.jpg
+2026-06-07 19:19:31,629 [INFO]     📸 Imagen guardada para : -> -301.jpg
+2026-06-07 19:19:31,882 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-116.jpg
+2026-06-07 19:19:32,213 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-117.jpg
+2026-06-07 19:19:32,577 [INFO]     📸 Imagen guardada para : -> -302.jpg
+2026-06-07 19:19:32,800 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-3.jpg
+2026-06-07 19:19:33,081 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-118.jpg
+2026-06-07 19:19:33,436 [INFO]     📸 Imagen guardada para : -> -303.jpg
+2026-06-07 19:19:33,813 [INFO]     📸 Imagen guardada para : -> -304.jpg
+2026-06-07 19:19:34,206 [INFO]     📸 Imagen guardada para : -> -305.jpg
+2026-06-07 19:19:34,679 [INFO]     📸 Imagen guardada para : -> -306.jpg
+2026-06-07 19:19:35,051 [INFO]     📸 Imagen guardada para : -> -307.jpg
+2026-06-07 19:19:35,413 [INFO]     📸 Imagen guardada para : -> -308.jpg
+2026-06-07 19:19:35,763 [INFO]     📸 Imagen guardada para : -> -309.jpg
+2026-06-07 19:19:36,058 [INFO]     📸 Imagen guardada para : -> -310.jpg
+2026-06-07 19:19:36,446 [INFO]     📸 Imagen guardada para : -> -311.jpg
+2026-06-07 19:19:36,819 [INFO]     📸 Imagen guardada para : -> -312.jpg
+2026-06-07 19:19:37,023 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-119.jpg
+2026-06-07 19:19:37,324 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-120.jpg
+2026-06-07 19:19:37,674 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-121.jpg
+2026-06-07 19:19:38,015 [INFO]     📸 Imagen guardada para : -> -313.jpg
+2026-06-07 19:19:38,326 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-122.jpg
+2026-06-07 19:19:38,623 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-123.jpg
+2026-06-07 19:19:38,848 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-4.jpg
+2026-06-07 19:19:39,083 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-5.jpg
+2026-06-07 19:19:39,349 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-124.jpg
+2026-06-07 19:19:39,701 [INFO]     📸 Imagen guardada para : -> -314.jpg
+2026-06-07 19:19:40,100 [INFO]     📸 Imagen guardada para : -> -315.jpg
+2026-06-07 19:19:40,367 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-125.jpg
+2026-06-07 19:19:40,380 [INFO]   creados=720 actualizados=0
+2026-06-07 19:19:40,380 [INFO] 
+Página 7/14: https://baocheng3f888.x.yupoo.com/categories?page=7
+2026-06-07 19:19:51,427 [INFO]   120 álbumes extraídos
+2026-06-07 19:19:51,814 [INFO]     📸 Imagen guardada para : -> -316.jpg
+2026-06-07 19:19:52,089 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-126.jpg
+2026-06-07 19:19:52,395 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-127.jpg
+2026-06-07 19:19:52,706 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-128.jpg
+2026-06-07 19:19:52,998 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-129.jpg
+2026-06-07 19:19:53,291 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-130.jpg
+2026-06-07 19:19:53,643 [INFO]     📸 Imagen guardada para : -> -317.jpg
+2026-06-07 19:19:54,010 [INFO]     📸 Imagen guardada para : -> -318.jpg
+2026-06-07 19:19:54,311 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-131.jpg
+2026-06-07 19:19:54,621 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-132.jpg
+2026-06-07 19:19:54,952 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-133.jpg
+2026-06-07 19:19:55,401 [INFO]     📸 Imagen guardada para : -> -319.jpg
+2026-06-07 19:19:55,760 [INFO]     📸 Imagen guardada para : -> -320.jpg
+2026-06-07 19:19:56,133 [INFO]     📸 Imagen guardada para : -> -321.jpg
+2026-06-07 19:19:56,530 [INFO]     📸 Imagen guardada para : -> -322.jpg
+2026-06-07 19:19:56,886 [INFO]     📸 Imagen guardada para : -> -323.jpg
+2026-06-07 19:19:57,175 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-134.jpg
+2026-06-07 19:19:57,538 [INFO]     📸 Imagen guardada para : -> -324.jpg
+2026-06-07 19:19:57,920 [INFO]     📸 Imagen guardada para : -> -325.jpg
+2026-06-07 19:19:58,266 [INFO]     📸 Imagen guardada para : -> -326.jpg
+2026-06-07 19:19:58,646 [INFO]     📸 Imagen guardada para : -> -327.jpg
+2026-06-07 19:19:59,009 [INFO]     📸 Imagen guardada para : -> -328.jpg
+2026-06-07 19:19:59,393 [INFO]     📸 Imagen guardada para : -> -329.jpg
+2026-06-07 19:19:59,747 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-135.jpg
+2026-06-07 19:20:00,078 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-136.jpg
+2026-06-07 19:20:00,466 [INFO]     📸 Imagen guardada para : -> -330.jpg
+2026-06-07 19:20:00,874 [INFO]     📸 Imagen guardada para : -> -331.jpg
+2026-06-07 19:20:01,243 [INFO]     📸 Imagen guardada para : -> -332.jpg
+2026-06-07 19:20:01,768 [INFO]     📸 Imagen guardada para : -> -333.jpg
+2026-06-07 19:20:02,128 [INFO]     📸 Imagen guardada para : -> -334.jpg
+2026-06-07 19:20:02,489 [INFO]     📸 Imagen guardada para : -> -335.jpg
+2026-06-07 19:20:02,820 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-137.jpg
+2026-06-07 19:20:03,058 [INFO]     📸 Imagen guardada para :MCA -> mca.jpg
+2026-06-07 19:20:03,447 [INFO]     📸 Imagen guardada para : -> -336.jpg
+2026-06-07 19:20:03,701 [INFO]     📸 Imagen guardada para :AC -> ac-2.jpg
+2026-06-07 19:20:04,200 [INFO]     📸 Imagen guardada para : -> -337.jpg
+2026-06-07 19:20:04,584 [INFO]     📸 Imagen guardada para : -> -338.jpg
+2026-06-07 19:20:04,972 [INFO]     📸 Imagen guardada para : -> -339.jpg
+2026-06-07 19:20:05,420 [INFO]     📸 Imagen guardada para : -> -340.jpg
+2026-06-07 19:20:05,799 [INFO]     📸 Imagen guardada para : -> -341.jpg
+2026-06-07 19:20:06,183 [INFO]     📸 Imagen guardada para : -> -342.jpg
+2026-06-07 19:20:06,550 [INFO]     📸 Imagen guardada para : -> -343.jpg
+2026-06-07 19:20:06,935 [INFO]     📸 Imagen guardada para : -> -344.jpg
+2026-06-07 19:20:07,353 [INFO]     📸 Imagen guardada para : -> -345.jpg
+2026-06-07 19:20:07,610 [INFO]     📸 Imagen guardada para :25-26AC -> 25-26ac-1.jpg
+2026-06-07 19:20:07,944 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-138.jpg
+2026-06-07 19:20:08,284 [INFO]     📸 Imagen guardada para : -> -346.jpg
+2026-06-07 19:20:08,588 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-139.jpg
+2026-06-07 19:20:08,884 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-140.jpg
+2026-06-07 19:20:09,188 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-141.jpg
+2026-06-07 19:20:09,494 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-142.jpg
+2026-06-07 19:20:09,782 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-143.jpg
+2026-06-07 19:20:10,062 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-144.jpg
+2026-06-07 19:20:10,424 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-145.jpg
+2026-06-07 19:20:10,814 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-146.jpg
+2026-06-07 19:20:11,073 [INFO]     📸 Imagen guardada para :25-26AC -> 25-26ac-2.jpg
+2026-06-07 19:20:11,490 [INFO]     📸 Imagen guardada para : -> -347.jpg
+2026-06-07 19:20:11,780 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-147.jpg
+2026-06-07 19:20:12,096 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-148.jpg
+2026-06-07 19:20:12,481 [INFO]     📸 Imagen guardada para : -> -348.jpg
+2026-06-07 19:20:12,856 [INFO]     📸 Imagen guardada para : -> -349.jpg
+2026-06-07 19:20:13,205 [INFO]     📸 Imagen guardada para : -> -350.jpg
+2026-06-07 19:20:13,555 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-149.jpg
+2026-06-07 19:20:13,952 [INFO]     📸 Imagen guardada para : -> -351.jpg
+2026-06-07 19:20:14,391 [INFO]     📸 Imagen guardada para : -> -352.jpg
+2026-06-07 19:20:14,808 [INFO]     📸 Imagen guardada para : -> -353.jpg
+2026-06-07 19:20:15,191 [INFO]     📸 Imagen guardada para : -> -354.jpg
+2026-06-07 19:20:15,588 [INFO]     📸 Imagen guardada para : -> -355.jpg
+2026-06-07 19:20:16,047 [INFO]     📸 Imagen guardada para : -> -356.jpg
+2026-06-07 19:20:16,422 [INFO]     📸 Imagen guardada para : -> -357.jpg
+2026-06-07 19:20:16,854 [INFO]     📸 Imagen guardada para : -> -358.jpg
+2026-06-07 19:20:17,241 [INFO]     📸 Imagen guardada para : -> -359.jpg
+2026-06-07 19:20:17,675 [INFO]     📸 Imagen guardada para : -> -360.jpg
+2026-06-07 19:20:18,002 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-150.jpg
+2026-06-07 19:20:18,311 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-151.jpg
+2026-06-07 19:20:18,764 [INFO]     📸 Imagen guardada para : -> -361.jpg
+2026-06-07 19:20:19,156 [INFO]     📸 Imagen guardada para : -> -362.jpg
+2026-06-07 19:20:19,473 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-152.jpg
+2026-06-07 19:20:19,906 [INFO]     📸 Imagen guardada para : -> -363.jpg
+2026-06-07 19:20:20,300 [INFO]     📸 Imagen guardada para : -> -364.jpg
+2026-06-07 19:20:20,720 [INFO]     📸 Imagen guardada para : -> -365.jpg
+2026-06-07 19:20:21,149 [INFO]     📸 Imagen guardada para : -> -366.jpg
+2026-06-07 19:20:21,549 [INFO]     📸 Imagen guardada para : -> -367.jpg
+2026-06-07 19:20:21,928 [INFO]     📸 Imagen guardada para : -> -368.jpg
+2026-06-07 19:20:22,343 [INFO]     📸 Imagen guardada para : -> -369.jpg
+2026-06-07 19:20:22,755 [INFO]     📸 Imagen guardada para : -> -370.jpg
+2026-06-07 19:20:23,062 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-153.jpg
+2026-06-07 19:20:23,421 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-154.jpg
+2026-06-07 19:20:23,816 [INFO]     📸 Imagen guardada para : -> -371.jpg
+2026-06-07 19:20:24,145 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-155.jpg
+2026-06-07 19:20:24,515 [INFO]     📸 Imagen guardada para : -> -372.jpg
+2026-06-07 19:20:24,944 [INFO]     📸 Imagen guardada para : -> -373.jpg
+2026-06-07 19:20:25,231 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-156.jpg
+2026-06-07 19:20:25,667 [INFO]     📸 Imagen guardada para : -> -374.jpg
+2026-06-07 19:20:26,032 [INFO]     📸 Imagen guardada para : -> -375.jpg
+2026-06-07 19:20:26,345 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-157.jpg
+2026-06-07 19:20:26,599 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-6.jpg
+2026-06-07 19:20:26,916 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-158.jpg
+2026-06-07 19:20:27,269 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-159.jpg
+2026-06-07 19:20:27,673 [INFO]     📸 Imagen guardada para : -> -376.jpg
+2026-06-07 19:20:28,041 [INFO]     📸 Imagen guardada para : -> -377.jpg
+2026-06-07 19:20:28,403 [INFO]     📸 Imagen guardada para : -> -378.jpg
+2026-06-07 19:20:28,764 [INFO]     📸 Imagen guardada para : -> -379.jpg
+2026-06-07 19:20:29,221 [INFO]     📸 Imagen guardada para : -> -380.jpg
+2026-06-07 19:20:29,643 [INFO]     📸 Imagen guardada para : -> -381.jpg
+2026-06-07 19:20:29,967 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-160.jpg
+2026-06-07 19:20:30,294 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-161.jpg
+2026-06-07 19:20:30,680 [INFO]     📸 Imagen guardada para : -> -382.jpg
+2026-06-07 19:20:30,982 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-162.jpg
+2026-06-07 19:20:31,304 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-163.jpg
+2026-06-07 19:20:31,538 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-164.jpg
+2026-06-07 19:20:31,949 [INFO]     📸 Imagen guardada para : -> -383.jpg
+2026-06-07 19:20:32,392 [INFO]     📸 Imagen guardada para : -> -384.jpg
+2026-06-07 19:20:32,636 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-165.jpg
+2026-06-07 19:20:33,058 [INFO]     📸 Imagen guardada para : -> -385.jpg
+2026-06-07 19:20:33,420 [INFO]     📸 Imagen guardada para : -> -386.jpg
+2026-06-07 19:20:33,818 [INFO]     📸 Imagen guardada para : -> -387.jpg
+2026-06-07 19:20:34,146 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-166.jpg
+2026-06-07 19:20:34,601 [INFO]     📸 Imagen guardada para : -> -388.jpg
+2026-06-07 19:20:34,989 [INFO]     📸 Imagen guardada para : -> -389.jpg
+2026-06-07 19:20:35,007 [INFO]   creados=840 actualizados=0
+2026-06-07 19:20:35,007 [INFO] 
+Página 8/14: https://baocheng3f888.x.yupoo.com/categories?page=8
+2026-06-07 19:20:45,733 [INFO]   120 álbumes extraídos
+2026-06-07 19:20:46,230 [INFO]     📸 Imagen guardada para : -> -390.jpg
+2026-06-07 19:20:46,640 [INFO]     📸 Imagen guardada para : -> -391.jpg
+2026-06-07 19:20:47,081 [INFO]     📸 Imagen guardada para : -> -392.jpg
+2026-06-07 19:20:47,472 [INFO]     📸 Imagen guardada para : -> -393.jpg
+2026-06-07 19:20:47,884 [INFO]     📸 Imagen guardada para : -> -394.jpg
+2026-06-07 19:20:48,116 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-7.jpg
+2026-06-07 19:20:48,499 [INFO]     📸 Imagen guardada para : -> -395.jpg
+2026-06-07 19:20:48,925 [INFO]     📸 Imagen guardada para : -> -396.jpg
+2026-06-07 19:20:49,313 [INFO]     📸 Imagen guardada para : -> -397.jpg
+2026-06-07 19:20:49,718 [INFO]     📸 Imagen guardada para : -> -398.jpg
+2026-06-07 19:20:49,942 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-167.jpg
+2026-06-07 19:20:50,399 [INFO]     📸 Imagen guardada para : -> -399.jpg
+2026-06-07 19:20:50,956 [INFO]     📸 Imagen guardada para : -> -400.jpg
+2026-06-07 19:20:51,381 [INFO]     📸 Imagen guardada para : -> -401.jpg
+2026-06-07 19:20:51,812 [INFO]     📸 Imagen guardada para : -> -402.jpg
+2026-06-07 19:20:52,218 [INFO]     📸 Imagen guardada para : -> -403.jpg
+2026-06-07 19:20:52,670 [INFO]     📸 Imagen guardada para : -> -404.jpg
+2026-06-07 19:20:53,012 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-168.jpg
+2026-06-07 19:20:53,421 [INFO]     📸 Imagen guardada para : -> -405.jpg
+2026-06-07 19:20:53,846 [INFO]     📸 Imagen guardada para : -> -406.jpg
+2026-06-07 19:20:54,268 [INFO]     📸 Imagen guardada para : -> -407.jpg
+2026-06-07 19:20:54,665 [INFO]     📸 Imagen guardada para : -> -408.jpg
+2026-06-07 19:20:55,101 [INFO]     📸 Imagen guardada para : -> -409.jpg
+2026-06-07 19:20:55,507 [INFO]     📸 Imagen guardada para : -> -410.jpg
+2026-06-07 19:20:55,879 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-169.jpg
+2026-06-07 19:20:56,206 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-170.jpg
+2026-06-07 19:20:56,666 [INFO]     📸 Imagen guardada para : -> -411.jpg
+2026-06-07 19:20:57,033 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-171.jpg
+2026-06-07 19:20:57,433 [INFO]     📸 Imagen guardada para : -> -412.jpg
+2026-06-07 19:20:57,803 [INFO]     📸 Imagen guardada para : -> -413.jpg
+2026-06-07 19:20:58,106 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-172.jpg
+2026-06-07 19:20:58,437 [INFO]     📸 Imagen guardada para :AC -> ac-3.jpg
+2026-06-07 19:20:58,749 [INFO]     📸 Imagen guardada para :AC -> ac-4.jpg
+2026-06-07 19:20:58,973 [INFO]     📸 Imagen guardada para 2025/56 -> 202556-1.jpg
+2026-06-07 19:20:59,362 [INFO]     📸 Imagen guardada para : -> -414.jpg
+2026-06-07 19:20:59,749 [INFO]     📸 Imagen guardada para : -> -415.jpg
+2026-06-07 19:21:00,139 [INFO]     📸 Imagen guardada para : -> -416.jpg
+2026-06-07 19:21:00,486 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-173.jpg
+2026-06-07 19:21:00,813 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-174.jpg
+2026-06-07 19:21:01,189 [INFO]     📸 Imagen guardada para : -> -417.jpg
+2026-06-07 19:21:01,618 [INFO]     📸 Imagen guardada para : -> -418.jpg
+2026-06-07 19:21:02,022 [INFO]     📸 Imagen guardada para : -> -419.jpg
+2026-06-07 19:21:02,453 [INFO]     📸 Imagen guardada para : -> -420.jpg
+2026-06-07 19:21:02,846 [INFO]     📸 Imagen guardada para : -> -421.jpg
+2026-06-07 19:21:03,158 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-175.jpg
+2026-06-07 19:21:03,631 [INFO]     📸 Imagen guardada para ； -> -422.jpg
+2026-06-07 19:21:03,952 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-176.jpg
+2026-06-07 19:21:04,377 [INFO]     📸 Imagen guardada para ； -> -423.jpg
+2026-06-07 19:21:04,817 [INFO]     📸 Imagen guardada para ； -> -424.jpg
+2026-06-07 19:21:05,323 [INFO]     📸 Imagen guardada para : -> -425.jpg
+2026-06-07 19:21:05,763 [INFO]     📸 Imagen guardada para : -> -426.jpg
+2026-06-07 19:21:06,112 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-177.jpg
+2026-06-07 19:21:06,451 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-178.jpg
+2026-06-07 19:21:06,885 [INFO]     📸 Imagen guardada para : -> -427.jpg
+2026-06-07 19:21:07,337 [INFO]     📸 Imagen guardada para ； -> -428.jpg
+2026-06-07 19:21:07,816 [INFO]     📸 Imagen guardada para ； -> -429.jpg
+2026-06-07 19:21:08,038 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-7.jpg
+2026-06-07 19:21:08,271 [INFO]     📸 Imagen guardada para 2093/94 -> 209394-3.jpg
+2026-06-07 19:21:08,535 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-8.jpg
+2026-06-07 19:21:08,815 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-4.jpg
+2026-06-07 19:21:09,054 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-15.jpg
+2026-06-07 19:21:09,285 [INFO]     📸 Imagen guardada para 2019/90 -> 201990-4.jpg
+2026-06-07 19:21:09,518 [INFO]     📸 Imagen guardada para 2020/04 -> 202004-3.jpg
+2026-06-07 19:21:09,717 [INFO]     📸 Imagen guardada para 2001/03 -> 200103-1.jpg
+2026-06-07 19:21:10,055 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-179.jpg
+2026-06-07 19:21:10,451 [INFO]     📸 Imagen guardada para ； -> -430.jpg
+2026-06-07 19:21:10,908 [INFO]     📸 Imagen guardada para ； -> -431.jpg
+2026-06-07 19:21:11,332 [INFO]     📸 Imagen guardada para ； -> -432.jpg
+2026-06-07 19:21:11,818 [INFO]     📸 Imagen guardada para ； -> -433.jpg
+2026-06-07 19:21:12,282 [INFO]     📸 Imagen guardada para ； -> -434.jpg
+2026-06-07 19:21:12,603 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-9.jpg
+2026-06-07 19:21:12,840 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-3.jpg
+2026-06-07 19:21:13,081 [INFO]     📸 Imagen guardada para 2019/70 -> 201970-2.jpg
+2026-06-07 19:21:13,306 [INFO]     📸 Imagen guardada para 2092/94 -> 209294-1.jpg
+2026-06-07 19:21:13,541 [INFO]     📸 Imagen guardada para 2001/03 -> 200103-2.jpg
+2026-06-07 19:21:13,793 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-12.jpg
+2026-06-07 19:21:14,038 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-10.jpg
+2026-06-07 19:21:14,314 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-8.jpg
+2026-06-07 19:21:14,524 [INFO]     📸 Imagen guardada para 2089/91 -> 208991-2.jpg
+2026-06-07 19:21:14,759 [INFO]     📸 Imagen guardada para 2014/15 -> 201415-3.jpg
+2026-06-07 19:21:14,978 [INFO]     📸 Imagen guardada para 2019/92 -> 201992-4.jpg
+2026-06-07 19:21:15,206 [INFO]     📸 Imagen guardada para 2000/01 -> 200001-4.jpg
+2026-06-07 19:21:15,414 [INFO]     📸 Imagen guardada para 2000/01 -> 200001-5.jpg
+2026-06-07 19:21:15,643 [INFO]     📸 Imagen guardada para 2004/05 -> 200405-5.jpg
+2026-06-07 19:21:15,868 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-19.jpg
+2026-06-07 19:21:16,079 [INFO]     📸 Imagen guardada para 2017/18 -> 201718-1.jpg
+2026-06-07 19:21:16,324 [INFO]     📸 Imagen guardada para 2091/92 -> 209192-3.jpg
+2026-06-07 19:21:16,547 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-10.jpg
+2026-06-07 19:21:16,785 [INFO]     📸 Imagen guardada para 2020/21 -> 202021-1.jpg
+2026-06-07 19:21:17,016 [INFO]     📸 Imagen guardada para 2020/04 -> 202004-4.jpg
+2026-06-07 19:21:17,271 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-8.jpg
+2026-06-07 19:21:17,529 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-16.jpg
+2026-06-07 19:21:17,983 [INFO]     📸 Imagen guardada para 复古阿森纳 -> -435.jpg
+2026-06-07 19:21:18,200 [INFO]     📸 Imagen guardada para 2097/98 -> 209798-4.jpg
+2026-06-07 19:21:18,401 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-1.jpg
+2026-06-07 19:21:18,635 [INFO]     📸 Imagen guardada para 2094/95 -> 209495-8.jpg
+2026-06-07 19:21:18,844 [INFO]     📸 Imagen guardada para 2004/05 -> 200405-6.jpg
+2026-06-07 19:21:19,316 [INFO]     📸 Imagen guardada para : -> -436.jpg
+2026-06-07 19:21:19,603 [INFO]     📸 Imagen guardada para :2 -> 2.jpg
+2026-06-07 19:21:19,863 [INFO]     📸 Imagen guardada para 2004/06 -> 200406.jpg
+2026-06-07 19:21:20,076 [INFO]     📸 Imagen guardada para 2014/15 -> 201415-4.jpg
+2026-06-07 19:21:20,332 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-2.jpg
+2026-06-07 19:21:20,517 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-11.jpg
+2026-06-07 19:21:20,741 [INFO]     📸 Imagen guardada para 2019/92 -> 201992-5.jpg
+2026-06-07 19:21:20,969 [INFO]     📸 Imagen guardada para 2019/86 -> 201986.jpg
+2026-06-07 19:21:21,214 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-3.jpg
+2026-06-07 19:21:21,485 [INFO]     📸 Imagen guardada para 2009/10 -> 200910-5.jpg
+2026-06-07 19:21:21,766 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-129.jpg
+2026-06-07 19:21:22,022 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-9.jpg
+2026-06-07 19:21:22,228 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-9.jpg
+2026-06-07 19:21:22,442 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-10.jpg
+2026-06-07 19:21:22,644 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-13.jpg
+2026-06-07 19:21:22,850 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-5.jpg
+2026-06-07 19:21:23,033 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-2.jpg
+2026-06-07 19:21:23,234 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-20.jpg
+2026-06-07 19:21:23,485 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-4.jpg
+2026-06-07 19:21:23,997 [INFO]     📸 Imagen guardada para ； -> -437.jpg
+2026-06-07 19:21:24,461 [INFO]     📸 Imagen guardada para ； -> -438.jpg
+2026-06-07 19:21:24,940 [INFO]     📸 Imagen guardada para ； -> -439.jpg
+2026-06-07 19:21:25,409 [INFO]     📸 Imagen guardada para ； -> -440.jpg
+2026-06-07 19:21:25,421 [INFO]   creados=960 actualizados=0
+2026-06-07 19:21:25,421 [INFO] 
+Página 9/14: https://baocheng3f888.x.yupoo.com/categories?page=9
+2026-06-07 19:21:35,819 [INFO]   120 álbumes extraídos
+2026-06-07 19:21:36,295 [INFO]     📸 Imagen guardada para ； -> -441.jpg
+2026-06-07 19:21:36,762 [INFO]     📸 Imagen guardada para ； -> -442.jpg
+2026-06-07 19:21:37,200 [INFO]     📸 Imagen guardada para ； -> -443.jpg
+2026-06-07 19:21:37,620 [INFO]     📸 Imagen guardada para ； -> -444.jpg
+2026-06-07 19:21:38,105 [INFO]     📸 Imagen guardada para ； -> -445.jpg
+2026-06-07 19:21:38,563 [INFO]     📸 Imagen guardada para ； -> -446.jpg
+2026-06-07 19:21:39,039 [INFO]     📸 Imagen guardada para ； -> -447.jpg
+2026-06-07 19:21:39,521 [INFO]     📸 Imagen guardada para ； -> -448.jpg
+2026-06-07 19:21:39,829 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-180.jpg
+2026-06-07 19:21:40,172 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-181.jpg
+2026-06-07 19:21:40,598 [INFO]     📸 Imagen guardada para ； -> -449.jpg
+2026-06-07 19:21:41,119 [INFO]     📸 Imagen guardada para ； -> -450.jpg
+2026-06-07 19:21:41,648 [INFO]     📸 Imagen guardada para ； -> -451.jpg
+2026-06-07 19:21:42,129 [INFO]     📸 Imagen guardada para ； -> -452.jpg
+2026-06-07 19:21:42,587 [INFO]     📸 Imagen guardada para ； -> -453.jpg
+2026-06-07 19:21:43,013 [INFO]     📸 Imagen guardada para ； -> -454.jpg
+2026-06-07 19:21:43,358 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-182.jpg
+2026-06-07 19:21:43,757 [INFO]     📸 Imagen guardada para ； -> -455.jpg
+2026-06-07 19:21:44,171 [INFO]     📸 Imagen guardada para ； -> -456.jpg
+2026-06-07 19:21:44,644 [INFO]     📸 Imagen guardada para ； -> -457.jpg
+2026-06-07 19:21:45,095 [INFO]     📸 Imagen guardada para : -> -458.jpg
+2026-06-07 19:21:45,455 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-183.jpg
+2026-06-07 19:21:45,812 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-184.jpg
+2026-06-07 19:21:46,153 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-185.jpg
+2026-06-07 19:21:46,475 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-186.jpg
+2026-06-07 19:21:46,784 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-187.jpg
+2026-06-07 19:21:47,231 [INFO]     📸 Imagen guardada para ； -> -459.jpg
+2026-06-07 19:21:47,499 [INFO]     📸 Imagen guardada para 25 -> 25.jpg
+2026-06-07 19:21:47,961 [INFO]     📸 Imagen guardada para ； -> -460.jpg
+2026-06-07 19:21:48,358 [INFO]     📸 Imagen guardada para ； -> -461.jpg
+2026-06-07 19:21:48,801 [INFO]     📸 Imagen guardada para ； -> -462.jpg
+2026-06-07 19:21:49,221 [INFO]     📸 Imagen guardada para 新克墨西哥纯棉休闲版 -> -463.jpg
+2026-06-07 19:21:49,667 [INFO]     📸 Imagen guardada para ； -> -464.jpg
+2026-06-07 19:21:49,991 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-188.jpg
+2026-06-07 19:21:50,416 [INFO]     📸 Imagen guardada para :， -> -465.jpg
+2026-06-07 19:21:50,777 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-189.jpg
+2026-06-07 19:21:51,135 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-190.jpg
+2026-06-07 19:21:51,460 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-191.jpg
+2026-06-07 19:21:51,855 [INFO]     📸 Imagen guardada para : -> -466.jpg
+2026-06-07 19:21:52,222 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-192.jpg
+2026-06-07 19:21:52,534 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-193.jpg
+2026-06-07 19:21:52,911 [INFO]     📸 Imagen guardada para : -> -467.jpg
+2026-06-07 19:21:53,681 [INFO]     📸 Imagen guardada para ； -> -468.jpg
+2026-06-07 19:21:54,139 [INFO]     📸 Imagen guardada para 提花三叶休闲款 -> -469.jpg
+2026-06-07 19:21:54,561 [INFO]     📸 Imagen guardada para ； -> -470.jpg
+2026-06-07 19:21:55,036 [INFO]     📸 Imagen guardada para ； -> -471.jpg
+2026-06-07 19:21:55,531 [INFO]     📸 Imagen guardada para ； -> -472.jpg
+2026-06-07 19:21:56,009 [INFO]     📸 Imagen guardada para ； -> -473.jpg
+2026-06-07 19:21:56,252 [INFO]     📸 Imagen guardada para ；25=26 -> 2526.jpg
+2026-06-07 19:21:56,558 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-194.jpg
+2026-06-07 19:21:56,911 [INFO]     📸 Imagen guardada para : -> -474.jpg
+2026-06-07 19:21:57,321 [INFO]     📸 Imagen guardada para 提花三叶休闲款紫 -> -475.jpg
+2026-06-07 19:21:57,724 [INFO]     📸 Imagen guardada para 提花三叶休闲款蓝 -> -476.jpg
+2026-06-07 19:21:58,142 [INFO]     📸 Imagen guardada para 提花三叶休闲款粉 -> -477.jpg
+2026-06-07 19:21:58,484 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-195.jpg
+2026-06-07 19:21:58,872 [INFO]     📸 Imagen guardada para : -> -478.jpg
+2026-06-07 19:21:59,201 [INFO]     📸 Imagen guardada para : -> -479.jpg
+2026-06-07 19:21:59,611 [INFO]     📸 Imagen guardada para : -> -480.jpg
+2026-06-07 19:21:59,937 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-196.jpg
+2026-06-07 19:22:00,324 [INFO]     📸 Imagen guardada para ， -> -481.jpg
+2026-06-07 19:22:00,667 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-197.jpg
+2026-06-07 19:22:01,005 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-198.jpg
+2026-06-07 19:22:01,342 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-199.jpg
+2026-06-07 19:22:01,655 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-200.jpg
+2026-06-07 19:22:01,876 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-12.jpg
+2026-06-07 19:22:02,097 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-11.jpg
+2026-06-07 19:22:02,325 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-13.jpg
+2026-06-07 19:22:02,564 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-13.jpg
+2026-06-07 19:22:02,841 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-4.jpg
+2026-06-07 19:22:03,106 [INFO]     📸 Imagen guardada para 2095/97 -> 209597-6.jpg
+2026-06-07 19:22:03,385 [INFO]     📸 Imagen guardada para 2019/92 -> 201992-6.jpg
+2026-06-07 19:22:03,595 [INFO]     📸 Imagen guardada para 2019/99 -> 201999-10.jpg
+2026-06-07 19:22:03,828 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-12.jpg
+2026-06-07 19:22:04,110 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-21.jpg
+2026-06-07 19:22:04,303 [INFO]     📸 Imagen guardada para 2019/90 -> 201990-5.jpg
+2026-06-07 19:22:04,565 [INFO]     📸 Imagen guardada para 2095/97 -> 209597-7.jpg
+2026-06-07 19:22:04,762 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-13.jpg
+2026-06-07 19:22:05,228 [INFO]     📸 Imagen guardada para 提花三叶休闲款粉 -> -482.jpg
+2026-06-07 19:22:05,678 [INFO]     📸 Imagen guardada para 提花三叶休闲鞋款黑 -> -483.jpg
+2026-06-07 19:22:06,047 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-201.jpg
+2026-06-07 19:22:06,371 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-202.jpg
+2026-06-07 19:22:06,805 [INFO]     📸 Imagen guardada para : -> -484.jpg
+2026-06-07 19:22:07,045 [INFO]     📸 Imagen guardada para :AC -> ac-5.jpg
+2026-06-07 19:22:07,459 [INFO]     📸 Imagen guardada para : -> -485.jpg
+2026-06-07 19:22:07,872 [INFO]     📸 Imagen guardada para : -> -486.jpg
+2026-06-07 19:22:08,173 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-203.jpg
+2026-06-07 19:22:08,683 [INFO]     📸 Imagen guardada para : -> -487.jpg
+2026-06-07 19:22:09,550 [INFO]     📸 Imagen guardada para : -> -488.jpg
+2026-06-07 19:22:10,008 [INFO]     📸 Imagen guardada para : -> -489.jpg
+2026-06-07 19:22:10,267 [INFO]     📸 Imagen guardada para :25 -> 25-1.jpg
+2026-06-07 19:22:10,790 [INFO]     📸 Imagen guardada para : -> -490.jpg
+2026-06-07 19:22:11,141 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-204.jpg
+2026-06-07 19:22:11,551 [INFO]     📸 Imagen guardada para : -> -491.jpg
+2026-06-07 19:22:11,904 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-205.jpg
+2026-06-07 19:22:12,335 [INFO]     📸 Imagen guardada para : -> -492.jpg
+2026-06-07 19:22:12,810 [INFO]     📸 Imagen guardada para : -> -493.jpg
+2026-06-07 19:22:13,115 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-206.jpg
+2026-06-07 19:22:13,435 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-207.jpg
+2026-06-07 19:22:13,862 [INFO]     📸 Imagen guardada para : -> -494.jpg
+2026-06-07 19:22:14,134 [INFO]     📸 Imagen guardada para :25 -> 25-2.jpg
+2026-06-07 19:22:14,397 [INFO]     📸 Imagen guardada para :25 -> 25-3.jpg
+2026-06-07 19:22:14,824 [INFO]     📸 Imagen guardada para : -> -495.jpg
+2026-06-07 19:22:15,326 [INFO]     📸 Imagen guardada para : -> -496.jpg
+2026-06-07 19:22:15,703 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-208.jpg
+2026-06-07 19:22:16,262 [INFO]     📸 Imagen guardada para : -> -497.jpg
+2026-06-07 19:22:16,705 [INFO]     📸 Imagen guardada para : -> -498.jpg
+2026-06-07 19:22:17,164 [INFO]     📸 Imagen guardada para : -> -499.jpg
+2026-06-07 19:22:17,618 [INFO]     📸 Imagen guardada para : -> -500.jpg
+2026-06-07 19:22:18,087 [INFO]     📸 Imagen guardada para : -> -501.jpg
+2026-06-07 19:22:18,413 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-209.jpg
+2026-06-07 19:22:18,650 [INFO]     📸 Imagen guardada para :25-26AC2 -> 25-26ac2.jpg
+2026-06-07 19:22:19,002 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-210.jpg
+2026-06-07 19:22:19,423 [INFO]     📸 Imagen guardada para : -> -502.jpg
+2026-06-07 19:22:19,876 [INFO]     📸 Imagen guardada para : -> -503.jpg
+2026-06-07 19:22:20,353 [INFO]     📸 Imagen guardada para : -> -504.jpg
+2026-06-07 19:22:20,778 [INFO]     📸 Imagen guardada para : -> -505.jpg
+2026-06-07 19:22:21,189 [INFO]     📸 Imagen guardada para : -> -506.jpg
+2026-06-07 19:22:21,708 [INFO]     📸 Imagen guardada para : -> -507.jpg
+2026-06-07 19:22:22,170 [INFO]     📸 Imagen guardada para :， -> -508.jpg
+2026-06-07 19:22:22,403 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-22.jpg
+2026-06-07 19:22:22,416 [INFO]   creados=1080 actualizados=0
+2026-06-07 19:22:22,416 [INFO] 
+Página 10/14: https://baocheng3f888.x.yupoo.com/categories?page=10
+2026-06-07 19:22:33,523 [INFO]   120 álbumes extraídos
+2026-06-07 19:22:33,805 [INFO]     📸 Imagen guardada para 2019/88 -> 201988-3.jpg
+2026-06-07 19:22:34,012 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-14.jpg
+2026-06-07 19:22:34,219 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-10.jpg
+2026-06-07 19:22:34,432 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-23.jpg
+2026-06-07 19:22:34,644 [INFO]     📸 Imagen guardada para 2019/90 -> 201990-6.jpg
+2026-06-07 19:22:34,917 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-130.jpg
+2026-06-07 19:22:35,140 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-15.jpg
+2026-06-07 19:22:35,359 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-14.jpg
+2026-06-07 19:22:35,615 [INFO]     📸 Imagen guardada para 2004/05 -> 200405-7.jpg
+2026-06-07 19:22:35,841 [INFO]     📸 Imagen guardada para 2000/01 -> 200001-6.jpg
+2026-06-07 19:22:36,217 [INFO]     📸 Imagen guardada para 河床复古 -> -509.jpg
+2026-06-07 19:22:36,442 [INFO]     📸 Imagen guardada para 2093/95 -> 209395-2.jpg
+2026-06-07 19:22:36,693 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-5.jpg
+2026-06-07 19:22:36,974 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-17.jpg
+2026-06-07 19:22:37,156 [INFO]     📸 Imagen guardada para 2000/01 -> 200001-7.jpg
+2026-06-07 19:22:37,373 [INFO]     📸 Imagen guardada para 2099/01 -> 209901.jpg
+2026-06-07 19:22:37,770 [INFO]     📸 Imagen guardada para : -> -510.jpg
+2026-06-07 19:22:38,205 [INFO]     📸 Imagen guardada para : -> -511.jpg
+2026-06-07 19:22:38,629 [INFO]     📸 Imagen guardada para : -> -512.jpg
+2026-06-07 19:22:39,131 [INFO]     📸 Imagen guardada para : -> -513.jpg
+2026-06-07 19:22:39,725 [INFO]     📸 Imagen guardada para : -> -514.jpg
+2026-06-07 19:22:40,483 [INFO]     📸 Imagen guardada para : -> -515.jpg
+2026-06-07 19:22:40,987 [INFO]     📸 Imagen guardada para : -> -516.jpg
+2026-06-07 19:22:41,441 [INFO]     📸 Imagen guardada para : -> -517.jpg
+2026-06-07 19:22:41,872 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-211.jpg
+2026-06-07 19:22:42,358 [INFO]     📸 Imagen guardada para : -> -518.jpg
+2026-06-07 19:22:42,676 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-212.jpg
+2026-06-07 19:22:43,161 [INFO]     📸 Imagen guardada para : -> -519.jpg
+2026-06-07 19:22:43,591 [INFO]     📸 Imagen guardada para : -> -520.jpg
+2026-06-07 19:22:44,077 [INFO]     📸 Imagen guardada para : -> -521.jpg
+2026-06-07 19:22:44,501 [INFO]     📸 Imagen guardada para : -> -522.jpg
+2026-06-07 19:22:44,830 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-8.jpg
+2026-06-07 19:22:45,130 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-213.jpg
+2026-06-07 19:22:45,491 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-214.jpg
+2026-06-07 19:22:45,821 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-215.jpg
+2026-06-07 19:22:46,213 [INFO]     📸 Imagen guardada para : -> -523.jpg
+2026-06-07 19:22:46,489 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-131.jpg
+2026-06-07 19:22:46,693 [INFO]     📸 Imagen guardada para 2024/45 -> 202445.jpg
+2026-06-07 19:22:46,954 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-3.jpg
+2026-06-07 19:22:47,193 [INFO]     📸 Imagen guardada para 2093/94 -> 209394-4.jpg
+2026-06-07 19:22:47,448 [INFO]     📸 Imagen guardada para 2019/91 -> 201991-2.jpg
+2026-06-07 19:22:47,642 [INFO]     📸 Imagen guardada para 2019/70 -> 201970-3.jpg
+2026-06-07 19:22:47,868 [INFO]     📸 Imagen guardada para 2020/04 -> 202004-5.jpg
+2026-06-07 19:22:48,121 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-14.jpg
+2026-06-07 19:22:48,328 [INFO]     📸 Imagen guardada para 2005/06 -> 200506-7.jpg
+2026-06-07 19:22:48,621 [INFO]     📸 Imagen guardada para 2019/88 -> 201988-4.jpg
+2026-06-07 19:22:48,902 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-15.jpg
+2026-06-07 19:22:49,126 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-6.jpg
+2026-06-07 19:22:49,367 [INFO]     📸 Imagen guardada para 2019/95 -> 201995-6.jpg
+2026-06-07 19:22:49,594 [INFO]     📸 Imagen guardada para 2086/87 -> 208687-1.jpg
+2026-06-07 19:22:49,823 [INFO]     📸 Imagen guardada para 2097/98 -> 209798-5.jpg
+2026-06-07 19:22:50,092 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-6.jpg
+2026-06-07 19:22:50,408 [INFO]     📸 Imagen guardada para 2019/86 -> 201986-1.jpg
+2026-06-07 19:22:50,641 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-16.jpg
+2026-06-07 19:22:50,892 [INFO]     📸 Imagen guardada para 95 -> 95.jpg
+2026-06-07 19:22:51,099 [INFO]     📸 Imagen guardada para 2020/07 -> 202007-2.jpg
+2026-06-07 19:22:51,304 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-2.jpg
+2026-06-07 19:22:51,641 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-216.jpg
+2026-06-07 19:22:52,062 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-217.jpg
+2026-06-07 19:22:52,492 [INFO]     📸 Imagen guardada para 球员德国周年版长袖 -> -524.jpg
+2026-06-07 19:22:52,973 [INFO]     📸 Imagen guardada para : -> -525.jpg
+2026-06-07 19:22:53,432 [INFO]     📸 Imagen guardada para : -> -526.jpg
+2026-06-07 19:22:53,890 [INFO]     📸 Imagen guardada para : -> -527.jpg
+2026-06-07 19:22:54,371 [INFO]     📸 Imagen guardada para ； -> -528.jpg
+2026-06-07 19:22:54,740 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-218.jpg
+2026-06-07 19:22:55,241 [INFO]     📸 Imagen guardada para ； -> -529.jpg
+2026-06-07 19:22:55,725 [INFO]     📸 Imagen guardada para ； -> -530.jpg
+2026-06-07 19:22:56,174 [INFO]     📸 Imagen guardada para ； -> -531.jpg
+2026-06-07 19:22:56,667 [INFO]     📸 Imagen guardada para : -> -532.jpg
+2026-06-07 19:22:56,876 [INFO]     📸 Imagen guardada para 2082/84 -> 208284.jpg
+2026-06-07 19:22:57,081 [INFO]     📸 Imagen guardada para 2086/87 -> 208687-2.jpg
+2026-06-07 19:22:57,297 [INFO]     📸 Imagen guardada para 86 -> 86.jpg
+2026-06-07 19:22:57,505 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-17.jpg
+2026-06-07 19:22:57,751 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-3.jpg
+2026-06-07 19:22:58,009 [INFO]     📸 Imagen guardada para 88/89AC -> 8889ac.jpg
+2026-06-07 19:22:58,238 [INFO]     📸 Imagen guardada para 2097/99 -> 209799-3.jpg
+2026-06-07 19:22:58,466 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-7.jpg
+2026-06-07 19:22:58,688 [INFO]     📸 Imagen guardada para 2019/83 -> 201983.jpg
+2026-06-07 19:22:58,944 [INFO]     📸 Imagen guardada para 2019/88 -> 201988-5.jpg
+2026-06-07 19:22:59,181 [INFO]     📸 Imagen guardada para 2005/06 -> 200506-8.jpg
+2026-06-07 19:22:59,370 [INFO]     📸 Imagen guardada para 2020/04 -> 202004-6.jpg
+2026-06-07 19:22:59,585 [INFO]     📸 Imagen guardada para 2020/03 -> 202003-1.jpg
+2026-06-07 19:22:59,786 [INFO]     📸 Imagen guardada para 2091/93 -> 209193-1.jpg
+2026-06-07 19:23:00,011 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-6.jpg
+2026-06-07 19:23:00,218 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-8.jpg
+2026-06-07 19:23:00,445 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-9.jpg
+2026-06-07 19:23:00,640 [INFO]     📸 Imagen guardada para 2020/14 -> 202014-5.jpg
+2026-06-07 19:23:00,882 [INFO]     📸 Imagen guardada para 2019/84 -> 201984.jpg
+2026-06-07 19:23:01,107 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-11.jpg
+2026-06-07 19:23:01,373 [INFO]     📸 Imagen guardada para 2019/95 -> 201995-7.jpg
+2026-06-07 19:23:01,611 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-18.jpg
+2026-06-07 19:23:01,826 [INFO]     📸 Imagen guardada para 2010/11 -> 201011-2.jpg
+2026-06-07 19:23:02,093 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-24.jpg
+2026-06-07 19:23:02,408 [INFO]     📸 Imagen guardada para 24=25 -> 2425.jpg
+2026-06-07 19:23:02,617 [INFO]     📸 Imagen guardada para 2010/11 -> 201011-3.jpg
+2026-06-07 19:23:02,853 [INFO]     📸 Imagen guardada para 2018/19 -> 201819-2.jpg
+2026-06-07 19:23:03,079 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-15.jpg
+2026-06-07 19:23:03,340 [INFO]     📸 Imagen guardada para 2019/92 -> 201992-7.jpg
+2026-06-07 19:23:03,587 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-4.jpg
+2026-06-07 19:23:03,814 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-11.jpg
+2026-06-07 19:23:04,026 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-12.jpg
+2026-06-07 19:23:04,242 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-5.jpg
+2026-06-07 19:23:04,539 [INFO]     📸 Imagen guardada para 2094/95 -> 209495-9.jpg
+2026-06-07 19:23:04,780 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-14.jpg
+2026-06-07 19:23:05,039 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-16.jpg
+2026-06-07 19:23:05,245 [INFO]     📸 Imagen guardada para 2090/91 -> 209091-3.jpg
+2026-06-07 19:23:05,534 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-132.jpg
+2026-06-07 19:23:05,787 [INFO]     📸 Imagen guardada para ；25-26AC -> 25-26ac-3.jpg
+2026-06-07 19:23:06,151 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-219.jpg
+2026-06-07 19:23:06,428 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-18.jpg
+2026-06-07 19:23:06,726 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-133.jpg
+2026-06-07 19:23:06,945 [INFO]     📸 Imagen guardada para 2085/86 -> 208586.jpg
+2026-06-07 19:23:07,159 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-2.jpg
+2026-06-07 19:23:07,518 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-134.jpg
+2026-06-07 19:23:07,792 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-16.jpg
+2026-06-07 19:23:08,013 [INFO]     📸 Imagen guardada para 2020/02 -> 202002-6.jpg
+2026-06-07 19:23:08,251 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-13.jpg
+2026-06-07 19:23:08,502 [INFO]     📸 Imagen guardada para 2019/93 -> 201993-1.jpg
+2026-06-07 19:23:08,760 [INFO]     📸 Imagen guardada para 2099/91 -> 209991.jpg
+2026-06-07 19:23:08,996 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-6.jpg
+2026-06-07 19:23:09,006 [INFO]   creados=1200 actualizados=0
+2026-06-07 19:23:09,007 [INFO]   PROGRESO: 10/14 | Total BD: 22487
+2026-06-07 19:23:09,007 [INFO] 
+Página 11/14: https://baocheng3f888.x.yupoo.com/categories?page=11
+2026-06-07 19:23:18,597 [INFO]   120 álbumes extraídos
+2026-06-07 19:23:18,833 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-17.jpg
+2026-06-07 19:23:19,353 [INFO]     📸 Imagen guardada para : -> -533.jpg
+2026-06-07 19:23:19,687 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-220.jpg
+2026-06-07 19:23:20,015 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-221.jpg
+2026-06-07 19:23:20,531 [INFO]     📸 Imagen guardada para : -> -534.jpg
+2026-06-07 19:23:20,790 [INFO]     📸 Imagen guardada para ;25-26AC -> 25-26ac-4.jpg
+2026-06-07 19:23:21,247 [INFO]     📸 Imagen guardada para ； -> -535.jpg
+2026-06-07 19:23:21,540 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-135.jpg
+2026-06-07 19:23:21,785 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-10.jpg
+2026-06-07 19:23:22,028 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-15.jpg
+2026-06-07 19:23:22,297 [INFO]     📸 Imagen guardada para 2004/05 -> 200405-8.jpg
+2026-06-07 19:23:22,523 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-7.jpg
+2026-06-07 19:23:22,771 [INFO]     📸 Imagen guardada para 2094/96 -> 209496-4.jpg
+2026-06-07 19:23:22,999 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-16.jpg
+2026-06-07 19:23:23,216 [INFO]     📸 Imagen guardada para 2091/93 -> 209193-2.jpg
+2026-06-07 19:23:23,442 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-5.jpg
+2026-06-07 19:23:23,661 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-19.jpg
+2026-06-07 19:23:23,941 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-136.jpg
+2026-06-07 19:23:24,169 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-25.jpg
+2026-06-07 19:23:24,435 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-17.jpg
+2026-06-07 19:23:24,669 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-3.jpg
+2026-06-07 19:23:24,903 [INFO]     📸 Imagen guardada para 2019/91 -> 201991-3.jpg
+2026-06-07 19:23:25,163 [INFO]     📸 Imagen guardada para 2019/93 -> 201993-2.jpg
+2026-06-07 19:23:25,417 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-6.jpg
+2026-06-07 19:23:25,683 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-137.jpg
+2026-06-07 19:23:25,930 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-138.jpg
+2026-06-07 19:23:26,405 [INFO]     📸 Imagen guardada para : -> -536.jpg
+2026-06-07 19:23:26,751 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-222.jpg
+2026-06-07 19:23:27,214 [INFO]     📸 Imagen guardada para : -> -537.jpg
+2026-06-07 19:23:27,637 [INFO]     📸 Imagen guardada para : -> -538.jpg
+2026-06-07 19:23:27,970 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-223.jpg
+2026-06-07 19:23:28,452 [INFO]     📸 Imagen guardada para : -> -539.jpg
+2026-06-07 19:23:28,936 [INFO]     📸 Imagen guardada para : -> -540.jpg
+2026-06-07 19:23:29,405 [INFO]     📸 Imagen guardada para : -> -541.jpg
+2026-06-07 19:23:29,733 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-224.jpg
+2026-06-07 19:23:30,137 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-225.jpg
+2026-06-07 19:23:30,569 [INFO]     📸 Imagen guardada para : -> -542.jpg
+2026-06-07 19:23:30,850 [INFO]     📸 Imagen guardada para 2019/86 -> 201986-2.jpg
+2026-06-07 19:23:31,084 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-7.jpg
+2026-06-07 19:23:31,287 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-3.jpg
+2026-06-07 19:23:31,514 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-17.jpg
+2026-06-07 19:23:31,759 [INFO]     📸 Imagen guardada para 2015/16 -> 201516-6.jpg
+2026-06-07 19:23:32,060 [INFO]     📸 Imagen guardada para 2019/88 -> 201988-6.jpg
+2026-06-07 19:23:32,293 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-4.jpg
+2026-06-07 19:23:32,502 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-8.jpg
+2026-06-07 19:23:32,739 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-7.jpg
+2026-06-07 19:23:32,991 [INFO]     📸 Imagen guardada para 2096/98 -> 209698-1.jpg
+2026-06-07 19:23:33,228 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-5.jpg
+2026-06-07 19:23:33,434 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-4.jpg
+2026-06-07 19:23:33,716 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-139.jpg
+2026-06-07 19:23:33,931 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-6.jpg
+2026-06-07 19:23:34,182 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-140.jpg
+2026-06-07 19:23:34,451 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-18.jpg
+2026-06-07 19:23:34,665 [INFO]     📸 Imagen guardada para 2019/86 -> 201986-3.jpg
+2026-06-07 19:23:34,916 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-26.jpg
+2026-06-07 19:23:35,141 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-8.jpg
+2026-06-07 19:23:35,392 [INFO]     📸 Imagen guardada para 2019/20 -> 201920-2.jpg
+2026-06-07 19:23:35,646 [INFO]     📸 Imagen guardada para 2090/92 -> 209092-1.jpg
+2026-06-07 19:23:36,104 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-7.jpg
+2026-06-07 19:23:36,363 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-14.jpg
+2026-06-07 19:23:36,601 [INFO]     📸 Imagen guardada para 2020/02 -> 202002-7.jpg
+2026-06-07 19:23:36,818 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-20.jpg
+2026-06-07 19:23:37,031 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-4.jpg
+2026-06-07 19:23:37,285 [INFO]     📸 Imagen guardada para 2009/10 -> 200910-6.jpg
+2026-06-07 19:23:37,509 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-12.jpg
+2026-06-07 19:23:37,961 [INFO]     📸 Imagen guardada para : -> -543.jpg
+2026-06-07 19:23:38,201 [INFO]     📸 Imagen guardada para 2004/05 -> 200405-9.jpg
+2026-06-07 19:23:38,453 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-19.jpg
+2026-06-07 19:23:38,710 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-15.jpg
+2026-06-07 19:23:38,998 [INFO]     📸 Imagen guardada para 2002/03 -> 200203-1.jpg
+2026-06-07 19:23:39,240 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-21.jpg
+2026-06-07 19:23:39,536 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-5.jpg
+2026-06-07 19:23:39,806 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-141.jpg
+2026-06-07 19:23:40,091 [INFO]     📸 Imagen guardada para 2003/04 -> 200304-7.jpg
+2026-06-07 19:23:40,332 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-27.jpg
+2026-06-07 19:23:40,579 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-22.jpg
+2026-06-07 19:23:40,823 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-16.jpg
+2026-06-07 19:23:41,055 [INFO]     📸 Imagen guardada para 2093/94 -> 209394-5.jpg
+2026-06-07 19:23:41,284 [INFO]     📸 Imagen guardada para 2099/01 -> 209901-1.jpg
+2026-06-07 19:23:41,541 [INFO]     📸 Imagen guardada para 2093/94 -> 209394-6.jpg
+2026-06-07 19:23:41,753 [INFO]     📸 Imagen guardada para 2097/98 -> 209798-6.jpg
+2026-06-07 19:23:42,047 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-226.jpg
+2026-06-07 19:23:42,273 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-8.jpg
+2026-06-07 19:23:42,514 [INFO]     📸 Imagen guardada para 2092/94 -> 209294-2.jpg
+2026-06-07 19:23:42,746 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-7.jpg
+2026-06-07 19:23:43,179 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-142.jpg
+2026-06-07 19:23:43,374 [INFO]     📸 Imagen guardada para 2011/12 -> 201112-9.jpg
+2026-06-07 19:23:43,611 [INFO]     📸 Imagen guardada para 15-16AC -> 15-16ac.jpg
+2026-06-07 19:23:43,853 [INFO]     📸 Imagen guardada para 18 -> 18.jpg
+2026-06-07 19:23:44,083 [INFO]     📸 Imagen guardada para 2097/97 -> 209797.jpg
+2026-06-07 19:23:44,305 [INFO]     📸 Imagen guardada para 2003/04 -> 200304-8.jpg
+2026-06-07 19:23:44,514 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-9.jpg
+2026-06-07 19:23:44,727 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-17.jpg
+2026-06-07 19:23:44,968 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-19.jpg
+2026-06-07 19:23:45,184 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-28.jpg
+2026-06-07 19:23:45,411 [INFO]     📸 Imagen guardada para 2003/04 -> 200304-9.jpg
+2026-06-07 19:23:45,615 [INFO]     📸 Imagen guardada para 2093/95 -> 209395-3.jpg
+2026-06-07 19:23:45,832 [INFO]     📸 Imagen guardada para 2020/14 -> 202014-6.jpg
+2026-06-07 19:23:46,094 [INFO]     📸 Imagen guardada para 2005/06 -> 200506-9.jpg
+2026-06-07 19:23:46,343 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-18.jpg
+2026-06-07 19:23:46,851 [INFO]     📸 Imagen guardada para : -> -544.jpg
+2026-06-07 19:23:47,181 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-227.jpg
+2026-06-07 19:23:47,598 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-228.jpg
+2026-06-07 19:23:47,951 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-229.jpg
+2026-06-07 19:23:48,358 [INFO]     📸 Imagen guardada para : -> -545.jpg
+2026-06-07 19:23:48,707 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-230.jpg
+2026-06-07 19:23:48,977 [INFO]     📸 Imagen guardada para 2089/91 -> 208991-3.jpg
+2026-06-07 19:23:49,212 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-8.jpg
+2026-06-07 19:23:49,430 [INFO]     📸 Imagen guardada para 2001/02 -> 200102-13.jpg
+2026-06-07 19:23:49,658 [INFO]     📸 Imagen guardada para 2097/99 -> 209799-4.jpg
+2026-06-07 19:23:49,916 [INFO]     📸 Imagen guardada para 2014/15 -> 201415-5.jpg
+2026-06-07 19:23:50,132 [INFO]     📸 Imagen guardada para 2093/94 -> 209394-7.jpg
+2026-06-07 19:23:50,340 [INFO]     📸 Imagen guardada para 2017/18 -> 201718-2.jpg
+2026-06-07 19:23:50,551 [INFO]     📸 Imagen guardada para 2005/06 -> 200506-10.jpg
+2026-06-07 19:23:50,785 [INFO]     📸 Imagen guardada para 2005/06 -> 200506-11.jpg
+2026-06-07 19:23:51,063 [INFO]     📸 Imagen guardada para 2020/00 -> 202000-7.jpg
+2026-06-07 19:23:51,281 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-23.jpg
+2026-06-07 19:23:51,487 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-10.jpg
+2026-06-07 19:23:51,741 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-9.jpg
+2026-06-07 19:23:51,974 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-5.jpg
+2026-06-07 19:23:51,985 [INFO]   creados=1320 actualizados=0
+2026-06-07 19:23:51,985 [INFO] 
+Página 12/14: https://baocheng3f888.x.yupoo.com/categories?page=12
+2026-06-07 19:24:03,053 [INFO]   120 álbumes extraídos
+2026-06-07 19:24:03,381 [INFO]     📸 Imagen guardada para 2010/11 -> 201011-4.jpg
+2026-06-07 19:24:03,620 [INFO]     📸 Imagen guardada para 2098/00 -> 209800-1.jpg
+2026-06-07 19:24:03,868 [INFO]     📸 Imagen guardada para 2092/94 -> 209294-3.jpg
+2026-06-07 19:24:04,108 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-11.jpg
+2026-06-07 19:24:04,390 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-18.jpg
+2026-06-07 19:24:04,622 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-6.jpg
+2026-06-07 19:24:04,834 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-8.jpg
+2026-06-07 19:24:05,067 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-24.jpg
+2026-06-07 19:24:05,301 [INFO]     📸 Imagen guardada para 2020/14 -> 202014-7.jpg
+2026-06-07 19:24:05,505 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-12.jpg
+2026-06-07 19:24:05,740 [INFO]     📸 Imagen guardada para 2010/11 -> 201011-5.jpg
+2026-06-07 19:24:06,016 [INFO]     📸 Imagen guardada para 2002/03 -> 200203-2.jpg
+2026-06-07 19:24:06,333 [INFO]     📸 Imagen guardada para 2002/03 -> 200203-3.jpg
+2026-06-07 19:24:06,558 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-9.jpg
+2026-06-07 19:24:06,804 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-20.jpg
+2026-06-07 19:24:07,027 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-19.jpg
+2026-06-07 19:24:07,256 [INFO]     📸 Imagen guardada para 2019/20 -> 201920-3.jpg
+2026-06-07 19:24:07,497 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-10.jpg
+2026-06-07 19:24:07,712 [INFO]     📸 Imagen guardada para 2020/14 -> 202014-8.jpg
+2026-06-07 19:24:07,950 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-11.jpg
+2026-06-07 19:24:08,163 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-18.jpg
+2026-06-07 19:24:08,392 [INFO]     📸 Imagen guardada para 2020/13 -> 202013-8.jpg
+2026-06-07 19:24:08,632 [INFO]     📸 Imagen guardada para 2096/97 -> 209697-20.jpg
+2026-06-07 19:24:09,065 [INFO]     📸 Imagen guardada para : -> -546.jpg
+2026-06-07 19:24:09,389 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-231.jpg
+2026-06-07 19:24:09,648 [INFO]     📸 Imagen guardada para 2097/98 -> 209798-7.jpg
+2026-06-07 19:24:09,843 [INFO]     📸 Imagen guardada para 2019/90 -> 201990-7.jpg
+2026-06-07 19:24:10,124 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-20.jpg
+2026-06-07 19:24:10,397 [INFO]     📸 Imagen guardada para 2099/01 -> 209901-2.jpg
+2026-06-07 19:24:10,631 [INFO]     📸 Imagen guardada para 2018/99 -> 201899.jpg
+2026-06-07 19:24:10,839 [INFO]     📸 Imagen guardada para 2019/97 -> 201997-4.jpg
+2026-06-07 19:24:11,104 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-21.jpg
+2026-06-07 19:24:11,325 [INFO]     📸 Imagen guardada para 2093/94 -> 209394-8.jpg
+2026-06-07 19:24:11,514 [INFO]     📸 Imagen guardada para 2020/00 -> 202000-8.jpg
+2026-06-07 19:24:11,839 [INFO]     📸 Imagen guardada para 2091/92 -> 209192-4.jpg
+2026-06-07 19:24:12,061 [INFO]     📸 Imagen guardada para 2018/19 -> 201819-3.jpg
+2026-06-07 19:24:12,295 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-19.jpg
+2026-06-07 19:24:12,582 [INFO]     📸 Imagen guardada para 2020/02 -> 202002-8.jpg
+2026-06-07 19:24:12,813 [INFO]     📸 Imagen guardada para 2094/95 -> 209495-10.jpg
+2026-06-07 19:24:13,023 [INFO]     📸 Imagen guardada para 2005/06 -> 200506-12.jpg
+2026-06-07 19:24:13,229 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-7.jpg
+2026-06-07 19:24:13,451 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-8.jpg
+2026-06-07 19:24:13,690 [INFO]     📸 Imagen guardada para 2004/05 -> 200405-10.jpg
+2026-06-07 19:24:13,923 [INFO]     📸 Imagen guardada para 2010/11 -> 201011-6.jpg
+2026-06-07 19:24:14,193 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-6.jpg
+2026-06-07 19:24:14,425 [INFO]     📸 Imagen guardada para 2016/17 -> 201617-12.jpg
+2026-06-07 19:24:14,647 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-7.jpg
+2026-06-07 19:24:14,913 [INFO]     📸 Imagen guardada para 2094/95 -> 209495-11.jpg
+2026-06-07 19:24:15,188 [INFO]     📸 Imagen guardada para 2099/01 -> 209901-3.jpg
+2026-06-07 19:24:15,402 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-21.jpg
+2026-06-07 19:24:15,866 [INFO]     📸 Imagen guardada para : -> -547.jpg
+2026-06-07 19:24:16,292 [INFO]     📸 Imagen guardada para : -> -548.jpg
+2026-06-07 19:24:16,815 [INFO]     📸 Imagen guardada para : -> -549.jpg
+2026-06-07 19:24:17,030 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-25.jpg
+2026-06-07 19:24:17,276 [INFO]     📸 Imagen guardada para 2020/00 -> 202000-9.jpg
+2026-06-07 19:24:17,513 [INFO]     📸 Imagen guardada para 2097/99 -> 209799-5.jpg
+2026-06-07 19:24:17,768 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-19.jpg
+2026-06-07 19:24:18,021 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-26.jpg
+2026-06-07 19:24:18,254 [INFO]     📸 Imagen guardada para 2097/98 -> 209798-8.jpg
+2026-06-07 19:24:18,516 [INFO]     📸 Imagen guardada para 16/17AC -> 1617ac.jpg
+2026-06-07 19:24:18,765 [INFO]     📸 Imagen guardada para 2019/97 -> 201997-5.jpg
+2026-06-07 19:24:19,021 [INFO]     📸 Imagen guardada para 2018/19 -> 201819-4.jpg
+2026-06-07 19:24:19,343 [INFO]     📸 Imagen guardada para 2019/94 -> 201994-20.jpg
+2026-06-07 19:24:19,581 [INFO]     📸 Imagen guardada para 2020/00 -> 202000-10.jpg
+2026-06-07 19:24:19,847 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-27.jpg
+2026-06-07 19:24:20,056 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-28.jpg
+2026-06-07 19:24:20,363 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-6.jpg
+2026-06-07 19:24:20,619 [INFO]     📸 Imagen guardada para 2099/00 -> 209900-29.jpg
+2026-06-07 19:24:20,854 [INFO]     📸 Imagen guardada para 2094/95 -> 209495-12.jpg
+2026-06-07 19:24:21,076 [INFO]     📸 Imagen guardada para 2017/18 -> 201718-3.jpg
+2026-06-07 19:24:21,322 [INFO]     📸 Imagen guardada para 2013/14 -> 201314-9.jpg
+2026-06-07 19:24:21,593 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-9.jpg
+2026-06-07 19:24:21,806 [INFO]     📸 Imagen guardada para 2098/00 -> 209800-2.jpg
+2026-06-07 19:24:22,041 [INFO]     📸 Imagen guardada para 2095/97 -> 209597-8.jpg
+2026-06-07 19:24:22,265 [INFO]     📸 Imagen guardada para 2095/97 -> 209597-9.jpg
+2026-06-07 19:24:22,486 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-11.jpg
+2026-06-07 19:24:22,684 [INFO]     📸 Imagen guardada para 2095/96 -> 209596-22.jpg
+2026-06-07 19:24:22,928 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-7.jpg
+2026-06-07 19:24:23,164 [INFO]     📸 Imagen guardada para 2091/93 -> 209193-3.jpg
+2026-06-07 19:24:23,387 [INFO]     📸 Imagen guardada para 2020/02 -> 202002-9.jpg
+2026-06-07 19:24:23,625 [INFO]     📸 Imagen guardada para 2008/09 -> 200809-10.jpg
+2026-06-07 19:24:23,893 [INFO]     📸 Imagen guardada para 2019/88 -> 201988-7.jpg
+2026-06-07 19:24:24,108 [INFO]     📸 Imagen guardada para 2019/93 -> 201993-3.jpg
+2026-06-07 19:24:24,385 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-29.jpg
+2026-06-07 19:24:24,600 [INFO]     📸 Imagen guardada para 2000/01 -> 200001-8.jpg
+2026-06-07 19:24:24,831 [INFO]     📸 Imagen guardada para 2002/03 -> 200203-4.jpg
+2026-06-07 19:24:25,080 [INFO]     📸 Imagen guardada para 2015/16 -> 201516-7.jpg
+2026-06-07 19:24:25,294 [INFO]     📸 Imagen guardada para 07-08AC -> 07-08ac.jpg
+2026-06-07 19:24:25,518 [INFO]     📸 Imagen guardada para 2098/00 -> 209800-3.jpg
+2026-06-07 19:24:26,012 [INFO]     📸 Imagen guardada para : -> -550.jpg
+2026-06-07 19:24:26,360 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-232.jpg
+2026-06-07 19:24:26,572 [INFO]     📸 Imagen guardada para 2020/06 -> 202006-8.jpg
+2026-06-07 19:24:26,814 [INFO]     📸 Imagen guardada para 2017/18 -> 201718-4.jpg
+2026-06-07 19:24:27,072 [INFO]     📸 Imagen guardada para 2017/18 -> 201718-5.jpg
+2026-06-07 19:24:27,316 [INFO]     📸 Imagen guardada para 2020/12 -> 202012-12.jpg
+2026-06-07 19:24:27,529 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-13.jpg
+2026-06-07 19:24:27,740 [INFO]     📸 Imagen guardada para 2014/15 -> 201415-6.jpg
+2026-06-07 19:24:28,003 [INFO]     📸 Imagen guardada para 2098/99 -> 209899-22.jpg
+2026-06-07 19:24:28,264 [INFO]     📸 Imagen guardada para 2019/20 -> 201920-4.jpg
+2026-06-07 19:24:28,509 [INFO]     📸 Imagen guardada para 2019/88 -> 201988-8.jpg
+2026-06-07 19:24:28,765 [INFO]     📸 Imagen guardada para 2017/18 -> 201718-6.jpg
+2026-06-07 19:24:29,105 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-233.jpg
+2026-06-07 19:24:29,647 [INFO]     📸 Imagen guardada para : -> -551.jpg
+2026-06-07 19:24:30,153 [INFO]     📸 Imagen guardada para : -> -552.jpg
+2026-06-07 19:24:30,524 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-234.jpg
+2026-06-07 19:24:30,780 [INFO]     📸 Imagen guardada para 2019/95 -> 201995-8.jpg
+2026-06-07 19:24:30,990 [INFO]     📸 Imagen guardada para 2019/99 -> 201999-11.jpg
+2026-06-07 19:24:31,245 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-30.jpg
+2026-06-07 19:24:31,480 [INFO]     📸 Imagen guardada para 2012/13 -> 201213-10.jpg
+2026-06-07 19:24:31,816 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-235.jpg
+2026-06-07 19:24:32,074 [INFO]     📸 Imagen guardada para :25-262 -> 25-262-9.jpg
+2026-06-07 19:24:32,240 [INFO]     📸 Imagen guardada para 2019/92 -> 201992-8.jpg
+2026-06-07 19:24:32,723 [INFO]     📸 Imagen guardada para ； -> -553.jpg
+2026-06-07 19:24:32,980 [INFO]     📸 Imagen guardada para 2020/11 -> 202011-6.jpg
+2026-06-07 19:24:33,217 [INFO]     📸 Imagen guardada para 2020/11 -> 202011-7.jpg
+2026-06-07 19:24:33,523 [INFO]     📸 Imagen guardada para 2020/11 -> 202011-8.jpg
+2026-06-07 19:24:33,777 [INFO]     📸 Imagen guardada para 2019/98 -> 201998-31.jpg
+2026-06-07 19:24:34,036 [INFO]     📸 Imagen guardada para 2019/89 -> 201989.jpg
+2026-06-07 19:24:34,282 [INFO]     📸 Imagen guardada para 2007/08 -> 200708-8.jpg
+2026-06-07 19:24:34,565 [INFO]     📸 Imagen guardada para 2006/07 -> 200607-14.jpg
+2026-06-07 19:24:34,577 [INFO]   creados=1440 actualizados=0
+2026-06-07 19:24:34,577 [INFO] 
+Página 13/14: https://baocheng3f888.x.yupoo.com/categories?page=13
+2026-06-07 19:24:43,828 [INFO]   120 álbumes extraídos
+2026-06-07 19:24:44,102 [INFO]     📸 Imagen guardada para 2019/96 -> 201996-20.jpg
+2026-06-07 19:24:44,326 [INFO]     📸 Imagen guardada para 2019/90 -> 201990-8.jpg
+2026-06-07 19:24:44,701 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-236.jpg
+2026-06-07 19:24:45,186 [INFO]     📸 Imagen guardada para : -> -554.jpg
+2026-06-07 19:24:45,692 [INFO]     📸 Imagen guardada para : -> -555.jpg
+2026-06-07 19:24:46,201 [INFO]     📸 Imagen guardada para : -> -556.jpg
+2026-06-07 19:24:46,512 [INFO]     📸 Imagen guardada para 2025/56 -> 202556-2.jpg
+2026-06-07 19:24:46,977 [INFO]     📸 Imagen guardada para : -> -557.jpg
+2026-06-07 19:24:47,463 [INFO]     📸 Imagen guardada para : -> -558.jpg
+2026-06-07 19:24:47,953 [INFO]     📸 Imagen guardada para : -> -559.jpg
+2026-06-07 19:24:48,446 [INFO]     📸 Imagen guardada para : -> -560.jpg
+2026-06-07 19:24:48,850 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-237.jpg
+2026-06-07 19:24:49,302 [INFO]     📸 Imagen guardada para : -> -561.jpg
+2026-06-07 19:24:49,801 [INFO]     📸 Imagen guardada para : -> -562.jpg
+2026-06-07 19:24:50,281 [INFO]     📸 Imagen guardada para : -> -563.jpg
+2026-06-07 19:24:50,769 [INFO]     📸 Imagen guardada para : -> -564.jpg
+2026-06-07 19:24:51,252 [INFO]     📸 Imagen guardada para : -> -565.jpg
+2026-06-07 19:24:51,748 [INFO]     📸 Imagen guardada para : -> -566.jpg
+2026-06-07 19:24:52,251 [INFO]     📸 Imagen guardada para :， -> -567.jpg
+2026-06-07 19:24:52,775 [INFO]     📸 Imagen guardada para : -> -568.jpg
+2026-06-07 19:24:53,326 [INFO]     📸 Imagen guardada para : -> -569.jpg
+2026-06-07 19:24:53,842 [INFO]     📸 Imagen guardada para : -> -570.jpg
+2026-06-07 19:24:54,390 [INFO]     📸 Imagen guardada para : -> -571.jpg
+2026-06-07 19:24:54,875 [INFO]     📸 Imagen guardada para : -> -572.jpg
+2026-06-07 19:24:55,366 [INFO]     📸 Imagen guardada para : -> -573.jpg
+2026-06-07 19:24:55,878 [INFO]     📸 Imagen guardada para : -> -574.jpg
+2026-06-07 19:24:56,379 [INFO]     📸 Imagen guardada para : -> -575.jpg
+2026-06-07 19:24:56,843 [INFO]     📸 Imagen guardada para : -> -576.jpg
+2026-06-07 19:24:57,359 [INFO]     📸 Imagen guardada para : -> -577.jpg
+2026-06-07 19:24:57,905 [INFO]     📸 Imagen guardada para : -> -578.jpg
+2026-06-07 19:24:58,416 [INFO]     📸 Imagen guardada para : -> -579.jpg
+2026-06-07 19:24:58,956 [INFO]     📸 Imagen guardada para : -> -580.jpg
+2026-06-07 19:24:59,400 [INFO]     📸 Imagen guardada para : -> -581.jpg
+2026-06-07 19:24:59,829 [INFO]     📸 Imagen guardada para : -> -582.jpg
+2026-06-07 19:25:00,327 [INFO]     📸 Imagen guardada para : -> -583.jpg
+2026-06-07 19:25:00,771 [INFO]     📸 Imagen guardada para : -> -584.jpg
+2026-06-07 19:25:01,256 [INFO]     📸 Imagen guardada para : -> -585.jpg
+2026-06-07 19:25:01,771 [INFO]     📸 Imagen guardada para : -> -586.jpg
+2026-06-07 19:25:02,327 [INFO]     📸 Imagen guardada para : -> -587.jpg
+2026-06-07 19:25:02,840 [INFO]     📸 Imagen guardada para : -> -588.jpg
+2026-06-07 19:25:03,303 [INFO]     📸 Imagen guardada para : -> -589.jpg
+2026-06-07 19:25:03,800 [INFO]     📸 Imagen guardada para : -> -590.jpg
+2026-06-07 19:25:04,270 [INFO]     📸 Imagen guardada para : -> -591.jpg
+2026-06-07 19:25:04,756 [INFO]     📸 Imagen guardada para : -> -592.jpg
+2026-06-07 19:25:05,212 [INFO]     📸 Imagen guardada para : -> -593.jpg
+2026-06-07 19:25:05,678 [INFO]     📸 Imagen guardada para : -> -594.jpg
+2026-06-07 19:25:06,230 [INFO]     📸 Imagen guardada para : -> -595.jpg
+2026-06-07 19:25:06,672 [INFO]     📸 Imagen guardada para : -> -596.jpg
+2026-06-07 19:25:07,161 [INFO]     📸 Imagen guardada para : -> -597.jpg
+2026-06-07 19:25:07,651 [INFO]     📸 Imagen guardada para : -> -598.jpg
+2026-06-07 19:25:08,107 [INFO]     📸 Imagen guardada para 复古阿森纳长袖 -> -599.jpg
+2026-06-07 19:25:08,570 [INFO]     📸 Imagen guardada para 拜仁复古长袖 -> -600.jpg
+2026-06-07 19:25:09,022 [INFO]     📸 Imagen guardada para 拜仁复古 -> -601.jpg
+2026-06-07 19:25:09,501 [INFO]     📸 Imagen guardada para : -> -602.jpg
+2026-06-07 19:25:09,965 [INFO]     📸 Imagen guardada para : -> -603.jpg
+2026-06-07 19:25:10,427 [INFO]     📸 Imagen guardada para : -> -604.jpg
+2026-06-07 19:25:10,956 [INFO]     📸 Imagen guardada para : -> -605.jpg
+2026-06-07 19:25:11,340 [INFO]     📸 Imagen guardada para 2025/26 -> 202526-238.jpg
+2026-06-07 19:25:11,926 [INFO]     📸 Imagen guardada para 阿森纳复古 -> -606.jpg
+2026-06-07 19:25:12,431 [INFO]     📸 Imagen guardada para 曼联复古黑 -> -607.jpg
+2026-06-07 19:25:12,966 [INFO]     📸 Imagen guardada para : -> -608.jpg
+2026-06-07 19:25:13,441 [INFO]     📸 Imagen guardada para : -> -609.jpg
+2026-06-07 19:25:13,884 [INFO]     📸 Imagen guardada para : -> -610.jpg
+2026-06-07 19:25:14,392 [INFO]     📸 Imagen guardada para : -> -611.jpg
+2026-06-07 19:25:14,866 [INFO]     📸 Imagen guardada para : -> -612.jpg
+2026-06-07 19:25:15,333 [INFO]     📸 Imagen guardada para : -> -613.jpg
+2026-06-07 19:25:15,913 [INFO]     📸 Imagen guardada para : -> -614.jpg
+2026-06-07 19:25:16,351 [INFO]     📸 Imagen guardada para : -> -615.jpg
+2026-06-07 19:25:16,789 [INFO]     📸 Imagen guardada para : -> -616.jpg
+2026-06-07 19:25:17,283 [INFO]     📸 Imagen guardada para : -> -617.jpg
+2026-06-07 19:25:17,796 [INFO]     📸 Imagen guardada para : -> -618.jpg
+2026-06-07 19:25:18,255 [INFO]     📸 Imagen guardada para : -> -619.jpg
+2026-06-07 19:25:18,717 [INFO]     📸 Imagen guardada para : -> -620.jpg
+2026-06-07 19:25:19,158 [INFO]     📸 Imagen guardada para : -> -621.jpg
+2026-06-07 19:25:19,663 [INFO]     📸 Imagen guardada para : -> -622.jpg
+2026-06-07 19:25:20,127 [INFO]     📸 Imagen guardada para : -> -623.jpg
+2026-06-07 19:25:20,579 [INFO]     📸 Imagen guardada para : -> -624.jpg
+2026-06-07 19:25:21,035 [INFO]     📸 Imagen guardada para : -> -625.jpg
+2026-06-07 19:25:21,533 [INFO]     📸 Imagen guardada para : -> -626.jpg
+2026-06-07 19:25:21,973 [INFO]     📸 Imagen guardada para : -> -627.jpg
+2026-06-07 19:25:22,428 [INFO]     📸 Imagen guardada para : -> -628.jpg
+2026-06-07 19:25:22,938 [INFO]     📸 Imagen guardada para : -> -629.jpg
+2026-06-07 19:25:23,483 [INFO]     📸 Imagen guardada para : -> -630.jpg
+2026-06-07 19:25:23,958 [INFO]     📸 Imagen guardada para : -> -631.jpg
+2026-06-07 19:25:24,443 [INFO]     📸 Imagen guardada para : -> -632.jpg
+2026-06-07 19:25:24,910 [INFO]     📸 Imagen guardada para : -> -633.jpg
+2026-06-07 19:25:25,442 [INFO]     📸 Imagen guardada para : -> -634.jpg
+2026-06-07 19:25:25,969 [INFO]     📸 Imagen guardada para : -> -635.jpg
+2026-06-07 19:25:26,465 [INFO]     📸 Imagen guardada para : -> -636.jpg
+2026-06-07 19:25:26,942 [INFO]     📸 Imagen guardada para : -> -637.jpg
+2026-06-07 19:25:27,186 [INFO]     📸 Imagen guardada para :2 -> 2-1.jpg
+2026-06-07 19:25:27,691 [INFO]     📸 Imagen guardada para : -> -638.jpg
+2026-06-07 19:25:28,245 [INFO]     📸 Imagen guardada para : -> -639.jpg
+2026-06-07 19:25:28,781 [INFO]     📸 Imagen guardada para : -> -640.jpg
+2026-06-07 19:25:29,371 [INFO]     📸 Imagen guardada para : -> -641.jpg
+2026-06-07 19:25:29,887 [INFO]     📸 Imagen guardada para : -> -642.jpg
+2026-06-07 19:25:30,394 [INFO]     📸 Imagen guardada para : -> -643.jpg
+2026-06-07 19:25:30,877 [INFO]     📸 Imagen guardada para : -> -644.jpg
+2026-06-07 19:25:31,362 [INFO]     📸 Imagen guardada para : -> -645.jpg
+2026-06-07 19:25:31,962 [INFO]     📸 Imagen guardada para : -> -646.jpg
+2026-06-07 19:25:32,489 [INFO]     📸 Imagen guardada para : -> -647.jpg
+2026-06-07 19:25:32,991 [INFO]     📸 Imagen guardada para ， -> -648.jpg
+2026-06-07 19:25:33,525 [INFO]     📸 Imagen guardada para : -> -649.jpg
+2026-06-07 19:25:34,059 [INFO]     📸 Imagen guardada para : -> -650.jpg
+2026-06-07 19:25:34,560 [INFO]     📸 Imagen guardada para : -> -651.jpg
+2026-06-07 19:25:34,822 [INFO]     📸 Imagen guardada para :AC -> ac-6.jpg
+2026-06-07 19:25:35,339 [INFO]     📸 Imagen guardada para : -> -652.jpg
+2026-06-07 19:25:35,842 [INFO]     📸 Imagen guardada para : -> -653.jpg
+2026-06-07 19:25:36,339 [INFO]     📸 Imagen guardada para : -> -654.jpg
+2026-06-07 19:25:36,934 [INFO]     📸 Imagen guardada para : -> -655.jpg
+2026-06-07 19:25:37,490 [INFO]     📸 Imagen guardada para :， -> -656.jpg
+2026-06-07 19:25:38,015 [INFO]     📸 Imagen guardada para :（） -> -657.jpg
+2026-06-07 19:25:38,570 [INFO]     📸 Imagen guardada para : -> -658.jpg
+2026-06-07 19:25:39,134 [INFO]     📸 Imagen guardada para : -> -659.jpg
+2026-06-07 19:25:39,654 [INFO]     📸 Imagen guardada para : -> -660.jpg
+2026-06-07 19:25:40,199 [INFO]     📸 Imagen guardada para : -> -661.jpg
+2026-06-07 19:25:40,726 [INFO]     📸 Imagen guardada para : -> -662.jpg
+2026-06-07 19:25:41,123 [INFO]     📸 Imagen guardada para : -> -663.jpg
+2026-06-07 19:25:41,629 [INFO]     📸 Imagen guardada para : -> -664.jpg
+2026-06-07 19:25:42,161 [INFO]     📸 Imagen guardada para : -> -665.jpg
+2026-06-07 19:25:42,174 [INFO]   creados=1560 actualizados=0
+2026-06-07 19:25:42,174 [INFO] 
+Página 14/14: https://baocheng3f888.x.yupoo.com/categories?page=14
+2026-06-07 19:25:51,958 [INFO]   74 álbumes extraídos
+2026-06-07 19:25:52,641 [INFO]     📸 Imagen guardada para : -> -666.jpg
+2026-06-07 19:25:53,159 [INFO]     📸 Imagen guardada para :（） -> -667.jpg
+2026-06-07 19:25:53,644 [INFO]     📸 Imagen guardada para : -> -668.jpg
+2026-06-07 19:25:54,132 [INFO]     📸 Imagen guardada para : -> -669.jpg
+2026-06-07 19:25:54,692 [INFO]     📸 Imagen guardada para : -> -670.jpg
+2026-06-07 19:25:54,997 [INFO]     📸 Imagen guardada para :2 -> 2-2.jpg
+2026-06-07 19:25:55,476 [INFO]     📸 Imagen guardada para : -> -671.jpg
+2026-06-07 19:25:55,949 [INFO]     📸 Imagen guardada para : -> -672.jpg
+2026-06-07 19:25:56,435 [INFO]     📸 Imagen guardada para : -> -673.jpg
+2026-06-07 19:25:56,891 [INFO]     📸 Imagen guardada para : -> -674.jpg
+2026-06-07 19:25:57,432 [INFO]     📸 Imagen guardada para : -> -675.jpg
+2026-06-07 19:25:57,913 [INFO]     📸 Imagen guardada para : -> -676.jpg
+2026-06-07 19:25:58,441 [INFO]     📸 Imagen guardada para : -> -677.jpg
+2026-06-07 19:25:58,894 [INFO]     📸 Imagen guardada para : -> -678.jpg
+2026-06-07 19:25:59,395 [INFO]     📸 Imagen guardada para : -> -679.jpg
+2026-06-07 19:25:59,941 [INFO]     📸 Imagen guardada para : -> -680.jpg
+2026-06-07 19:26:00,416 [INFO]     📸 Imagen guardada para : -> -681.jpg
+2026-06-07 19:26:00,960 [INFO]     📸 Imagen guardada para : -> -682.jpg
+2026-06-07 19:26:01,469 [INFO]     📸 Imagen guardada para : -> -683.jpg
+2026-06-07 19:26:02,068 [INFO]     📸 Imagen guardada para : -> -684.jpg
+2026-06-07 19:26:02,539 [INFO]     📸 Imagen guardada para : -> -685.jpg
+2026-06-07 19:26:03,038 [INFO]     📸 Imagen guardada para : -> -686.jpg
+2026-06-07 19:26:03,533 [INFO]     📸 Imagen guardada para : -> -687.jpg
+2026-06-07 19:26:04,032 [INFO]     📸 Imagen guardada para : -> -688.jpg
+2026-06-07 19:26:04,541 [INFO]     📸 Imagen guardada para : -> -689.jpg
+2026-06-07 19:26:04,834 [INFO]     📸 Imagen guardada para :XS-2XL -> xs-2xl.jpg
+2026-06-07 19:26:05,323 [INFO]     📸 Imagen guardada para : -> -690.jpg
+2026-06-07 19:26:05,793 [INFO]     📸 Imagen guardada para : -> -691.jpg
+2026-06-07 19:26:06,265 [INFO]     📸 Imagen guardada para : -> -692.jpg
+2026-06-07 19:26:06,760 [INFO]     📸 Imagen guardada para : -> -693.jpg
+2026-06-07 19:26:07,286 [INFO]     📸 Imagen guardada para : -> -694.jpg
+2026-06-07 19:26:07,831 [INFO]     📸 Imagen guardada para : -> -695.jpg
+2026-06-07 19:26:08,320 [INFO]     📸 Imagen guardada para : -> -696.jpg
+2026-06-07 19:26:08,806 [INFO]     📸 Imagen guardada para : -> -697.jpg
+2026-06-07 19:26:09,303 [INFO]     📸 Imagen guardada para : -> -698.jpg
+2026-06-07 19:26:09,548 [INFO]     📸 Imagen guardada para :Y3 -> y3.jpg
+2026-06-07 19:26:10,169 [INFO]     📸 Imagen guardada para : -> -699.jpg
+2026-06-07 19:26:10,702 [INFO]     📸 Imagen guardada para : -> -700.jpg
+2026-06-07 19:26:11,269 [INFO]     📸 Imagen guardada para : -> -701.jpg
+2026-06-07 19:26:11,781 [INFO]     📸 Imagen guardada para : -> -702.jpg
+2026-06-07 19:26:12,313 [INFO]     📸 Imagen guardada para : -> -703.jpg
+2026-06-07 19:26:12,824 [INFO]     📸 Imagen guardada para : -> -704.jpg
+2026-06-07 19:26:13,338 [INFO]     📸 Imagen guardada para ， -> -705.jpg
+2026-06-07 19:26:13,874 [INFO]     📸 Imagen guardada para : -> -706.jpg
+2026-06-07 19:26:14,393 [INFO]     📸 Imagen guardada para : -> -707.jpg
+2026-06-07 19:26:14,629 [INFO]     📸 Imagen guardada para :2 -> 2-3.jpg
+2026-06-07 19:26:15,200 [INFO]     📸 Imagen guardada para : -> -708.jpg
+2026-06-07 19:26:15,503 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-143.jpg
+2026-06-07 19:26:15,821 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-144.jpg
+2026-06-07 19:26:16,114 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-145.jpg
+2026-06-07 19:26:16,406 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-146.jpg
+2026-06-07 19:26:16,681 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-147.jpg
+2026-06-07 19:26:17,024 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-148.jpg
+2026-06-07 19:26:17,525 [INFO]     📸 Imagen guardada para : -> -709.jpg
+2026-06-07 19:26:17,858 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-149.jpg
+2026-06-07 19:26:18,160 [INFO]     📸 Imagen guardada para :24 -> 24.jpg
+2026-06-07 19:26:18,414 [INFO]     📸 Imagen guardada para :24-25AC -> 24-25ac.jpg
+2026-06-07 19:26:18,717 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-150.jpg
+2026-06-07 19:26:19,212 [INFO]     📸 Imagen guardada para : -> -710.jpg
+2026-06-07 19:26:19,441 [INFO]     📸 Imagen guardada para :24 -> 24-1.jpg
+2026-06-07 19:26:20,059 [INFO]     📸 Imagen guardada para : -> -711.jpg
+2026-06-07 19:26:20,625 [INFO]     📸 Imagen guardada para : -> -712.jpg
+2026-06-07 19:26:21,128 [INFO]     📸 Imagen guardada para : -> -713.jpg
+2026-06-07 19:26:21,699 [INFO]     📸 Imagen guardada para : -> -714.jpg
+2026-06-07 19:26:21,951 [INFO]     📸 Imagen guardada para :24 -> 24-2.jpg
+2026-06-07 19:26:22,269 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-151.jpg
+2026-06-07 19:26:22,556 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-152.jpg
+2026-06-07 19:26:22,836 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-153.jpg
+2026-06-07 19:26:23,156 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-154.jpg
+2026-06-07 19:26:23,445 [INFO]     📸 Imagen guardada para 2024/25 -> 202425-155.jpg
+2026-06-07 19:26:23,961 [INFO]     📸 Imagen guardada para : -> -715.jpg
+2026-06-07 19:26:24,479 [INFO]     📸 Imagen guardada para : -> -716.jpg
+2026-06-07 19:26:25,016 [INFO]     📸 Imagen guardada para : -> -717.jpg
+2026-06-07 19:26:25,496 [INFO]     📸 Imagen guardada para 球员尺码表 -> -718.jpeg
+2026-06-07 19:26:25,509 [INFO]   creados=1634 actualizados=0
+2026-06-07 19:26:25,509 [INFO] Resumen Proveedor Baocheng: {'creado': 1634, 'actualizado': 0, 'asociado': 0, 'error': 0}
+2026-06-07 19:26:25,680 [INFO] 
+============================================================
+2026-06-07 19:26:25,680 [INFO] 🎉 IMPORTACIÓN COMPLETADA
+2026-06-07 19:26:25,681 [INFO]   Proveedores: 3
+2026-06-07 19:26:25,681 [INFO]   Categorías:  13
+2026-06-07 19:26:25,682 [INFO]   Productos:   22921
+2026-06-07 19:26:25,682 [INFO]   Creados:     1634
+2026-06-07 19:26:25,682 [INFO]   Asociados:   0
+2026-06-07 19:26:25,682 [INFO]   Errores:     0

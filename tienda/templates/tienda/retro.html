@@ -6,75 +6,59 @@
 <style>
   /* ══════════════════════════════════════════════════════════════════
      RETRO PAGE — Estética vintage diferenciada del catálogo general
-     Paleta: sepia, marrón oscuro, crema envejecida, acento óxido
-  ══════════════════════════════════════════════════════════════════ */
+     Paleta: Warm Amber, Gold Neon, Dark Glassmorphism
+     ══════════════════════════════════════════════════════════════════ */
 
   /* Variables locales que sobreescriben solo en esta página */
   .retro-page {
-    --r-fondo:       #f5f0e8;
-    --r-fondo-card:  #faf7f2;
-    --r-borde:       #d4c5a9;
-    --r-borde-hover: #8b4513;
-    --r-texto:       #2c1810;
-    --r-gris:        #6b5a4e;
-    --r-acento:      #8b4513;       /* óxido/marrón ladrillo */
-    --r-acento-claro:#b5661a;
-    --r-crema:       #e8dcc8;
-    --r-sombra:      rgba(44,24,16,0.15);
-    --r-sombra-hover:rgba(44,24,16,0.30);
-    --r-stamp:       #6b2d0f;
+    --r-fondo:       transparent;
+    --r-fondo-card:  rgba(26, 22, 18, 0.55); /* warm dark translucent */
+    --r-borde:       rgba(255, 184, 0, 0.12);
+    --r-borde-hover: #ffb800;
+    --r-texto:       #faf7f2;
+    --r-gris:        #bda38f;
+    --r-acento:      #ffb800;       /* Gold/Amber neon accent */
+    --r-acento-claro:#ffd37a;
+    --r-crema:       rgba(255, 184, 0, 0.08);
+    --r-sombra:      rgba(0,0,0,0.5);
+    --r-sombra-hover:rgba(255, 184, 0, 0.25);
+    --r-stamp:       #ffb800;
   }
 
-  /* Fondo general de la página con textura sutil */
+  /* Fondo general de la página con textura vintage retro */
   .retro-page {
     background:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 28px,
-        rgba(139,69,19,0.04) 28px,
-        rgba(139,69,19,0.04) 29px
-      ),
+      radial-gradient(circle at 50% 20%, rgba(255, 184, 0, 0.05), transparent 60%),
       var(--r-fondo);
     min-height: 100vh;
   }
 
   /* ── BANDA SUPERIOR ── */
   .retro-banda {
-    background: var(--r-texto);
-    color: var(--r-crema);
+    background: rgba(255, 184, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--r-borde);
+    color: var(--r-acento);
     text-align: center;
-    padding: 0.5rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.35em;
+    padding: 0.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 184, 0, 0.3);
   }
 
   /* ── HERO ── */
   .retro-hero {
-    padding: 3.5rem 0 2.5rem;
+    padding: 4rem 0 3rem;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 2rem;
-    border-bottom: 3px double var(--r-borde);
+    border-bottom: 1px dashed var(--r-borde);
     margin-bottom: 2.5rem;
     position: relative;
-  }
-
-  /* Líneas decorativas arriba del hero */
-  .retro-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        var(--r-acento) 0, var(--r-acento) 8px,
-        transparent 8px, transparent 16px
-      );
   }
 
   .retro-eyebrow {
@@ -84,46 +68,50 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--r-acento);
-    border: 1px solid var(--r-acento);
-    padding: 0.2rem 0.8rem;
-    margin-bottom: 1rem;
+    border: 1px solid var(--r-borde);
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1.2rem;
+    border-radius: 9999px; /* Pill style */
+    background: rgba(255, 184, 0, 0.05);
+    text-shadow: 0 0 8px rgba(255, 184, 0, 0.3);
   }
 
   .retro-hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Sora', sans-serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 900;
-    font-style: italic;
-    line-height: 0.9;
+    font-weight: 800;
+    line-height: 0.95;
     letter-spacing: -2px;
     color: var(--r-texto);
   }
 
   .retro-hero h1 span {
     display: block;
-    font-style: normal;
-    font-size: 0.45em;
-    letter-spacing: 0.18em;
-    color: var(--r-gris);
+    font-style: italic;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.4em;
+    letter-spacing: 0.05em;
+    color: var(--r-acento);
     margin-top: 0.6rem;
-    font-weight: 500;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 184, 0, 0.2);
   }
 
   .retro-hero-sub {
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     color: var(--r-gris);
     margin-top: 1.2rem;
-    max-width: 360px;
+    max-width: 420px;
     line-height: 1.7;
-    border-left: 2px solid var(--r-acento);
+    border-left: 3px solid var(--r-acento);
     padding-left: 0.9rem;
   }
 
-  /* Sello decorativo */
+  /* Sello vintage */
   .retro-stamp {
     width: 120px;
     height: 120px;
-    border: 3px solid var(--r-stamp);
+    border: 2px solid var(--r-acento);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -132,32 +120,40 @@
     text-align: center;
     padding: 0.5rem;
     transform: rotate(-8deg);
-    box-shadow: inset 0 0 0 5px var(--r-crema), 0 0 0 8px var(--r-stamp);
-    background: var(--r-fondo);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.25), inset 0 0 10px rgba(255, 184, 0, 0.15);
+    background: rgba(26, 22, 18, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     position: relative;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  .retro-stamp:hover {
+    transform: rotate(0deg) scale(1.05);
   }
   .retro-stamp::after {
     content: '';
     position: absolute;
-    inset: -12px;
-    border: 1px dashed var(--r-stamp);
+    inset: -8px;
+    border: 1px dashed var(--r-borde);
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.6;
   }
   .retro-stamp-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--r-stamp);
+    font-family: 'Sora', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--r-acento);
     line-height: 1;
+    text-shadow: 0 0 10px rgba(255, 184, 0, 0.4);
   }
   .retro-stamp-txt {
-    font-size: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--r-stamp);
+    color: var(--r-gris);
     line-height: 1.3;
     margin-top: 0.15rem;
   }
@@ -182,27 +178,30 @@
   .retro-search-wrap svg {
     position: absolute; left: 1rem; top: 50%;
     transform: translateY(-50%);
-    color: var(--r-gris);
+    color: var(--r-acento);
     pointer-events: none;
+    filter: drop-shadow(0 0 4px rgba(255, 184, 0, 0.3));
   }
   .retro-search-wrap input {
     width: 100%;
-    padding: 0.7rem 1rem 0.7rem 2.8rem;
-    background: var(--r-fondo-card);
+    padding: 0.75rem 1rem 0.75rem 2.8rem;
+    background: rgba(26, 22, 18, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--r-borde);
-    border-radius: 0;
-    font-family: 'DM Sans', sans-serif;
+    border-radius: 9999px; /* Pill search */
+    font-family: 'Inter', sans-serif;
     font-size: 0.88rem;
     color: var(--r-texto);
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    border-bottom-width: 2px;
+    transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
   }
   .retro-search-wrap input:focus {
     border-color: var(--r-acento);
-    box-shadow: 0 2px 0 var(--r-acento);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.2);
+    background: rgba(26, 22, 18, 0.8);
   }
-  .retro-search-wrap input::placeholder { color: var(--r-gris); opacity: 0.7; }
+  .retro-search-wrap input::placeholder { color: var(--r-gris); }
 
   .retro-result-count {
     font-size: 0.78rem;
@@ -214,192 +213,213 @@
   /* ── GRID ── */
   .retro-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
   }
 
   /* ── CARD ── */
   .retro-card {
     background: var(--r-fondo-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--r-borde);
-    border-radius: 0;
+    box-shadow: inset 1px 1px 0 rgba(255, 184, 0, 0.05), 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 12px;
     overflow: hidden;
     transition:
-      transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
-      box-shadow 0.3s ease,
-      border-color 0.3s;
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s;
     cursor: pointer;
-    animation: retroFadeUp 0.55s ease both;
+    animation: retroFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
     position: relative;
   }
 
-  /* Efecto esquina doblada */
-  .retro-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 0 0 22px 22px;
-    border-color: transparent transparent var(--r-borde) transparent;
-    transition: border-color 0.3s;
-  }
-
   .retro-card:hover {
-    transform: translateY(-5px) rotate(0.3deg);
-    box-shadow: 5px 8px 24px var(--r-sombra-hover);
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 184, 0, 0.15), 0 15px 40px rgba(0,0,0,0.5);
     border-color: var(--r-acento);
-  }
-  .retro-card:hover::after {
-    border-color: transparent transparent var(--r-acento) transparent;
   }
 
   @keyframes retroFadeUp {
-    from { opacity: 0; transform: translateY(18px) rotate(-0.5deg); }
-    to   { opacity: 1; transform: translateY(0) rotate(0); }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  .retro-card:nth-child(1)  { animation-delay: 0.04s; }
-  .retro-card:nth-child(2)  { animation-delay: 0.09s; }
-  .retro-card:nth-child(3)  { animation-delay: 0.14s; }
-  .retro-card:nth-child(4)  { animation-delay: 0.19s; }
-  .retro-card:nth-child(5)  { animation-delay: 0.24s; }
-  .retro-card:nth-child(6)  { animation-delay: 0.29s; }
-  .retro-card:nth-child(n+7){ animation-delay: 0.34s; }
+  .retro-card:nth-child(1)  { animation-delay: 0.03s; }
+  .retro-card:nth-child(2)  { animation-delay: 0.06s; }
+  .retro-card:nth-child(3)  { animation-delay: 0.09s; }
+  .retro-card:nth-child(4)  { animation-delay: 0.12s; }
+  .retro-card:nth-child(5)  { animation-delay: 0.15s; }
+  .retro-card:nth-child(6)  { animation-delay: 0.18s; }
+  .retro-card:nth-child(n+7){ animation-delay: 0.21s; }
 
   /* Imagen con filtro sepia leve */
   .retro-card-img-wrap {
     position: relative;
     aspect-ratio: 4/5;
     overflow: hidden;
-    background: var(--r-crema);
+    background: rgba(13, 11, 9, 0.5);
   }
   .retro-card-img-wrap img {
     width: 100%; height: 100%;
     object-fit: cover;
-    transition: transform 0.55s ease, filter 0.3s ease;
-    filter: sepia(20%) contrast(1.02);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    filter: sepia(35%) contrast(1.02);
   }
   .retro-card:hover .retro-card-img-wrap img {
-    transform: scale(1.05);
-    filter: sepia(0%) contrast(1.05);
+    transform: scale(1.08);
+    filter: sepia(10%) contrast(1.05);
   }
 
   .retro-card-placeholder {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
-    background: linear-gradient(135deg, var(--r-crema), var(--r-borde));
+    background: linear-gradient(135deg, rgba(26,22,18,0.4), rgba(13,11,9,0.6));
   }
 
   /* Etiqueta "RETRO" en la esquina */
   .retro-tag {
-    position: absolute; top: 0; left: 0;
+    position: absolute; top: 0.75rem; left: 0.75rem;
     background: var(--r-acento);
-    color: #faf7f2;
-    font-size: 0.6rem;
+    color: #0d0f12;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 0.28rem 0.65rem;
-    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
-    padding-right: 1rem;
-  }
-
-  /* Número de álbum como referencia vintage */
-  .retro-album-ref {
-    position: absolute; bottom: 0.6rem; right: 1.5rem;
-    font-size: 0.6rem;
-    color: var(--r-gris);
-    opacity: 0.7;
-    font-style: italic;
-    letter-spacing: 0.05em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.3);
   }
 
   .retro-card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(44,24,16,0.82) 0%, transparent 55%);
+    background: linear-gradient(to top, rgba(13,11,9,0.85) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.35s;
-    display: flex; align-items: flex-end; padding: 1rem;
+    display: flex; align-items: flex-end; padding: 1.2rem;
   }
   .retro-card:hover .retro-card-overlay { opacity: 1; }
   .retro-card-overlay a {
     width: 100%;
     text-align: center;
     background: var(--r-acento);
-    color: #faf7f2;
-    padding: 0.6rem;
-    font-size: 0.75rem;
+    color: #0d0f12;
+    padding: 0.65rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.2s;
+    border-radius: 9999px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.3);
   }
-  .retro-card-overlay a:hover { background: var(--r-acento-claro); }
+  .retro-card-overlay a:hover { 
+    background: var(--r-acento-claro); 
+    box-shadow: 0 0 20px rgba(255, 184, 0, 0.5);
+  }
 
   /* Cuerpo de la card con línea divisora estilo formulario */
   .retro-card-body {
-    padding: 0.85rem 1rem 0.75rem;
-    border-top: 2px solid var(--r-crema);
+    padding: 1.2rem;
+    border-top: 1px solid var(--r-borde);
   }
   .retro-card-nombre {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.88rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.95rem;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.4;
     color: var(--r-texto);
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.8rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    transition: color 0.2s;
+  }
+  .retro-card:hover .retro-card-nombre {
+    color: var(--r-acento);
   }
   .retro-card-tallas {
-    display: flex; gap: 0.3rem; flex-wrap: wrap;
+    display: flex; gap: 0.4rem; flex-wrap: wrap;
   }
   .retro-talla-chip {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     border: 1px solid var(--r-borde);
-    padding: 0.18rem 0.4rem;
+    background: rgba(255,255,255,0.02);
+    padding: 0.25rem 0.55rem;
+    border-radius: 4px;
     color: var(--r-gris);
-    background: transparent;
-    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .retro-card:hover .retro-talla-chip {
+    border-color: rgba(255,184,0,0.25);
+    color: var(--r-texto);
   }
 
   /* ── PAGINACIÓN ── */
+  .retro-pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
   .retro-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.4rem;
-    margin-top: 3rem;
-    padding-bottom: 2rem;
+    gap: 0.5rem;
+    margin: 0; padding: 0;
   }
   .retro-pagination a,
-  .retro-pagination span.current {
-    padding: 0.45rem 1rem;
+  .retro-pagination span.current,
+  .retro-pagination span.ellipsis {
+    padding: 0.6rem 1.1rem;
     border: 1px solid var(--r-borde);
     text-decoration: none;
     color: var(--r-texto);
-    font-size: 0.85rem;
-    font-weight: 500;
-    background: var(--r-fondo-card);
-    transition: all 0.2s;
-    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(26,22,18,0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.6rem;
   }
   .retro-pagination a:hover {
-    background: var(--r-crema);
+    background: rgba(255, 184, 0, 0.1);
     border-color: var(--r-acento);
     color: var(--r-acento);
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.15);
+    transform: translateY(-1px);
   }
   .retro-pagination span.current {
     background: var(--r-acento);
-    color: #faf7f2;
+    color: #0d0f12;
     border-color: var(--r-acento);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.3);
+  }
+  .retro-pagination span.ellipsis {
+    border-color: transparent;
+    background: transparent;
+    color: var(--r-gris);
+    cursor: default;
+    user-select: none;
+  }
+  .retro-pagination-info {
+    font-size: 0.8rem;
+    color: var(--r-gris);
+    letter-spacing: 0.05em;
   }
 
   /* ── EMPTY ── */
@@ -409,7 +429,7 @@
     color: var(--r-gris);
   }
   .retro-empty h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Sora', sans-serif;
     font-size: 2rem;
     font-style: italic;
     color: var(--r-texto);
@@ -418,25 +438,31 @@
 
   /* ── ENLACE AL CATÁLOGO GENERAL (en la toolbar) ── */
   .retro-volver {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: var(--r-gris);
     text-decoration: none;
     letter-spacing: 0.06em;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
     border-bottom: 1px dashed var(--r-borde);
     padding-bottom: 1px;
-    transition: color 0.2s;
+    transition: all 0.2s;
   }
-  .retro-volver:hover { color: var(--r-acento); border-color: var(--r-acento); }
+  .retro-volver:hover { 
+    color: var(--r-acento); 
+    border-color: var(--r-acento); 
+    text-shadow: 0 0 5px rgba(255, 184, 0, 0.3);
+  }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .retro-hero { grid-template-columns: 1fr; }
+    .retro-hero { grid-template-columns: 1fr; padding: 2.5rem 0 2rem; }
     .retro-stamp { display: none; }
-    .retro-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .retro-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .retro-hero h1 { font-size: 2.8rem; }
+    .retro-card-nombre { font-size: 0.82rem; margin-bottom: 0.5rem; }
   }
 </style>
 {% endblock %}
@@ -538,18 +564,33 @@
 
   <!-- Paginación -->
   {% if page_obj.has_other_pages %}
-  <div class="retro-pagination">
-    {% if page_obj.has_previous %}
-      <a href="?page=1{% if busqueda %}&q={{ busqueda }}{% endif %}">&laquo;</a>
-      <a href="?page={{ page_obj.previous_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}">‹</a>
-    {% endif %}
+  <div class="retro-pagination-container">
+    <div class="retro-pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% if busqueda %}&q={{ busqueda }}{% endif %}" title="Primera página">&laquo;</a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}" title="Anterior">‹</a>
+        {% endif %}
 
-    <span class="current">{{ page_obj.number }}</span>
+        {% for page_num in page_obj.paginator.page_range %}
+            {% if page_num == page_obj.number %}
+                <span class="current">{{ page_num }}</span>
+            {% elif page_num == 1 or page_num == page_obj.paginator.num_pages %}
+                <a href="?page={{ page_num }}{% if busqueda %}&q={{ busqueda }}{% endif %}">{{ page_num }}</a>
+            {% elif page_num > page_obj.number|add:"-3" and page_num < page_obj.number|add:"3" %}
+                <a href="?page={{ page_num }}{% if busqueda %}&q={{ busqueda }}{% endif %}">{{ page_num }}</a>
+            {% elif page_num == page_obj.number|add:"-3" or page_num == page_obj.number|add:"3" %}
+                <span class="ellipsis">...</span>
+            {% endif %}
+        {% endfor %}
 
-    {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}">›</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}{% if busqueda %}&q={{ busqueda }}{% endif %}">&raquo;</a>
-    {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}" title="Siguiente">›</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}{% if busqueda %}&q={{ busqueda }}{% endif %}" title="Última página">&raquo;</a>
+        {% endif %}
+    </div>
+    <div class="retro-pagination-info">
+        Página <strong>{{ page_obj.number }}</strong> de <strong>{{ page_obj.paginator.num_pages }}</strong> ({{ page_obj.paginator.count }} artículos disponibles)
+    </div>
   </div>
   {% endif %}
 

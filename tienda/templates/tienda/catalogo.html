@@ -11,33 +11,35 @@
     grid-template-columns: 1fr auto;
     align-items: end;
     gap: 2rem;
-    border-bottom: 1px solid var(--crema-oscura);
+    border-bottom: 1px solid var(--outline);
     margin-bottom: 2rem;
   }
   .hero-eyebrow {
-    font-size: 0.75rem; font-weight: 600;
+    font-size: 0.75rem; font-weight: 700;
     letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--dorado); margin-bottom: 0.8rem;
+    color: var(--primary-container); margin-bottom: 0.8rem;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
   }
   .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Sora', sans-serif;
     font-size: clamp(2.8rem, 6vw, 5.5rem);
-    font-weight: 900; line-height: 0.95; letter-spacing: -2px;
+    font-weight: 800; line-height: 0.95; letter-spacing: -2px;
     color: var(--negro);
   }
-  .hero h1 em { font-style: italic; color: var(--dorado); }
+  .hero h1 em { font-style: italic; color: var(--secondary-container); text-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
   .hero-sub {
-    font-size: 0.9rem; color: var(--gris);
-    margin-top: 1rem; max-width: 340px; line-height: 1.6;
+    font-size: 0.95rem; color: var(--gris);
+    margin-top: 1rem; max-width: 420px; line-height: 1.6;
   }
   .hero-count {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem; font-weight: 900;
-    color: var(--crema-oscura); line-height: 1; text-align: right;
+    font-family: 'Sora', sans-serif;
+    font-size: 4rem; font-weight: 800;
+    color: var(--outline-active); line-height: 1; text-align: right;
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.25);
   }
   .hero-count small {
-    display: block; font-family: 'DM Sans', sans-serif;
-    font-size: 0.72rem; font-weight: 500;
+    display: block; font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--gris-claro); margin-top: 0.2rem;
   }
@@ -56,197 +58,261 @@
   .search-wrap svg.search-icon {
     position: absolute; left: 1rem; top: 50%;
     transform: translateY(-50%);
-    color: var(--gris-claro); pointer-events: none;
+    color: var(--secondary-container); pointer-events: none;
+    filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.4));
   }
   .search-wrap input {
     width: 100%;
-    padding: 0.75rem 3rem 0.75rem 2.8rem;
-    background: var(--blanco);
-    border: 1px solid var(--crema-oscura);
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
+    padding: 0.75rem 3.5rem 0.75rem 2.8rem;
+    background: rgba(26, 28, 35, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--outline);
+    border-radius: 9999px; /* Pill input */
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem; color: var(--negro); outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
   }
   .search-wrap input:focus {
-    border-color: var(--dorado);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    border-color: var(--primary-container);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+    background: rgba(26, 28, 35, 0.8);
   }
-  .search-wrap input::placeholder { color: var(--gris-claro); }
+  .search-wrap input::placeholder { color: var(--gris); }
   .search-btn {
     position: absolute; right: 0.4rem; top: 50%;
     transform: translateY(-50%);
-    background: var(--negro); color: var(--blanco);
-    border: none; border-radius: 2px;
-    padding: 0.45rem 0.7rem; cursor: pointer;
-    font-size: 0.72rem; font-weight: 600;
+    background: var(--primary-container); color: #0d0f12;
+    border: none; border-radius: 9999px;
+    padding: 0.45rem 1rem; cursor: pointer;
+    font-size: 0.72rem; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
-    transition: background 0.2s;
+    transition: background-color 0.2s, box-shadow 0.2s;
   }
-  .search-btn:hover { background: var(--dorado); color: var(--negro); }
+  .search-btn:hover { 
+    background: #efffe3; 
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+  }
 
-  /* Dropdown categoría */
-  .custom-dropdown {
-    position: relative; min-width: 240px;
-    font-family: 'DM Sans', sans-serif;
-    outline: none;
+  /* ── CATEGORY TABS ── */
+  .category-tabs-wrap {
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
   }
-  .dropdown-selected {
-    padding: 0.75rem 1rem;
-    background: var(--blanco);
-    border: 1px solid var(--crema-oscura);
-    border-radius: 2px;
-    font-size: 0.9rem; color: var(--negro);
-    cursor: pointer; display: flex;
-    justify-content: space-between; align-items: center;
-    transition: border-color 0.2s, box-shadow 0.2s;
+  .category-tabs-wrap::-webkit-scrollbar {
+    height: 4px;
   }
-  .dropdown-selected:hover { border-color: var(--negro); }
-  .custom-dropdown:focus .dropdown-selected,
-  .custom-dropdown:focus-within .dropdown-selected {
-    border-color: var(--dorado);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+  .category-tabs-wrap::-webkit-scrollbar-thumb {
+    background: var(--outline);
+    border-radius: 4px;
   }
-  .custom-dropdown svg { transition: transform 0.2s; }
-  .custom-dropdown:focus-within svg { transform: rotate(180deg); }
-  
-  .dropdown-list {
-    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
-    background: var(--blanco); border: 1px solid var(--crema-oscura);
-    border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    max-height: 350px; overflow-y: auto; z-index: 100;
-    opacity: 0; visibility: hidden; transform: translateY(-5px);
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  .category-tabs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
-  .custom-dropdown:focus .dropdown-list,
-  .custom-dropdown:focus-within .dropdown-list,
-  .custom-dropdown:hover .dropdown-list {
-    opacity: 1; visibility: visible; transform: translateY(0);
+  @media (max-width: 768px) {
+    .category-tabs {
+      flex-wrap: nowrap;
+      width: max-content;
+    }
   }
-  .dropdown-item {
-    display: block; padding: 0.6rem 1rem;
-    color: var(--negro); text-decoration: none; font-size: 0.85rem;
-    transition: background 0.15s;
-    border-bottom: 1px solid #f9f9f9;
+  .category-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(26, 28, 35, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--outline);
+    border-radius: 9999px; /* Pill category buttons */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--negro);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
   }
-  .dropdown-item:last-child { border-bottom: none; }
-  .dropdown-item:hover { background: var(--crema); }
-  .dropdown-item.active { background: var(--dorado); font-weight: 600; }
-  
-  /* scrollbar dropdown */
-  .dropdown-list::-webkit-scrollbar { width: 5px; }
-  .dropdown-list::-webkit-scrollbar-track { background: transparent; }
-  .dropdown-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+  .category-tab:hover {
+    border-color: var(--primary-container);
+    color: var(--primary-container);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.15);
+  }
+  .category-tab.active {
+    background: var(--primary-container);
+    color: #0d0f12;
+    border-color: var(--primary-container);
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+  }
+  .category-icon {
+    font-size: 1rem;
+  }
 
   /* ── GRID ── */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   /* ── CARD ── */
   .card {
     background: var(--blanco);
-    border: 1px solid var(--crema-oscura);
-    border-radius: 4px; overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
-                box-shadow 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
-                border-color 0.3s;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--outline);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 12px; overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s;
     cursor: pointer;
     opacity: 0; transform: translateY(20px);
   }
   .card.visible {
     opacity: 1; transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease,
-                box-shadow 0.3s, border-color 0.3s;
+    transition: opacity 0.6s ease, transform 0.6s ease,
+                box-shadow 0.4s, border-color 0.4s;
   }
   .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px var(--sombra-hover);
-    border-color: var(--dorado);
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.15), 0 15px 40px rgba(0,0,0,0.5);
+    border-color: var(--primary-container);
   }
-  .card.visible:hover { transform: translateY(-6px); }
+  .card.visible:hover { transform: translateY(-8px); }
 
   .card-img-wrap {
     position: relative; aspect-ratio: 4/5;
-    overflow: hidden; background: var(--crema);
+    overflow: hidden; background: rgba(13, 15, 18, 0.5);
   }
   .card-img-wrap img {
     width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.4s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
   }
   .card-img-wrap img.lazy { opacity: 0; }
   .card-img-wrap img.loaded { opacity: 1; }
-  .card:hover .card-img-wrap img { transform: scale(1.06); }
+  .card:hover .card-img-wrap img { transform: scale(1.08); }
 
   .card-placeholder {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
-    background: linear-gradient(135deg, var(--crema), var(--crema-oscura));
+    background: linear-gradient(135deg, rgba(26,28,35,0.4), rgba(18,20,26,0.6));
   }
 
   .card-cat-tag {
     position: absolute; top: 0.75rem; left: 0.75rem;
-    background: var(--negro); color: var(--blanco);
-    font-size: 0.65rem; font-weight: 600;
+    background: var(--primary-container); color: #0d0f12;
+    font-size: 0.65rem; font-weight: 700;
     letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 0.3rem 0.6rem; border-radius: 2px;
+    padding: 0.35rem 0.75rem; border-radius: 9999px;
+    box-shadow: 0 2px 10px rgba(57, 255, 20, 0.3);
   }
 
   .card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(17,16,8,0.7) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(13,15,18,0.85) 0%, transparent 60%);
     opacity: 0; transition: opacity 0.35s;
     display: flex; align-items: flex-end; padding: 1.2rem;
   }
   .card:hover .card-overlay { opacity: 1; }
   .card-overlay a {
     width: 100%; text-align: center;
-    background: var(--dorado); color: var(--negro);
+    background: var(--primary-container); color: #0d0f12;
     padding: 0.65rem; font-size: 0.78rem;
     font-weight: 700; letter-spacing: 0.12em;
     text-transform: uppercase; text-decoration: none;
-    border-radius: 2px; transition: background 0.2s;
+    border-radius: 9999px; transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
   }
-  .card-overlay a:hover { background: var(--dorado-claro); }
+  .card-overlay a:hover { 
+    background: #efffe3; 
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+  }
 
-  .card-body { padding: 1rem 1.1rem 0.8rem; }
+  .card-body { padding: 1.2rem; }
   .card-nombre {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Sora', sans-serif;
     font-size: 0.95rem; font-weight: 700;
-    line-height: 1.3; color: var(--negro);
-    margin-bottom: 0.6rem;
+    line-height: 1.4; color: var(--negro);
+    margin-bottom: 0.8rem;
     display: -webkit-box; -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; overflow: hidden;
+    transition: color 0.2s;
   }
-  .card-tallas { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+  .card:hover .card-nombre { color: var(--primary-container); }
+  .card-tallas { display: flex; gap: 0.4rem; flex-wrap: wrap; }
   .talla-chip {
-    font-size: 0.68rem; font-weight: 600;
+    font-size: 0.68rem; font-weight: 700;
     letter-spacing: 0.05em;
-    border: 1px solid var(--crema-oscura);
-    padding: 0.2rem 0.45rem; border-radius: 2px;
+    border: 1px solid var(--outline);
+    background: rgba(255,255,255,0.02);
+    padding: 0.25rem 0.55rem; border-radius: 4px;
     color: var(--gris);
+    transition: all 0.2s;
+  }
+  .card:hover .talla-chip {
+    border-color: rgba(255,255,255,0.15);
+    color: var(--on-surface);
   }
 
   /* ── PAGINACIÓN ── */
+  .pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
   .pagination {
     display: flex; justify-content: center;
-    gap: 0.5rem; margin-top: 3rem; padding-bottom: 2rem;
+    gap: 0.5rem; margin: 0; padding: 0;
+    align-items: center;
   }
-  .pagination a, .pagination span.current {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--crema-oscura);
-    border-radius: 4px; text-decoration: none;
-    color: var(--negro); font-weight: 500;
+  .pagination a, .pagination span.current, .pagination span.ellipsis {
+    padding: 0.6rem 1.1rem;
+    border: 1px solid var(--outline);
+    background: rgba(26,28,35,0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px; text-decoration: none;
+    color: var(--negro); font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.6rem;
+    transition: all 0.25s;
   }
   .pagination a:hover {
-    background: var(--crema); border-color: var(--dorado);
+    border-color: var(--primary-container);
+    color: var(--primary-container);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.15);
+    transform: translateY(-1px);
   }
   .pagination span.current {
-    background: var(--dorado); color: var(--negro);
-    border-color: var(--dorado);
+    background: var(--primary-container); color: #0d0f12;
+    border-color: var(--primary-container);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+  }
+  .pagination span.ellipsis {
+    border-color: transparent;
+    background: transparent;
+    color: var(--gris);
+    cursor: default;
+    user-select: none;
+  }
+  .pagination-info {
+    font-size: 0.8rem;
+    color: var(--gris);
+    letter-spacing: 0.05em;
   }
 
   /* ── EMPTY ── */
@@ -254,18 +320,17 @@
     text-align: center; padding: 6rem 2rem; color: var(--gris);
   }
   .empty h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Sora', sans-serif;
     font-size: 2rem; color: var(--negro); margin-bottom: 0.8rem;
   }
 
   @media (max-width: 600px) {
-    .hero { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; padding: 2.5rem 0 2rem; }
     .hero-count { display: none; }
-    .grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-    .card-nombre { font-size: 0.82rem; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .card-nombre { font-size: 0.82rem; margin-bottom: 0.5rem; }
     .toolbar { flex-direction: column; align-items: stretch; }
     .search-wrap { max-width: 100%; }
-    .custom-dropdown { width: 100%; }
   }
 </style>
 {% endblock %}
@@ -291,36 +356,28 @@
     {% if categoria_actual %}
     <input type="hidden" name="categoria" value="{{ categoria_actual.slug }}">
     {% endif %}
-    <input type="search" name="q" placeholder="Buscar equipo, liga…" value="{{ busqueda }}"
+    <input type="search" name="q" placeholder="Buscar equipo, liga o detalles..." value="{{ busqueda }}"
            autocomplete="off">
     <button type="submit" class="search-btn">Buscar</button>
   </form>
+</div>
 
-  <div class="custom-dropdown" tabindex="0">
-    <div class="dropdown-selected">
-      <span>
-      {% if categoria_actual %}
-        {{ categoria_actual.nombre|limpiar_nombre }}
-      {% else %}
-        Todas las categorías
-      {% endif %}
-      </span>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-    </div>
-    <div class="dropdown-list">
-      <a class="dropdown-item {% if not categoria_actual %}active{% endif %}" 
-         href="{% url 'catalogo' %}{% if busqueda %}?q={{ busqueda }}{% endif %}">
-        Todas las categorías
-      </a>
-      {% for cat in categorias %}
-      {% if 'Todas' not in cat.nombre and 'todas' not in cat.nombre %}
-      <a class="dropdown-item {% if categoria_actual.slug == cat.slug %}active{% endif %}" 
-         href="?categoria={{ cat.slug }}{% if busqueda %}&q={{ busqueda }}{% endif %}">
-        {{ cat.nombre|limpiar_nombre }}
-      </a>
-      {% endif %}
-      {% endfor %}
-    </div>
+<div class="category-tabs-wrap">
+  <div class="category-tabs">
+    <a class="category-tab {% if not categoria_actual %}active{% endif %}" 
+       href="{% url 'catalogo' %}{% if busqueda %}?q={{ busqueda }}{% endif %}">
+      <span class="category-icon">⚽</span>
+      <span class="category-name">Todas las categorías</span>
+    </a>
+    {% for cat in categorias %}
+    {% if 'Todas' not in cat.nombre and 'todas' not in cat.nombre %}
+    <a class="category-tab {% if categoria_actual.slug == cat.slug %}active{% endif %}" 
+       href="?categoria={{ cat.slug }}{% if busqueda %}&q={{ busqueda }}{% endif %}">
+      <span class="category-icon">{% if cat.icono %}{{ cat.icono }}{% else %}⚽{% endif %}</span>
+      <span class="category-name">{{ cat.nombre }}</span>
+    </a>
+    {% endif %}
+    {% endfor %}
   </div>
 </div>
 
@@ -361,18 +418,33 @@
 </div>
 
 {% if page_obj.has_other_pages %}
-<div class="pagination">
-    {% if page_obj.has_previous %}
-        <a href="?page=1{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}">&laquo;</a>
-        <a href="?page={{ page_obj.previous_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}">‹</a>
-    {% endif %}
+<div class="pagination-container">
+  <div class="pagination">
+      {% if page_obj.has_previous %}
+          <a href="?page=1{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}" title="Primera página">&laquo;</a>
+          <a href="?page={{ page_obj.previous_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}" title="Anterior">‹</a>
+      {% endif %}
 
-    <span class="current">{{ page_obj.number }}</span>
+      {% for page_num in page_obj.paginator.page_range %}
+          {% if page_num == page_obj.number %}
+              <span class="current">{{ page_num }}</span>
+          {% elif page_num == 1 or page_num == page_obj.paginator.num_pages %}
+              <a href="?page={{ page_num }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}">{{ page_num }}</a>
+          {% elif page_num > page_obj.number|add:"-3" and page_num < page_obj.number|add:"3" %}
+              <a href="?page={{ page_num }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}">{{ page_num }}</a>
+          {% elif page_num == page_obj.number|add:"-3" or page_num == page_obj.number|add:"3" %}
+              <span class="ellipsis">...</span>
+          {% endif %}
+      {% endfor %}
 
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}">›</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}">&raquo;</a>
-    {% endif %}
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}" title="Siguiente">›</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}{% if busqueda %}&q={{ busqueda }}{% endif %}{% if categoria_actual %}&categoria={{ categoria_actual.slug }}{% endif %}" title="Última página">&raquo;</a>
+      {% endif %}
+  </div>
+  <div class="pagination-info">
+      Página <strong>{{ page_obj.number }}</strong> de <strong>{{ page_obj.paginator.num_pages }}</strong> ({{ page_obj.paginator.count }} artículos disponibles)
+  </div>
 </div>
 {% endif %}
 

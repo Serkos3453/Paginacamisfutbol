@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv # 1. Importar la librería
+from dotenv import load_dotenv  # 1. Importar la librería
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,6 +27,16 @@ DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['sergioa.pythonanywhere.com', 'www.sergioa.pythonanywhere.com', '127.0.0.1', 'localhost']
 
+# Configuración de seguridad para producción (PythonAnywhere/Supabase)
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000  # 1 año
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
 
 # Application definition
 
@@ -37,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',   # django-storages para AWS S3
     'tienda',
 ]
 
@@ -70,15 +81,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'paginacamisetas.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+import dj_database_url
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+    )
 }
+
+if DATABASES['default'].get('ENGINE') == 'django.db.backends.postgresql':
+    DATABASES['default']['OPTIONS'] = {
+        'sslmode': 'require',
+    }
 
 
 # Password validation
@@ -103,25 +117,68 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
+# ═══════════════════════════════════════════════════════════════════════════════
+#  ARCHIVOS ESTÁTICOS — Permanecen en local / PythonAnywhere
+# ═══════════════════════════════════════════════════════════════════════════════
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = 'static/'
-# Para archivos subidos (imágenes de camisetas)
-import os
-MEDIA_URL = '/media/'
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  AWS S3 — SOLO para archivos MEDIA (imágenes de camisetas)
+# ═══════════════════════════════════════════════════════════════════════════════
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME', 'eu-west-3')
+AWS_S3_CUSTOM_DOMAIN = os.environ.get(
+    'AWS_S3_CUSTOM_DOMAIN',
+    f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com' if AWS_STORAGE_BUCKET_NAME else '',
+)
+
+# URLs públicas sin firma temporal (legibles por cualquier navegador)
+AWS_QUERYSTRING_AUTH = False
+
+# Evitar que S3 sobreescriba archivos con el mismo nombre
+AWS_S3_FILE_OVERWRITE = False
+
+# Cabeceras de caché para rendimiento en CDN/navegador
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+# Redirigir todos los archivos MEDIA a S3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
+# MEDIA_URL apunta al dominio del bucket
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/' if AWS_S3_CUSTOM_DOMAIN else '/media/'
+
+# Fallback local si no hay S3 configurado (para desarrollo local sin AWS)
+if not AWS_ACCESS_KEY_ID:
+    STORAGES["default"]["BACKEND"] = "django.core.files.storage.FileSystemStorage"
+    MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Para que las sesiones funcionen (cesta)
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
