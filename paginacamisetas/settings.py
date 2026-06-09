@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # También puedes hacerlo con DEBUG para mayor seguridad
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['sergioa.pythonanywhere.com', 'www.sergioa.pythonanywhere.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['sergioa.pythonanywhere.com', 'www.sergioa.pythonanywhere.com', '127.0.0.1', 'localhost', 'futbolpro.onrender.com', '.onrender.com']
 
 # Configuración de seguridad para producción (PythonAnywhere/Supabase)
 if not DEBUG:
