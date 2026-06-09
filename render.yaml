@@ -13,4 +13,4 @@ services:
       - key: DEBUG
         value: "False"
       - key: DATABASE_URL
-        value: postgresql://postgres:S3rk0s3453%2A%2A@db.qkqjrvzwzjtqaakxieqc.supabase.co:5432/postgres
+        value: postgresql://postgres.qkqjrvzwzjtqaakxieqc:S3rk0s3453%2A%2A@aws-1-eu-central-1.pooler.supabase.com:5432/postgres
