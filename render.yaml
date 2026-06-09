@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: futbolpro
+    env: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn paginacamisetas.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        value: postgresql://postgres:S3rk0s3453%2A%2A@db.qkqjrvzwzjtqaakxieqc.supabase.co:5432/postgres
