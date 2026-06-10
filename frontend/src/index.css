@@ -1522,8 +1522,8 @@ nav {
 }
 
 .jersey-3d-scene {
-  width: 170px;
-  height: 210px;
+  width: 210px;
+  height: 245px;
   position: relative;
   transform-style: preserve-3d;
   cursor: grab;

@@ -626,25 +626,96 @@ function Interactive3DJersey() {
       >
         {/* Front Face */}
         <div className="jersey-face front">
-          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <clipPath id="jersey-clip">
-                <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" />
+              <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="12" stdDeviation="10" floodColor="#000" floodOpacity="0.5"/>
+              </filter>
+              <filter id="crease-blur" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3"/>
+              </filter>
+              <linearGradient id="torso-shading" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0.75"/>
+                <stop offset="15%" stopColor="#000000" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
+                <stop offset="85%" stopColor="#000000" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.75"/>
+              </linearGradient>
+              <linearGradient id="left-sleeve-shading" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
+              </linearGradient>
+              <linearGradient id="right-sleeve-shading" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
+              </linearGradient>
+              <linearGradient id="barca-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#003b73"/>
+                <stop offset="50%" stopColor="#004d98"/>
+                <stop offset="100%" stopColor="#003b73"/>
+              </linearGradient>
+              <linearGradient id="barca-red" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#800030"/>
+                <stop offset="50%" stopColor="#a50044"/>
+                <stop offset="100%" stopColor="#800030"/>
+              </linearGradient>
+              <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#cca325"/>
+                <stop offset="50%" stopColor="#ffbe1a"/>
+                <stop offset="100%" stopColor="#cca325"/>
+              </linearGradient>
+              <clipPath id="torso-clip">
+                <path d="M65 40 Q120 48 175 40 L178 85 C170 95 168 120 174 150 C178 170 178 200 174 245 C170 252 165 255 155 255 L85 255 C75 255 70 252 66 245 C62 200 62 170 66 150 C72 120 70 95 62 85 Z"/>
+              </clipPath>
+              <clipPath id="left-sleeve-clip">
+                <path d="M65 40 L62 85 C50 82 25 90 15 105 L2 90 L22 55 Q45 42 65 40 Z"/>
+              </clipPath>
+              <clipPath id="right-sleeve-clip">
+                <path d="M175 40 L178 85 C190 82 215 90 225 105 L238 90 L218 55 Q195 42 175 40 Z"/>
               </clipPath>
             </defs>
-            <g clipPath="url(#jersey-clip)">
-              <rect width="200" height="240" fill="#004d98" />
-              <rect x="78" y="0" width="44" height="240" fill="#a50044" />
-              <rect x="18" y="0" width="30" height="240" fill="#a50044" />
-              <rect x="152" y="0" width="30" height="240" fill="#a50044" />
-              <path d="M25 60 L45 75" stroke="#ffbe1a" strokeWidth="4" />
-              <path d="M175 60 L155 75" stroke="#ffbe1a" strokeWidth="4" />
+            <g filter="url(#soft-shadow)">
+              <path d="M65 40 L22 55 L2 90 L15 105 L45 95 C52 110 52 135 48 165 C44 185 44 215 48 245 C52 255 60 260 75 260 L165 260 C180 260 188 255 192 245 C196 215 196 185 192 165 C188 135 188 110 195 95 L225 105 L238 90 L218 55 L175 40 Q120 48 65 40 Z" fill="#0c0d12"/>
             </g>
-            <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" fill="none" stroke="#ffbe1a" strokeWidth="2.5" />
-            <path d="M75 10 C85 20, 115 20, 125 10" fill="none" stroke="#ffbe1a" strokeWidth="4" />
-            <path d="M118 45 C122 45, 124 43, 128 41 C126 43, 122 47, 116 48 C113 48.5, 112 47.5, 114 46 Z" fill="#ffbe1a" />
-            <g transform="translate(68, 38) scale(0.65)">
-              <path d="M0 0 C10 -2 20 -2 30 0 C30 10 32 20 15 32 C-2 20 0 10 0 0 Z" fill="#ffbe1a" />
+            <g clipPath="url(#left-sleeve-clip)">
+              <rect x="-10" y="20" width="100" height="100" fill="url(#barca-blue)"/>
+              <path d="M10 30 L40 100" stroke="url(#barca-red)" strokeWidth="18"/>
+              <path d="M35 25 L65 95" stroke="url(#barca-red)" strokeWidth="12"/>
+              <path d="M15 105 L2 90" stroke="url(#gold-grad)" strokeWidth="6"/>
+              <rect x="-10" y="20" width="100" height="100" fill="url(#left-sleeve-shading)"/>
+            </g>
+            <g clipPath="url(#right-sleeve-clip)">
+              <rect x="150" y="20" width="100" height="100" fill="url(#barca-blue)"/>
+              <path d="M230 30 L200 100" stroke="url(#barca-red)" strokeWidth="18"/>
+              <path d="M205 25 L175 95" stroke="url(#barca-red)" strokeWidth="12"/>
+              <path d="M225 105 L238 90" stroke="url(#gold-grad)" strokeWidth="6"/>
+              <rect x="150" y="20" width="100" height="100" fill="url(#right-sleeve-shading)"/>
+            </g>
+            <g clipPath="url(#torso-clip)">
+              <rect x="50" y="30" width="140" height="230" fill="url(#barca-blue)"/>
+              <path d="M102 30 L102 260 L138 260 L138 30 Z" fill="url(#barca-red)"/>
+              <path d="M52 30 C 58 100, 58 190, 52 260 L78 260 C 84 190, 84 100, 78 30 Z" fill="url(#barca-red)"/>
+              <path d="M162 30 C 156 100, 156 190, 162 260 L188 260 C 182 190, 182 100, 188 30 Z" fill="url(#barca-red)"/>
+              <path d="M66 150 C72 170 72 210 68 245" stroke="url(#gold-grad)" strokeWidth="2.5" fill="none"/>
+              <path d="M174 150 C168 170 168 210 172 245" stroke="url(#gold-grad)" strokeWidth="2.5" fill="none"/>
+              <rect x="50" y="30" width="140" height="230" fill="url(#torso-shading)"/>
+              <path d="M 64 90 Q 90 115 110 100" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur)"/>
+              <path d="M 64 90 Q 90 115 110 100" stroke="#fff" strokeWidth="1.5" strokeOpacity="0.15" fill="none" filter="url(#crease-blur)"/>
+              <path d="M 60 170 Q 120 190 180 165" stroke="#000" strokeWidth="4" strokeOpacity="0.45" fill="none" filter="url(#crease-blur)"/>
+              <path d="M 60 170 Q 120 190 180 165" stroke="#fff" strokeWidth="2" strokeOpacity="0.15" fill="none" filter="url(#crease-blur)"/>
+              <path d="M 65 215 Q 120 230 175 210" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur)"/>
+              <path d="M 65 215 Q 120 230 175 210" stroke="#fff" strokeWidth="1.5" strokeOpacity="0.1" fill="none" filter="url(#crease-blur)"/>
+            </g>
+            <path d="M90 35 C100 48, 140 48, 150 35 C140 58, 100 58, 90 35 Z" fill="#07080a"/>
+            <path d="M82 28 L94 38 L120 54 L146 38 L158 28 C148 44, 92 44, 82 28 Z" fill="url(#gold-grad)" stroke="#9c7512" strokeWidth="1"/>
+            <path d="M120 54 L120 62" stroke="url(#gold-grad)" strokeWidth="2.5"/>
+            <g transform="translate(142, 70) rotate(-4) scale(0.9)">
+              <path d="M2 5 C8 5, 14 3, 24 0 C18 4, 10 9, 2 11 C-2 11, -3 8, 2 5 Z" fill="url(#gold-grad)" filter="drop-shadow(0 2px 2px rgba(0,0,0,0.4))"/>
+            </g>
+            <g transform="translate(74, 62) scale(0.75)" filter="drop-shadow(0 3px 5px rgba(0,0,0,0.5))">
+              <path d="M0 0 C10 -2 20 -2 30 0 C30 10 32 20 15 32 C-2 20 0 10 0 0 Z" fill="url(#gold-grad)" />
               <path d="M1.5 1.5 C10 -0.5 20 -0.5 28.5 1.5 C28.5 10 30 18 15 29 C0 18 1.5 10 1.5 1.5 Z" fill="#fff" />
               <rect x="3" y="3" width="10" height="10" fill="#df0016" />
               <rect x="7" y="3" width="2" height="10" fill="#fff" />
@@ -660,39 +731,112 @@ function Interactive3DJersey() {
               <path d="M19 16 L19 28" stroke="#a50044" strokeWidth="2.5" />
               <path d="M24 16 L24 26" stroke="#a50044" strokeWidth="2.5" />
             </g>
-            <g transform="translate(68, 85) scale(0.9)">
-              <circle cx="15" cy="15" r="13" stroke="#ffbe1a" strokeWidth="2.5" fill="none" />
-              <path d="M7 11 C11 9, 19 9, 23 11" stroke="#ffbe1a" strokeWidth="2" strokeLinecap="round" fill="none" />
-              <path d="M9 15 C12 13.5, 18 13.5, 21 15" stroke="#ffbe1a" strokeWidth="2.2" strokeLinecap="round" fill="none" />
-              <path d="M11 19 C13.5 18, 16.5 18, 19 19" stroke="#ffbe1a" strokeWidth="2.2" strokeLinecap="round" fill="none" />
-              <text x="35" y="22" fill="#ffbe1a" fontFamily="sans-serif" fontWeight="900" fontSize="14" letterSpacing="-0.02em">Spotify</text>
+            <g transform="translate(76, 120) scale(1.15)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))">
+              <circle cx="12" cy="12" r="10" stroke="url(#gold-grad)" strokeWidth="2" fill="none" />
+              <path d="M6 9 C9 7.5, 15 7.5, 18 9" stroke="url(#gold-grad)" strokeWidth="1.6" stroke-linecap="round" fill="none" />
+              <path d="M7.5 12 C10 11, 14 11, 16.5 12" stroke="url(#gold-grad)" strokeWidth="1.8" stroke-linecap="round" fill="none" />
+              <path d="M9 15 C11 14.2, 13 14.2, 15 15" stroke="url(#gold-grad)" strokeWidth="1.8" stroke-linecap="round" fill="none" />
+              <text x="27" y="17" fill="url(#gold-grad)" fontFamily="'Inter', sans-serif" fontWeight="900" fontSize="11" letterSpacing="-0.03em">Spotify</text>
+            </g>
+            <g transform="translate(202, 68) rotate(15) scale(0.4)" filter="drop-shadow(-1px 2px 2px rgba(0,0,0,0.3))">
+              <rect x="0" y="0" width="22" height="30" rx="3" fill="#fff" stroke="#ffbe1a" strokeWidth="1.5"/>
+              <path d="M6 8 L10 4 L16 10 L12 14 Z" fill="#df0016"/>
+              <path d="M10 16 L14 12 L20 18 L16 22 Z" fill="#df0016"/>
             </g>
           </svg>
         </div>
         {/* Back Face */}
         <div className="jersey-face back">
-          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <clipPath id="jersey-clip-back">
-                <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" />
+              <filter id="soft-shadow-back" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="12" stdDeviation="10" floodColor="#000" floodOpacity="0.5"/>
+              </filter>
+              <filter id="crease-blur-back" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3"/>
+              </filter>
+              <linearGradient id="torso-shading-back" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0.75"/>
+                <stop offset="15%" stopColor="#000000" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
+                <stop offset="85%" stopColor="#000000" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.75"/>
+              </linearGradient>
+              <linearGradient id="left-sleeve-shading-back" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
+              </linearGradient>
+              <linearGradient id="right-sleeve-shading-back" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
+              </linearGradient>
+              <linearGradient id="barca-blue-back" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#003b73"/>
+                <stop offset="50%" stopColor="#004d98"/>
+                <stop offset="100%" stopColor="#003b73"/>
+              </linearGradient>
+              <linearGradient id="barca-red-back" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#800030"/>
+                <stop offset="50%" stopColor="#a50044"/>
+                <stop offset="100%" stopColor="#800030"/>
+              </linearGradient>
+              <linearGradient id="gold-grad-back" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#cca325"/>
+                <stop offset="50%" stopColor="#ffbe1a"/>
+                <stop offset="100%" stopColor="#cca325"/>
+              </linearGradient>
+              <clipPath id="torso-clip-back">
+                <path d="M65 40 Q120 48 175 40 L178 85 C170 95 168 120 174 150 C178 170 178 200 174 245 C170 252 165 255 155 255 L85 255 C75 255 70 252 66 245 C62 200 62 170 66 150 C72 120 70 95 62 85 Z"/>
+              </clipPath>
+              <clipPath id="left-sleeve-clip-back">
+                <path d="M65 40 L62 85 C50 82 25 90 15 105 L2 90 L22 55 Q45 42 65 40 Z"/>
+              </clipPath>
+              <clipPath id="right-sleeve-clip-back">
+                <path d="M175 40 L178 85 C190 82 215 90 225 105 L238 90 L218 55 Q195 42 175 40 Z"/>
               </clipPath>
             </defs>
-            <g clipPath="url(#jersey-clip-back)">
-              <rect width="200" height="240" fill="#004d98" />
-              <rect x="78" y="0" width="44" height="240" fill="#a50044" />
-              <rect x="18" y="0" width="30" height="240" fill="#a50044" />
-              <rect x="152" y="0" width="30" height="240" fill="#a50044" />
-              <path d="M25 60 L45 75" stroke="#ffbe1a" strokeWidth="4" />
-              <path d="M175 60 L155 75" stroke="#ffbe1a" strokeWidth="4" />
+            <g filter="url(#soft-shadow-back)">
+              <path d="M65 40 L22 55 L2 90 L15 105 L45 95 C52 110 52 135 48 165 C44 185 44 215 48 245 C52 255 60 260 75 260 L165 260 C180 260 188 255 192 245 C196 215 196 185 192 165 C188 135 188 110 195 95 L225 105 L238 90 L218 55 L175 40 Q120 48 65 40 Z" fill="#0c0d12"/>
             </g>
-            <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" fill="none" stroke="#ffbe1a" strokeWidth="2.5" />
-            <path d="M75 10 C85 14, 115 14, 125 10" fill="none" stroke="#ffbe1a" strokeWidth="4" />
-            <text x="100" y="55" fill="#ffbe1a" fontFamily="'Inter', sans-serif" fontWeight="800" fontSize="14" textAnchor="middle" letterSpacing="0.1em">L. YAMAL</text>
-            <text x="100" y="145" fill="#ffbe1a" fontFamily="'Outfit', 'Impact', sans-serif" fontWeight="900" fontSize="75" textAnchor="middle" letterSpacing="-0.05em">19</text>
-            <g transform="translate(80, 180) scale(0.8)">
-              <path d="M5 10 C8 6, 12 6, 15 10" stroke="#ffbe1a" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-              <circle cx="10" cy="5" r="2.5" fill="#ffbe1a" />
-              <text x="22" y="10" fill="#ffbe1a" fontFamily="sans-serif" fontWeight="800" fontSize="11" letterSpacing="0.05em">unicef</text>
+            <g clipPath="url(#left-sleeve-clip-back)">
+              <rect x="-10" y="20" width="100" height="100" fill="url(#barca-blue-back)"/>
+              <path d="M10 30 L40 100" stroke="url(#barca-red-back)" strokeWidth="18"/>
+              <path d="M35 25 L65 95" stroke="url(#barca-red-back)" strokeWidth="12"/>
+              <path d="M15 105 L2 90" stroke="url(#gold-grad-back)" strokeWidth="6"/>
+              <rect x="-10" y="20" width="100" height="100" fill="url(#left-sleeve-shading-back)"/>
+            </g>
+            <g clipPath="url(#right-sleeve-clip-back)">
+              <rect x="150" y="20" width="100" height="100" fill="url(#barca-blue-back)"/>
+              <path d="M230 30 L200 100" stroke="url(#barca-red-back)" strokeWidth="18"/>
+              <path d="M205 25 L175 95" stroke="url(#barca-red-back)" strokeWidth="12"/>
+              <path d="M225 105 L238 90" stroke="url(#gold-grad-back)" strokeWidth="6"/>
+              <rect x="150" y="20" width="100" height="100" fill="url(#right-sleeve-shading-back)"/>
+            </g>
+            <g clipPath="url(#torso-clip-back)">
+              <rect x="50" y="30" width="140" height="230" fill="url(#barca-blue-back)"/>
+              <path d="M102 30 L102 260 L138 260 L138 30 Z" fill="url(#barca-red-back)"/>
+              <path d="M52 30 C 58 100, 58 190, 52 260 L78 260 C 84 190, 84 100, 78 30 Z" fill="url(#barca-red-back)"/>
+              <path d="M162 30 C 156 100, 156 190, 162 260 L188 260 C 182 190, 182 100, 188 30 Z" fill="url(#barca-red-back)"/>
+              <path d="M66 150 C72 170 72 210 68 245" stroke="url(#gold-grad-back)" strokeWidth="2.5" fill="none"/>
+              <path d="M174 150 C168 170 168 210 172 245" stroke="url(#gold-grad-back)" strokeWidth="2.5" fill="none"/>
+              <rect x="50" y="30" width="140" height="230" fill="url(#torso-shading-back)"/>
+              <path d="M 64 90 Q 90 115 110 100" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur-back)"/>
+              <path d="M 64 90 Q 90 115 110 100" stroke="#fff" strokeWidth="1.5" strokeOpacity="0.15" fill="none" filter="url(#crease-blur-back)"/>
+              <path d="M 60 170 Q 120 190 180 165" stroke="#000" strokeWidth="4" strokeOpacity="0.45" fill="none" filter="url(#crease-blur-back)"/>
+              <path d="M 60 170 Q 120 190 180 165" stroke="#fff" stroke-width="2" strokeOpacity="0.15" fill="none" filter="url(#crease-blur-back)"/>
+              <path d="M 65 215 Q 120 230 175 210" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur-back)"/>
+              <path d="M 65 215 Q 120 230 175 210" stroke="#fff" stroke-width="1.5" strokeOpacity="0.1" fill="none" filter="url(#crease-blur-back)"/>
+            </g>
+            <path d="M82 28 C92 44, 148 44, 158 28" stroke="url(#gold-grad-back)" strokeWidth="5" fill="none"/>
+            <path d="M90 31 C100 42, 140 42, 150 31" stroke="#000" strokeWidth="2" fill="none"/>
+            <text x="120" y="75" fill="url(#gold-grad-back)" fontFamily="'Inter', sans-serif" fontWeight="900" fontSize="14" textAnchor="middle" letterSpacing="0.12em" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.5))">L. YAMAL</text>
+            <text x="120" y="165" fill="url(#gold-grad-back)" fontFamily="'Outfit', 'Impact', sans-serif" fontWeight="900" fontSize="78" textAnchor="middle" letterSpacing="-0.02em" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.6))">19</text>
+            <g transform="translate(98, 205) scale(0.95)" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.4))">
+              <path d="M4 12 C7 8, 11 8, 14 12" stroke="url(#gold-grad-back)" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+              <circle cx="9" cy="6" r="2.5" fill="url(#gold-grad-back)" />
+              <text x="20" y="12" fill="url(#gold-grad-back)" fontFamily="'Inter', sans-serif" fontWeight="900" fontSize="11" letterSpacing="0.04em">unicef</text>
             </g>
           </svg>
         </div>
