@@ -27,8 +27,8 @@
   .back:hover {
     color: var(--primary-container);
     border-color: var(--primary-container);
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
+    background: rgba(20, 27, 45, 0.8);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
     transform: translateX(-3px);
   }
   .back svg {
@@ -50,22 +50,24 @@
   .img-principal {
     position: sticky;
     top: 100px;
-    aspect-ratio: 4/5;
-    background: #ffffff;
+    aspect-ratio: 1/1;
+    background: #0c0e14;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--outline);
     box-shadow: 0 10px 30px var(--sombra);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
   }
   .img-principal:hover {
     border-color: var(--primary-container);
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15), 0 12px 30px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.15), 0 12px 30px rgba(0, 0, 0, 0.4);
   }
   .img-principal img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .img-principal:hover img {
@@ -78,7 +80,7 @@
     align-items: center;
     justify-content: center;
     font-size: 6rem;
-    background: #f1f5f9;
+    background: #0c0e14;
   }
 
   /* INFO DEL PRODUCTO */
@@ -96,7 +98,7 @@
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -1px;
-    color: var(--negro);
+    color: #ffffff;
     margin-bottom: 1.2rem;
   }
   .desc {
@@ -152,13 +154,13 @@
   .talla-label:hover {
     border-color: var(--primary-container);
     color: var(--primary-container);
-    background: #ffffff;
+    background: rgba(20, 27, 45, 0.8);
   }
   .talla-radio:checked + .talla-label {
     background: var(--primary-container);
     border-color: var(--primary-container);
-    color: white;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
     transform: scale(1.05);
   }
 
@@ -172,7 +174,7 @@
 
   /* PERSONALIZACIÓN */
   .opciones-extra {
-    background: var(--surface-container) !important;
+    background: rgba(20, 27, 45, 0.5) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--outline) !important;
@@ -181,27 +183,27 @@
   }
   .opciones-extra label {
     transition: color 0.2s;
-    color: var(--on-surface);
+    color: #ffffff !important;
   }
   .opciones-extra label:hover {
-    color: var(--negro);
+    color: var(--primary-container) !important;
   }
   .opciones-extra input[type="checkbox"] {
     accent-color: var(--primary-container);
     cursor: pointer;
   }
   .opciones-extra input[type="text"] {
-    background: #ffffff;
-    border: 1px solid var(--outline);
-    border-radius: 8px;
-    color: var(--negro);
-    outline: none;
-    transition: border-color 0.25s, box-shadow 0.25s;
-    font-family: 'Inter', sans-serif;
+    background: rgba(25, 30, 50, 0.8) !important;
+    border: 1px solid var(--outline) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    outline: none !important;
+    transition: border-color 0.25s, box-shadow 0.25s !important;
+    font-family: 'Inter', sans-serif !important;
   }
   .opciones-extra input[type="text"]:focus {
-    border-color: var(--primary-container);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+    border-color: var(--primary-container) !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3) !important;
   }
 
   /* CANTIDAD */
@@ -228,8 +230,8 @@
     justify-content: center;
   }
   .qty-btn:hover {
-    background: #ffffff;
-    color: var(--negro);
+    background: rgba(20, 27, 45, 0.8);
+    color: var(--primary-container);
   }
   .qty-val {
     width: 54px;
@@ -237,7 +239,7 @@
     font-family: 'Sora', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: var(--negro);
+    color: #ffffff;
     border: none;
     border-left: 1px solid var(--outline);
     border-right: 1px solid var(--outline);
@@ -256,7 +258,7 @@
     width: 100%;
     padding: 1.1rem;
     background: var(--primary-container);
-    color: white;
+    color: #000000;
     border: none;
     border-radius: 9999px; /* Rounded pill button */
     font-family: 'Inter', sans-serif;
@@ -267,13 +269,13 @@
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     margin-top: 2rem;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.3);
   }
   .btn-añadir:hover {
-    background: #059669;
-    color: white;
+    background: #efffe3;
+    color: #000000;
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 6px 18px rgba(57, 255, 20, 0.5);
   }
   .btn-añadir:active {
     transform: translateY(-1px);
@@ -284,9 +286,18 @@
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
-    .img-principal {
+    .img-principal-wrapper {
       position: static;
     }
+  }
+
+  /* ── BOTONES DE VISUALIZACIÓN DOCK ── */
+  .preview-mode-toggle .btn.active,
+  #jersey-view-controls .btn.active {
+    background: var(--primary-container) !important;
+    border-color: var(--primary-container) !important;
+    color: #000000 !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
   }
 </style>
 {% endblock %}
@@ -300,15 +311,33 @@
 </a>
 
 <div class="detalle">
-  <div class="img-principal">
-    {% if camiseta.imagen_local %}
-      <img src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}">
-    {% elif camiseta.imagen_url %}
-      <img src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}"
-           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>⚽</div>'">
-    {% else %}
-      <div class="img-placeholder">⚽</div>
-    {% endif %}
+  <div class="img-principal-wrapper">
+    <div class="preview-mode-toggle" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+      <button type="button" id="btn-show-photo" class="btn btn-sm btn-outline active" style="flex: 1; cursor: none;">📸 Fotos del Producto</button>
+      <button type="button" id="btn-show-3d" class="btn btn-sm btn-outline" style="flex: 1; cursor: none;">👕 Preview 3D / Personalización</button>
+    </div>
+
+    <div class="img-principal">
+      <div id="photo-viewer" class="viewer-content" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+        {% if camiseta.imagen_local %}
+          <img src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}">
+        {% elif camiseta.imagen_url %}
+          <img src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}"
+               onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>⚽</div>'">
+        {% else %}
+          <div class="img-placeholder">⚽</div>
+        {% endif %}
+      </div>
+      
+      <div id="jersey-svg-viewer" class="viewer-content" style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center;">
+        <div id="detail-jersey-container" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></div>
+      </div>
+    </div>
+
+    <div id="jersey-view-controls" style="display: none; justify-content: center; gap: 1rem; margin-top: 1rem;">
+      <button type="button" id="btn-view-front" class="btn btn-sm btn-outline active" style="cursor: none;">Frente</button>
+      <button type="button" id="btn-view-back" class="btn btn-sm btn-outline" style="cursor: none;">Espalda</button>
+    </div>
   </div>
 
   <div class="info">
@@ -316,7 +345,6 @@
     <div class="info-cat">{{ camiseta.categoria.nombre }}</div>
     {% endif %}
     <h1>{{ camiseta.nombre|limpiar_nombre }}</h1>
-
 
     {% if camiseta.descripcion %}
     <p class="desc">{{ camiseta.descripcion }}</p>
@@ -341,7 +369,7 @@
         <div class="error-talla" id="err-talla">⚠ Elige una talla</div>
       </div>
 
-      <div class="opciones-extra" style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--crema); border-radius: 4px; border: 1px solid var(--crema-oscura);">
+      <div class="opciones-extra" style="margin-bottom: 1.5rem;">
         <div class="label-seccion" style="margin-bottom: 1rem;">Personaliza tu camiseta</div>
 
         <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; cursor: pointer; font-size: 0.9rem; font-weight: 500;">
@@ -355,8 +383,8 @@
         </label>
 
         <div id="div_texto_dorsal" style="display: none; margin-top: 1rem;">
-            <input type="text" name="texto_dorsal" placeholder="Ej: MESSI 10"
-                   style="width: 100%; padding: 0.8rem; border: 1px solid var(--outline); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.9rem; background: #ffffff; color: var(--negro); outline: none;">
+            <input type="text" name="texto_dorsal" id="texto_dorsal_input" placeholder="Ej: MESSI 10"
+                   style="width: 100%; padding: 0.8rem;">
             <small style="display: block; margin-top: 0.4rem; color: var(--gris); font-size: 0.75rem;">Escribe el nombre y número exacto que deseas.</small>
         </div>
       </div>
@@ -380,17 +408,115 @@
 </div>
 
 <script>
-  // Mostrar/Ocultar el campo de texto del dorsal
+  // ── LÓGICA DE DORSAL Y RE-RENDERIZACIÓN EN TIEMPO REAL ──
+  const nameInput = document.getElementById('texto_dorsal_input');
+  const dorsalChk = document.getElementById('dorsal_chk');
+  const jerseyContainer = document.getElementById('detail-jersey-container');
+  const camisetaNombre = "{{ camiseta.nombre|escapejs }}";
+
+  let currentView = 'front';
+  let currentName = '';
+  let currentNumber = '10';
+
+  function updateDetailJersey() {
+    if (!jerseyContainer) return;
+    jerseyContainer.innerHTML = getJerseySVG(camisetaNombre, {
+      view: currentView,
+      name: currentName,
+      number: currentNumber,
+      className: 'w-full h-auto'
+    });
+  }
+
+  function setView(view) {
+    currentView = view;
+    
+    const btnFront = document.getElementById('btn-view-front');
+    const btnBack = document.getElementById('btn-view-back');
+    
+    if (view === 'front') {
+      btnFront.classList.add('active');
+      btnBack.classList.remove('active');
+    } else {
+      btnFront.classList.remove('active');
+      btnBack.classList.add('active');
+    }
+    
+    updateDetailJersey();
+  }
+
+  // Toggles de fotos vs 3D
+  const btnShowPhoto = document.getElementById('btn-show-photo');
+  const btnShow3D = document.getElementById('btn-show-3d');
+  const photoViewer = document.getElementById('photo-viewer');
+  const svgViewer = document.getElementById('jersey-svg-viewer');
+  const viewControls = document.getElementById('jersey-view-controls');
+
+  function showMode(mode) {
+    if (mode === 'photo') {
+      btnShowPhoto.classList.add('active');
+      btnShow3D.classList.remove('active');
+      photoViewer.style.display = 'flex';
+      svgViewer.style.display = 'none';
+      viewControls.style.display = 'none';
+    } else {
+      btnShowPhoto.classList.remove('active');
+      btnShow3D.classList.add('active');
+      photoViewer.style.display = 'none';
+      svgViewer.style.display = 'flex';
+      viewControls.style.display = 'flex';
+      updateDetailJersey();
+    }
+  }
+
+  if (btnShowPhoto) btnShowPhoto.addEventListener('click', () => showMode('photo'));
+  if (btnShow3D) btnShow3D.addEventListener('click', () => showMode('3d'));
+
+  const btnViewFront = document.getElementById('btn-view-front');
+  const btnViewBack = document.getElementById('btn-view-back');
+  if (btnViewFront) btnViewFront.addEventListener('click', () => setView('front'));
+  if (btnViewBack) btnViewBack.addEventListener('click', () => setView('back'));
+
+  // Mostrar/Ocultar el campo de texto del dorsal y conectar con SVG
   function toggleDorsal() {
       var chk = document.getElementById('dorsal_chk');
       var div = document.getElementById('div_texto_dorsal');
       if(chk.checked) {
           div.style.display = 'block';
           div.querySelector('input').focus();
+          showMode('3d');
+          setView('back');
       } else {
           div.style.display = 'none';
-          div.querySelector('input').value = ''; // Limpia si desmarca
+          div.querySelector('input').value = ''; 
+          currentName = '';
+          currentNumber = '10';
+          updateDetailJersey();
       }
+  }
+
+  if (nameInput) {
+    nameInput.addEventListener('input', () => {
+      let rawValue = nameInput.value;
+      
+      let parsedName = rawValue;
+      let parsedNum = '10';
+      
+      const numMatch = rawValue.match(/\b\d{1,2}\b/);
+      if (numMatch) {
+        parsedNum = numMatch[0];
+        parsedName = rawValue.replace(numMatch[0], '').trim();
+      }
+      
+      currentName = parsedName;
+      currentNumber = parsedNum;
+      
+      if (currentView !== 'back') {
+        setView('back');
+      } else {
+        updateDetailJersey();
+      }
+    });
   }
 
   // Lógica de cantidad

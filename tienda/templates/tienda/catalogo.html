@@ -6,17 +6,39 @@
 <style>
   /* ── HERO ── */
   .hero {
-    padding: 4rem 0 3rem;
+    position: relative;
+    padding: 5rem 2.5rem 4.5rem;
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
     gap: 2rem;
-    border-bottom: 1px solid var(--outline);
-    margin-bottom: 2rem;
+    border: 1px solid var(--outline);
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    background: rgba(13, 18, 30, 0.4);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 55%;
+    background-image: 
+      linear-gradient(to right, #050814 0%, rgba(5, 8, 20, 0.8) 15%, transparent 40%, transparent 80%, #050814 100%),
+      linear-gradient(to bottom, #050814 0%, transparent 15%, transparent 85%, #050814 100%),
+      url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
   }
   .hero-eyebrow {
     font-size: 0.75rem; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase;
+    letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--primary-container); margin-bottom: 0.8rem;
     text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
   }
@@ -24,24 +46,29 @@
     font-family: 'Sora', sans-serif;
     font-size: clamp(2.8rem, 6vw, 5.5rem);
     font-weight: 800; line-height: 0.95; letter-spacing: -2px;
-    color: var(--negro);
+    color: var(--primary-container);
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
   }
-  .hero h1 em { font-style: italic; color: var(--secondary-container); text-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
+  .hero h1 em { 
+    font-style: normal; 
+    color: #ffffff; 
+    text-shadow: none; 
+  }
   .hero-sub {
     font-size: 0.95rem; color: var(--gris);
-    margin-top: 1rem; max-width: 420px; line-height: 1.6;
+    margin-top: 1rem; max-width: 450px; line-height: 1.6;
   }
   .hero-count {
     font-family: 'Sora', sans-serif;
-    font-size: 4rem; font-weight: 800;
-    color: var(--outline-active); line-height: 1; text-align: right;
-    text-shadow: 0 0 20px rgba(57, 255, 20, 0.25);
+    font-size: 5rem; font-weight: 800;
+    color: #ffffff; line-height: 1; text-align: right;
+    text-shadow: 0 0 30px rgba(57, 255, 20, 0.25);
   }
   .hero-count small {
     display: block; font-family: 'Inter', sans-serif;
     font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gris-claro); margin-top: 0.2rem;
+    color: var(--gris); margin-top: 0.2rem;
   }
 
   /* ── TOOLBAR ── */
@@ -59,38 +86,39 @@
     position: absolute; left: 1rem; top: 50%;
     transform: translateY(-50%);
     color: var(--secondary-container); pointer-events: none;
+    z-index: 10;
   }
   .search-wrap input {
     width: 100%;
-    padding: 0.75rem 3.5rem 0.75rem 2.8rem;
-    background: var(--surface-container);
+    padding: 0.75rem 5.5rem 0.75rem 2.8rem;
+    background: rgba(20, 27, 45, 0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--outline);
     border-radius: 9999px; /* Pill input */
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem; color: var(--negro); outline: none;
+    font-size: 0.9rem; color: #ffffff; outline: none;
     transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
   }
   .search-wrap input:focus {
     border-color: var(--primary-container);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
-    background: #ffffff;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+    background: rgba(20, 27, 45, 0.8);
   }
   .search-wrap input::placeholder { color: var(--gris); }
   .search-btn {
     position: absolute; right: 0.4rem; top: 50%;
     transform: translateY(-50%);
-    background: var(--primary-container); color: white;
+    background: var(--primary-container); color: #000000;
     border: none; border-radius: 9999px;
-    padding: 0.45rem 1rem; cursor: pointer;
-    font-size: 0.72rem; font-weight: 700;
+    padding: 0.45rem 1.2rem; cursor: pointer;
+    font-size: 0.72rem; font-weight: 800;
     letter-spacing: 0.08em; text-transform: uppercase;
     transition: background-color 0.2s, box-shadow 0.2s;
   }
   .search-btn:hover { 
-    background: #059669; 
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+    background: #efffe3; 
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
   }
 
   /* ── CATEGORY TABS ── */
@@ -123,31 +151,31 @@
     align-items: center;
     gap: 0.45rem;
     padding: 0.6rem 1.2rem;
-    background: var(--surface);
+    background: rgba(13, 18, 30, 0.55);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--outline);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 9999px; /* Pill category buttons */
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--negro);
+    color: #94a3b8;
     text-decoration: none;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
   }
   .category-tab:hover {
-    border-color: var(--primary-container);
-    color: var(--primary-container);
+    border-color: var(--secondary-container);
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
   }
   .category-tab.active {
     background: var(--primary-container);
-    color: white;
+    color: #000000;
     border-color: var(--primary-container);
     font-weight: 700;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
   }
   .category-icon {
     font-size: 1rem;
@@ -162,12 +190,12 @@
 
   /* ── CARD ── */
   .card {
-    background: var(--blanco);
+    background: var(--surface);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--outline);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 30px var(--sombra);
-    border-radius: 12px; overflow: hidden;
+    border-radius: 16px; overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.4s;
@@ -181,17 +209,19 @@
   }
   .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 4px 25px rgba(16, 185, 129, 0.1), 0 12px 30px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.15), 0 12px 30px rgba(0, 0, 0, 0.4);
     border-color: var(--primary-container);
   }
   .card.visible:hover { transform: translateY(-8px); }
 
   .card-img-wrap {
-    position: relative; aspect-ratio: 4/5;
-    overflow: hidden; background: #f1f5f9;
+    position: relative; aspect-ratio: 1/1;
+    overflow: hidden; background: #0c0e14;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
   }
   .card-img-wrap img {
-    width: 100%; height: 100%; object-fit: cover;
+    width: 100%; height: 100%; object-fit: contain;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
   }
   .card-img-wrap img.lazy { opacity: 0; }
@@ -202,44 +232,44 @@
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
-    background: #f1f5f9;
+    background: #0c0e14;
   }
 
   .card-cat-tag {
     position: absolute; top: 0.75rem; left: 0.75rem;
-    background: var(--primary-container); color: white;
-    font-size: 0.65rem; font-weight: 700;
+    background: var(--primary-container); color: #000000;
+    font-size: 0.65rem; font-weight: 800;
     letter-spacing: 0.12em; text-transform: uppercase;
     padding: 0.35rem 0.75rem; border-radius: 9999px;
-    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 2px 10px rgba(57, 255, 20, 0.2);
   }
 
   .card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(5, 8, 20, 0.95) 0%, transparent 60%);
     opacity: 0; transition: opacity 0.35s;
     display: flex; align-items: flex-end; padding: 1.2rem;
   }
   .card:hover .card-overlay { opacity: 1; }
   .card-overlay a {
     width: 100%; text-align: center;
-    background: var(--primary-container); color: white;
+    background: var(--primary-container); color: #000000;
     padding: 0.65rem; font-size: 0.78rem;
-    font-weight: 700; letter-spacing: 0.12em;
+    font-weight: 800; letter-spacing: 0.12em;
     text-transform: uppercase; text-decoration: none;
     border-radius: 9999px; transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 10px rgba(57, 255, 20, 0.2);
   }
   .card-overlay a:hover { 
-    background: #059669; 
-    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+    background: #efffe3; 
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
   }
 
   .card-body { padding: 1.2rem; }
   .card-nombre {
     font-family: 'Sora', sans-serif;
     font-size: 0.95rem; font-weight: 700;
-    line-height: 1.4; color: var(--negro);
+    line-height: 1.4; color: #ffffff;
     margin-bottom: 0.8rem;
     display: -webkit-box; -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; overflow: hidden;
@@ -250,15 +280,15 @@
   .talla-chip {
     font-size: 0.68rem; font-weight: 700;
     letter-spacing: 0.05em;
-    border: 1px solid var(--outline);
-    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
     padding: 0.25rem 0.55rem; border-radius: 4px;
-    color: var(--gris);
+    color: #94a3b8;
     transition: all 0.2s;
   }
   .card:hover .talla-chip {
-    border-color: rgba(0, 0, 0, 0.1);
-    color: var(--on-surface);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
   }
 
   /* ── PAGINACIÓN ── */
@@ -277,12 +307,12 @@
   }
   .pagination a, .pagination span.current, .pagination span.ellipsis {
     padding: 0.6rem 1.1rem;
-    border: 1px solid var(--outline);
-    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(13, 18, 30, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 8px; text-decoration: none;
-    color: var(--negro); font-weight: 600;
+    color: #e2e8f0; font-weight: 600;
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
@@ -293,13 +323,13 @@
   .pagination a:hover {
     border-color: var(--primary-container);
     color: var(--primary-container);
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 12px rgba(57, 255, 20, 0.3);
     transform: translateY(-1px);
   }
   .pagination span.current {
-    background: var(--primary-container); color: white;
+    background: var(--primary-container); color: #000000;
     border-color: var(--primary-container);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
   }
   .pagination span.ellipsis {
     border-color: transparent;
@@ -320,7 +350,7 @@
   }
   .empty h2 {
     font-family: 'Sora', sans-serif;
-    font-size: 2rem; color: var(--negro); margin-bottom: 0.8rem;
+    font-size: 2rem; color: #ffffff; margin-bottom: 0.8rem;
   }
 
   @media (max-width: 600px) {
@@ -389,9 +419,10 @@
         <img class="lazy" data-src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre|limpiar_nombre }}">
       {% elif camiseta.imagen_url %}
         <img class="lazy" data-src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre|limpiar_nombre }}"
-             onerror="this.parentElement.innerHTML='<div class=\'card-placeholder\'>⚽</div>'">
+             onerror="this.style.display='none'; const c = this.parentElement.querySelector('.jersey-svg-container'); if(c){ c.style.display='block'; if(typeof initJerseySVGs === 'function'){ initJerseySVGs(); } }">
+        <div class="jersey-svg-container" data-nombre="{{ camiseta.nombre }}" style="display: none; width: 100%; height: 100%;"></div>
       {% else %}
-        <div class="card-placeholder">⚽</div>
+        <div class="jersey-svg-container" data-nombre="{{ camiseta.nombre }}" style="width: 100%; height: 100%;"></div>
       {% endif %}
 
 

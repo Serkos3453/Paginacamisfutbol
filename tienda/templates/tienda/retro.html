@@ -12,17 +12,17 @@
   /* Variables locales que sobreescriben solo en esta página */
   .retro-page {
     --r-fondo:       transparent;
-    --r-fondo-card:  rgba(255, 255, 255, 0.7); /* warm light translucent */
-    --r-borde:       rgba(184, 115, 51, 0.15); /* warm light amber border */
-    --r-borde-hover: #b45309; /* warm dark amber border */
-    --r-texto:       #1e293b; /* Slate 800 */
-    --r-gris:        #475569; /* Slate 600 */
-    --r-acento:      #d97706; /* Amber-600 */
-    --r-acento-claro:#f59e0b;
-    --r-crema:       rgba(217, 119, 6, 0.08);
-    --r-sombra:      rgba(15, 23, 42, 0.05);
-    --r-sombra-hover:rgba(217, 119, 6, 0.15);
-    --r-stamp:       #d97706;
+    --r-fondo-card:  rgba(24, 18, 10, 0.65); /* warm dark translucent card */
+    --r-borde:       rgba(217, 119, 6, 0.18); /* vintage amber border */
+    --r-borde-hover: #fbbf24; /* bright vintage gold border */
+    --r-texto:       #ffffff; /* light text for dark mode */
+    --r-gris:        #94a3b8; /* slate grey */
+    --r-acento:      #fbbf24; /* vintage gold accent */
+    --r-acento-claro:#fef08a; /* light gold */
+    --r-crema:       rgba(217, 119, 6, 0.1); /* warm gold tint */
+    --r-sombra:      rgba(0, 0, 0, 0.6);
+    --r-sombra-hover:rgba(251, 191, 36, 0.25);
+    --r-stamp:       #fbbf24;
   }
 
   /* Fondo general de la página con textura vintage retro */
@@ -196,8 +196,8 @@
   }
   .retro-search-wrap input:focus {
     border-color: var(--r-acento);
-    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.15);
-    background: #ffffff;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.35);
+    background: rgba(24, 18, 10, 0.9);
   }
   .retro-search-wrap input::placeholder { color: var(--r-gris); }
 
@@ -255,45 +255,48 @@
   /* Imagen con filtro sepia leve */
   .retro-card-img-wrap {
     position: relative;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
     overflow: hidden;
-    background: #f1f5f9;
+    background: #0d0a05;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
   }
   .retro-card-img-wrap img {
     width: 100%; height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-    filter: sepia(15%) contrast(1.02);
+    filter: sepia(20%) contrast(1.02);
   }
   .retro-card:hover .retro-card-img-wrap img {
     transform: scale(1.08);
-    filter: sepia(5%) contrast(1.05);
+    filter: sepia(10%) contrast(1.05);
   }
 
   .retro-card-placeholder {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
-    background: #f1f5f9;
+    background: #0d0a05;
   }
 
   /* Etiqueta "RETRO" en la esquina */
   .retro-tag {
     position: absolute; top: 0.75rem; left: 0.75rem;
     background: var(--r-acento);
-    color: white;
+    color: #000000;
     font-size: 0.65rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.35rem 0.75rem;
     border-radius: 9999px;
-    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.2);
+    box-shadow: 0 2px 10px rgba(251, 191, 36, 0.25);
+    z-index: 10;
   }
 
   .retro-card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(13, 10, 5, 0.95) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.35s;
     display: flex; align-items: flex-end; padding: 1.2rem;
@@ -303,20 +306,20 @@
     width: 100%;
     text-align: center;
     background: var(--r-acento);
-    color: white;
+    color: #000000 !important;
     padding: 0.65rem;
     font-size: 0.78rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 9999px;
     transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.2);
+    box-shadow: 0 4px 10px rgba(251, 191, 36, 0.25);
   }
   .retro-card-overlay a:hover { 
     background: var(--r-acento-claro); 
-    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
   }
 
   /* Cuerpo de la card con línea divisora estilo formulario */
@@ -348,14 +351,14 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     border: 1px solid var(--r-borde);
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(255, 255, 255, 0.04);
     padding: 0.25rem 0.55rem;
     border-radius: 4px;
     color: var(--r-gris);
     transition: all 0.2s;
   }
   .retro-card:hover .retro-talla-chip {
-    border-color: rgba(217, 119, 6, 0.25);
+    border-color: rgba(251, 191, 36, 0.25);
     color: var(--r-texto);
   }
 
@@ -395,17 +398,17 @@
     min-width: 2.6rem;
   }
   .retro-pagination a:hover {
-    background: rgba(217, 119, 6, 0.08);
+    background: rgba(251, 191, 36, 0.08);
     border-color: var(--r-acento);
     color: var(--r-acento);
-    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.15);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
     transform: translateY(-1px);
   }
   .retro-pagination span.current {
     background: var(--r-acento);
-    color: white;
+    color: #000000;
     border-color: var(--r-acento);
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.45);
   }
   .retro-pagination span.ellipsis {
     border-color: transparent;
@@ -534,9 +537,10 @@
           <img src="{{ camiseta.imagen_local.url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}" loading="lazy">
         {% elif camiseta.imagen_url %}
           <img src="{{ camiseta.imagen_url }}" referrerpolicy="no-referrer" alt="{{ camiseta.nombre }}" loading="lazy"
-               onerror="this.parentElement.innerHTML='<div class=\'retro-card-placeholder\'>⚽</div>'">
+               onerror="this.style.display='none'; const c = this.parentElement.querySelector('.jersey-svg-container'); if(c){ c.style.display='block'; if(typeof initJerseySVGs === 'function'){ initJerseySVGs(); } }">
+          <div class="jersey-svg-container" data-nombre="{{ camiseta.nombre }}" style="display: none; width: 100%; height: 100%;"></div>
         {% else %}
-          <div class="retro-card-placeholder">⚽</div>
+          <div class="jersey-svg-container" data-nombre="{{ camiseta.nombre }}" style="width: 100%; height: 100%;"></div>
         {% endif %}
 
         <div class="retro-tag">Retro</div>

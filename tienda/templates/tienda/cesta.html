@@ -22,7 +22,7 @@
     font-weight: 800;
     letter-spacing: -1.5px;
     line-height: 1;
-    color: var(--negro);
+    color: #ffffff;
   }
 
   .cesta-layout {
@@ -52,14 +52,16 @@
     height: 90px;
     border-radius: 8px;
     overflow: hidden;
-    background: #ffffff;
+    background: #0c0e14;
     border: 1px solid var(--outline);
     flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0.5rem;
   }
   .item-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   .item-placeholder {
     width: 100%;
@@ -68,13 +70,13 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    background: #f1f5f9;
+    background: #0c0e14;
   }
   .item-nombre {
     font-family: 'Sora', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--negro);
+    color: #ffffff;
     line-height: 1.35;
     margin-bottom: 0.5rem;
   }
@@ -85,10 +87,10 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     background: var(--primary-container);
-    color: white;
+    color: #000000;
     padding: 0.25rem 0.65rem;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.25);
   }
   .item-acciones {
     display: flex;
@@ -118,8 +120,8 @@
     transition: all 0.2s;
   }
   .qm-btn:hover {
-    background: #ffffff;
-    color: var(--negro);
+    background: rgba(20, 27, 45, 0.8);
+    color: var(--primary-container);
   }
   .qm-val {
     width: 36px;
@@ -132,7 +134,7 @@
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
-    color: var(--negro);
+    color: #ffffff;
     -moz-appearance: textfield;
   }
   .qm-val::-webkit-outer-spin-button,
@@ -158,7 +160,7 @@
 
   /* RESUMEN */
   .resumen {
-    background: var(--surface-container);
+    background: rgba(20, 27, 45, 0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--outline);
@@ -172,7 +174,7 @@
     font-family: 'Sora', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
-    color: var(--negro);
+    color: #ffffff;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--outline);
@@ -186,7 +188,7 @@
     border-bottom: 1px dashed var(--outline);
   }
   .resumen-linea strong {
-    color: var(--negro);
+    color: #ffffff;
   }
   .resumen-total {
     display: flex;
@@ -194,7 +196,7 @@
     align-items: center;
     font-weight: 800;
     font-size: 1.05rem;
-    color: var(--negro);
+    color: #ffffff;
     padding-top: 1.2rem;
     margin-top: 1.2rem;
     border-top: 2px solid var(--outline);
@@ -216,7 +218,7 @@
     font-family: 'Sora', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--negro);
+    color: #ffffff;
     margin-bottom: 1.2rem;
   }
   .empty-icon {
@@ -263,8 +265,8 @@
         <span class="item-talla">{{ item.talla }}</span>
 
         {% if item.parche or item.dorsal %}
-        <div style="font-size: 0.8rem; color: var(--gris); margin-top: 0.5rem; background: var(--surface); padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid var(--outline); display: inline-block;">
-            <strong style="color: var(--negro);">Personalización:</strong>
+        <div style="font-size: 0.8rem; color: var(--gris); margin-top: 0.5rem; background: rgba(20, 27, 45, 0.5); padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid var(--outline); display: inline-block;">
+            <strong style="color: #ffffff;">Personalización:</strong>
             <ul style="margin: 0.2rem 0 0 0; padding-left: 1.2rem;">
                 {% if item.parche %}
                     <li>Parche Liga/Champions</li>

@@ -182,6 +182,9 @@ class LineaPedidoInline(admin.TabularInline):
     ]
     can_delete = False
 
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related('producto')
+
     def preview_img(self, obj):
         return _imagen_thumb(obj.producto, height=55)
     preview_img.short_description = 'Imagen'
