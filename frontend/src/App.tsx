@@ -797,15 +797,13 @@ function App() {
                     <span>⚽</span> Todas
                   </button>
                   {categories.map((cat) => (
-                    cat.tipo !== 'retro' && (
-                      <button 
-                        key={cat.id}
-                        onClick={() => handleCategoryClick(cat.slug)}
-                        className={`category-tab ${selectedCat === cat.slug ? 'active' : ''}`}
-                      >
-                        <span>{cat.icono || '⚽'}</span> {cat.nombre}
-                      </button>
-                    )
+                    <button 
+                      key={cat.id}
+                      onClick={() => handleCategoryClick(cat.slug)}
+                      className={`category-tab ${selectedCat === cat.slug ? 'active' : ''}`}
+                    >
+                      <span>{cat.icono || '⚽'}</span> {cat.nombre}
+                    </button>
                   ))}
                 </div>
               </div>

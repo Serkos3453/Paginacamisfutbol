@@ -331,9 +331,6 @@ def api_catalogo(request):
 
     if is_retro:
         productos = productos.filter(categoria__tipo='retro')
-    else:
-        # Excluir retro del catálogo general
-        productos = productos.exclude(categoria__tipo='retro')
 
     if categoria_slug:
         productos = productos.filter(categoria__slug=categoria_slug)
