@@ -200,11 +200,11 @@ class LineaPedidoInline(admin.TabularInline):
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
     list_display = [
-        'id', 'nombre_cliente', 'telefono', 'estado',
+        'id', 'nombre_cliente', 'telefono', 'comentarios_cliente', 'estado',
         'num_articulos', 'fecha_pedido',
     ]
     list_filter = ['estado', 'fecha_pedido']
-    search_fields = ['nombre_cliente', 'telefono']
+    search_fields = ['nombre_cliente', 'telefono', 'notas']
     list_editable = ['estado']
     readonly_fields = ['fecha_pedido', 'fecha_actualizacion']
     inlines = [LineaPedidoInline]
@@ -220,6 +220,12 @@ class PedidoAdmin(admin.ModelAdmin):
         return obj._num_articulos
     num_articulos.short_description = 'Artículos'
     num_articulos.admin_order_field = '_num_articulos'
+
+    def comentarios_cliente(self, obj):
+        if obj.notas:
+            return format_html('<span style="color:#6b7280; font-style:italic; font-size:12px;">{}</span>', obj.notas)
+        return format_html('<span style="color:#d1d5db;">—</span>')
+    comentarios_cliente.short_description = 'Comentarios Cliente'
 
     fieldsets = (
         ('👤 Cliente', {

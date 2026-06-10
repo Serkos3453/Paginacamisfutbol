@@ -303,7 +303,7 @@ def get_csrf_token(request):
     return JsonResponse({'success': True})
 
 def api_categorias(request):
-    categorias = Categoria.objects.filter(activa=True)
+    categorias = Categoria.objects.filter(activa=True).only('id', 'nombre', 'slug', 'icono', 'tipo')
     data = []
     for cat in categorias:
         if 'Todas' not in cat.nombre and 'todas' not in cat.nombre:
@@ -327,6 +327,10 @@ def api_catalogo(request):
         .filter(activo=True)
         .select_related('categoria')
         .prefetch_related('variantes')
+        .only(
+            'id', 'nombre', 'slug', 'precio', 'imagen', 'imagen_url_original',
+            'categoria__id', 'categoria__nombre', 'categoria__slug', 'categoria__tipo',
+        )
     )
 
     if is_retro:
@@ -381,7 +385,7 @@ def api_catalogo(request):
 
 def api_detalle_camiseta(request, pk):
     producto = get_object_or_404(
-        Producto.objects.prefetch_related('variantes'),
+        Producto.objects.select_related('categoria').prefetch_related('variantes'),
         pk=pk, activo=True
     )
     nombre_limpio = re.sub(r'^(?:Camiseta\s+de\s+fútbol\s+de\s+|Camiseta\s+de\s+fútbol\s+|Camiseta\s+de\s+|Camiseta\s+)(.*)$', r'\1', producto.nombre, flags=re.IGNORECASE).strip().capitalize()

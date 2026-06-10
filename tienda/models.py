@@ -317,8 +317,8 @@ class Pedido(models.Model):
     nombre_cliente = models.CharField(max_length=200)
     telefono = models.CharField(max_length=20, blank=True)
     notas = models.TextField(blank=True, help_text='Notas adicionales del cliente')
-    estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente')
-    fecha_pedido = models.DateTimeField(default=timezone.now)
+    estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente', db_index=True)
+    fecha_pedido = models.DateTimeField(default=timezone.now, db_index=True)
     fecha_actualizacion = models.DateTimeField(auto_now=True)
     notas_admin = models.TextField(blank=True, help_text='Notas internas (solo visibles para el admin)')
 

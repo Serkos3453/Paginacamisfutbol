@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export function Interactive3DJersey() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   
   // Drag rotation state
   const isDragging = useRef(false);
@@ -90,10 +92,17 @@ export function Interactive3DJersey() {
         });
 
         jerseyGroup.add(model);
+        setIsLoading(false);
       },
-      undefined,
+      (xhr) => {
+        if (xhr.total) {
+          const percent = Math.round((xhr.loaded / xhr.total) * 100);
+          setLoadingProgress(percent);
+        }
+      },
       (error) => {
         console.error('An error happened loading the GLTF model:', error);
+        setIsLoading(false);
       }
     );
 
@@ -136,10 +145,12 @@ export function Interactive3DJersey() {
     const onTouchEnd = () => handleEnd();
 
     const container = containerRef.current;
-    container.addEventListener('mousedown', onMouseDown);
+    if (container) {
+      container.addEventListener('mousedown', onMouseDown);
+      container.addEventListener('touchstart', onTouchStart);
+    }
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
-    container.addEventListener('touchstart', onTouchStart);
     window.addEventListener('touchmove', onTouchMove);
     window.addEventListener('touchend', onTouchEnd);
 
@@ -161,10 +172,12 @@ export function Interactive3DJersey() {
 
     return () => {
       cancelAnimationFrame(animationId);
-      container.removeEventListener('mousedown', onMouseDown);
+      if (container) {
+        container.removeEventListener('mousedown', onMouseDown);
+        container.removeEventListener('touchstart', onTouchStart);
+      }
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
-      container.removeEventListener('touchstart', onTouchStart);
       window.removeEventListener('touchmove', onTouchMove);
       window.removeEventListener('touchend', onTouchEnd);
       
@@ -175,8 +188,44 @@ export function Interactive3DJersey() {
   return (
     <div className="hero-3d-container" ref={containerRef}>
       <div className="jersey-3d-scene-wrap">
-        <canvas ref={canvasRef} style={{ display: 'block', cursor: 'grab' }} />
-        <div className="jersey-3d-hint">Girar 3D 🔄</div>
+        {isLoading && (
+          <div className="jersey-3d-loader-overlay" style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(20, 22, 29, 0.75)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: '16px',
+            zIndex: 10,
+            color: 'var(--primary)',
+            fontFamily: 'var(--font-sora)',
+            textAlign: 'center',
+            padding: '1rem'
+          }}>
+            <div className="jersey-loader-spinner" style={{
+              width: '40px',
+              height: '40px',
+              border: '3px solid rgba(0, 255, 102, 0.1)',
+              borderTop: '3px solid var(--primary)',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              marginBottom: '1rem'
+            }}></div>
+            <style>{`
+              @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+              }
+            `}</style>
+            <div style={{ fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.05em' }}>CARGANDO MODELO 3D</div>
+            <div style={{ fontSize: '1.2rem', fontWeight: 800, marginTop: '0.2rem', textShadow: '0 0 10px var(--primary-glow)' }}>{loadingProgress}%</div>
+          </div>
+        )}
+        <canvas ref={canvasRef} style={{ display: isLoading ? 'none' : 'block', cursor: 'grab' }} />
+        {!isLoading && <div className="jersey-3d-hint">Girar 3D 🔄</div>}
       </div>
     </div>
   );
