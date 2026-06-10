@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 // Helper to get CSRF token from cookies
 function getCookie(name: string): string | null {
   let cookieValue = null;
@@ -559,7 +560,7 @@ function Interactive3DJersey() {
 
     // 2. Camera setup
     const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
-    camera.position.set(0, 0, 5.0);
+    camera.position.set(0, 0, 4.5);
 
     // 3. Renderer setup
     const renderer = new THREE.WebGLRenderer({
@@ -571,186 +572,66 @@ function Interactive3DJersey() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     // 4. Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
     scene.add(ambientLight);
 
-    const dirLightFront = new THREE.DirectionalLight(0xffffff, 0.85);
+    const dirLightFront = new THREE.DirectionalLight(0xffffff, 0.95);
     dirLightFront.position.set(2, 3, 4);
     scene.add(dirLightFront);
 
-    const dirLightBack = new THREE.DirectionalLight(0xffffff, 0.45);
+    const dirLightBack = new THREE.DirectionalLight(0xffffff, 0.55);
     dirLightBack.position.set(-2, -1, -4);
     scene.add(dirLightBack);
 
-    // 5. Generate Textures Dynamically on 2D Canvases
-    
-    // 5a. Torso Texture Canvas
-    const torsoCanvas = document.createElement('canvas');
-    torsoCanvas.width = 512;
-    torsoCanvas.height = 512;
-    const ctxT = torsoCanvas.getContext('2d')!;
-
-    // Background: Blue
-    ctxT.fillStyle = '#004d98';
-    ctxT.fillRect(0, 0, 512, 512);
-
-    // Red stripes (Garnet)
-    ctxT.fillStyle = '#a50044';
-    // Front stripes (X: 0 to 256)
-    ctxT.fillRect(35, 0, 42, 512);
-    ctxT.fillRect(107, 0, 42, 512);
-    ctxT.fillRect(179, 0, 42, 512);
-    // Back stripes (X: 256 to 512)
-    ctxT.fillRect(291, 0, 42, 512);
-    ctxT.fillRect(363, 0, 42, 512);
-    ctxT.fillRect(435, 0, 42, 512);
-
-    // Gold collar detail (Front side V-neck)
-    ctxT.strokeStyle = '#ffbe1a';
-    ctxT.lineWidth = 12;
-    ctxT.beginPath();
-    ctxT.moveTo(70, 0);
-    ctxT.lineTo(128, 55);
-    ctxT.lineTo(186, 0);
-    ctxT.stroke();
-
-    // Gold collar detail (Back side curve)
-    ctxT.beginPath();
-    ctxT.moveTo(326, 0);
-    ctxT.quadraticCurveTo(384, 25, 442, 0);
-    ctxT.stroke();
-
-    // Nike Swoosh (Front - Left chest on canvas, right on real shirt)
-    ctxT.fillStyle = '#ffbe1a';
-    ctxT.beginPath();
-    ctxT.moveTo(72, 118);
-    ctxT.quadraticCurveTo(84, 118, 96, 110);
-    ctxT.quadraticCurveTo(88, 122, 72, 124);
-    ctxT.fill();
-
-    // FC Barcelona Crest (Front - Right chest on canvas, left on real shirt)
-    ctxT.save();
-    ctxT.translate(162, 102);
-    ctxT.scale(0.7, 0.7);
-    ctxT.fillStyle = '#ffbe1a';
-    ctxT.beginPath();
-    ctxT.moveTo(0, 0);
-    ctxT.quadraticCurveTo(15, -3, 30, 0);
-    ctxT.quadraticCurveTo(32, 18, 15, 32);
-    ctxT.quadraticCurveTo(-2, 18, 0, 0);
-    ctxT.fill();
-    ctxT.fillStyle = '#ffffff';
-    ctxT.beginPath();
-    ctxT.moveTo(2, 2);
-    ctxT.quadraticCurveTo(15, -1, 28, 2);
-    ctxT.quadraticCurveTo(29, 17, 15, 29);
-    ctxT.quadraticCurveTo(0, 17, 2, 2);
-    ctxT.fill();
-    // Red cross
-    ctxT.fillStyle = '#df0016';
-    ctxT.fillRect(4, 4, 10, 10);
-    ctxT.fillStyle = '#ffffff';
-    ctxT.fillRect(8, 4, 2, 10);
-    ctxT.fillRect(4, 8, 10, 2);
-    // Yellow/red stripes
-    ctxT.fillStyle = '#ffbe1a';
-    ctxT.fillRect(16, 4, 10, 10);
-    ctxT.fillStyle = '#df0016';
-    ctxT.fillRect(19, 4, 2, 10);
-    ctxT.fillRect(23, 4, 2, 10);
-    ctxT.restore();
-
-    // Spotify Logo (Front)
-    ctxT.fillStyle = '#ffbe1a';
-    ctxT.font = 'bold 22px sans-serif';
-    ctxT.textAlign = 'center';
-    ctxT.fillText('Spotify', 128, 205);
-    ctxT.strokeStyle = '#ffbe1a';
-    ctxT.lineWidth = 3;
-    ctxT.beginPath();
-    ctxT.arc(128, 165, 13, 0, Math.PI * 2);
-    ctxT.stroke();
-    ctxT.beginPath();
-    ctxT.arc(128, 165, 8, 1.2 * Math.PI, 1.8 * Math.PI);
-    ctxT.stroke();
-    ctxT.beginPath();
-    ctxT.arc(128, 165, 5, 1.2 * Math.PI, 1.8 * Math.PI);
-    ctxT.stroke();
-
-    // Player Name "L. YAMAL" (Back side)
-    ctxT.fillStyle = '#ffbe1a';
-    ctxT.font = 'bold 22px sans-serif';
-    ctxT.textAlign = 'center';
-    ctxT.fillText('L. YAMAL', 384, 110);
-
-    // Player Number "19" (Back side)
-    ctxT.font = 'bold 110px Impact, sans-serif';
-    ctxT.fillText('19', 384, 225);
-
-    // UNICEF Logo (Back side)
-    ctxT.font = 'bold 18px sans-serif';
-    ctxT.fillText('unicef', 384, 290);
-
-    const torsoTexture = new THREE.CanvasTexture(torsoCanvas);
-    torsoTexture.wrapS = THREE.RepeatWrapping;
-    // Offset the wrap so front of canvas maps to the front of cylinder
-    torsoTexture.offset.x = 0.5;
-
-    // 5b. Sleeve Texture Canvas
-    const sleeveCanvas = document.createElement('canvas');
-    sleeveCanvas.width = 256;
-    sleeveCanvas.height = 256;
-    const ctxS = sleeveCanvas.getContext('2d')!;
-    ctxS.fillStyle = '#004d98';
-    ctxS.fillRect(0, 0, 256, 256);
-    ctxS.fillStyle = '#a50044';
-    ctxS.fillRect(40, 0, 60, 256);
-    ctxS.fillRect(156, 0, 60, 256);
-    // Gold cuff
-    ctxS.fillStyle = '#ffbe1a';
-    ctxS.fillRect(0, 220, 256, 36);
-
-    const sleeveTexture = new THREE.CanvasTexture(sleeveCanvas);
-
-    // 6. Build the Jersey 3D Mesh Group
+    // 5. Build the Jersey 3D Mesh Group
     const jerseyGroup = new THREE.Group();
-
-    // Torso Cylinder (Ovalized via scale for chest look)
-    const torsoGeo = new THREE.CylinderGeometry(0.85, 0.75, 2.3, 32, 8, true);
-    const torsoMat = new THREE.MeshStandardMaterial({
-      map: torsoTexture,
-      roughness: 0.6,
-      metalness: 0.1,
-      side: THREE.DoubleSide
-    });
-    const torsoMesh = new THREE.Mesh(torsoGeo, torsoMat);
-    torsoMesh.scale.set(1.2, 1.0, 0.75);
-    jerseyGroup.add(torsoMesh);
-
-    // Left Sleeve Cylinder
-    const sleeveGeo = new THREE.CylinderGeometry(0.28, 0.24, 0.8, 16, 4, true);
-    const sleeveMat = new THREE.MeshStandardMaterial({
-      map: sleeveTexture,
-      roughness: 0.6,
-      metalness: 0.1,
-      side: THREE.DoubleSide
-    });
-    
-    const leftSleeveMesh = new THREE.Mesh(sleeveGeo, sleeveMat);
-    leftSleeveMesh.position.set(-1.0, 0.75, 0);
-    leftSleeveMesh.rotation.z = 0.5; 
-    leftSleeveMesh.rotation.y = 0.15; 
-    jerseyGroup.add(leftSleeveMesh);
-
-    // Right Sleeve Cylinder
-    const rightSleeveMesh = new THREE.Mesh(sleeveGeo, sleeveMat);
-    rightSleeveMesh.position.set(1.0, 0.75, 0);
-    rightSleeveMesh.rotation.z = -0.5; 
-    rightSleeveMesh.rotation.y = -0.15; 
-    jerseyGroup.add(rightSleeveMesh);
-
     scene.add(jerseyGroup);
-    jerseyGroup.position.y = -0.1;
+
+    // 6. Load GLTF model
+    const loader = new GLTFLoader();
+    const modelUrl = '/static/spa/fc_barcelona-leo.glb';
+
+    loader.load(
+      modelUrl,
+      (gltf) => {
+        const model = gltf.scene;
+
+        // Center the model geometry
+        const box = new THREE.Box3().setFromObject(model);
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        model.position.sub(center); // center at (0, 0, 0)
+        
+        // Scale the model to fit screen nicely
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = 2.4 / maxDim; // Adjust scale factor
+        model.scale.set(scale, scale, scale);
+
+        // Optional: Traverse child meshes to adjust materials
+        model.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            if (mesh.material) {
+              if (Array.isArray(mesh.material)) {
+                mesh.material.forEach(mat => mat.side = THREE.DoubleSide);
+              } else {
+                mesh.material.side = THREE.DoubleSide;
+              }
+            }
+          }
+        });
+
+        jerseyGroup.add(model);
+      },
+      undefined,
+      (error) => {
+        console.error('An error happened loading the GLTF model:', error);
+      }
+    );
 
     // 7. Interaction Handlers
     const handleStart = (clientX: number, clientY: number) => {
@@ -823,12 +704,6 @@ function Interactive3DJersey() {
       window.removeEventListener('touchmove', onTouchMove);
       window.removeEventListener('touchend', onTouchEnd);
       
-      torsoGeo.dispose();
-      torsoMat.dispose();
-      sleeveGeo.dispose();
-      sleeveMat.dispose();
-      torsoTexture.dispose();
-      sleeveTexture.dispose();
       renderer.dispose();
     };
   }, []);
