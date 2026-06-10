@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   /* Ultra-modern dark futuristic color palette */
@@ -22,6 +22,63 @@
   
   --talla-selected-bg: #00ff66;
   --talla-selected-text: #0b0c10;
+}
+
+/* Light mode overrides */
+:root.light-mode {
+  --bg-main: #f5f6fa;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(245, 246, 250, 0.85);
+  
+  --primary: #00bf4c; /* Darker neon green for high contrast on light bg */
+  --primary-glow: rgba(0, 191, 76, 0.15);
+  --secondary: #6d28d9; /* Violet */
+  --secondary-glow: rgba(109, 40, 217, 0.15);
+  
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+  --border-focus: #9ca3af;
+  
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-neon: 0 0 10px rgba(0, 191, 76, 0.08);
+  
+  --talla-selected-bg: #00bf4c;
+  --talla-selected-text: #ffffff;
+}
+
+/* Global Transition for Theme Switching */
+body, header, nav, .card, .cesta-drawer, .form-card, input, select, textarea, button, .category-card-btn, .category-card-logo-container {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Personalization Nav Settings Gear Icon */
+.nav-settings {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  padding: 0.7rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+  transition: all 0.3s ease !important;
+}
+
+.nav-settings:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+  transform: rotate(30deg);
+}
+
+.light-mode .nav-settings {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.light-mode .nav-settings:hover {
+  background: rgba(0, 0, 0, 0.06);
 }
 
 /* Base Styles */
@@ -190,7 +247,7 @@ nav {
 /* ── HERO SECTION ── */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #181922 0%, #0c0d14 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-main) 100%);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 3.5rem;
@@ -215,7 +272,7 @@ nav {
 }
 
 .hero.retro-theme {
-  background: linear-gradient(135deg, #201712 0%, #0c0d14 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-main) 100%);
 }
 
 .hero.retro-theme::before {
@@ -245,7 +302,7 @@ nav {
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--text-main);
   margin-bottom: 1.2rem;
 }
 
@@ -270,14 +327,14 @@ nav {
 }
 
 .hero-count {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(128, 128, 128, 0.05);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem 2rem;
   text-align: center;
   font-size: 2.8rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .hero-count small {
@@ -498,7 +555,7 @@ nav {
   position: relative;
   aspect-ratio: 1/1;
   width: 100%;
-  background: #181922;
+  background: var(--bg-main);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1029,7 +1086,7 @@ nav {
   width: 100%;
   max-width: 440px;
   height: 100vh;
-  background: #0f1015;
+  background: var(--bg-card);
   border-left: 1px solid var(--border);
   z-index: 1001;
   transform: translateX(100%);
@@ -1083,7 +1140,7 @@ nav {
 .cesta-drawer-item-img {
   width: 64px;
   height: 64px;
-  background: #181922;
+  background: var(--bg-main);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -1164,7 +1221,7 @@ nav {
 .cesta-drawer-footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem;
-  background: #0b0c10;
+  background: var(--bg-card);
 }
 
 .cesta-drawer-total {

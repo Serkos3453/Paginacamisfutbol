@@ -731,6 +731,13 @@ function App() {
   const [toast, setToast] = useState<{ message: string; show: boolean }>({ message: '', show: false });
   const [toastBinds, setToastBinds] = useState(0);
 
+  // UI Theme & User Personalization States
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+  const [accent, setAccent] = useState(() => localStorage.getItem('accent') || 'green');
+  const [font, setFont] = useState(() => localStorage.getItem('font') || 'sora');
+  const [mobileCols, setMobileCols] = useState(() => parseInt(localStorage.getItem('mobileCols') || '3'));
+
   // Catalog / Filter States
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -805,6 +812,48 @@ function App() {
       window.removeEventListener('popstate', handleLocationChange);
     };
   }, []);
+
+  // ── USER PERSONALIZATION EFFECTS ──
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light-mode');
+    } else {
+      document.documentElement.classList.remove('light-mode');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const colors: Record<string, { dark: string; light: string; glow: string }> = {
+      green: { dark: '#00ff66', light: '#00bf4c', glow: 'rgba(0, 255, 102, 0.3)' },
+      blue: { dark: '#00f0ff', light: '#0088cc', glow: 'rgba(0, 240, 255, 0.3)' },
+      red: { dark: '#ff3b30', light: '#d92b2b', glow: 'rgba(255, 59, 48, 0.3)' },
+      gold: { dark: '#ffb700', light: '#d97706', glow: 'rgba(255, 183, 0, 0.3)' },
+      pink: { dark: '#ff007f', light: '#db2777', glow: 'rgba(255, 0, 127, 0.3)' }
+    };
+    const activeColor = colors[accent] || colors.green;
+    const primaryVal = theme === 'light' ? activeColor.light : activeColor.dark;
+    document.documentElement.style.setProperty('--primary', primaryVal);
+    document.documentElement.style.setProperty('--primary-glow', activeColor.glow);
+    document.documentElement.style.setProperty('--talla-selected-bg', primaryVal);
+    localStorage.setItem('accent', accent);
+  }, [accent, theme]);
+
+  useEffect(() => {
+    const fonts: Record<string, string> = {
+      sora: "'Sora', system-ui, -apple-system, sans-serif",
+      mono: "'JetBrains Mono', monospace",
+      serif: "'Playfair Display', Georgia, serif"
+    };
+    const activeFont = fonts[font] || fonts.sora;
+    document.documentElement.style.setProperty('--font-sans', activeFont);
+    localStorage.setItem('font', font);
+  }, [font]);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--mobile-cols', mobileCols.toString());
+    localStorage.setItem('mobileCols', mobileCols.toString());
+  }, [mobileCols]);
 
   // Sync route state with window.location
   const handleLocationChange = () => {
@@ -1152,6 +1201,12 @@ function App() {
             </svg>
             <span className="cesta-badge">{totalCartItems}</span>
           </div>
+          <div className="nav-settings" onClick={() => setSettingsOpen(true)} title="Personalización">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
         </div>
       </nav>
 
@@ -1248,7 +1303,7 @@ function App() {
                 <p style={{ marginTop: '1rem', color: 'var(--gris)' }}>Cargando catálogo...</p>
               </div>
             ) : products.length > 0 ? (
-              <div className="grid">
+              <div className={`grid cols-${mobileCols}`}>
                 {products.map((product) => (
                   <div 
                     key={product.id} 
@@ -1779,6 +1834,153 @@ function App() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* ── SETTINGS SLIDE-IN DRAWER ── */}
+      <div 
+        className={`cesta-drawer-overlay ${settingsOpen ? 'active' : ''}`}
+        onClick={() => setSettingsOpen(false)}
+      />
+
+      <div className={`cesta-drawer ${settingsOpen ? 'open' : ''}`}>
+        <div className="cesta-drawer-header">
+          <h3>Personalización</h3>
+          <button className="close-drawer-btn" onClick={() => setSettingsOpen(false)}>×</button>
+        </div>
+
+        <div className="cesta-drawer-items" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          
+          {/* A. TEMA CLARO / OSCURO */}
+          <div className="form-section">
+            <span className="section-label" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tema Principal</span>
+            <div style={{ display: 'flex', gap: '0.8rem', marginTop: '0.6rem' }}>
+              <button 
+                className={`theme-mode-btn ${theme === 'dark' ? 'selected' : ''}`}
+                onClick={() => setTheme('dark')}
+                style={{
+                  flex: 1,
+                  background: theme === 'dark' ? 'var(--primary)' : 'rgba(128,128,128,0.08)',
+                  color: theme === 'dark' ? '#0b0c10' : 'var(--text-main)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '10px',
+                  padding: '0.8rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                Oscuro 🌙
+              </button>
+              <button 
+                className={`theme-mode-btn ${theme === 'light' ? 'selected' : ''}`}
+                onClick={() => setTheme('light')}
+                style={{
+                  flex: 1,
+                  background: theme === 'light' ? 'var(--primary)' : 'rgba(128,128,128,0.08)',
+                  color: theme === 'light' ? '#0b0c10' : 'var(--text-main)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '10px',
+                  padding: '0.8rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                Claro ☀️
+              </button>
+            </div>
+          </div>
+
+          {/* B. COLOR DE ACENTO */}
+          <div className="form-section">
+            <span className="section-label" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Color de Acento</span>
+            <div style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap', marginTop: '0.6rem' }}>
+              {[
+                { id: 'green', name: 'Verde', color: '#00ff66' },
+                { id: 'blue', name: 'Azul', color: '#00f0ff' },
+                { id: 'red', name: 'Rojo', color: '#ff3b30' },
+                { id: 'gold', name: 'Oro', color: '#ffb700' },
+                { id: 'pink', name: 'Rosa', color: '#ff007f' }
+              ].map((colorItem) => (
+                <button
+                  key={colorItem.id}
+                  onClick={() => setAccent(colorItem.id)}
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '50%',
+                    backgroundColor: colorItem.color,
+                    border: accent === colorItem.id ? '3px solid var(--text-main)' : '2px solid transparent',
+                    cursor: 'pointer',
+                    boxShadow: accent === colorItem.id ? '0 0 10px var(--primary-glow)' : 'none',
+                    transition: 'all 0.2s ease'
+                  }}
+                  title={colorItem.name}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* C. TIPOGRAFÍA */}
+          <div className="form-section">
+            <span className="section-label" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Estilo de Letra</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.6rem' }}>
+              {[
+                { id: 'sora', name: 'Sora (Moderno)', fontStyle: 'Sora' },
+                { id: 'mono', name: 'JetBrains Mono (Técnico)', fontStyle: 'monospace' },
+                { id: 'serif', name: 'Playfair Display (Elegante)', fontStyle: 'serif' }
+              ].map((fontItem) => (
+                <button
+                  key={fontItem.id}
+                  onClick={() => setFont(fontItem.id)}
+                  style={{
+                    textAlign: 'left',
+                    background: font === fontItem.id ? 'var(--primary)' : 'rgba(128,128,128,0.08)',
+                    color: font === fontItem.id ? '#0b0c10' : 'var(--text-main)',
+                    border: font === fontItem.id ? '1px solid var(--primary)' : '1px solid var(--border)',
+                    borderRadius: '8px',
+                    padding: '0.7rem 1rem',
+                    cursor: 'pointer',
+                    fontFamily: fontItem.id === 'sora' ? "'Sora', sans-serif" : fontItem.id === 'mono' ? "'JetBrains Mono', monospace" : "'Playfair Display', serif",
+                    fontWeight: font === fontItem.id ? 700 : 500,
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {fontItem.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* D. COLUMNAS EN MÓVIL */}
+          <div className="form-section">
+            <span className="section-label" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Diseño en Móvil (Columnas)</span>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>Elige cuántas camisetas ver por fila en tu móvil</p>
+            <div style={{ display: 'flex', gap: '0.8rem', marginTop: '0.6rem' }}>
+              {[1, 2, 3].map((num) => (
+                <button
+                  key={num}
+                  className={`cols-select-btn ${mobileCols === num ? 'selected' : ''}`}
+                  onClick={() => setMobileCols(num)}
+                  style={{
+                    flex: 1,
+                    background: mobileCols === num ? 'var(--primary)' : 'rgba(128,128,128,0.08)',
+                    color: mobileCols === num ? '#0b0c10' : 'var(--text-main)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '10px',
+                    padding: '0.6rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  {num} {num === 1 ? 'Col' : 'Cols'}
+                </button>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
