@@ -25,7 +25,7 @@
 }
 
 /* Light mode overrides */
-:root.light-mode {
+.light-mode {
   --bg-main: #f5f6fa;
   --bg-card: #ffffff;
   --bg-nav: rgba(245, 246, 250, 0.85);
