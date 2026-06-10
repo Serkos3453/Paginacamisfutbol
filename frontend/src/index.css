@@ -1608,3 +1608,244 @@ nav {
     align-self: center !important;
   }
 }
+
+/* ── MOBILE OPTIMIZATIONS (max-width: 768px) ── */
+@media (max-width: 768px) {
+  /* Sticky Navigation Bar */
+  nav {
+    height: 60px !important;
+    padding: 0 16px !important;
+  }
+  .nav-logo {
+    font-size: 1.25rem !important;
+  }
+  .nav-right {
+    gap: 0.8rem !important;
+  }
+  .nav-link {
+    font-size: 0.82rem !important;
+  }
+  .nav-cesta {
+    padding: 0.5rem !important;
+  }
+  .cesta-badge {
+    top: -4px !important;
+    right: -4px !important;
+    width: 17px !important;
+    height: 17px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Main Area */
+  .main-content {
+    margin-top: 60px !important;
+    padding: 1rem 12px !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 1.5rem 1rem !important;
+    margin-bottom: 1.5rem !important;
+    gap: 1.2rem !important;
+    border-radius: 12px !important;
+  }
+  .hero h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+  }
+  .hero p {
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .hero-3d-container {
+    padding: 0 !important;
+  }
+  .jersey-3d-scene {
+    width: 145px !important;
+    height: 169px !important;
+  }
+  .jersey-3d-hint {
+    font-size: 0.6rem !important;
+    padding: 0.2rem 0.6rem !important;
+    bottom: -20px !important;
+  }
+
+  /* Toolbar & Search */
+  .toolbar {
+    margin-bottom: 1.2rem !important;
+  }
+  .search-wrap {
+    border-radius: 10px !important;
+    padding: 0.25rem !important;
+  }
+  .search-wrap input {
+    padding: 0.5rem 0.6rem !important;
+    font-size: 0.88rem !important;
+  }
+  .search-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.88rem !important;
+    border-radius: 8px !important;
+  }
+  .search-icon {
+    margin-left: 0.6rem !important;
+  }
+
+  /* Category Slider */
+  .category-slider-outer {
+    margin: 1rem 0 1.5rem 0 !important;
+  }
+  .category-card-btn {
+    flex: 0 0 84px !important;
+    height: 98px !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 0.25rem 0.4rem 0.25rem !important;
+  }
+  .category-card-logo-container {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 8px !important;
+    padding: 5px !important;
+  }
+  .category-card-label {
+    font-size: 0.58rem !important;
+    margin-top: 0.2rem !important;
+    max-width: 80px !important;
+  }
+  .slider-arrow {
+    display: none !important; /* Touch swipe only on mobile */
+  }
+
+  /* 3 Jerseys columns in grid */
+  .grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .card {
+    border-radius: 8px !important;
+  }
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: var(--border) !important;
+  }
+  .card-img-wrap {
+    border-radius: 8px 8px 0 0 !important;
+  }
+  .card-overlay {
+    display: none !important; /* Hide overlay hover on mobile */
+  }
+  .card-cat-tag {
+    font-size: 0.55rem !important;
+    padding: 0.1rem 0.3rem !important;
+    top: 4px !important;
+    left: 4px !important;
+    border-radius: 4px !important;
+    z-index: 5 !important;
+  }
+  .card-body {
+    padding: 0.4rem !important;
+  }
+  .card-nombre {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.25 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    height: 2.5em !important;
+  }
+  .card-tallas {
+    display: none !important; /* Hide chips in grid list to keep it super clean */
+  }
+
+  /* Product Detail Page */
+  .detail-grid {
+    gap: 1.5rem !important;
+  }
+  .viewer-box {
+    padding: 0.5rem !important;
+    border-radius: 12px !important;
+  }
+  .specs-header {
+    padding-bottom: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .specs-header h1 {
+    font-size: 1.5rem !important;
+  }
+  .specs-desc {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .specs-form {
+    gap: 1.2rem !important;
+  }
+  .talla-btn {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+  }
+  .custom-card {
+    padding: 0.8rem !important;
+    border-radius: 10px !important;
+  }
+  .custom-checkbox-txt {
+    font-size: 0.88rem !important;
+  }
+  .custom-inputs {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+    margin-top: 0.8rem !important;
+    padding-top: 0.8rem !important;
+  }
+  .svg-personalizer {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .svg-side-view h4 {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .svg-side-box {
+    aspect-ratio: 1/1 !important;
+    height: auto !important;
+    padding: 0.5rem !important;
+  }
+
+  /* Cesta / Drawer */
+  .cesta-drawer-header {
+    padding: 1rem !important;
+  }
+  .cesta-drawer-items {
+    padding: 1rem !important;
+  }
+  .cesta-drawer-footer {
+    padding: 1rem !important;
+  }
+  .cesta-drawer-item {
+    gap: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .cesta-drawer-item-img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .cesta-drawer-item-name {
+    font-size: 0.85rem !important;
+  }
+
+  /* Checkout */
+  .checkout-grid {
+    gap: 1.5rem !important;
+  }
+  .form-card {
+    padding: 1.2rem !important;
+    border-radius: 12px !important;
+  }
+}
