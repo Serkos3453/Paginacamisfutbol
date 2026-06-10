@@ -1090,7 +1090,6 @@ function App() {
 
   // Total items in cart counter
   const totalCartItems = cart.reduce((acc, curr) => acc + curr.cantidad, 0);
-  const totalCartPrice = cart.reduce((acc, curr) => acc + (curr.precio_total * curr.cantidad), 0);
 
   // Trigger search filters
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -1287,7 +1286,6 @@ function App() {
                     <div className="card-body">
                       <div className="card-nombre">{product.nombre}</div>
                       <div className="card-price-row">
-                        <span className="card-price">{product.precio.toFixed(2)} €</span>
                       </div>
                       <div className="card-tallas">
                         {product.tallas.map((talla) => (
@@ -1421,7 +1419,7 @@ function App() {
                     {detailProduct.categoria?.nombre || 'Colección oficial'}
                   </span>
                   <h1>{detailProduct.nombre}</h1>
-                  <div className="specs-price">{detailProduct.precio.toFixed(2)} €</div>
+                  {/* <div className="specs-price">{detailProduct.precio.toFixed(2)} €</div> */}
                 </div>
 
                 <p className="specs-desc">{detailProduct.descripcion}</p>
@@ -1457,7 +1455,7 @@ function App() {
                         }}
                       />
                       <span className="custom-checkbox-box"></span>
-                      <span className="custom-checkbox-txt">¿Añadir parche y dorsal (+4.00 €)?</span>
+                      <span className="custom-checkbox-txt">¿Añadir parche y dorsal?</span>
                     </label>
 
                     {customEnabled && (
@@ -1590,16 +1588,15 @@ function App() {
                       </div>
                       <div className="res-item-right">
                         <span>x{item.cantidad}</span>
-                        <strong>{(item.precio_total * item.cantidad).toFixed(2)} €</strong>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="res-total">
+                {/* <div className="res-total">
                   <span>Total Pedido:</span>
                   <span>{totalCartPrice.toFixed(2)} €</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -1739,9 +1736,9 @@ function App() {
                   </button>
                 </div>
 
-                <div className="cesta-drawer-item-price">
+                {/* <div className="cesta-drawer-item-price">
                   {(item.precio_total * item.cantidad).toFixed(2)} €
-                </div>
+                </div> */}
 
               </div>
             ))
@@ -1761,10 +1758,10 @@ function App() {
 
         {cart.length > 0 && (
           <div className="cesta-drawer-footer">
-            <div className="cesta-drawer-total">
+            {/* <div className="cesta-drawer-total">
               <span>Total Cesta:</span>
               <span>{totalCartPrice.toFixed(2)} €</span>
-            </div>
+            </div> */}
             <div className="cesta-drawer-actions">
               <button 
                 onClick={() => {
