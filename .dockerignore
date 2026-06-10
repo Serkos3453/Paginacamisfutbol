@@ -1,0 +1,9 @@
+.git
+.github
+.venv
+.idea
+*.pyc
+__pycache__
+db.sqlite3
+frontend/node_modules
+frontend/dist
