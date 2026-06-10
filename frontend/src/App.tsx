@@ -537,6 +537,171 @@ function CategoryCard({ slug, name, isActive, onClick }: CategoryCardProps) {
   );
 }
 
+function Interactive3DJersey() {
+  const [rotationY, setRotationY] = useState(20); // starts slightly rotated
+  const [rotationX, setRotationX] = useState(10);
+  const [isDragging, setIsDragging] = useState(false);
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const currentRotY = useRef(20);
+  const currentRotX = useRef(10);
+  const autoSpin = useRef<number | null>(null);
+
+  // Auto spin effect when not dragging
+  useEffect(() => {
+    if (!isDragging) {
+      const spin = () => {
+        setRotationY((prev) => {
+          const next = (prev + 0.4) % 360;
+          currentRotY.current = next;
+          return next;
+        });
+        autoSpin.current = requestAnimationFrame(spin);
+      };
+      autoSpin.current = requestAnimationFrame(spin);
+    }
+    return () => {
+      if (autoSpin.current) {
+        cancelAnimationFrame(autoSpin.current);
+      }
+    };
+  }, [isDragging]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX.current;
+    const deltaY = e.clientY - startY.current;
+    
+    const nextY = currentRotY.current + deltaX * 0.8;
+    const nextX = Math.max(-30, Math.min(30, currentRotX.current - deltaY * 0.8)); // constrain X angle
+
+    setRotationY(nextY);
+    setRotationX(nextX);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    currentRotY.current = rotationY;
+    currentRotX.current = rotationX;
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    startX.current = e.touches[0].clientX;
+    startY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const deltaX = e.touches[0].clientX - startX.current;
+    const deltaY = e.touches[0].clientY - startY.current;
+
+    const nextY = currentRotY.current + deltaX * 0.8;
+    const nextX = Math.max(-30, Math.min(30, currentRotX.current - deltaY * 0.8));
+
+    setRotationY(nextY);
+    setRotationX(nextX);
+  };
+
+  return (
+    <div className="hero-3d-container">
+      <div 
+        className="jersey-3d-scene"
+        style={{
+          transform: `rotateY(${rotationY}deg) rotateX(${rotationX}deg)`,
+        }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleMouseUp}
+      >
+        {/* Front Face */}
+        <div className="jersey-face front">
+          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="jersey-clip">
+                <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" />
+              </clipPath>
+            </defs>
+            <g clipPath="url(#jersey-clip)">
+              <rect width="200" height="240" fill="#004d98" />
+              <rect x="78" y="0" width="44" height="240" fill="#a50044" />
+              <rect x="18" y="0" width="30" height="240" fill="#a50044" />
+              <rect x="152" y="0" width="30" height="240" fill="#a50044" />
+              <path d="M25 60 L45 75" stroke="#ffbe1a" strokeWidth="4" />
+              <path d="M175 60 L155 75" stroke="#ffbe1a" strokeWidth="4" />
+            </g>
+            <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" fill="none" stroke="#ffbe1a" strokeWidth="2.5" />
+            <path d="M75 10 C85 20, 115 20, 125 10" fill="none" stroke="#ffbe1a" strokeWidth="4" />
+            <path d="M118 45 C122 45, 124 43, 128 41 C126 43, 122 47, 116 48 C113 48.5, 112 47.5, 114 46 Z" fill="#ffbe1a" />
+            <g transform="translate(68, 38) scale(0.65)">
+              <path d="M0 0 C10 -2 20 -2 30 0 C30 10 32 20 15 32 C-2 20 0 10 0 0 Z" fill="#ffbe1a" />
+              <path d="M1.5 1.5 C10 -0.5 20 -0.5 28.5 1.5 C28.5 10 30 18 15 29 C0 18 1.5 10 1.5 1.5 Z" fill="#fff" />
+              <rect x="3" y="3" width="10" height="10" fill="#df0016" />
+              <rect x="7" y="3" width="2" height="10" fill="#fff" />
+              <rect x="3" y="7" width="10" height="2" fill="#fff" />
+              <rect x="15" y="3" width="12" height="10" fill="#ffbe1a" />
+              <rect x="18" y="3" width="2" height="10" fill="#df0016" />
+              <rect x="22" y="3" width="2" height="10" fill="#df0016" />
+              <rect x="1.5" y="13" width="27" height="3" fill="#000" />
+              <path d="M1.5 16 C5 22 10 26 15 29 C20 26 25 22 28.5 16 Z" fill="#004d98" />
+              <path d="M6 16 L6 26" stroke="#a50044" strokeWidth="2.5" />
+              <path d="M11 16 L11 28" stroke="#a50044" strokeWidth="2.5" />
+              <path d="M15 16 L15 29" stroke="#ffbe1a" strokeWidth="1.5" />
+              <path d="M19 16 L19 28" stroke="#a50044" strokeWidth="2.5" />
+              <path d="M24 16 L24 26" stroke="#a50044" strokeWidth="2.5" />
+            </g>
+            <g transform="translate(68, 85) scale(0.9)">
+              <circle cx="15" cy="15" r="13" stroke="#ffbe1a" strokeWidth="2.5" fill="none" />
+              <path d="M7 11 C11 9, 19 9, 23 11" stroke="#ffbe1a" strokeWidth="2" strokeLinecap="round" fill="none" />
+              <path d="M9 15 C12 13.5, 18 13.5, 21 15" stroke="#ffbe1a" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+              <path d="M11 19 C13.5 18, 16.5 18, 19 19" stroke="#ffbe1a" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+              <text x="35" y="22" fill="#ffbe1a" fontFamily="sans-serif" fontWeight="900" fontSize="14" letterSpacing="-0.02em">Spotify</text>
+            </g>
+          </svg>
+        </div>
+        {/* Back Face */}
+        <div className="jersey-face back">
+          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="jersey-clip-back">
+                <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" />
+              </clipPath>
+            </defs>
+            <g clipPath="url(#jersey-clip-back)">
+              <rect width="200" height="240" fill="#004d98" />
+              <rect x="78" y="0" width="44" height="240" fill="#a50044" />
+              <rect x="18" y="0" width="30" height="240" fill="#a50044" />
+              <rect x="152" y="0" width="30" height="240" fill="#a50044" />
+              <path d="M25 60 L45 75" stroke="#ffbe1a" strokeWidth="4" />
+              <path d="M175 60 L155 75" stroke="#ffbe1a" strokeWidth="4" />
+            </g>
+            <path d="M50 20 L75 10 L100 22 L125 10 L150 20 L175 60 L155 75 L145 65 L145 220 C145 225 140 230 135 230 L65 230 C60 230 55 225 55 220 L55 65 L45 75 L25 60 Z" fill="none" stroke="#ffbe1a" strokeWidth="2.5" />
+            <path d="M75 10 C85 14, 115 14, 125 10" fill="none" stroke="#ffbe1a" strokeWidth="4" />
+            <text x="100" y="55" fill="#ffbe1a" fontFamily="'Inter', sans-serif" fontWeight="800" fontSize="14" textAnchor="middle" letterSpacing="0.1em">L. YAMAL</text>
+            <text x="100" y="145" fill="#ffbe1a" fontFamily="'Outfit', 'Impact', sans-serif" fontWeight="900" fontSize="75" textAnchor="middle" letterSpacing="-0.05em">19</text>
+            <g transform="translate(80, 180) scale(0.8)">
+              <path d="M5 10 C8 6, 12 6, 15 10" stroke="#ffbe1a" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+              <circle cx="10" cy="5" r="2.5" fill="#ffbe1a" />
+              <text x="22" y="10" fill="#ffbe1a" fontFamily="sans-serif" fontWeight="800" fontSize="11" letterSpacing="0.05em">unicef</text>
+            </g>
+          </svg>
+        </div>
+        <div className="jersey-3d-hint">Girar 3D 🔄</div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   // Navigation Routing States
   const [route, setRoute] = useState<{ path: string; param?: number }>({ path: '/' });
@@ -996,6 +1161,7 @@ function App() {
                   }
                 </p>
               </div>
+              <Interactive3DJersey />
               <div className="hero-count">
                 {totalCount}
                 <small>artículos</small>
