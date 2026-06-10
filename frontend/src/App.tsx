@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-
+import * as THREE from 'three'
 // Helper to get CSRF token from cookies
 function getCookie(name: string): string | null {
   let cookieValue = null;
@@ -538,308 +538,305 @@ function CategoryCard({ slug, name, isActive, onClick }: CategoryCardProps) {
 }
 
 function Interactive3DJersey() {
-  const [rotationY, setRotationY] = useState(20); // starts slightly rotated
-  const [rotationX, setRotationX] = useState(10);
-  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  // Drag rotation state
+  const isDragging = useRef(false);
   const startX = useRef(0);
   const startY = useRef(0);
-  const currentRotY = useRef(20);
-  const currentRotX = useRef(10);
-  const autoSpin = useRef<number | null>(null);
+  const rotationY = useRef(0.5); // Initial Y angle
+  const rotationX = useRef(0.15); // Initial X angle
 
-  // Auto spin effect when not dragging
   useEffect(() => {
-    if (!isDragging) {
-      const spin = () => {
-        setRotationY((prev) => {
-          const next = (prev + 0.4) % 360;
-          currentRotY.current = next;
-          return next;
-        });
-        autoSpin.current = requestAnimationFrame(spin);
-      };
-      autoSpin.current = requestAnimationFrame(spin);
-    }
-    return () => {
-      if (autoSpin.current) {
-        cancelAnimationFrame(autoSpin.current);
+    if (!containerRef.current || !canvasRef.current) return;
+
+    const width = 240;
+    const height = 280;
+
+    // 1. Scene setup
+    const scene = new THREE.Scene();
+
+    // 2. Camera setup
+    const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
+    camera.position.set(0, 0, 5.0);
+
+    // 3. Renderer setup
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvasRef.current,
+      alpha: true,
+      antialias: true
+    });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // 4. Lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
+    scene.add(ambientLight);
+
+    const dirLightFront = new THREE.DirectionalLight(0xffffff, 0.85);
+    dirLightFront.position.set(2, 3, 4);
+    scene.add(dirLightFront);
+
+    const dirLightBack = new THREE.DirectionalLight(0xffffff, 0.45);
+    dirLightBack.position.set(-2, -1, -4);
+    scene.add(dirLightBack);
+
+    // 5. Generate Textures Dynamically on 2D Canvases
+    
+    // 5a. Torso Texture Canvas
+    const torsoCanvas = document.createElement('canvas');
+    torsoCanvas.width = 512;
+    torsoCanvas.height = 512;
+    const ctxT = torsoCanvas.getContext('2d')!;
+
+    // Background: Blue
+    ctxT.fillStyle = '#004d98';
+    ctxT.fillRect(0, 0, 512, 512);
+
+    // Red stripes (Garnet)
+    ctxT.fillStyle = '#a50044';
+    // Front stripes (X: 0 to 256)
+    ctxT.fillRect(35, 0, 42, 512);
+    ctxT.fillRect(107, 0, 42, 512);
+    ctxT.fillRect(179, 0, 42, 512);
+    // Back stripes (X: 256 to 512)
+    ctxT.fillRect(291, 0, 42, 512);
+    ctxT.fillRect(363, 0, 42, 512);
+    ctxT.fillRect(435, 0, 42, 512);
+
+    // Gold collar detail (Front side V-neck)
+    ctxT.strokeStyle = '#ffbe1a';
+    ctxT.lineWidth = 12;
+    ctxT.beginPath();
+    ctxT.moveTo(70, 0);
+    ctxT.lineTo(128, 55);
+    ctxT.lineTo(186, 0);
+    ctxT.stroke();
+
+    // Gold collar detail (Back side curve)
+    ctxT.beginPath();
+    ctxT.moveTo(326, 0);
+    ctxT.quadraticCurveTo(384, 25, 442, 0);
+    ctxT.stroke();
+
+    // Nike Swoosh (Front - Left chest on canvas, right on real shirt)
+    ctxT.fillStyle = '#ffbe1a';
+    ctxT.beginPath();
+    ctxT.moveTo(72, 118);
+    ctxT.quadraticCurveTo(84, 118, 96, 110);
+    ctxT.quadraticCurveTo(88, 122, 72, 124);
+    ctxT.fill();
+
+    // FC Barcelona Crest (Front - Right chest on canvas, left on real shirt)
+    ctxT.save();
+    ctxT.translate(162, 102);
+    ctxT.scale(0.7, 0.7);
+    ctxT.fillStyle = '#ffbe1a';
+    ctxT.beginPath();
+    ctxT.moveTo(0, 0);
+    ctxT.quadraticCurveTo(15, -3, 30, 0);
+    ctxT.quadraticCurveTo(32, 18, 15, 32);
+    ctxT.quadraticCurveTo(-2, 18, 0, 0);
+    ctxT.fill();
+    ctxT.fillStyle = '#ffffff';
+    ctxT.beginPath();
+    ctxT.moveTo(2, 2);
+    ctxT.quadraticCurveTo(15, -1, 28, 2);
+    ctxT.quadraticCurveTo(29, 17, 15, 29);
+    ctxT.quadraticCurveTo(0, 17, 2, 2);
+    ctxT.fill();
+    // Red cross
+    ctxT.fillStyle = '#df0016';
+    ctxT.fillRect(4, 4, 10, 10);
+    ctxT.fillStyle = '#ffffff';
+    ctxT.fillRect(8, 4, 2, 10);
+    ctxT.fillRect(4, 8, 10, 2);
+    // Yellow/red stripes
+    ctxT.fillStyle = '#ffbe1a';
+    ctxT.fillRect(16, 4, 10, 10);
+    ctxT.fillStyle = '#df0016';
+    ctxT.fillRect(19, 4, 2, 10);
+    ctxT.fillRect(23, 4, 2, 10);
+    ctxT.restore();
+
+    // Spotify Logo (Front)
+    ctxT.fillStyle = '#ffbe1a';
+    ctxT.font = 'bold 22px sans-serif';
+    ctxT.textAlign = 'center';
+    ctxT.fillText('Spotify', 128, 205);
+    ctxT.strokeStyle = '#ffbe1a';
+    ctxT.lineWidth = 3;
+    ctxT.beginPath();
+    ctxT.arc(128, 165, 13, 0, Math.PI * 2);
+    ctxT.stroke();
+    ctxT.beginPath();
+    ctxT.arc(128, 165, 8, 1.2 * Math.PI, 1.8 * Math.PI);
+    ctxT.stroke();
+    ctxT.beginPath();
+    ctxT.arc(128, 165, 5, 1.2 * Math.PI, 1.8 * Math.PI);
+    ctxT.stroke();
+
+    // Player Name "L. YAMAL" (Back side)
+    ctxT.fillStyle = '#ffbe1a';
+    ctxT.font = 'bold 22px sans-serif';
+    ctxT.textAlign = 'center';
+    ctxT.fillText('L. YAMAL', 384, 110);
+
+    // Player Number "19" (Back side)
+    ctxT.font = 'bold 110px Impact, sans-serif';
+    ctxT.fillText('19', 384, 225);
+
+    // UNICEF Logo (Back side)
+    ctxT.font = 'bold 18px sans-serif';
+    ctxT.fillText('unicef', 384, 290);
+
+    const torsoTexture = new THREE.CanvasTexture(torsoCanvas);
+    torsoTexture.wrapS = THREE.RepeatWrapping;
+    // Offset the wrap so front of canvas maps to the front of cylinder
+    torsoTexture.offset.x = 0.5;
+
+    // 5b. Sleeve Texture Canvas
+    const sleeveCanvas = document.createElement('canvas');
+    sleeveCanvas.width = 256;
+    sleeveCanvas.height = 256;
+    const ctxS = sleeveCanvas.getContext('2d')!;
+    ctxS.fillStyle = '#004d98';
+    ctxS.fillRect(0, 0, 256, 256);
+    ctxS.fillStyle = '#a50044';
+    ctxS.fillRect(40, 0, 60, 256);
+    ctxS.fillRect(156, 0, 60, 256);
+    // Gold cuff
+    ctxS.fillStyle = '#ffbe1a';
+    ctxS.fillRect(0, 220, 256, 36);
+
+    const sleeveTexture = new THREE.CanvasTexture(sleeveCanvas);
+
+    // 6. Build the Jersey 3D Mesh Group
+    const jerseyGroup = new THREE.Group();
+
+    // Torso Cylinder (Ovalized via scale for chest look)
+    const torsoGeo = new THREE.CylinderGeometry(0.85, 0.75, 2.3, 32, 8, true);
+    const torsoMat = new THREE.MeshStandardMaterial({
+      map: torsoTexture,
+      roughness: 0.6,
+      metalness: 0.1,
+      side: THREE.DoubleSide
+    });
+    const torsoMesh = new THREE.Mesh(torsoGeo, torsoMat);
+    torsoMesh.scale.set(1.2, 1.0, 0.75);
+    jerseyGroup.add(torsoMesh);
+
+    // Left Sleeve Cylinder
+    const sleeveGeo = new THREE.CylinderGeometry(0.28, 0.24, 0.8, 16, 4, true);
+    const sleeveMat = new THREE.MeshStandardMaterial({
+      map: sleeveTexture,
+      roughness: 0.6,
+      metalness: 0.1,
+      side: THREE.DoubleSide
+    });
+    
+    const leftSleeveMesh = new THREE.Mesh(sleeveGeo, sleeveMat);
+    leftSleeveMesh.position.set(-1.0, 0.75, 0);
+    leftSleeveMesh.rotation.z = 0.5; 
+    leftSleeveMesh.rotation.y = 0.15; 
+    jerseyGroup.add(leftSleeveMesh);
+
+    // Right Sleeve Cylinder
+    const rightSleeveMesh = new THREE.Mesh(sleeveGeo, sleeveMat);
+    rightSleeveMesh.position.set(1.0, 0.75, 0);
+    rightSleeveMesh.rotation.z = -0.5; 
+    rightSleeveMesh.rotation.y = -0.15; 
+    jerseyGroup.add(rightSleeveMesh);
+
+    scene.add(jerseyGroup);
+    jerseyGroup.position.y = -0.1;
+
+    // 7. Interaction Handlers
+    const handleStart = (clientX: number, clientY: number) => {
+      isDragging.current = true;
+      startX.current = clientX;
+      startY.current = clientY;
+    };
+
+    const handleMove = (clientX: number, clientY: number) => {
+      if (!isDragging.current) return;
+      const deltaX = clientX - startX.current;
+      const deltaY = clientY - startY.current;
+
+      rotationY.current += deltaX * 0.012;
+      rotationX.current = Math.max(-0.4, Math.min(0.4, rotationX.current + deltaY * 0.012));
+
+      startX.current = clientX;
+      startY.current = clientY;
+    };
+
+    const handleEnd = () => {
+      isDragging.current = false;
+    };
+
+    const onMouseDown = (e: MouseEvent) => handleStart(e.clientX, e.clientY);
+    const onMouseMove = (e: MouseEvent) => handleMove(e.clientX, e.clientY);
+    const onMouseUp = () => handleEnd();
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleStart(e.touches[0].clientX, e.touches[0].clientY);
       }
     };
-  }, [isDragging]);
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+    const onTouchEnd = () => handleEnd();
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    startX.current = e.clientX;
-    startY.current = e.clientY;
-  };
+    const container = containerRef.current;
+    container.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    container.addEventListener('touchstart', onTouchStart);
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchend', onTouchEnd);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    const deltaX = e.clientX - startX.current;
-    const deltaY = e.clientY - startY.current;
-    
-    const nextY = currentRotY.current + deltaX * 0.8;
-    const nextX = Math.max(-30, Math.min(30, currentRotX.current - deltaY * 0.8)); // constrain X angle
+    // 8. Animation & Render Loop
+    let animationId: number;
+    const animate = () => {
+      if (!isDragging.current) {
+        rotationY.current += 0.007; // Slow automatic rotation
+      }
 
-    setRotationY(nextY);
-    setRotationX(nextX);
-  };
+      jerseyGroup.rotation.y = rotationY.current;
+      jerseyGroup.rotation.x = rotationX.current;
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    currentRotY.current = rotationY;
-    currentRotX.current = rotationX;
-  };
+      renderer.render(scene, camera);
+      animationId = requestAnimationFrame(animate);
+    };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    startX.current = e.touches[0].clientX;
-    startY.current = e.touches[0].clientY;
-  };
+    animate();
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const deltaX = e.touches[0].clientX - startX.current;
-    const deltaY = e.touches[0].clientY - startY.current;
-
-    const nextY = currentRotY.current + deltaX * 0.8;
-    const nextX = Math.max(-30, Math.min(30, currentRotX.current - deltaY * 0.8));
-
-    setRotationY(nextY);
-    setRotationX(nextX);
-  };
+    return () => {
+      cancelAnimationFrame(animationId);
+      container.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+      container.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onTouchEnd);
+      
+      torsoGeo.dispose();
+      torsoMat.dispose();
+      sleeveGeo.dispose();
+      sleeveMat.dispose();
+      torsoTexture.dispose();
+      sleeveTexture.dispose();
+      renderer.dispose();
+    };
+  }, []);
 
   return (
-    <div className="hero-3d-container">
-      <div 
-        className="jersey-3d-scene"
-        style={{
-          transform: `rotateY(${rotationY}deg) rotateX(${rotationX}deg)`,
-        }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleMouseUp}
-      >
-        {/* Front Face */}
-        <div className="jersey-face front">
-          <svg viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="12" stdDeviation="10" floodColor="#000" floodOpacity="0.5"/>
-              </filter>
-              <filter id="crease-blur" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3"/>
-              </filter>
-              <linearGradient id="torso-shading" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#000000" stopOpacity="0.75"/>
-                <stop offset="15%" stopColor="#000000" stopOpacity="0.3"/>
-                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
-                <stop offset="85%" stopColor="#000000" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#000000" stopOpacity="0.75"/>
-              </linearGradient>
-              <linearGradient id="left-sleeve-shading" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
-                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
-                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
-              </linearGradient>
-              <linearGradient id="right-sleeve-shading" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
-                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
-                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
-              </linearGradient>
-              <linearGradient id="barca-blue" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#003b73"/>
-                <stop offset="50%" stopColor="#004d98"/>
-                <stop offset="100%" stopColor="#003b73"/>
-              </linearGradient>
-              <linearGradient id="barca-red" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#800030"/>
-                <stop offset="50%" stopColor="#a50044"/>
-                <stop offset="100%" stopColor="#800030"/>
-              </linearGradient>
-              <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#cca325"/>
-                <stop offset="50%" stopColor="#ffbe1a"/>
-                <stop offset="100%" stopColor="#cca325"/>
-              </linearGradient>
-              <clipPath id="torso-clip">
-                <path d="M65 40 Q120 48 175 40 L178 85 C170 95 168 120 174 150 C178 170 178 200 174 245 C170 252 165 255 155 255 L85 255 C75 255 70 252 66 245 C62 200 62 170 66 150 C72 120 70 95 62 85 Z"/>
-              </clipPath>
-              <clipPath id="left-sleeve-clip">
-                <path d="M65 40 L62 85 C50 82 25 90 15 105 L2 90 L22 55 Q45 42 65 40 Z"/>
-              </clipPath>
-              <clipPath id="right-sleeve-clip">
-                <path d="M175 40 L178 85 C190 82 215 90 225 105 L238 90 L218 55 Q195 42 175 40 Z"/>
-              </clipPath>
-            </defs>
-            <g filter="url(#soft-shadow)">
-              <path d="M65 40 L22 55 L2 90 L15 105 L45 95 C52 110 52 135 48 165 C44 185 44 215 48 245 C52 255 60 260 75 260 L165 260 C180 260 188 255 192 245 C196 215 196 185 192 165 C188 135 188 110 195 95 L225 105 L238 90 L218 55 L175 40 Q120 48 65 40 Z" fill="#0c0d12"/>
-            </g>
-            <g clipPath="url(#left-sleeve-clip)">
-              <rect x="-10" y="20" width="100" height="100" fill="url(#barca-blue)"/>
-              <path d="M10 30 L40 100" stroke="url(#barca-red)" strokeWidth="18"/>
-              <path d="M35 25 L65 95" stroke="url(#barca-red)" strokeWidth="12"/>
-              <path d="M15 105 L2 90" stroke="url(#gold-grad)" strokeWidth="6"/>
-              <rect x="-10" y="20" width="100" height="100" fill="url(#left-sleeve-shading)"/>
-            </g>
-            <g clipPath="url(#right-sleeve-clip)">
-              <rect x="150" y="20" width="100" height="100" fill="url(#barca-blue)"/>
-              <path d="M230 30 L200 100" stroke="url(#barca-red)" strokeWidth="18"/>
-              <path d="M205 25 L175 95" stroke="url(#barca-red)" strokeWidth="12"/>
-              <path d="M225 105 L238 90" stroke="url(#gold-grad)" strokeWidth="6"/>
-              <rect x="150" y="20" width="100" height="100" fill="url(#right-sleeve-shading)"/>
-            </g>
-            <g clipPath="url(#torso-clip)">
-              <rect x="50" y="30" width="140" height="230" fill="url(#barca-blue)"/>
-              <path d="M102 30 L102 260 L138 260 L138 30 Z" fill="url(#barca-red)"/>
-              <path d="M52 30 C 58 100, 58 190, 52 260 L78 260 C 84 190, 84 100, 78 30 Z" fill="url(#barca-red)"/>
-              <path d="M162 30 C 156 100, 156 190, 162 260 L188 260 C 182 190, 182 100, 188 30 Z" fill="url(#barca-red)"/>
-              <path d="M66 150 C72 170 72 210 68 245" stroke="url(#gold-grad)" strokeWidth="2.5" fill="none"/>
-              <path d="M174 150 C168 170 168 210 172 245" stroke="url(#gold-grad)" strokeWidth="2.5" fill="none"/>
-              <rect x="50" y="30" width="140" height="230" fill="url(#torso-shading)"/>
-              <path d="M 64 90 Q 90 115 110 100" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur)"/>
-              <path d="M 64 90 Q 90 115 110 100" stroke="#fff" strokeWidth="1.5" strokeOpacity="0.15" fill="none" filter="url(#crease-blur)"/>
-              <path d="M 60 170 Q 120 190 180 165" stroke="#000" strokeWidth="4" strokeOpacity="0.45" fill="none" filter="url(#crease-blur)"/>
-              <path d="M 60 170 Q 120 190 180 165" stroke="#fff" strokeWidth="2" strokeOpacity="0.15" fill="none" filter="url(#crease-blur)"/>
-              <path d="M 65 215 Q 120 230 175 210" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur)"/>
-              <path d="M 65 215 Q 120 230 175 210" stroke="#fff" strokeWidth="1.5" strokeOpacity="0.1" fill="none" filter="url(#crease-blur)"/>
-            </g>
-            <path d="M90 35 C100 48, 140 48, 150 35 C140 58, 100 58, 90 35 Z" fill="#07080a"/>
-            <path d="M82 28 L94 38 L120 54 L146 38 L158 28 C148 44, 92 44, 82 28 Z" fill="url(#gold-grad)" stroke="#9c7512" strokeWidth="1"/>
-            <path d="M120 54 L120 62" stroke="url(#gold-grad)" strokeWidth="2.5"/>
-            <g transform="translate(142, 70) rotate(-4) scale(0.9)">
-              <path d="M2 5 C8 5, 14 3, 24 0 C18 4, 10 9, 2 11 C-2 11, -3 8, 2 5 Z" fill="url(#gold-grad)" filter="drop-shadow(0 2px 2px rgba(0,0,0,0.4))"/>
-            </g>
-            <g transform="translate(74, 62) scale(0.75)" filter="drop-shadow(0 3px 5px rgba(0,0,0,0.5))">
-              <path d="M0 0 C10 -2 20 -2 30 0 C30 10 32 20 15 32 C-2 20 0 10 0 0 Z" fill="url(#gold-grad)" />
-              <path d="M1.5 1.5 C10 -0.5 20 -0.5 28.5 1.5 C28.5 10 30 18 15 29 C0 18 1.5 10 1.5 1.5 Z" fill="#fff" />
-              <rect x="3" y="3" width="10" height="10" fill="#df0016" />
-              <rect x="7" y="3" width="2" height="10" fill="#fff" />
-              <rect x="3" y="7" width="10" height="2" fill="#fff" />
-              <rect x="15" y="3" width="12" height="10" fill="#ffbe1a" />
-              <rect x="18" y="3" width="2" height="10" fill="#df0016" />
-              <rect x="22" y="3" width="2" height="10" fill="#df0016" />
-              <rect x="1.5" y="13" width="27" height="3" fill="#000" />
-              <path d="M1.5 16 C5 22 10 26 15 29 C20 26 25 22 28.5 16 Z" fill="#004d98" />
-              <path d="M6 16 L6 26" stroke="#a50044" strokeWidth="2.5" />
-              <path d="M11 16 L11 28" stroke="#a50044" strokeWidth="2.5" />
-              <path d="M15 16 L15 29" stroke="#ffbe1a" strokeWidth="1.5" />
-              <path d="M19 16 L19 28" stroke="#a50044" strokeWidth="2.5" />
-              <path d="M24 16 L24 26" stroke="#a50044" strokeWidth="2.5" />
-            </g>
-            <g transform="translate(76, 120) scale(1.15)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))">
-              <circle cx="12" cy="12" r="10" stroke="url(#gold-grad)" strokeWidth="2" fill="none" />
-              <path d="M6 9 C9 7.5, 15 7.5, 18 9" stroke="url(#gold-grad)" strokeWidth="1.6" stroke-linecap="round" fill="none" />
-              <path d="M7.5 12 C10 11, 14 11, 16.5 12" stroke="url(#gold-grad)" strokeWidth="1.8" stroke-linecap="round" fill="none" />
-              <path d="M9 15 C11 14.2, 13 14.2, 15 15" stroke="url(#gold-grad)" strokeWidth="1.8" stroke-linecap="round" fill="none" />
-              <text x="27" y="17" fill="url(#gold-grad)" fontFamily="'Inter', sans-serif" fontWeight="900" fontSize="11" letterSpacing="-0.03em">Spotify</text>
-            </g>
-            <g transform="translate(202, 68) rotate(15) scale(0.4)" filter="drop-shadow(-1px 2px 2px rgba(0,0,0,0.3))">
-              <rect x="0" y="0" width="22" height="30" rx="3" fill="#fff" stroke="#ffbe1a" strokeWidth="1.5"/>
-              <path d="M6 8 L10 4 L16 10 L12 14 Z" fill="#df0016"/>
-              <path d="M10 16 L14 12 L20 18 L16 22 Z" fill="#df0016"/>
-            </g>
-          </svg>
-        </div>
-        {/* Back Face */}
-        <div className="jersey-face back">
-          <svg viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="soft-shadow-back" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="12" stdDeviation="10" floodColor="#000" floodOpacity="0.5"/>
-              </filter>
-              <filter id="crease-blur-back" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3"/>
-              </filter>
-              <linearGradient id="torso-shading-back" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#000000" stopOpacity="0.75"/>
-                <stop offset="15%" stopColor="#000000" stopOpacity="0.3"/>
-                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
-                <stop offset="85%" stopColor="#000000" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#000000" stopOpacity="0.75"/>
-              </linearGradient>
-              <linearGradient id="left-sleeve-shading-back" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
-                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
-                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
-              </linearGradient>
-              <linearGradient id="right-sleeve-shading-back" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#000000" stopOpacity="0.6"/>
-                <stop offset="50%" stopColor="#ffffff" stopOpacity="0.2"/>
-                <stop offset="100%" stopColor="#000000" stopOpacity="0.6"/>
-              </linearGradient>
-              <linearGradient id="barca-blue-back" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#003b73"/>
-                <stop offset="50%" stopColor="#004d98"/>
-                <stop offset="100%" stopColor="#003b73"/>
-              </linearGradient>
-              <linearGradient id="barca-red-back" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#800030"/>
-                <stop offset="50%" stopColor="#a50044"/>
-                <stop offset="100%" stopColor="#800030"/>
-              </linearGradient>
-              <linearGradient id="gold-grad-back" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#cca325"/>
-                <stop offset="50%" stopColor="#ffbe1a"/>
-                <stop offset="100%" stopColor="#cca325"/>
-              </linearGradient>
-              <clipPath id="torso-clip-back">
-                <path d="M65 40 Q120 48 175 40 L178 85 C170 95 168 120 174 150 C178 170 178 200 174 245 C170 252 165 255 155 255 L85 255 C75 255 70 252 66 245 C62 200 62 170 66 150 C72 120 70 95 62 85 Z"/>
-              </clipPath>
-              <clipPath id="left-sleeve-clip-back">
-                <path d="M65 40 L62 85 C50 82 25 90 15 105 L2 90 L22 55 Q45 42 65 40 Z"/>
-              </clipPath>
-              <clipPath id="right-sleeve-clip-back">
-                <path d="M175 40 L178 85 C190 82 215 90 225 105 L238 90 L218 55 Q195 42 175 40 Z"/>
-              </clipPath>
-            </defs>
-            <g filter="url(#soft-shadow-back)">
-              <path d="M65 40 L22 55 L2 90 L15 105 L45 95 C52 110 52 135 48 165 C44 185 44 215 48 245 C52 255 60 260 75 260 L165 260 C180 260 188 255 192 245 C196 215 196 185 192 165 C188 135 188 110 195 95 L225 105 L238 90 L218 55 L175 40 Q120 48 65 40 Z" fill="#0c0d12"/>
-            </g>
-            <g clipPath="url(#left-sleeve-clip-back)">
-              <rect x="-10" y="20" width="100" height="100" fill="url(#barca-blue-back)"/>
-              <path d="M10 30 L40 100" stroke="url(#barca-red-back)" strokeWidth="18"/>
-              <path d="M35 25 L65 95" stroke="url(#barca-red-back)" strokeWidth="12"/>
-              <path d="M15 105 L2 90" stroke="url(#gold-grad-back)" strokeWidth="6"/>
-              <rect x="-10" y="20" width="100" height="100" fill="url(#left-sleeve-shading-back)"/>
-            </g>
-            <g clipPath="url(#right-sleeve-clip-back)">
-              <rect x="150" y="20" width="100" height="100" fill="url(#barca-blue-back)"/>
-              <path d="M230 30 L200 100" stroke="url(#barca-red-back)" strokeWidth="18"/>
-              <path d="M205 25 L175 95" stroke="url(#barca-red-back)" strokeWidth="12"/>
-              <path d="M225 105 L238 90" stroke="url(#gold-grad-back)" strokeWidth="6"/>
-              <rect x="150" y="20" width="100" height="100" fill="url(#right-sleeve-shading-back)"/>
-            </g>
-            <g clipPath="url(#torso-clip-back)">
-              <rect x="50" y="30" width="140" height="230" fill="url(#barca-blue-back)"/>
-              <path d="M102 30 L102 260 L138 260 L138 30 Z" fill="url(#barca-red-back)"/>
-              <path d="M52 30 C 58 100, 58 190, 52 260 L78 260 C 84 190, 84 100, 78 30 Z" fill="url(#barca-red-back)"/>
-              <path d="M162 30 C 156 100, 156 190, 162 260 L188 260 C 182 190, 182 100, 188 30 Z" fill="url(#barca-red-back)"/>
-              <path d="M66 150 C72 170 72 210 68 245" stroke="url(#gold-grad-back)" strokeWidth="2.5" fill="none"/>
-              <path d="M174 150 C168 170 168 210 172 245" stroke="url(#gold-grad-back)" strokeWidth="2.5" fill="none"/>
-              <rect x="50" y="30" width="140" height="230" fill="url(#torso-shading-back)"/>
-              <path d="M 64 90 Q 90 115 110 100" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur-back)"/>
-              <path d="M 64 90 Q 90 115 110 100" stroke="#fff" strokeWidth="1.5" strokeOpacity="0.15" fill="none" filter="url(#crease-blur-back)"/>
-              <path d="M 60 170 Q 120 190 180 165" stroke="#000" strokeWidth="4" strokeOpacity="0.45" fill="none" filter="url(#crease-blur-back)"/>
-              <path d="M 60 170 Q 120 190 180 165" stroke="#fff" stroke-width="2" strokeOpacity="0.15" fill="none" filter="url(#crease-blur-back)"/>
-              <path d="M 65 215 Q 120 230 175 210" stroke="#000" strokeWidth="3" strokeOpacity="0.4" fill="none" filter="url(#crease-blur-back)"/>
-              <path d="M 65 215 Q 120 230 175 210" stroke="#fff" stroke-width="1.5" strokeOpacity="0.1" fill="none" filter="url(#crease-blur-back)"/>
-            </g>
-            <path d="M82 28 C92 44, 148 44, 158 28" stroke="url(#gold-grad-back)" strokeWidth="5" fill="none"/>
-            <path d="M90 31 C100 42, 140 42, 150 31" stroke="#000" strokeWidth="2" fill="none"/>
-            <text x="120" y="75" fill="url(#gold-grad-back)" fontFamily="'Inter', sans-serif" fontWeight="900" fontSize="14" textAnchor="middle" letterSpacing="0.12em" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.5))">L. YAMAL</text>
-            <text x="120" y="165" fill="url(#gold-grad-back)" fontFamily="'Outfit', 'Impact', sans-serif" fontWeight="900" fontSize="78" textAnchor="middle" letterSpacing="-0.02em" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.6))">19</text>
-            <g transform="translate(98, 205) scale(0.95)" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.4))">
-              <path d="M4 12 C7 8, 11 8, 14 12" stroke="url(#gold-grad-back)" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-              <circle cx="9" cy="6" r="2.5" fill="url(#gold-grad-back)" />
-              <text x="20" y="12" fill="url(#gold-grad-back)" fontFamily="'Inter', sans-serif" fontWeight="900" fontSize="11" letterSpacing="0.04em">unicef</text>
-            </g>
-          </svg>
-        </div>
+    <div className="hero-3d-container" ref={containerRef}>
+      <div className="jersey-3d-scene-wrap">
+        <canvas ref={canvasRef} style={{ display: 'block', cursor: 'grab' }} />
         <div className="jersey-3d-hint">Girar 3D 🔄</div>
       </div>
     </div>
