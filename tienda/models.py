@@ -177,7 +177,12 @@ class Producto(models.Model):
                 .values_list('talla', flat=True)
                 .distinct()
             )
-        return tallas if tallas else ['S', 'M', 'L', 'XL', 'XXL']
+        if tallas:
+            order = ['2', '4', '6', '8', '10', '12', '14', '16', '18', '20', '22', '24', '26', '28', '30', '32', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL']
+            order_dict = {size: i for i, size in enumerate(order)}
+            tallas = sorted(tallas, key=lambda x: (order_dict.get(x.upper(), 999), x.upper()))
+            return tallas
+        return ['S', 'M', 'L', 'XL', 'XXL']
 
     def get_imagen_url(self):
         """Retorna la mejor URL de imagen disponible."""

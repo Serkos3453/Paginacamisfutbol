@@ -40,7 +40,6 @@ function App() {
 
   // Detail Page Customization States
   const [detailProduct, setDetailProduct] = useState<Product | null>(null);
-  const [detailTab, setDetailTab] = useState<'photo' | 'svg'>('photo');
   const [customEnabled, setCustomEnabled] = useState(false);
   const [customName, setCustomName] = useState('');
   const [customNumber, setCustomNumber] = useState('');
@@ -262,7 +261,6 @@ function App() {
         setCustomEnabled(false);
         setCustomName('');
         setCustomNumber('');
-        setDetailTab('photo');
       }
     } catch (e) {
       console.error("Error fetching shirt detail API", e);
@@ -705,54 +703,16 @@ function App() {
               
               {/* VIEWER COLUMN */}
               <div className="viewer-column">
-                <div className="detail-tabs">
-                  <button 
-                    className={`detail-tab ${detailTab === 'photo' ? 'active' : ''}`}
-                    onClick={() => setDetailTab('photo')}
-                  >
-                    Foto de Catálogo
-                  </button>
-                  <button 
-                    className={`detail-tab ${detailTab === 'svg' ? 'active' : ''}`}
-                    onClick={() => setDetailTab('svg')}
-                  >
-                    Personalización 3D
-                  </button>
-                </div>
-
-                <div className="viewer-box">
-                  {detailTab === 'photo' ? (
-                    detailProduct.imagen_url ? (
-                      <img 
-                        className="detail-photo" 
-                        src={detailProduct.imagen_url} 
-                        alt={detailProduct.nombre} 
-                        onError={() => setDetailTab('svg')}
-                      />
-                    ) : (
-                      <div className="fallback-svg-view">
-                        <JerseySVG name={detailProduct.nombre} />
-                      </div>
-                    )
+                <div className="viewer-box single-photo-view">
+                  {detailProduct.imagen_url ? (
+                    <img 
+                      className="detail-photo" 
+                      src={detailProduct.imagen_url} 
+                      alt={detailProduct.nombre} 
+                    />
                   ) : (
-                    <div className="svg-personalizer">
-                      <div className="svg-side-view">
-                        <h4>Frente</h4>
-                        <div className="svg-side-box">
-                          <JerseySVG name={detailProduct.nombre} vista="front" />
-                        </div>
-                      </div>
-                      <div className="svg-side-view">
-                        <h4>Espalda (Dorsal)</h4>
-                        <div className="svg-side-box">
-                          <JerseySVG 
-                            name={detailProduct.nombre} 
-                            vista="back"
-                            dorsalNombre={customName}
-                            dorsalNumero={customNumber}
-                          />
-                        </div>
-                      </div>
+                    <div className="fallback-svg-view">
+                      <JerseySVG name={detailProduct.nombre} />
                     </div>
                   )}
                 </div>
@@ -797,7 +757,6 @@ function App() {
                         checked={customEnabled}
                         onChange={(e) => {
                           setCustomEnabled(e.target.checked);
-                          if (e.target.checked) setDetailTab('svg'); // Switch to back view svg automatically
                         }}
                       />
                       <span className="custom-checkbox-box"></span>
