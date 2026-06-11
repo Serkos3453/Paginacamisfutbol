@@ -142,6 +142,11 @@ function App() {
     localStorage.setItem('mobileCols', mobileCols.toString());
   }, [mobileCols]);
 
+  // Scroll to top when catalog page changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   // Sync route state with window.location
   const handleLocationChange = () => {
     const path = window.location.pathname;
@@ -503,29 +508,31 @@ function App() {
         {(route.path === '/' || route.path === '/retro') && (
           <div className="catalog-view fade-in">
             {/* HERO BANNER */}
-            <div className={`hero ${isRetroTab ? 'retro-theme' : ''}`}>
-              <div>
-                <div className="hero-eyebrow">
-                  {isRetroTab ? 'Archivo Histórico · Colección Retro' : 'Colección Oficial · Temporada 25/26 · 26/27'}
+            {currentPage === 1 && (
+              <div className={`hero ${isRetroTab ? 'retro-theme' : ''}`}>
+                <div>
+                  <div className="hero-eyebrow">
+                    {isRetroTab ? 'Archivo Histórico · Colección Retro' : 'Colección Oficial · Temporada 25/26 · 26/27'}
+                  </div>
+                  <h1>
+                    {isRetroTab ? 'Clásicos' : 'Elige tu'}
+                    <br />
+                    <em>{isRetroTab ? 'Eternos' : 'Camiseta'}</em>
+                  </h1>
+                  <p className="hero-sub">
+                    {isRetroTab 
+                      ? 'Las camisetas que marcaron una era. Réplicas legendarias de los mejores clubes e historias del fútbol mundial.'
+                      : 'Personaliza tu dorsal, escoge tu talla y pide directamente por WhatsApp. Rápido, seguro y premium.'
+                    }
+                  </p>
                 </div>
-                <h1>
-                  {isRetroTab ? 'Clásicos' : 'Elige tu'}
-                  <br />
-                  <em>{isRetroTab ? 'Eternos' : 'Camiseta'}</em>
-                </h1>
-                <p className="hero-sub">
-                  {isRetroTab 
-                    ? 'Las camisetas que marcaron una era. Réplicas legendarias de los mejores clubes e historias del fútbol mundial.'
-                    : 'Personaliza tu dorsal, escoge tu talla y pide directamente por WhatsApp. Rápido, seguro y premium.'
-                  }
-                </p>
+                <Interactive3DJersey />
+                <div className="hero-count">
+                  {totalCount}
+                  <small>artículos</small>
+                </div>
               </div>
-              <Interactive3DJersey />
-              <div className="hero-count">
-                {totalCount}
-                <small>artículos</small>
-              </div>
-            </div>
+            )}
 
             {/* SEARCH AND CATEGORIES TAB BAR */}
             <div className="toolbar">
