@@ -470,5 +470,6 @@ def api_confirmacion(request, pk):
         'lineas': lineas_data,
     })
 
+@ensure_csrf_cookie
 def index_spa(request, *args, **kwargs):
     return render(request, 'index.html')
