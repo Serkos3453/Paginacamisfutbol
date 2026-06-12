@@ -5,6 +5,7 @@ admin.py — Panel de administración profesional (optimizado)
 
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django.urls import reverse
 from django.http import HttpResponse
 from django.db.models import Count
@@ -28,7 +29,7 @@ def _imagen_thumb(producto, height=60):
             'onerror="this.outerHTML=\'<span style=\\\'font-size:24px;\\\'>⚽</span>\'" />',
             url, height,
         )
-    return format_html('<span style="font-size: 24px;">⚽</span>')
+    return mark_safe('<span style="font-size: 24px;">⚽</span>')
 
 
 def _extras_badge(linea):
@@ -45,7 +46,7 @@ def _extras_badge(linea):
             'font-size:11px;font-weight:600;">✍️ {}</span>',
             linea.texto_dorsal,
         ))
-    return format_html(' '.join(badges)) if badges else '—'
+    return mark_safe(' '.join(badges)) if badges else '—'
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -163,6 +164,7 @@ class ProductoProveedorAdmin(admin.ModelAdmin):
     list_display = ['producto', 'proveedor', 'yupoo_album_id', 'fecha_scraping']
     list_filter = ['proveedor']
     search_fields = ['producto__nombre', 'yupoo_album_id']
+    autocomplete_fields = ['producto']
     list_select_related = ['producto', 'proveedor']
     list_per_page = 30
     show_full_result_count = False
@@ -224,7 +226,7 @@ class PedidoAdmin(admin.ModelAdmin):
     def comentarios_cliente(self, obj):
         if obj.notas:
             return format_html('<span style="color:#6b7280; font-style:italic; font-size:12px;">{}</span>', obj.notas)
-        return format_html('<span style="color:#d1d5db;">—</span>')
+        return mark_safe('<span style="color:#d1d5db;">—</span>')
     comentarios_cliente.short_description = 'Comentarios Cliente'
 
     fieldsets = (
@@ -292,6 +294,7 @@ class LineaPedidoAdmin(admin.ModelAdmin):
     ]
     list_filter = ['talla', 'parche', 'dorsal']
     search_fields = ['producto__nombre', 'pedido__nombre_cliente', 'texto_dorsal']
+    autocomplete_fields = ['producto', 'pedido']
     list_select_related = ['producto', 'pedido']
     list_per_page = 30
 
