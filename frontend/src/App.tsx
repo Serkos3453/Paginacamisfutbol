@@ -52,6 +52,19 @@ function App() {
   const [checkoutPhone, setCheckoutPhone] = useState('');
   const [checkoutNotes, setCheckoutNotes] = useState('');
   const [isSubmittingOrder, setIsSubmittingOrder] = useState(false);
+  const [checkoutStep, setCheckoutStep] = useState(1);
+
+  // User Authentication States
+  const [currentUser, setCurrentUser] = useState<{ id: number; username: string } | null>(null);
+  const [checkoutAuthTab, setCheckoutAuthTab] = useState<'login' | 'registro'>('login');
+  const [misPedidos, setMisPedidos] = useState<any[]>([]);
+
+  // Order modification states
+  const [modifyingOrder, setModifyingOrder] = useState<number | null>(null);
+  const [modifyName, setModifyName] = useState('');
+  const [modifyPhone, setModifyPhone] = useState('');
+  const [modifyNotes, setModifyNotes] = useState('');
+  const [modifyLineas, setModifyLineas] = useState<any[]>([]);
 
   // Confirmation View States
   const [confirmedOrder, setConfirmedOrder] = useState<{
@@ -93,6 +106,13 @@ function App() {
     // 3. Fetch current shopping basket
     fetchCart();
     fetchCategories();
+    checkAuth();
+
+    // 4. Prefill customer details from localStorage if they exist
+    const savedName = localStorage.getItem('checkoutName');
+    const savedPhone = localStorage.getItem('checkoutPhone');
+    if (savedName) setCheckoutName(savedName);
+    if (savedPhone) setCheckoutPhone(savedPhone);
 
     return () => {
       window.removeEventListener('popstate', handleLocationChange);
@@ -166,11 +186,22 @@ function App() {
       }
     } else if (path === '/checkout' || path === '/checkout/') {
       setRoute({ path: '/checkout' });
+      setCheckoutStep(1);
       return;
     } else if (path === '/retro' || path === '/retro/') {
       setRoute({ path: '/retro' });
       setIsRetroTab(true);
       fetchCatalog(1, null, '', true);
+      return;
+    } else if (path === '/login' || path === '/login/') {
+      setRoute({ path: '/login' });
+      return;
+    } else if (path === '/registro' || path === '/registro/') {
+      setRoute({ path: '/registro' });
+      return;
+    } else if (path === '/mis-pedidos' || path === '/mis-pedidos/') {
+      setRoute({ path: '/mis-pedidos' });
+      fetchMisPedidos();
       return;
     }
 
@@ -290,6 +321,155 @@ function App() {
     }
   };
 
+  // User Auth & Order Helpers
+  const checkAuth = async () => {
+    try {
+      const res = await fetch('/api/auth/me/');
+      if (res.ok) {
+        const data = await res.json();
+        if (data.is_authenticated) {
+          setCurrentUser({ id: data.id, username: data.username });
+          setCheckoutName(prev => prev || data.username);
+        } else {
+          setCurrentUser(null);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const fetchMisPedidos = async () => {
+    try {
+      const res = await fetch('/api/mis-pedidos/');
+      if (res.ok) {
+        const data = await res.json();
+        setMisPedidos(data.pedidos || []);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleLogin = async (username: string, password: string) => {
+    const csrf = getCookie('csrftoken');
+    try {
+      const res = await fetch('/api/auth/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrf || '',
+        },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setCurrentUser(data.user);
+        setCheckoutName(data.user.username);
+        showToast('¡Sesión iniciada con éxito! 🎉');
+        navigateTo('/');
+        return { success: true };
+      } else {
+        return { success: false, message: data.message };
+      }
+    } catch (e) {
+      return { success: false, message: 'Error de red al iniciar sesión' };
+    }
+  };
+
+  const handleRegister = async (username: string, password: string) => {
+    const csrf = getCookie('csrftoken');
+    try {
+      const res = await fetch('/api/auth/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrf || '',
+        },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setCurrentUser(data.user);
+        setCheckoutName(data.user.username);
+        showToast('¡Registro completado con éxito! 🎉');
+        navigateTo('/');
+        return { success: true };
+      } else {
+        return { success: false, message: data.message };
+      }
+    } catch (e) {
+      return { success: false, message: 'Error de red al registrarse' };
+    }
+  };
+
+  const handleLogout = async () => {
+    const csrf = getCookie('csrftoken');
+    try {
+      const res = await fetch('/api/auth/logout/', {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': csrf || '',
+        }
+      });
+      if (res.ok) {
+        setCurrentUser(null);
+        setMisPedidos([]);
+        showToast('Sesión cerrada.');
+        navigateTo('/');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleCancelOrder = async (orderId: number) => {
+    const csrf = getCookie('csrftoken');
+    try {
+      const res = await fetch(`/api/pedido/${orderId}/cancelar/`, {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': csrf || '',
+        }
+      });
+      const data = await res.json();
+      if (data.success) {
+        showToast('Pedido cancelado correctamente.');
+        fetchMisPedidos();
+      } else {
+        showToast(data.message);
+      }
+    } catch (e) {
+      showToast('Error al cancelar el pedido');
+    }
+  };
+
+  const handleModifyOrder = async (orderId: number, orderData: { nombre: string; telefono: string; notas: string; lineas: any[] }) => {
+    const csrf = getCookie('csrftoken');
+    try {
+      const res = await fetch(`/api/pedido/${orderId}/modificar/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrf || '',
+        },
+        body: JSON.stringify(orderData)
+      });
+      const data = await res.json();
+      if (data.success) {
+        showToast(data.message);
+        fetchMisPedidos();
+        return { success: true };
+      } else {
+        showToast(data.message);
+        return { success: false, message: data.message };
+      }
+    } catch (e) {
+      showToast('Error al modificar el pedido');
+      return { success: false, message: 'Error de red' };
+    }
+  };
+
   // Add Item to basket
   const handleAddToCart = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -391,44 +571,92 @@ function App() {
   const handleCheckoutSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (cart.length === 0) return;
+    if (!checkoutPhone.trim()) {
+      showToast('El teléfono es obligatorio.');
+      return;
+    }
     setIsSubmittingOrder(true);
 
     const csrf = getCookie('csrftoken');
-    try {
-      const res = await fetch('/api/checkout/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest',
-          'X-CSRFToken': csrf || '',
-        },
-        body: JSON.stringify({
-          nombre: checkoutName,
-          telefono: checkoutPhone,
-          notas: checkoutNotes
-        })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        if (data.success) {
-          setCart([]);
-          setCheckoutName('');
-          setCheckoutPhone('');
-          setCheckoutNotes('');
-          navigateTo(`/confirmacion/${data.pedido_id}`);
-        } else {
-          showToast(data.message || "Error procesando el pedido.");
-        }
-      } else {
-        const data = await res.json();
-        showToast(data.message || "Hubo un error al tramitar.");
-      }
-    } catch (e) {
-      console.error("Error placing checkout order", e);
-      showToast("Error de conexión.");
-    } finally {
-      setIsSubmittingOrder(false);
+    
+    // Generar o recuperar token de idempotencia para asegurar que no se creen duplicados
+    let orderToken = localStorage.getItem('pending_order_token');
+    if (!orderToken) {
+      orderToken = 'req_' + Math.random().toString(36).substring(2, 15) + '_' + Date.now();
+      localStorage.setItem('pending_order_token', orderToken);
     }
+
+    const maxRetries = 4;
+    let attempt = 0;
+    let delay = 1000; // delay inicial de 1s
+    let success = false;
+    let responseData: any = null;
+    let lastError: any = null;
+
+    while (attempt < maxRetries && !success) {
+      try {
+        const res = await fetch('/api/checkout/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': csrf || '',
+          },
+          body: JSON.stringify({
+            nombre: checkoutName,
+            telefono: checkoutPhone,
+            notas: checkoutNotes,
+            token_idempotencia: orderToken
+          })
+        });
+
+        if (res.ok) {
+          responseData = await res.json();
+          success = true;
+        } else {
+          try {
+            responseData = await res.json();
+          } catch (err) {
+            responseData = { message: `Error de servidor (${res.status})` };
+          }
+          
+          // Si es un error del cliente (4xx), no tiene sentido reintentar (cesta vacía, datos inválidos, etc.)
+          if (res.status >= 400 && res.status < 500) {
+            lastError = new Error(responseData?.message || `Error de validación (${res.status})`);
+            break;
+          }
+          
+          lastError = new Error(responseData?.message || `Error en el servidor (${res.status})`);
+        }
+      } catch (err) {
+        lastError = err;
+        console.warn(`Intento de envío ${attempt + 1} fallido por error de red:`, err);
+      }
+
+      if (!success) {
+        attempt++;
+        if (attempt < maxRetries) {
+          showToast(`Error de conexión. Reintentando envío (${attempt}/${maxRetries - 1})...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          delay *= 2; // backoff exponencial
+        }
+      }
+    }
+
+    if (success && responseData?.success) {
+      // Limpiar token y cesta una vez completado con éxito
+      localStorage.removeItem('pending_order_token');
+      setCart([]);
+      setCheckoutName('');
+      setCheckoutPhone('');
+      setCheckoutNotes('');
+      navigateTo(`/confirmacion/${responseData.pedido_id}`);
+    } else {
+      const errorMsg = lastError?.message || responseData?.message || "Error de conexión. Inténtalo de nuevo.";
+      showToast(errorMsg);
+    }
+    
+    setIsSubmittingOrder(false);
   };
 
   // Total items in cart counter
@@ -484,6 +712,32 @@ function App() {
           >
             Retro 🕰️
           </span>
+          {currentUser ? (
+            <>
+              <span 
+                onClick={() => navigateTo('/mis-pedidos')} 
+                className={`nav-link ${route.path === '/mis-pedidos' ? 'active' : ''}`}
+                style={{ cursor: 'pointer' }}
+              >
+                Mis Pedidos 📦
+              </span>
+              <span 
+                onClick={handleLogout} 
+                className="nav-link"
+                style={{ cursor: 'pointer', color: 'var(--red, #ff3b30)' }}
+              >
+                Salir 🚪
+              </span>
+            </>
+          ) : (
+            <span 
+              onClick={() => navigateTo('/login')} 
+              className={`nav-link ${route.path === '/login' || route.path === '/registro' ? 'active' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Entrar 👤
+            </span>
+          )}
           <div className={`nav-cesta ${hasBadge ? 'bump' : ''}`} onClick={() => setCartOpen(true)}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="9" cy="21" r="1"></circle>
@@ -533,6 +787,27 @@ function App() {
                 </div>
               </div>
             )}
+
+            {/* AVISO DE PRECIO */}
+            <div className="price-notice-banner" style={{ 
+              background: 'rgba(0, 255, 102, 0.07)', 
+              border: '1px solid var(--primary)', 
+              borderRadius: '16px', 
+              padding: '1.2rem 1.5rem', 
+              marginBottom: '2rem', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '1rem',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <span style={{ fontSize: '1.8rem' }}>💰</span>
+              <div>
+                <strong style={{ color: 'var(--primary)', fontSize: '1.1rem', display: 'block', marginBottom: '0.2rem' }}>Información sobre Precios:</strong>
+                <p style={{ margin: 0, fontSize: '0.95rem', color: '#ffffff', lineHeight: '1.4' }}>
+                  Para saber el precio de tu pedido, por favor contacta con <strong>Sergio</strong> en el teléfono <strong>611 41 53 76</strong>.
+                </p>
+              </div>
+            </div>
 
             {/* SEARCH AND CATEGORIES TAB BAR */}
             <div className="toolbar">
@@ -741,18 +1016,29 @@ function App() {
                   
                   {/* TALLAS LIST */}
                   <div className="form-section">
-                    <span className="section-label">Selecciona tu talla</span>
+                    <span className="section-label">
+                      Selecciona tu talla {detailProduct.categoria?.tipo === 'kids' && '🧒 (Equipación de Niño)'}
+                    </span>
                     <div className="tallas-grid">
-                      {detailProduct.tallas.map((talla) => (
-                        <button
-                          type="button"
-                          key={talla}
-                          className={`talla-btn ${selectedTalla === talla ? 'selected' : ''}`}
-                          onClick={() => setSelectedTalla(talla)}
-                        >
-                          {talla}
-                        </button>
-                      ))}
+                      {detailProduct.tallas.map((talla) => {
+                        let label = talla;
+                        if (detailProduct.categoria?.tipo === 'kids' || detailProduct.categoria?.slug === 'niños' || detailProduct.categoria?.slug === 'kids') {
+                          if (talla === '20') label = 'Talla 20 (5-6 años)';
+                          else if (talla === '22') label = 'Talla 22 (7-8 años)';
+                          else if (talla === '24') label = 'Talla 24 (9-10 años)';
+                          else if (talla === '26') label = 'Talla 26 (11-12 años)';
+                        }
+                        return (
+                          <button
+                            type="button"
+                            key={talla}
+                            className={`talla-btn ${selectedTalla === talla ? 'selected' : ''}`}
+                            onClick={() => setSelectedTalla(talla)}
+                          >
+                            {label}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
@@ -839,78 +1125,271 @@ function App() {
 
         {/* C. CHECKOUT VIEW */}
         {route.path === '/checkout' && (
-          <div className="checkout-view fade-in">
-            <h1>Tramitar Pedido</h1>
-            
-            <div className="checkout-grid">
-              {/* Form client */}
-              <div className="form-card">
-                <h2>Tus Datos</h2>
-                <form onSubmit={handleCheckoutSubmit}>
-                  <div className="campo">
-                    <label>Nombre Completo <span style={{ color: 'var(--tertiary-container)' }}>*</span></label>
-                    <input 
-                      type="text" 
-                      placeholder="Ej: Sergio Alarcón" 
-                      value={checkoutName}
-                      onChange={(e) => setCheckoutName(e.target.value)}
-                      required 
-                    />
-                  </div>
-                  <div className="campo">
-                    <label>Teléfono <span style={{ color: 'var(--gris)' }}>(para contacto WhatsApp)</span></label>
-                    <input 
-                      type="tel" 
-                      placeholder="Ej: 612 345 678" 
-                      value={checkoutPhone}
-                      onChange={(e) => setCheckoutPhone(e.target.value)}
-                    />
-                  </div>
-                  <div className="campo">
-                    <label>Notas de entrega <span style={{ color: 'var(--gris)' }}>(opcional)</span></label>
-                    <textarea 
-                      placeholder="Ej: Prefiero entrega en el campus por la mañana, o detalles especiales..." 
-                      value={checkoutNotes}
-                      onChange={(e) => setCheckoutNotes(e.target.value)}
-                    />
-                  </div>
-
-                  <button 
-                    type="submit" 
-                    className="submit-btn" 
-                    disabled={isSubmittingOrder || cart.length === 0}
-                  >
-                    {isSubmittingOrder ? 'Procesando...' : 'Confirmar y Enviar Pedido'}
-                  </button>
-                </form>
+          <div className="checkout-view fade-in" style={{ maxWidth: '800px', margin: '2rem auto' }}>
+            {/* Step indicator */}
+            <div className="checkout-steps-bar" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem' }}>
+              <div className={`step-indicator ${checkoutStep >= 1 ? 'active' : ''}`} style={{ fontWeight: 'bold', fontSize: '1.1rem', borderBottom: checkoutStep === 1 ? '3px solid var(--primary)' : 'none', paddingBottom: '0.5rem', color: checkoutStep === 1 ? 'var(--primary)' : 'var(--text-muted)' }}>
+                🛒 Paso 1: Revisa tu Cesta
               </div>
-
-              {/* Items summary */}
-              <div className="resumen-checkout">
-                <h2>Tu Selección</h2>
-                <div className="res-items">
-                  {cart.map((item, index) => (
-                    <div key={index} className="res-item">
-                      <div style={{ flex: 1 }}>
-                        <div className="res-item-name">{item.nombre}</div>
-                        <div className="res-item-talla">Talla: <strong>{item.talla}</strong></div>
-                        {item.dorsal && (
-                          <div className="res-item-custom">Personalizado: {item.texto_dorsal}</div>
-                        )}
-                      </div>
-                      <div className="res-item-right">
-                        <span>x{item.cantidad}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* <div className="res-total">
-                  <span>Total Pedido:</span>
-                  <span>{totalCartPrice.toFixed(2)} €</span>
-                </div> */}
+              <div className={`step-indicator ${checkoutStep >= 2 ? 'active' : ''}`} style={{ fontWeight: 'bold', fontSize: '1.1rem', borderBottom: checkoutStep === 2 ? '3px solid var(--primary)' : 'none', paddingBottom: '0.5rem', color: checkoutStep === 2 ? 'var(--primary)' : 'var(--text-muted)' }}>
+                📝 Paso 2: Pon tus Datos
               </div>
             </div>
+
+            {/* Helper Mascot Golazo */}
+            <div className="helper-mascot-card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '1.2rem', marginBottom: '2rem', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ fontSize: '3rem' }}>🐻</div>
+              <div>
+                <strong style={{ color: 'var(--primary)', fontSize: '1.1rem' }}>Golazo (Tu ayudante):</strong>
+                <p style={{ margin: '0.3rem 0 0 0', fontSize: '1rem', color: '#e0e0e0', lineHeight: '1.4' }}>
+                  {checkoutStep === 1 
+                    ? "¡Hola! Mira las camisetas que has elegido para tu pedido. Si todo está correcto, pulsa el gran botón verde para poner tu nombre y teléfono."
+                    : "¡Genial! Ya casi está listo. Ahora dime cómo te llamas y un teléfono para que podamos mandarte tu pedido a casa."
+                  }
+                </p>
+              </div>
+            </div>
+
+            {checkoutStep === 1 && (
+              <div className="resumen-checkout-step fade-in" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '2rem' }}>
+                <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>Tus Camisetas Elegidas 👕</h2>
+                
+                {cart.length === 0 ? (
+                  <div style={{ textAlign: 'center', padding: '2rem' }}>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '1.1rem' }}>Tu cesta está vacía. ¡Ve al catálogo a elegir alguna!</p>
+                    <button className="add-cart-btn" onClick={() => navigateTo('/')} style={{ background: 'var(--primary)', color: '#0b0c10', border: 'none', borderRadius: '10px', padding: '0.8rem 2rem', fontWeight: 'bold', cursor: 'pointer' }}>Volver al catálogo</button>
+                  </div>
+                ) : (
+                  <>
+                    <div className="res-items" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
+                      {cart.map((item, index) => (
+                        <div key={index} className="res-item" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.2rem', background: 'var(--bg-main)', border: '1px solid var(--border)', borderRadius: '12px' }}>
+                          <div style={{ flex: 1 }}>
+                            <div className="res-item-name" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{item.nombre}</div>
+                            <div className="res-item-talla" style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.3rem' }}>
+                              Talla: <strong style={{ color: 'var(--primary)' }}>{item.talla}</strong>
+                            </div>
+                            {item.dorsal && (
+                              <div className="res-item-custom" style={{ fontSize: '0.95rem', color: 'var(--primary)', marginTop: '0.3rem' }}>
+                                ⭐ Personalizado: {item.texto_dorsal}
+                              </div>
+                            )}
+                          </div>
+                          <div className="res-item-right" style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                            {/* Quantity controls directly in the checkout view */}
+                            <div className="qty-selector" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '8px', padding: '0.3rem 0.6rem' }}>
+                              <button type="button" onClick={() => handleUpdateQty(item.camiseta_id, Math.max(1, item.cantidad - 1))} style={{ background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem', padding: '0 0.4rem', fontWeight: 'bold' }}>-</button>
+                              <span style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{item.cantidad}</span>
+                              <button type="button" onClick={() => handleUpdateQty(item.camiseta_id, item.cantidad + 1)} style={{ background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem', padding: '0 0.4rem', fontWeight: 'bold' }}>+</button>
+                            </div>
+                            <button type="button" onClick={() => handleRemoveItem(item.camiseta_id)} style={{ background: 'transparent', border: 'none', color: 'var(--red, #ff3b30)', cursor: 'pointer', fontSize: '1.4rem', padding: '0.3rem' }} title="Eliminar artículo">🗑️</button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {currentUser ? (
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', marginTop: '2rem' }}>
+                        <button className="volver-catalogo-btn" onClick={() => navigateTo('/')} style={{ background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', borderRadius: '10px', padding: '0.8rem 1.5rem', cursor: 'pointer', fontSize: '1rem' }}>
+                          ← Seguir comprando
+                        </button>
+                        <button className="add-cart-btn" onClick={() => setCheckoutStep(2)} style={{ background: 'var(--primary)', color: '#0b0c10', border: 'none', borderRadius: '10px', padding: '0.8rem 2rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.1rem' }}>
+                          Siguiente paso: Mis Datos ➡️
+                        </button>
+                      </div>
+                    ) : (
+                      <div style={{ marginTop: '2rem', padding: '2rem', background: 'rgba(255, 255, 255, 0.02)', border: '1px dashed var(--border)', borderRadius: '16px', textAlign: 'center' }}>
+                        <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🔒</div>
+                        <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>Casi listo... ¡Identifícate para continuar!</h3>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                          Necesitas iniciar sesión o registrarte para tramitar tu pedido. De esta forma podrás modificarlo o cancelarlo si lo necesitas.
+                        </p>
+
+                        {/* Tab toggles */}
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                          <button 
+                            type="button"
+                            onClick={() => setCheckoutAuthTab('login')} 
+                            style={{
+                              background: checkoutAuthTab === 'login' ? 'var(--primary)' : 'transparent',
+                              color: checkoutAuthTab === 'login' ? '#0b0c10' : 'var(--text-muted)',
+                              border: '1px solid var(--border)',
+                              borderRadius: '8px',
+                              padding: '0.5rem 1.5rem',
+                              fontWeight: 'bold',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s'
+                            }}
+                          >
+                            🔑 Ya tengo cuenta
+                          </button>
+                          <button 
+                            type="button"
+                            onClick={() => setCheckoutAuthTab('registro')}
+                            style={{
+                              background: checkoutAuthTab === 'registro' ? 'var(--primary)' : 'transparent',
+                              color: checkoutAuthTab === 'registro' ? '#0b0c10' : 'var(--text-muted)',
+                              border: '1px solid var(--border)',
+                              borderRadius: '8px',
+                              padding: '0.5rem 1.5rem',
+                              fontWeight: 'bold',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s'
+                            }}
+                          >
+                            👤 Crear cuenta nueva
+                          </button>
+                        </div>
+
+                        {/* Render active form */}
+                        <div style={{ maxWidth: '360px', margin: '0 auto', textAlign: 'left' }}>
+                          {checkoutAuthTab === 'login' ? (
+                            <form onSubmit={async (e) => {
+                              e.preventDefault();
+                              const target = e.target as any;
+                              const u = target.username.value;
+                              const p = target.password.value;
+                              const res = await handleLogin(u, p);
+                              if (!res.success) {
+                                alert(res.message || 'Error al iniciar sesión');
+                              }
+                            }}>
+                              <div style={{ marginBottom: '1rem' }}>
+                                <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: 'bold', fontSize: '0.9rem' }}>Usuario</label>
+                                <input type="text" name="username" placeholder="Ej: sergio123" required style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+                              </div>
+                              <div style={{ marginBottom: '1.2rem' }}>
+                                <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: 'bold', fontSize: '0.9rem' }}>Contraseña</label>
+                                <input type="password" name="password" placeholder="Tu contraseña" required style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+                              </div>
+                              <button type="submit" className="add-cart-btn" style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'var(--primary)', color: '#0b0c10', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>
+                                Iniciar Sesión 🚀
+                              </button>
+                            </form>
+                          ) : (
+                            <form onSubmit={async (e) => {
+                              e.preventDefault();
+                              const target = e.target as any;
+                              const u = target.username.value;
+                              const p = target.password.value;
+                              const res = await handleRegister(u, p);
+                              if (!res.success) {
+                                alert(res.message || 'Error al registrarse');
+                              }
+                            }}>
+                              <div style={{ marginBottom: '1rem' }}>
+                                <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: 'bold', fontSize: '0.9rem' }}>Usuario nuevo</label>
+                                <input type="text" name="username" placeholder="Ej: nino99" required style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+                              </div>
+                              <div style={{ marginBottom: '1.2rem' }}>
+                                <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: 'bold', fontSize: '0.9rem' }}>Contraseña</label>
+                                <input type="password" name="password" placeholder="Mínimo 4 caracteres" required style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+                              </div>
+                              <button type="submit" className="add-cart-btn" style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'var(--primary)', color: '#0b0c10', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>
+                                Registrarme y Continuar 🌟
+                              </button>
+                            </form>
+                          )}
+                        </div>
+
+                        <div style={{ marginTop: '1.5rem', borderTop: '1px solid var(--border)', paddingTop: '1rem' }}>
+                          <button type="button" className="volver-catalogo-btn" onClick={() => navigateTo('/')} style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '0.9rem', textDecoration: 'underline' }}>
+                            ← Volver al catálogo y seguir comprando sin cuenta
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+
+            {checkoutStep === 2 && currentUser && (
+              <div className="checkout-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2rem' }}>
+                {/* Form client */}
+                <div className="form-card" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '2rem' }}>
+                  <h2 style={{ marginBottom: '1.5rem', fontSize: '1.4rem' }}>Tus Datos de Envío 📝</h2>
+                  <div style={{ background: 'rgba(0, 255, 102, 0.07)', border: '1px solid var(--primary)', borderRadius: '10px', padding: '1rem', marginBottom: '1.5rem', fontSize: '0.95rem', color: '#ffffff', lineHeight: '1.5' }}>
+                    <div style={{ marginBottom: '0.6rem' }}>ℹ️ Cualquier cosa, contacte con <strong>Sergio</strong> en el teléfono <strong>611 41 53 76</strong>.</div>
+                    <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '0.6rem' }}>📢 <strong>¿Vienes de parte de alguien?</strong> Por favor, escribe en las <strong>Notas</strong> de parte de quién vienes para saber quién hace el pedido.</div>
+                  </div>
+                  <form onSubmit={handleCheckoutSubmit}>
+                    <div className="campo" style={{ marginBottom: '1.2rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Mi Nombre Completo <span style={{ color: 'var(--primary)' }}>*</span></label>
+                      <input 
+                        type="text" 
+                        placeholder="Ej: Sergio Alarcón" 
+                        value={checkoutName}
+                        onChange={(e) => setCheckoutName(e.target.value)}
+                        required 
+                        style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff', fontSize: '1rem' }}
+                      />
+                    </div>
+                    <div className="campo" style={{ marginBottom: '1.2rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Mi Teléfono <span style={{ color: 'var(--primary)' }}>*</span></label>
+                      <input 
+                        type="tel" 
+                        placeholder="Ej: 612 345 678" 
+                        value={checkoutPhone}
+                        onChange={(e) => setCheckoutPhone(e.target.value)}
+                        required
+                        style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff', fontSize: '1rem' }}
+                      />
+                    </div>
+                    <div className="campo" style={{ marginBottom: '1.5rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Notas / ¿De parte de quién vienes? <span style={{ color: 'var(--text-muted)' }}>(opcional)</span></label>
+                      <textarea 
+                        placeholder="Si vienes de parte de alguien, escribe su nombre aquí. También puedes añadir indicaciones sobre la entrega, etc." 
+                        value={checkoutNotes}
+                        onChange={(e) => setCheckoutNotes(e.target.value)}
+                        style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff', fontSize: '1rem', minHeight: '80px' }}
+                      />
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                      <button type="button" onClick={() => setCheckoutStep(1)} style={{ background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', borderRadius: '10px', padding: '0.8rem 1.5rem', cursor: 'pointer', fontSize: '1rem' }}>
+                        ← Atrás
+                      </button>
+                      <button 
+                        type="submit" 
+                        className="submit-btn" 
+                        disabled={isSubmittingOrder || cart.length === 0}
+                        style={{ flex: 1, padding: '0.8rem 2rem', fontSize: '1.1rem', background: 'var(--primary)', color: '#0b0c10', fontWeight: 'bold', border: 'none', borderRadius: '10px', cursor: 'pointer' }}
+                      >
+                        {isSubmittingOrder ? 'Enviando...' : '¡Confirmar y Enviar Pedido! 🛒'}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                {/* Resumen mini */}
+                <div className="resumen-checkout" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '1.5rem' }}>
+                  <h3 style={{ marginBottom: '1rem', fontSize: '1.2rem' }}>Resumen</h3>
+                  <div className="res-items" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    {cart.map((item, index) => (
+                      <div key={index} style={{ borderBottom: '1px solid var(--border)', paddingBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div>
+                          <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>{item.nombre}</div>
+                          <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                            Talla {item.talla} x{item.cantidad}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {checkoutStep === 2 && !currentUser && (
+              <div style={{ textAlign: 'center', padding: '3rem 1rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔒</div>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '1.1rem' }}>Debes registrarte o iniciar sesión para continuar con el pedido.</p>
+                <button className="add-cart-btn" onClick={() => setCheckoutStep(1)} style={{ background: 'var(--primary)', color: '#0b0c10', border: 'none', borderRadius: '10px', padding: '0.8rem 2rem', fontWeight: 'bold', cursor: 'pointer' }}>
+                  Ir a identificarse
+                </button>
+              </div>
+            )}
           </div>
         )}
 
@@ -975,6 +1454,320 @@ function App() {
                 Volver al catálogo
               </button>
             </div>
+          </div>
+        )}
+
+        {/* E. LOGIN VIEW */}
+        {route.path === '/login' && (
+          <div className="login-view fade-in" style={{ maxWidth: '400px', margin: '4rem auto', padding: '2.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', boxShadow: 'var(--shadow-lg)' }}>
+            <h1 style={{ fontSize: '2rem', marginBottom: '1rem', textAlign: 'center' }}>Iniciar Sesión 🔑</h1>
+            <p style={{ color: 'var(--text-muted)', textAlign: 'center', marginBottom: '2rem' }}>Accede para ver tus pedidos y poder cancelarlos o modificarlos.</p>
+            
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              const target = e.target as any;
+              const u = target.username.value;
+              const p = target.password.value;
+              const res = await handleLogin(u, p);
+              if (!res.success) {
+                alert(res.message || 'Error al iniciar sesión');
+              }
+            }}>
+              <div className="campo" style={{ marginBottom: '1.5rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Nombre de usuario</label>
+                <input type="text" name="username" placeholder="Ej: sergio123" required style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+              </div>
+              <div className="campo" style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Contraseña</label>
+                <input type="password" name="password" placeholder="Tu contraseña" required style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+              </div>
+              
+              <button type="submit" className="add-cart-btn" style={{ width: '100%', padding: '1rem', borderRadius: '10px', background: 'var(--primary)', color: '#0b0c10', fontWeight: 'bold', border: 'none', cursor: 'pointer', fontSize: '1rem' }}>
+                Entrar 🚀
+              </button>
+            </form>
+            
+            <p style={{ marginTop: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+              ¿No tienes cuenta?{' '}
+              <span onClick={() => navigateTo('/registro')} style={{ color: 'var(--primary)', cursor: 'pointer', fontWeight: 'bold', textDecoration: 'underline' }}>
+                Regístrate aquí
+              </span>
+            </p>
+          </div>
+        )}
+
+        {/* F. REGISTRO VIEW */}
+        {route.path === '/registro' && (
+          <div className="registro-view fade-in" style={{ maxWidth: '400px', margin: '4rem auto', padding: '2.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', boxShadow: 'var(--shadow-lg)' }}>
+            <h1 style={{ fontSize: '2rem', marginBottom: '1rem', textAlign: 'center' }}>Crear Cuenta 👤</h1>
+            <p style={{ color: 'var(--text-muted)', textAlign: 'center', marginBottom: '2rem' }}>Regístrate para poder modificar y cancelar tus pedidos al instante.</p>
+            
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              const target = e.target as any;
+              const u = target.username.value;
+              const p = target.password.value;
+              const res = await handleRegister(u, p);
+              if (!res.success) {
+                alert(res.message || 'Error al registrarse');
+              }
+            }}>
+              <div className="campo" style={{ marginBottom: '1.5rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Nombre de usuario</label>
+                <input type="text" name="username" placeholder="Ej: sergio123" required style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+              </div>
+              <div className="campo" style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Contraseña</label>
+                <input type="password" name="password" placeholder="Tu contraseña" required style={{ width: '100%', padding: '0.8rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+              </div>
+              
+              <button type="submit" className="add-cart-btn" style={{ width: '100%', padding: '1rem', borderRadius: '10px', background: 'var(--primary)', color: '#0b0c10', fontWeight: 'bold', border: 'none', cursor: 'pointer', fontSize: '1rem' }}>
+                Registrarme 🌟
+              </button>
+            </form>
+            
+            <p style={{ marginTop: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+              ¿Ya tienes cuenta?{' '}
+              <span onClick={() => navigateTo('/login')} style={{ color: 'var(--primary)', cursor: 'pointer', fontWeight: 'bold', textDecoration: 'underline' }}>
+                Inicia sesión aquí
+              </span>
+            </p>
+          </div>
+        )}
+
+        {/* G. MIS PEDIDOS VIEW */}
+        {route.path === '/mis-pedidos' && (
+          <div className="mis-pedidos-view fade-in" style={{ maxWidth: '900px', margin: '2rem auto' }}>
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Mis Pedidos 📦</h1>
+
+            {!currentUser ? (
+              <div style={{ textAlign: 'center', padding: '3rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px' }}>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '1.1rem' }}>Debes iniciar sesión para ver y gestionar tus pedidos.</p>
+                <button className="add-cart-btn" onClick={() => navigateTo('/login')} style={{ background: 'var(--primary)', color: '#0b0c10', border: 'none', borderRadius: '10px', padding: '0.8rem 2rem', fontWeight: 'bold', cursor: 'pointer' }}>
+                  Iniciar Sesión
+                </button>
+              </div>
+            ) : (
+              <div>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+                  Hola, <strong>{currentUser.username}</strong>. Aquí tienes el historial de tus pedidos. Los pedidos en estado <strong>Pendiente</strong> se pueden cancelar o modificar.
+                </p>
+
+                {misPedidos.length === 0 ? (
+                  <div style={{ textAlign: 'center', padding: '3rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px' }}>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Aún no has realizado ningún pedido.</p>
+                    <button className="add-cart-btn" onClick={() => navigateTo('/')} style={{ background: 'var(--primary)', color: '#0b0c10', border: 'none', borderRadius: '10px', padding: '0.8rem 2rem', fontWeight: 'bold', cursor: 'pointer' }}>
+                      Ir al catálogo 🛒
+                    </button>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    {misPedidos.map((pedido) => {
+                      const isPending = pedido.estado === 'pendiente';
+                      const isModifying = modifyingOrder === pedido.id;
+
+                      if (isModifying) {
+                        return (
+                          <div key={pedido.id} className="pedido-card-modifying fade-in" style={{ background: 'var(--bg-card)', border: '2px solid var(--primary)', borderRadius: '16px', padding: '2rem' }}>
+                            <h2 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Modificar Pedido #{pedido.id} ✏️</h2>
+                            
+                            <div className="form-card" style={{ background: 'transparent', border: 'none', padding: 0, marginBottom: '2rem' }}>
+                              <div className="campo" style={{ marginBottom: '1rem' }}>
+                                <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.5rem' }}>Nombre del Cliente <span style={{ color: 'var(--primary)' }}>*</span></label>
+                                <input type="text" value={modifyName} onChange={(e) => setModifyName(e.target.value)} required style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+                              </div>
+                              <div className="campo" style={{ marginBottom: '1rem' }}>
+                                <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.5rem' }}>Teléfono <span style={{ color: 'var(--primary)' }}>*</span></label>
+                                <input type="text" value={modifyPhone} onChange={(e) => setModifyPhone(e.target.value)} required style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff' }} />
+                              </div>
+                              <div className="campo" style={{ marginBottom: '1.5rem' }}>
+                                <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.5rem' }}>Notas o Comentarios</label>
+                                <textarea value={modifyNotes} onChange={(e) => setModifyNotes(e.target.value)} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid var(--border)', background: 'var(--bg-main)', color: '#fff', minHeight: '80px' }} />
+                              </div>
+
+                              <h3 style={{ marginBottom: '1rem', borderBottom: '1px solid var(--border)', paddingBottom: '0.5rem' }}>Camisetas del Pedido:</h3>
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
+                                {modifyLineas.map((linea, lIdx) => (
+                                  <div key={linea.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', background: 'var(--bg-main)', border: '1px solid var(--border)', borderRadius: '10px' }}>
+                                    <div style={{ flex: 1 }}>
+                                      <div style={{ fontWeight: 'bold' }}>{linea.producto_nombre}</div>
+                                      
+                                      {/* Talla select */}
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+                                        <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Talla:</span>
+                                        <select 
+                                          value={linea.talla} 
+                                          onChange={(e) => {
+                                            const updated = [...modifyLineas];
+                                            updated[lIdx].talla = e.target.value;
+                                            setModifyLineas(updated);
+                                          }}
+                                          style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: '#fff', padding: '0.2rem 0.5rem', borderRadius: '4px' }}
+                                        >
+                                          {['20', '22', '24', '26', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'].map(sz => (
+                                            <option key={sz} value={sz}>{sz}</option>
+                                          ))}
+                                        </select>
+                                      </div>
+
+                                      {linea.dorsal && (
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+                                          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Dorsal:</span>
+                                          <input 
+                                            type="text" 
+                                            value={linea.texto_dorsal} 
+                                            onChange={(e) => {
+                                              const updated = [...modifyLineas];
+                                              updated[lIdx].texto_dorsal = e.target.value;
+                                              setModifyLineas(updated);
+                                            }}
+                                            style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: '#fff', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.85rem' }}
+                                          />
+                                        </div>
+                                      )}
+                                    </div>
+
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                      {/* Quantity editor */}
+                                      <div className="qty-selector" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '6px', padding: '0.25rem 0.5rem' }}>
+                                        <button type="button" onClick={() => {
+                                          const updated = [...modifyLineas];
+                                          updated[lIdx].cantidad = Math.max(0, linea.cantidad - 1);
+                                          setModifyLineas(updated);
+                                        }} style={{ background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1rem' }}>-</button>
+                                        <span style={{ fontWeight: 'bold' }}>{linea.cantidad}</span>
+                                        <button type="button" onClick={() => {
+                                          const updated = [...modifyLineas];
+                                          updated[lIdx].cantidad = linea.cantidad + 1;
+                                          setModifyLineas(updated);
+                                        }} style={{ background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1rem' }}>+</button>
+                                      </div>
+                                      
+                                      <button type="button" onClick={() => {
+                                        const updated = [...modifyLineas];
+                                        updated[lIdx].cantidad = 0;
+                                        setModifyLineas(updated);
+                                      }} style={{ background: 'transparent', border: 'none', color: 'var(--red, #ff3b30)', cursor: 'pointer', fontSize: '1.1rem' }} title="Quitar">🗑️</button>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div style={{ display: 'flex', gap: '1rem' }}>
+                              <button 
+                                className="volver-catalogo-btn" 
+                                onClick={() => setModifyingOrder(null)}
+                                style={{ background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', borderRadius: '8px', padding: '0.8rem 1.5rem', cursor: 'pointer' }}
+                              >
+                                Cancelar edición
+                              </button>
+                              <button 
+                                className="add-cart-btn" 
+                                onClick={async () => {
+                                  if (!modifyName.trim()) {
+                                    showToast('El nombre es obligatorio.');
+                                    return;
+                                  }
+                                  if (!modifyPhone.trim()) {
+                                    showToast('El teléfono es obligatorio.');
+                                    return;
+                                  }
+                                  const res = await handleModifyOrder(pedido.id, {
+                                    nombre: modifyName,
+                                    telefono: modifyPhone,
+                                    notas: modifyNotes,
+                                    lineas: modifyLineas
+                                  });
+                                  if (res.success) {
+                                    setModifyingOrder(null);
+                                  }
+                                }}
+                                style={{ background: 'var(--primary)', color: '#0b0c10', border: 'none', borderRadius: '8px', padding: '0.8rem 2rem', fontWeight: 'bold', cursor: 'pointer', flex: 1 }}
+                              >
+                                Guardar Cambios 💾
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      return (
+                        <div key={pedido.id} className="pedido-card" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)', paddingBottom: '0.75rem' }}>
+                            <div>
+                              <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Pedido #{pedido.id}</span>
+                              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginLeft: '1rem' }}>{new Date(pedido.fecha_pedido).toLocaleDateString()}</span>
+                            </div>
+                            <span className="status-badge" style={{ 
+                              background: pedido.estado === 'cancelado' ? 'rgba(255,59,48,0.15)' : pedido.estado === 'pendiente' ? 'rgba(255,183,0,0.15)' : 'rgba(0,255,102,0.15)',
+                              color: pedido.estado === 'cancelado' ? '#ff3b30' : pedido.estado === 'pendiente' ? '#ffb700' : 'var(--primary)',
+                              padding: '0.4rem 0.8rem',
+                              borderRadius: '30px',
+                              fontSize: '0.85rem',
+                              fontWeight: 'bold'
+                            }}>
+                              {pedido.estado_display}
+                            </span>
+                          </div>
+
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', fontSize: '0.95rem' }}>
+                            <div>
+                              <strong>Nombre:</strong> {pedido.nombre_cliente} <br />
+                              <strong>Teléfono:</strong> {pedido.telefono || '—'}
+                            </div>
+                            <div>
+                              <strong>Notas:</strong> <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>{pedido.notas || 'Sin notas adicionales.'}</span>
+                            </div>
+                          </div>
+
+                          <div style={{ background: 'var(--bg-main)', border: '1px solid var(--border)', borderRadius: '10px', padding: '1rem' }}>
+                            <strong style={{ fontSize: '0.9rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.5rem' }}>Productos:</strong>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                              {pedido.lineas.map((linea: any) => (
+                                <div key={linea.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.95rem' }}>
+                                  <span>
+                                    {linea.producto_nombre} (Talla <strong>{linea.talla}</strong>) x{linea.cantidad}
+                                    {linea.dorsal && <small style={{ display: 'block', color: 'var(--primary)', fontSize: '0.8rem' }}>⭐ Personalizado: {linea.texto_dorsal}</small>}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {isPending && (
+                            <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem', alignSelf: 'flex-end' }}>
+                              <button 
+                                onClick={() => {
+                                  setModifyingOrder(pedido.id);
+                                  setModifyName(pedido.nombre_cliente);
+                                  setModifyPhone(pedido.telefono);
+                                  setModifyNotes(pedido.notas);
+                                  setModifyLineas(JSON.parse(JSON.stringify(pedido.lineas))); // Deep copy
+                                }}
+                                style={{ background: 'rgba(0, 240, 255, 0.1)', color: '#00f0ff', border: '1px solid #00f0ff', borderRadius: '8px', padding: '0.6rem 1.2rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                              >
+                                ✏️ Modificar
+                              </button>
+                              <button 
+                                onClick={() => {
+                                  if (confirm('¿Estás seguro de que quieres cancelar este pedido? Se ocultará de la administración.')) {
+                                    handleCancelOrder(pedido.id);
+                                  }
+                                }}
+                                style={{ background: 'rgba(255, 59, 48, 0.1)', color: '#ff3b30', border: '1px solid #ff3b30', borderRadius: '8px', padding: '0.6rem 1.2rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                              >
+                                ❌ Cancelar Pedido
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
 

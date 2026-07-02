@@ -183,7 +183,11 @@
 
   <div class="form-card">
     <h2>Tus datos</h2>
-    <form method="post">
+    <div style="background: rgba(57, 255, 20, 0.07); border: 1px solid var(--primary-container); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; font-size: 0.95rem; color: #ffffff; line-height: 1.5;">
+      <div style="margin-bottom: 0.6rem;">ℹ️ Cualquier cosa, contacte con <strong>Sergio</strong> en el teléfono <strong>611 41 53 76</strong>.</div>
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 0.6rem;">📢 <strong>¿Vienes de parte de alguien?</strong> Por favor, escribe en las <strong>Notas</strong> de parte de quién vienes para saber quién hace el pedido.</div>
+    </div>
+    <form method="post" onsubmit="this.querySelector('.submit-btn').disabled = true; this.querySelector('.submit-btn').innerText = 'Enviando...';">
       {% csrf_token %}
       <div class="campo">
         <label>Nombre completo <span class="req">*</span></label>
@@ -191,13 +195,13 @@
                value="{{ request.POST.nombre }}" required>
       </div>
       <div class="campo">
-        <label>Teléfono <span style="color:var(--gris-claro);font-weight:400;">(opcional)</span></label>
+        <label>Teléfono <span class="req">*</span></label>
         <input type="tel" name="telefono" placeholder="Ej: 612 345 678"
-               value="{{ request.POST.telefono }}">
+               value="{{ request.POST.telefono }}" required>
       </div>
       <div class="campo">
-        <label>Notas <span style="color:var(--gris-claro);font-weight:400;">(opcional)</span></label>
-        <textarea name="notas" placeholder="Cuándo te la puedo dar, dirección, etc.">{{ request.POST.notas }}</textarea>
+        <label>Notas / ¿De parte de quién vienes? <span style="color:var(--gris-claro);font-weight:400;">(opcional)</span></label>
+        <textarea name="notas" placeholder="Si vienes de parte de alguien, escribe su nombre aquí. También puedes añadir indicaciones sobre la entrega, etc.">{{ request.POST.notas }}</textarea>
       </div>
       <button type="submit" class="submit-btn">Enviar pedido →</button>
     </form>

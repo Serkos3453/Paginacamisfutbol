@@ -214,7 +214,7 @@ class PedidoAdmin(admin.ModelAdmin):
     list_per_page = 30
 
     def get_queryset(self, request):
-        return super().get_queryset(request).annotate(
+        return super().get_queryset(request).exclude(estado='cancelado').annotate(
             _num_articulos=Count('lineas')
         )
 
@@ -231,7 +231,7 @@ class PedidoAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('👤 Cliente', {
-            'fields': ('nombre_cliente', 'telefono', 'notas')
+            'fields': ('usuario', 'nombre_cliente', 'telefono', 'notas')
         }),
         ('📦 Estado', {
             'fields': ('estado', 'notas_admin')

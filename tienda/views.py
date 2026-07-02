@@ -233,8 +233,14 @@ def checkout(request):
             return render(request, 'tienda/checkout.html', {
                 'cesta': cesta, 'cesta_count': cesta_count(request),
             })
+        if not telefono:
+            messages.error(request, 'Por favor introduce tu teléfono.')
+            return render(request, 'tienda/checkout.html', {
+                'cesta': cesta, 'cesta_count': cesta_count(request),
+            })
         with transaction.atomic():
             pedido = Pedido.objects.create(
+                usuario=request.user if request.user.is_authenticated else None,
                 nombre_cliente=nombre, telefono=telefono, notas=notas,
             )
             for item in cesta:
@@ -412,6 +418,9 @@ def api_detalle_camiseta(request, pk):
 
 @require_POST
 def api_checkout(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'success': False, 'message': 'Debes iniciar sesión para realizar un pedido.'}, status=401)
+
     try:
         data = json.loads(request.body)
     except Exception:
@@ -420,6 +429,18 @@ def api_checkout(request):
     nombre = data.get('nombre', '').strip()
     telefono = data.get('telefono', '').strip()
     notas = data.get('notas', '').strip()
+    token_idempotencia = data.get('token_idempotencia', '').strip()
+
+    if token_idempotencia:
+        pedido_existente = Pedido.objects.filter(token_idempotencia=token_idempotencia).first()
+        if pedido_existente:
+            save_cesta(request, [])
+            return JsonResponse({
+                'success': True,
+                'pedido_id': pedido_existente.pk,
+                'message': f'Pedido #{pedido_existente.pk} recuperado con éxito.'
+            })
+
     cesta = get_cesta(request)
 
     if not cesta:
@@ -428,9 +449,16 @@ def api_checkout(request):
     if not nombre:
         return JsonResponse({'success': False, 'message': 'Por favor introduce tu nombre.'}, status=400)
 
+    if not telefono:
+        return JsonResponse({'success': False, 'message': 'Por favor introduce tu teléfono.'}, status=400)
+
     with transaction.atomic():
         pedido = Pedido.objects.create(
-            nombre_cliente=nombre, telefono=telefono, notas=notas
+            usuario=request.user if request.user.is_authenticated else None,
+            nombre_cliente=nombre,
+            telefono=telefono,
+            notas=notas,
+            token_idempotencia=token_idempotencia or None
         )
         for item in cesta:
             producto = Producto.objects.get(pk=item['camiseta_id'])
@@ -473,3 +501,174 @@ def api_confirmacion(request, pk):
 @ensure_csrf_cookie
 def index_spa(request, *args, **kwargs):
     return render(request, 'index.html')
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  AUTH AND ORDER USER APIS
+# ═══════════════════════════════════════════════════════════════════════════════
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth.models import User
+
+@require_POST
+def api_register(request):
+    try:
+        data = json.loads(request.body)
+    except Exception:
+        return JsonResponse({'success': False, 'message': 'Datos inválidos'}, status=400)
+    
+    username = data.get('username', '').strip()
+    password = data.get('password', '').strip()
+    
+    if not username or not password:
+        return JsonResponse({'success': False, 'message': 'El usuario y la contraseña son obligatorios'}, status=400)
+        
+    if User.objects.filter(username=username).exists():
+        return JsonResponse({'success': False, 'message': 'El nombre de usuario ya está registrado'}, status=400)
+        
+    user = User.objects.create_user(username=username, password=password)
+    auth_login(request, user)
+    return JsonResponse({
+        'success': True,
+        'user': {
+            'username': user.username,
+            'id': user.id
+        }
+    })
+
+@require_POST
+def api_login(request):
+    try:
+        data = json.loads(request.body)
+    except Exception:
+        return JsonResponse({'success': False, 'message': 'Datos inválidos'}, status=400)
+        
+    username = data.get('username', '').strip()
+    password = data.get('password', '').strip()
+    
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        auth_login(request, user)
+        return JsonResponse({
+            'success': True,
+            'user': {
+                'username': user.username,
+                'id': user.id
+            }
+        })
+    else:
+        return JsonResponse({'success': False, 'message': 'Usuario o contraseña incorrectos'}, status=400)
+
+@require_POST
+def api_logout(request):
+    auth_logout(request)
+    return JsonResponse({'success': True})
+
+def api_me(request):
+    if request.user.is_authenticated:
+        return JsonResponse({
+            'is_authenticated': True,
+            'username': request.user.username,
+            'id': request.user.id
+        })
+    return JsonResponse({'is_authenticated': False})
+
+def api_mis_pedidos(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'success': False, 'message': 'No autorizado'}, status=401)
+        
+    pedidos = Pedido.objects.filter(usuario=request.user)
+    data = []
+    for p in pedidos:
+        lineas_data = []
+        for l in p.lineas.all().select_related('producto'):
+            nombre_limpio = re.sub(r'^(?:Camiseta\s+de\s+fútbol\s+de\s+|Camiseta\s+de\s+fútbol\s+|Camiseta\s+de\s+|Camiseta\s+)(.*)$', r'\1', l.producto.nombre, flags=re.IGNORECASE).strip().capitalize()
+            lineas_data.append({
+                'id': l.id,
+                'producto_id': l.producto.id,
+                'producto_nombre': nombre_limpio,
+                'talla': l.talla,
+                'cantidad': l.cantidad,
+                'parche': l.parche,
+                'dorsal': l.dorsal,
+                'texto_dorsal': l.texto_dorsal,
+            })
+        data.append({
+            'id': p.id,
+            'nombre_cliente': p.nombre_cliente,
+            'telefono': p.telefono,
+            'notas': p.notas,
+            'estado': p.estado,
+            'estado_display': p.get_estado_display(),
+            'fecha_pedido': p.fecha_pedido.isoformat(),
+            'lineas': lineas_data
+        })
+    return JsonResponse({'pedidos': data})
+
+@require_POST
+def api_cancelar_pedido(request, pk):
+    if not request.user.is_authenticated:
+        return JsonResponse({'success': False, 'message': 'No autorizado'}, status=401)
+        
+    pedido = get_object_or_404(Pedido, pk=pk, usuario=request.user)
+    if pedido.estado != 'pendiente':
+        return JsonResponse({'success': False, 'message': 'Solo puedes cancelar pedidos en estado Pendiente'}, status=400)
+        
+    pedido.estado = 'cancelado'
+    pedido.save()
+    return JsonResponse({'success': True, 'message': 'Pedido cancelado correctamente.'})
+
+@require_POST
+def api_modificar_pedido(request, pk):
+    if not request.user.is_authenticated:
+        return JsonResponse({'success': False, 'message': 'No autorizado'}, status=401)
+        
+    pedido = get_object_or_404(Pedido, pk=pk, usuario=request.user)
+    if pedido.estado != 'pendiente':
+        return JsonResponse({'success': False, 'message': 'Solo puedes modificar pedidos en estado Pendiente'}, status=400)
+        
+    try:
+        data = json.loads(request.body)
+    except Exception:
+        return JsonResponse({'success': False, 'message': 'JSON inválido.'}, status=400)
+        
+    nombre = data.get('nombre', '').strip()
+    telefono = data.get('telefono', '').strip()
+    notas = data.get('notas', '').strip()
+    lineas = data.get('lineas', [])
+    
+    if not nombre:
+        return JsonResponse({'success': False, 'message': 'El nombre es obligatorio'}, status=400)
+    if not telefono:
+        return JsonResponse({'success': False, 'message': 'El teléfono es obligatorio'}, status=400)
+        
+    with transaction.atomic():
+        pedido.nombre_cliente = nombre
+        pedido.telefono = telefono
+        pedido.notas = notas
+        pedido.save()
+        
+        # update lineas
+        for l_data in lineas:
+            linea_id = l_data.get('id')
+            talla = l_data.get('talla')
+            cantidad = int(l_data.get('cantidad', 1))
+            parche = l_data.get('parche', False)
+            dorsal = l_data.get('dorsal', False)
+            texto_dorsal = l_data.get('texto_dorsal', '') if dorsal else ''
+            
+            linea = LineaPedido.objects.filter(id=linea_id, pedido=pedido).first()
+            if linea:
+                if cantidad <= 0:
+                    linea.delete()
+                else:
+                    linea.talla = talla
+                    linea.cantidad = cantidad
+                    linea.parche = parche
+                    linea.dorsal = dorsal
+                    linea.texto_dorsal = texto_dorsal
+                    linea.save()
+                    
+        if not pedido.lineas.exists():
+            pedido.delete()
+            return JsonResponse({'success': True, 'deleted': True, 'message': 'Pedido eliminado al no tener productos.'})
+            
+    return JsonResponse({'success': True, 'message': 'Pedido modificado correctamente.'})

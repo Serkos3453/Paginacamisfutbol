@@ -13,6 +13,7 @@ Jerarquía:
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from django.conf import settings
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -165,6 +166,9 @@ class Producto(models.Model):
     def get_tallas(self):
         """Retorna las tallas disponibles de todas las variantes activas.
         Usa datos prefetched si están disponibles para evitar N+1 queries."""
+        if self.categoria and (self.categoria.tipo == 'kids' or self.categoria.slug == 'niños' or self.categoria.slug == 'kids'):
+            return ['20', '22', '24', '26']
+
         # Si las variantes fueron prefetched, usar memoria en vez de query
         if 'variantes' in getattr(self, '_prefetched_objects_cache', {}):
             tallas = list(set(
@@ -317,8 +321,15 @@ class Pedido(models.Model):
         ('pagado', '💰 Pagado'),
         ('enviado', '📦 Enviado'),
         ('entregado', '🎉 Entregado'),
+        ('cancelado', '❌ Cancelado'),
     ]
 
+    usuario = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True, blank=True,
+        related_name='pedidos',
+    )
     nombre_cliente = models.CharField(max_length=200)
     telefono = models.CharField(max_length=20, blank=True)
     notas = models.TextField(blank=True, help_text='Notas adicionales del cliente')
@@ -326,6 +337,10 @@ class Pedido(models.Model):
     fecha_pedido = models.DateTimeField(default=timezone.now, db_index=True)
     fecha_actualizacion = models.DateTimeField(auto_now=True)
     notas_admin = models.TextField(blank=True, help_text='Notas internas (solo visibles para el admin)')
+    token_idempotencia = models.CharField(
+        max_length=100, blank=True, null=True, unique=True, db_index=True,
+        help_text='Token único para evitar duplicados en reintentos de red'
+    )
 
     class Meta:
         ordering = ['-fecha_pedido']
